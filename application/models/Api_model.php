@@ -603,8 +603,8 @@ class Api_model extends CI_Model
 		foreach ($my_courses as $key => $my_course) {
 			if (isset($my_course['id']) && $my_course['id'] > 0) {
 				$my_courses[$key]['completion'] = round(course_progress($my_course['id'], $user_id));
-				$my_courses[$key]['total_number_of_lessons'] = $this->crud_model->get_lessons('course', $my_course['id'])->num_rows();
-				$my_courses[$key]['total_number_of_completed_lessons'] = $this->get_completed_number_of_lesson($user_id, 'course', $my_course['id']);
+				$my_courses[$key]['total_number_of_الدروس'] = $this->crud_model->get_الدروس('course', $my_course['id'])->num_rows();
+				$my_courses[$key]['total_number_of_completed_الدروس'] = $this->get_completed_number_of_lesson($user_id, 'course', $my_course['id']);
 			}
 		}
 		return $my_courses;
@@ -701,14 +701,14 @@ class Api_model extends CI_Model
 		$lesson_counter_ends   = 0;
 		$sections = $this->crud_model->get_section('course', $course_id)->result_array();
 		foreach ($sections as $key => $section) {
-			$sections[$key]['lessons'] = $this->section_wise_lessons($section['id'], $user_id);
+			$sections[$key]['الدروس'] = $this->section_wise_الدروس($section['id'], $user_id);
 			$sections[$key]['total_duration'] = str_replace(' Hours', "", $this->crud_model->get_total_duration_of_lesson_by_section_id($section['id']));
 			if ($key == 0) {
 				$lesson_counter_starts = 1;
-				$lesson_counter_ends = count($sections[$key]['lessons']);
+				$lesson_counter_ends = count($sections[$key]['الدروس']);
 			} else {
 				$lesson_counter_starts = $lesson_counter_ends + 1;
-				$lesson_counter_ends = $lesson_counter_starts + count($sections[$key]['lessons']);
+				$lesson_counter_ends = $lesson_counter_starts + count($sections[$key]['الدروس']);
 			}
 			$sections[$key]['lesson_counter_starts'] = $lesson_counter_starts;
 			$sections[$key]['lesson_counter_ends'] = $lesson_counter_ends;
@@ -722,11 +722,11 @@ class Api_model extends CI_Model
 		return $response;
 	}
 
-	public function section_wise_lessons($section_id = "", $user_id = "")
+	public function section_wise_الدروس($section_id = "", $user_id = "")
 	{
 		$response = array();
-		$lessons = $this->crud_model->get_lessons('section', $section_id)->result_array();
-		foreach ($lessons as $key => $lesson) {
+		$الدروس = $this->crud_model->get_الدروس('section', $section_id)->result_array();
+		foreach ($الدروس as $key => $lesson) {
 			$response[$key]['id'] = $lesson['id'];
 			$response[$key]['title'] = $lesson['title'];
 			$response[$key]['duration'] = readable_time_for_humans($lesson['duration_for_mobile_application']);
@@ -768,11 +768,11 @@ class Api_model extends CI_Model
 	{
 		$counter = 0;
 		if ($type == 'section') {
-			$lessons = $this->crud_model->get_lessons('section', $id)->result_array();
+			$الدروس = $this->crud_model->get_الدروس('section', $id)->result_array();
 		} else {
-			$lessons = $this->crud_model->get_lessons('course', $id)->result_array();
+			$الدروس = $this->crud_model->get_الدروس('course', $id)->result_array();
 		}
-		foreach ($lessons as $key => $lesson) {
+		foreach ($الدروس as $key => $lesson) {
 			if (lesson_progress($lesson['id'], $user_id)) {
 				$counter = $counter + 1;
 			}
@@ -782,7 +782,7 @@ class Api_model extends CI_Model
 
 	public function lesson_details_get($user_id = "", $lession_id = "")
 	{
-		$lesson_details = $this->crud_model->get_lessons('lesson', $lession_id)->result_array();
+		$lesson_details = $this->crud_model->get_الدروس('lesson', $lession_id)->result_array();
 		foreach ($lesson_details as $key => $lesson_detail) {
 			$lesson_details[$key]['duration'] = readable_time_for_humans($lesson_detail['duration']);
 		}
@@ -800,7 +800,7 @@ class Api_model extends CI_Model
 			$response[$key]['is_purchased'] = $this->is_purchased($user_id, $course_id);
 			$response[$key]['includes'] = array(
 				$this->crud_model->get_total_duration_of_lesson_by_course_id($course_id) . ' On demand videos',
-				$this->crud_model->get_lessons('course', $course_id)->num_rows() . ' Lessons',
+				$this->crud_model->get_الدروس('course', $course_id)->num_rows() . ' الدروس',
 				'High quality videos',
 				'Life time access'
 			);
@@ -875,7 +875,7 @@ class Api_model extends CI_Model
 	function save_course_progress_get($user_id = "")
 	{
 		$lesson_id = $_GET['lesson_id'];
-		$lesson_details = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+		$lesson_details = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
 		$this->crud_model->update_watch_history_manually($lesson_id, $lesson_details['course_id'], $user_id);
 		return $this->course_completion_data($lesson_details['course_id'], $user_id);
 	}
@@ -885,8 +885,8 @@ class Api_model extends CI_Model
 		$response = array();
 		$course = $this->crud_model->get_course_by_id($course_id)->row_array();
 		$response['course_id'] = $course['id'];
-		$response['number_of_lessons'] = $this->crud_model->get_lessons('course', $course_id)->num_rows();
-		$response['number_of_completed_lessons'] = $this->get_completed_number_of_lesson($user_id, 'course', $course_id);
+		$response['number_of_الدروس'] = $this->crud_model->get_الدروس('course', $course_id)->num_rows();
+		$response['number_of_completed_الدروس'] = $this->get_completed_number_of_lesson($user_id, 'course', $course_id);
 		$response['course_progress'] = round(course_progress($course_id, $user_id));
 		return $response;
 	}
@@ -1161,8 +1161,8 @@ class Api_model extends CI_Model
 		foreach ($my_bundle_course_details as $key => $my_course) {
 			if (isset($my_course['id']) && $my_course['id'] > 0) {
 				$my_bundle_course_details[$key]['completion'] = round(course_progress($my_course['id'], $user_id));
-				$my_bundle_course_details[$key]['total_number_of_lessons'] = $this->crud_model->get_lessons('course', $my_course['id'])->num_rows();
-				$my_bundle_course_details[$key]['total_number_of_completed_lessons'] = $this->get_completed_number_of_lesson($user_id, 'course', $my_course['id']);
+				$my_bundle_course_details[$key]['total_number_of_الدروس'] = $this->crud_model->get_الدروس('course', $my_course['id'])->num_rows();
+				$my_bundle_course_details[$key]['total_number_of_completed_الدروس'] = $this->get_completed_number_of_lesson($user_id, 'course', $my_course['id']);
 			}
 		}
 		return $my_bundle_course_details;
@@ -1351,7 +1351,7 @@ class Api_model extends CI_Model
     {
         $course_progress = 0;
         $is_completed = 0;
-        $number_of_completed_lessons = 0;
+        $number_of_completed_الدروس = 0;
         $data['watched_course_id'] = htmlspecialchars_($this->input->post('course_id'));
         $data['watched_lesson_id'] = htmlspecialchars_($this->input->post('lesson_id'));
         $data['watched_student_id'] = $user_id;
@@ -1422,13 +1422,13 @@ class Api_model extends CI_Model
                         $this->certificate_model->check_certificate_eligibility($data['watched_course_id'], $data['watched_student_id']);
                     }
 
-                    $number_of_completed_lessons = count($lesson_ids);
+                    $number_of_completed_الدروس = count($lesson_ids);
                 }else{
-                	$number_of_completed_lessons = count($lesson_ids);
+                	$number_of_completed_الدروس = count($lesson_ids);
                 }
             }
         }
-        return array('lesson_id' => $data['watched_lesson_id'], 'course_progress' => round($course_progress), 'is_completed' => $is_completed, 'number_of_completed_lessons' => $number_of_completed_lessons);
+        return array('lesson_id' => $data['watched_lesson_id'], 'course_progress' => round($course_progress), 'is_completed' => $is_completed, 'number_of_completed_الدروس' => $number_of_completed_الدروس);
     }
 
 //End Forum addon

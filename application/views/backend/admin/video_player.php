@@ -1,11 +1,11 @@
 <?php
-    $lesson_details = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+    $lesson_details = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
     $lesson_thumbnail_url = $this->crud_model->get_lesson_thumbnail_url($lesson_id);
     $course_details = $this->crud_model->get_course_by_id($lesson_details['course_id'])->row_array();
 ?>
 <ul class="breadcrumb">
     <li><a href="<?php echo site_url('admin/dashboard'); ?>" class=""><?php echo get_phrase('dashboard'); ?></a> </li>
-    <li><a href="<?php echo site_url('admin/lessons/').$lesson_details['course_id']; ?>"><?php echo get_phrase('lessons'); ?></a> </li>
+    <li><a href="<?php echo site_url('admin/الدروس/').$lesson_details['course_id']; ?>"><?php echo get_phrase('الدروس'); ?></a> </li>
     <li><a href="#" class="active"><?php echo get_phrase('video_player'); ?></a> </li>
 </ul>
 <div class="page-title"> <i class="icon-custom-left"></i>

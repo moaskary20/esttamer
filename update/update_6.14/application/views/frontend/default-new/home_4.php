@@ -216,7 +216,7 @@
       foreach ($top_courses as $key => $top_course) :
         if($key == 8) break;
         $number_of_enrolled_students = $this->crud_model->enrol_history($top_course['id'], true)->num_rows();
-        $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $top_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $top_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $top_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -255,10 +255,10 @@
                     <p class="info"><?php echo $number_of_enrolled_students; ?></p>
                   </div>
                   <div class="item">
-                    <div class="icon" title="<?php echo get_phrase('Total lessons'); ?>" data-bs-toggle="tooltip">
+                    <div class="icon" title="<?php echo get_phrase('Total الدروس'); ?>" data-bs-toggle="tooltip">
                       <img loading="lazy" src="<?php echo site_url('assets/frontend/default-new/') ?>image/icon/play.svg" alt="" />
                     </div>
-                    <p class="info"><?php echo $lessons->num_rows(); ?></p>
+                    <p class="info"><?php echo $الدروس->num_rows(); ?></p>
                   </div>
                 </div>
               </div>
@@ -335,7 +335,7 @@
       foreach ($latest_courses as $key => $latest_course) :
         if($key == 8) break;
         $number_of_enrolled_students = $this->crud_model->enrol_history($latest_course['id'], true)->num_rows();
-        $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $latest_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $latest_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $latest_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -374,10 +374,10 @@
                     <p class="info"><?php echo $number_of_enrolled_students; ?></p>
                   </div>
                   <div class="item">
-                    <div class="icon" title="<?php echo get_phrase('Total lessons'); ?>" data-bs-toggle="tooltip">
+                    <div class="icon" title="<?php echo get_phrase('Total الدروس'); ?>" data-bs-toggle="tooltip">
                       <img loading="lazy" src="<?php echo site_url('assets/frontend/default-new/') ?>image/icon/play.svg" alt="" />
                     </div>
-                    <p class="info"><?php echo $lessons->num_rows(); ?></p>
+                    <p class="info"><?php echo $الدروس->num_rows(); ?></p>
                   </div>
                 </div>
               </div>
@@ -457,7 +457,7 @@
           <h4 class="title"><?php echo get_phrase('Our Popular Instructor'); ?></h4>
           <div class="bar"></div>
         </div>
-        <p class="fz_15_m_24 c-8e8e96 pb-30"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging lessons, making learning a delightful and enriching experience.') ?></p>
+        <p class="fz_15_m_24 c-8e8e96 pb-30"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging الدروس, making learning a delightful and enriching experience.') ?></p>
       </div>
 
       <?php foreach($top_instructor_ids as $top_instructor_id):

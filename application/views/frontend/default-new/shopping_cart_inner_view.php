@@ -104,7 +104,7 @@
             </form>
 
             <?php if (isset($coupon_code) && !empty($coupon_code) && isset($coupon_details) && $coupon_details['discount_percentage'] == 100 && $total == 0 && $coupon_details['expiry_date'] >= time()): ?>
-                <a href="<?php echo site_url('home/coupon_offer_100_percent'); ?>" class="btn btn-primary px-2 w-100"><?php echo get_phrase('Enroll Now') ?></a>
+                <a href="<?php echo site_url('home/coupon_offer_100_percent'); ?>" class="btn btn-primary px-2 w-100"><?php echo get_phrase('سجل الآن') ?></a>
             <?php else: ?>
                 <form action="<?php echo site_url('home/course_payment') ?>" method="post">
                     <div class="input-group mb-1">

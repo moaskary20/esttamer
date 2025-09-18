@@ -641,7 +641,7 @@ class Crud_model extends CI_Model
         }
     }
 
-    public function get_lessons($type = "", $id = "")
+    public function get_الدروس($type = "", $id = "")
     {
         $this->db->order_by("order", "asc");
         if ($type == "course") {
@@ -1138,7 +1138,7 @@ class Crud_model extends CI_Model
         $this->db->delete('enrol');
 
         if ($course_type == 'general') {
-            // DELETE ALL THE LESSONS OF THIS COURSE FROM LESSON TABLE
+            // DELETE ALL THE الدروس OF THIS COURSE FROM LESSON TABLE
             $lesson_checker = array('course_id' => $course_id);
             $this->db->delete('lesson', $lesson_checker);
 
@@ -1548,7 +1548,7 @@ class Crud_model extends CI_Model
                 return json_encode(['error' => get_phrase('invalid_lesson_provider')]);
             }
 
-            // This portion is for mobile application video lessons
+            // This portion is for mobile application video الدروس
             if ($this->input->post('html5_video_url_for_mobile_application') == "" || $this->input->post('html5_duration_for_mobile_application') == "") {
                 $mobile_app_lesson_url = "https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm";
                 $mobile_app_lesson_duration = "00:01:10";
@@ -1951,7 +1951,7 @@ class Crud_model extends CI_Model
             }
             $data['attachment'] = "";
 
-            // This portion is for mobile application video lessons
+            // This portion is for mobile application video الدروس
             if ($this->input->post('html5_video_url_for_mobile_application') == "" || $this->input->post('html5_duration_for_mobile_application') == "") {
                 $mobile_app_lesson_url = "https://www.html5rocks.com/en/tutorials/video/basics/devstories.webm";
                 $mobile_app_lesson_duration = "00:01:10";
@@ -3453,8 +3453,8 @@ class Crud_model extends CI_Model
 
     public function sort_lesson($lesson_json)
     {
-        $lessons = json_decode($lesson_json);
-        foreach ($lessons as $key => $value) {
+        $الدروس = json_decode($lesson_json);
+        foreach ($الدروس as $key => $value) {
             $updater = array(
                 'order' => $key + 1
             );
@@ -4302,7 +4302,7 @@ class Crud_model extends CI_Model
         return $total_price > 0 ? $total_price : 0;
     }
 
-    function get_free_lessons($lesson_id = "")
+    function get_free_الدروس($lesson_id = "")
     {
         if ($lesson_id != "") {
             $this->db->where('id', $lesson_id);

@@ -88,10 +88,10 @@ if($language_dirs){
 			<ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
 					<a class="nav-link text-white p-0" aria-current="page" href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$course_details['id']); ?>">
-						<?php $number_of_lessons = $this->crud_model->get_lessons('course', $course_details['id'])->num_rows(); ?>
+						<?php $number_of_الدروس = $this->crud_model->get_الدروس('course', $course_details['id'])->num_rows(); ?>
 						<p class="text-md-center fs-6"><?php echo $course_details['title']; ?></p>
 						<?php if(isset($watch_history) && !empty($watch_history['completed_lesson']) && is_array(json_decode($watch_history['completed_lesson'], true))): ?>
-							<p class="text-md-center text-12px"><?php echo $watch_history['course_progress'].'% '.get_phrase('Completed'); ?>(<?php echo count(json_decode($watch_history['completed_lesson'], true)) ?>/<?php echo $number_of_lessons; ?>)</p>
+							<p class="text-md-center text-12px"><?php echo $watch_history['course_progress'].'% '.get_phrase('Completed'); ?>(<?php echo count(json_decode($watch_history['completed_lesson'], true)) ?>/<?php echo $number_of_الدروس; ?>)</p>
 						<?php endif; ?>
 					</a>
 				</li>

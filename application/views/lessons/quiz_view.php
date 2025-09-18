@@ -30,8 +30,8 @@
 <?php endif; ?>
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/lessons/flipclock-timer/flipclock.css'); ?>">
-<script type="text/javascript" src="<?php echo site_url('assets/lessons/flipclock-timer/flipclock.min.js'); ?>"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/الدروس/flipclock-timer/flipclock.css'); ?>">
+<script type="text/javascript" src="<?php echo site_url('assets/الدروس/flipclock-timer/flipclock.min.js'); ?>"></script>
 
 
 <div class="card">

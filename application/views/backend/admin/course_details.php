@@ -50,11 +50,11 @@
                             </td>
                         </tr>
                         <tr>
-                            <th><?php echo get_phrase('number_of_lessons'); ?>:</th>
+                            <th><?php echo get_phrase('number_of_الدروس'); ?>:</th>
                             <td>
                                 <?php
-                                    $lessons = $this->db->get_where('lesson', array('course_id' => $course_details['id']));
-                                    echo $lessons->num_rows().' '.get_phrase('lessons');
+                                    $الدروس = $this->db->get_where('lesson', array('course_id' => $course_details['id']));
+                                    echo $الدروس->num_rows().' '.get_phrase('الدروس');
                                 ?>
                             </td>
                         </tr>

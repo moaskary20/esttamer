@@ -609,7 +609,7 @@ class User_model extends CI_Model
     }
 
     function quiz_submission_checker($quiz_id = ""){
-        $quiz_details = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
+        $quiz_details = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
         $total_quiz_seconds = time_to_seconds($quiz_details['duration']);
 
         $this->db->where('quiz_id', $quiz_id);

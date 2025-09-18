@@ -212,7 +212,7 @@
                 <?php
                 $top_courses = $this->crud_model->get_top_courses()->result_array();
                 foreach ($top_courses as $top_course) :
-                    $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
+                    $الدروس = $this->crud_model->get_الدروس('course', $top_course['id']);
                     $instructor_details = $this->user_model->get_all_user($top_course['creator'])->row_array();
                     $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
                     $total_rating =  $this->crud_model->get_ratings('course', $top_course['id'], true)->row()->rating;
@@ -279,7 +279,7 @@
                                              <?php if(is_purchased($top_course['id'])): ?>
                                                 <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($top_course['title']).'/'.$top_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
                                             <?php else: ?>
-                                                <span class="enrollBtn"><?php echo site_phrase('Enroll Now')?></span>
+                                                <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -303,7 +303,7 @@
                                     <path d="M7.03999 11.3267C6.74666 11.3267 6.46666 11.2533 6.21999 11.1133C5.64666 10.78 5.32666 10.1267 5.32666 9.27333V7.04C5.32666 6.18666 5.63999 5.53333 6.21333 5.2C6.78666 4.86666 7.51333 4.92 8.25333 5.34666L10.1867 6.46C10.9267 6.88666 11.3333 7.48666 11.3333 8.15333C11.3333 8.81333 10.9267 9.42 10.1867 9.84666L8.25333 10.96C7.83999 11.2067 7.41999 11.3267 7.03999 11.3267ZM7.03999 5.98C6.91999 5.98 6.80666 6.00666 6.71999 6.06C6.46666 6.20666 6.32666 6.56 6.32666 7.04V9.27333C6.32666 9.74666 6.46666 10.1067 6.71999 10.2467C6.96666 10.3933 7.34666 10.3333 7.75999 10.1L9.69333 8.98666C10.1067 8.74666 10.34 8.44666 10.34 8.16C10.34 7.87333 10.1 7.57333 9.69333 7.33333L7.75999 6.22C7.49333 6.06 7.24666 5.98 7.03999 5.98Z" fill="#AAAFB6"/>
                                     </svg>
 
-                                        <?php echo $this->crud_model->get_lessons('course', $top_course['id'])->num_rows() . ' ' . site_phrase('lessons'); ?>
+                                        <?php echo $this->crud_model->get_الدروس('course', $top_course['id'])->num_rows() . ' ' . site_phrase('الدروس'); ?>
                                     </span>
                                     <?php if($course_duration): ?>
                                         <span class="">
@@ -358,7 +358,7 @@
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <?php if ($top_course['is_free_course'] == 1) : ?>
-                                        <a class="purchase-btn green_purchase ms-auto" href="<?php echo site_url('home/get_enrolled_to_free_course/' . $top_course['id']); ?>"><?php echo get_phrase('Enroll Now'); ?></a>
+                                        <a class="purchase-btn green_purchase ms-auto" href="<?php echo site_url('home/get_enrolled_to_free_course/' . $top_course['id']); ?>"><?php echo get_phrase('سجل الآن'); ?></a>
                                     <?php else : ?>
 
                                         <!-- Cart button -->
@@ -407,7 +407,7 @@
                 <?php
                 $latest_courses = $this->crud_model->get_latest_10_course();
                 foreach ($latest_courses as $latest_course) :
-                    $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
+                    $الدروس = $this->crud_model->get_الدروس('course', $latest_course['id']);
                     $instructor_details = $this->user_model->get_all_user($latest_course['creator'])->row_array();
                     $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($latest_course['id']);
                     $total_rating =  $this->crud_model->get_ratings('course', $latest_course['id'], true)->row()->rating;
@@ -470,7 +470,7 @@
                                             <?php if(is_purchased($latest_course['id'])): ?>
                                                 <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($latest_course['title']).'/'.$latest_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
                                             <?php else: ?>
-                                                <span class="enrollBtn"><?php echo site_phrase('Enroll Now')?></span>
+                                                <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -494,7 +494,7 @@
                                     <path d="M7.03999 11.3267C6.74666 11.3267 6.46666 11.2533 6.21999 11.1133C5.64666 10.78 5.32666 10.1267 5.32666 9.27333V7.04C5.32666 6.18666 5.63999 5.53333 6.21333 5.2C6.78666 4.86666 7.51333 4.92 8.25333 5.34666L10.1867 6.46C10.9267 6.88666 11.3333 7.48666 11.3333 8.15333C11.3333 8.81333 10.9267 9.42 10.1867 9.84666L8.25333 10.96C7.83999 11.2067 7.41999 11.3267 7.03999 11.3267ZM7.03999 5.98C6.91999 5.98 6.80666 6.00666 6.71999 6.06C6.46666 6.20666 6.32666 6.56 6.32666 7.04V9.27333C6.32666 9.74666 6.46666 10.1067 6.71999 10.2467C6.96666 10.3933 7.34666 10.3333 7.75999 10.1L9.69333 8.98666C10.1067 8.74666 10.34 8.44666 10.34 8.16C10.34 7.87333 10.1 7.57333 9.69333 7.33333L7.75999 6.22C7.49333 6.06 7.24666 5.98 7.03999 5.98Z" fill="#AAAFB6"/>
                                     </svg>
 
-                                        <?php echo $this->crud_model->get_lessons('course', $latest_course['id'])->num_rows() . ' ' . site_phrase('lessons'); ?>
+                                        <?php echo $this->crud_model->get_الدروس('course', $latest_course['id'])->num_rows() . ' ' . site_phrase('الدروس'); ?>
                                     </span>
                                     <?php if($course_duration): ?>
                                         <span class="">
@@ -546,7 +546,7 @@
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <?php if ($latest_course['is_free_course'] == 1) : ?>
-                                        <a class="purchase-btn green_purchase ms-auto" href="<?php echo site_url('home/get_enrolled_to_free_course/' . $latest_course['id']); ?>"><?php echo get_phrase('Enroll Now'); ?></a>
+                                        <a class="purchase-btn green_purchase ms-auto" href="<?php echo site_url('home/get_enrolled_to_free_course/' . $latest_course['id']); ?>"><?php echo get_phrase('سجل الآن'); ?></a>
                                     <?php else : ?>
 
                                         <!-- Cart button -->

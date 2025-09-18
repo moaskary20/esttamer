@@ -950,9 +950,9 @@ class Home extends CI_Controller
                 if ($lesson_id == "") {
                     $default_section = $sections->row_array();
                     $page_data['section_id'] = $default_section['id'];
-                    $lessons = $this->crud_model->get_lessons('section', $default_section['id']);
-                    if ($lessons->num_rows() > 0) {
-                        $default_lesson = $lessons->row_array();
+                    $الدروس = $this->crud_model->get_الدروس('section', $default_section['id']);
+                    if ($الدروس->num_rows() > 0) {
+                        $default_lesson = $الدروس->row_array();
                         $lesson_id = $default_lesson['id'];
                         $page_data['lesson_id']  = $default_lesson['id'];
                     }
@@ -981,7 +981,7 @@ class Home extends CI_Controller
             }
         }
 
-        $lesson_details = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+        $lesson_details = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
         if ($lesson_details['course_id'] != $course_id && $course_details['course_type'] == 'general') {
             $this->session->set_flashdata('error_message', site_phrase('Access denied'));
             redirect('home', 'refresh');
@@ -992,9 +992,9 @@ class Home extends CI_Controller
         $page_data['drip_content_settings']  = json_decode(get_settings('drip_content_settings'), true);
         $page_data['watch_history']  = $this->crud_model->get_watch_histories($user_id, $course_id)->row_array();
         $page_data['course_id']  = $course_id;
-        $page_data['page_name']  = 'lessons';
+        $page_data['page_name']  = 'الدروس';
         $page_data['page_title'] = $course_details['title'];
-        $this->load->view('lessons/index', $page_data);
+        $this->load->view('الدروس/index', $page_data);
     }
 
     function pdf_canvas($course_id = "", $lesson_id = "", $bundle_id = "")
@@ -1004,7 +1004,7 @@ class Home extends CI_Controller
         if (enroll_status($course_id) == 'valid' || $is_course_instructor || $is_admin || get_bundle_validity($bundle_id) == 'valid') {
             $page_data['course_id'] = $course_id;
             $page_data['lesson_id'] = $lesson_id;
-            $this->load->view('lessons/pdf_canvas', $page_data);
+            $this->load->view('الدروس/pdf_canvas', $page_data);
         } else {
             echo get_phrase('Access denied');
         }
@@ -1262,7 +1262,7 @@ class Home extends CI_Controller
         return $this->load->view('frontend/' . get_frontend_settings('theme') . '/reload_section', $page_data);
     }
 
-    public function manage_lessons($action = "", $course_id = "", $lesson_id = "")
+    public function manage_الدروس($action = "", $course_id = "", $lesson_id = "")
     {
         if ($this->session->userdata('user_login') != 1) {
             redirect('home', 'refresh');
@@ -1406,7 +1406,7 @@ class Home extends CI_Controller
         if ($from == 'mobile') {
             $this->load->view('mobile/quiz_result', $page_data);
         } else {
-            $this->load->view('lessons/quiz_result', $page_data);
+            $this->load->view('الدروس/quiz_result', $page_data);
         }
     }
 
@@ -1615,7 +1615,7 @@ class Home extends CI_Controller
 
     function preview_free_lesson($lesson_id = "")
     {
-        $page_data['lesson'] = $this->crud_model->get_free_lessons($lesson_id);
+        $page_data['lesson'] = $this->crud_model->get_free_الدروس($lesson_id);
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/preview_free_lesson', $page_data);
     }
 
@@ -1628,7 +1628,7 @@ class Home extends CI_Controller
     function play_lesson($lesson_id = "", $is_preview = "")
     {
         $admin_login = $this->session->userdata('admin_login');
-        $lesson = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+        $lesson = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
         $course_details = $this->crud_model->get_course_by_id($lesson['course_id'])->row_array();
         $is_course_instructor = $this->crud_model->is_course_instructor($course_details['id'], $this->session->userdata('user_id'));
         if ($is_preview) {
@@ -1637,7 +1637,7 @@ class Home extends CI_Controller
                 $data['lesson_details'] = $lesson;
                 $data['lesson_id'] = $lesson_id;
                 $data['course_id'] = $course_details['id'];
-                $this->load->view('lessons/general_course_content_body', $data);
+                $this->load->view('الدروس/general_course_content_body', $data);
             } else {
                 $response['error'] = get_phrase('This lecture is available exclusively as of premium part. To gain access, please purchase the course');
                 echo json_encode($response);
@@ -1677,10 +1677,10 @@ class Home extends CI_Controller
     function view_answer_sheet($quiz_result_id = "")
     {
         $page_data['quiz_results'] = $this->db->get_where('quiz_results', array('quiz_result_id' => $quiz_result_id));
-        $page_data['lesson_details'] = $this->crud_model->get_lessons('lesson', $page_data['quiz_results']->row('quiz_id'))->row_array();
+        $page_data['lesson_details'] = $this->crud_model->get_الدروس('lesson', $page_data['quiz_results']->row('quiz_id'))->row_array();
         $page_data['quiz_questions'] = $this->db->get_where('question', array('quiz_id' => $page_data['quiz_results']->row('quiz_id')));
 
-        $this->load->view('lessons/quiz_result', $page_data);
+        $this->load->view('الدروس/quiz_result', $page_data);
     }
 
 
@@ -1689,7 +1689,7 @@ class Home extends CI_Controller
     {
         $user_id = $this->session->userdata('user_id');
         $logged_in_user_details = $this->user_model->get_all_user($user_id)->row_array();
-        $data['lesson_details'] = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+        $data['lesson_details'] = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
         $course_details = $this->crud_model->get_course_by_id($data['lesson_details']['course_id'])->row_array();
         $is_purchased = $this->crud_model->check_course_enrolled($course_details['id'], $logged_in_user_details['id']);
 
@@ -2068,7 +2068,7 @@ class Home extends CI_Controller
             redirect(site_url('login'), 'refresh');
         }
 
-        $lesson_details = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+        $lesson_details = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
         $course_details = $this->crud_model->get_course_by_id($lesson_details['course_id'])->row_array();
 
         $get_lesson_type = get_lesson_type($lesson_details['id']);

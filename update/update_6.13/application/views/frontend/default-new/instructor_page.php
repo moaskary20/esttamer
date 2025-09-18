@@ -100,7 +100,7 @@ $total_students = $this->db->get('enrol')->num_rows();
 	                			if($key == 119) break;
 
 	                			$course = $this->crud_model->get_course_by_id($course_id)->row_array();
-	                			$lessons = $this->crud_model->get_lessons('course', $course['id']);
+	                			$الدروس = $this->crud_model->get_الدروس('course', $course['id']);
 			                    $instructor_details = $this->user_model->get_all_user($course['creator'])->row_array();
 			                    $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course['id']);
 			                    $total_rating =  $this->crud_model->get_ratings('course', $course['id'], true)->row()->rating;

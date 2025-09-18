@@ -168,7 +168,7 @@
                                 $instructor_details = $this->user_model->get_all_user($course['user_id'])->row_array();
                                 $category_details = $this->crud_model->get_category_details_by_id($course['sub_category_id'])->row_array();
                                 $sections = $this->crud_model->get_section('course', $course['id']);
-                                $lessons = $this->crud_model->get_lessons('course', $course['id']);
+                                $الدروس = $this->crud_model->get_الدروس('course', $course['id']);
                                 $enroll_history = $this->crud_model->enrol_history($course['id']);
                             ?>
                                 <tr>
@@ -184,7 +184,7 @@
                                             
                                         <?php if($course['course_type'] == 'general'): ?>
                                             <small class="text-muted"><?php echo '<b>'.get_phrase('total_section').'</b>: '.$sections->num_rows(); ?></small><br>
-                                            <small class="text-muted"><?php echo '<b>'.get_phrase('total_lesson').'</b>: '.$lessons->num_rows(); ?></small>
+                                            <small class="text-muted"><?php echo '<b>'.get_phrase('total_lesson').'</b>: '.$الدروس->num_rows(); ?></small>
                                         <?php else: ?>
                                             <span class="badge badge-info-lighten"><?= $course['course_type']; ?></span>
                                         <?php endif; ?>

@@ -5,7 +5,7 @@
         <th><?php echo get_phrase('category'); ?></th>
         <th><?php echo get_phrase('instructor'); ?></th>
         <th><?php echo get_phrase('number_of_sections'); ?></th>
-        <th><?php echo get_phrase('number_of_lessons'); ?></th>
+        <th><?php echo get_phrase('number_of_الدروس'); ?></th>
         <th><?php echo get_phrase('number_of_enrolled_users'); ?></th>
         <th><?php echo get_phrase('action'); ?></th>
       </tr>
@@ -41,8 +41,8 @@
                 <td hidden>
                     <ul style="list-style-type:square">
                     <?php
-                      $lessons = $this->crud_model->get_lessons('course', $course['id'])->result_array();
-                      foreach ($lessons as $lesson):?>
+                      $الدروس = $this->crud_model->get_الدروس('course', $course['id'])->result_array();
+                      foreach ($الدروس as $lesson):?>
                       <a href="<?php echo site_url('admin/watch_video/'.slugify($lesson['title']).'/'.$lesson['id']); ?>"><li><?php echo $lesson['title']; ?></li></a>
                     <?php endforeach; ?>
                     </ul>
@@ -55,8 +55,8 @@
                 </td>
                 <td>
                     <?php
-                        $lessons = $this->crud_model->get_lessons('course', $course['id']);
-                        echo $lessons->num_rows();
+                        $الدروس = $this->crud_model->get_الدروس('course', $course['id']);
+                        echo $الدروس->num_rows();
                     ?>
                 </td>
                 <td>
@@ -82,7 +82,7 @@
                             </li>
 
                             <li>
-                                <a href="<?php echo site_url('admin/lessons/'.$course['id']); ?>">
+                                <a href="<?php echo site_url('admin/الدروس/'.$course['id']); ?>">
                                     <?php echo get_phrase('manage_lesson');?>
                                 </a>
                             </li>

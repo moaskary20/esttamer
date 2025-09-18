@@ -24,7 +24,7 @@ $sections = $this->crud_model->get_section('course', $param2)->result_array();
 </div>
 
 <!-- ACTUAL LESSON ADDING FORM -->
-<form class="ajaxFormSubmission" action="<?php echo site_url('admin/lessons/'.$param2.'/add'); ?>" method="post" enctype="multipart/form-data">
+<form class="ajaxFormSubmission" action="<?php echo site_url('admin/الدروس/'.$param2.'/add'); ?>" method="post" enctype="multipart/form-data">
     <input type="hidden" name="course_id" value="<?php echo $param2; ?>">
     <div class="form-group">
         <label><?php echo get_phrase('title'); ?></label>

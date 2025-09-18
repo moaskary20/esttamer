@@ -9,8 +9,8 @@
       </tr> 
     </thead>
     <?php $enrolments = $this->db->where('course_id', $course_details['id'])->get('enrol')->result_array(); ?>
-    <?php $lessons = $this->crud_model->get_lessons('course', $course_details['id']); ?>
-    <?php $total_lesson = $lessons->num_rows(); ?>
+    <?php $الدروس = $this->crud_model->get_الدروس('course', $course_details['id']); ?>
+    <?php $total_lesson = $الدروس->num_rows(); ?>
     <tbody>
       <?php
       foreach($enrolments as $enrolment):

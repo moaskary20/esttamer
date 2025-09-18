@@ -510,10 +510,10 @@ class Api_instructor_model extends CI_Model
 				$this->db->select('title');
 				$this->db->order_by('order', 'asc');
 				$this->db->where('section_id', $section['id']);
-				$lessons = $this->db->get('lesson')->result_array();
+				$الدروس = $this->db->get('lesson')->result_array();
 
 				$section_and_lesson[$key] = $sections;
-				$section_and_lesson[$key]['lessons'] = $lessons;
+				$section_and_lesson[$key]['الدروس'] = $الدروس;
 			}
 
 

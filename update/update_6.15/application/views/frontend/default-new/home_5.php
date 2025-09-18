@@ -274,7 +274,7 @@
       foreach ($top_courses as $key => $top_course) :
         if($key == 8) break;
         $instructor_details = $this->user_model->get_all_user($top_course['creator'])->row_array();
-        $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $top_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $top_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $top_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -353,7 +353,7 @@
       foreach ($latest_courses as $key => $latest_course) :
         if($key == 8) break;
         $instructor_details = $this->user_model->get_all_user($latest_course['creator'])->row_array();
-        $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $latest_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $latest_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $latest_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -474,7 +474,7 @@
         <!-- Title -->
         <div class="title-two text-center pb-50">
           <h4 class="title"><?php echo get_phrase('Popular Instructor') ?></h4>
-          <p class="info"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging lessons, making learning a delightful and enriching experience.') ?></p>
+          <p class="info"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging الدروس, making learning a delightful and enriching experience.') ?></p>
         </div>
       </div>
     </div>

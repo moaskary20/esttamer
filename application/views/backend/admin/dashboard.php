@@ -1,7 +1,7 @@
 <?php
     $status_wise_courses = $this->crud_model->get_status_wise_courses();
     $number_of_courses = $status_wise_courses['pending']->num_rows() + $status_wise_courses['active']->num_rows();
-    $number_of_lessons = $this->crud_model->get_lessons()->num_rows();
+    $number_of_الدروس = $this->crud_model->get_الدروس()->num_rows();
     $number_of_enrolment = $this->crud_model->enrol_history()->num_rows();
     $number_of_students = $this->user_model->get_user()->num_rows();
 ?>
@@ -52,8 +52,8 @@
                             <div class="card shadow-none m-0 border-left">
                                 <div class="card-body text-center">
                                     <i class="dripicons-camcorder text-muted" style="font-size: 24px;"></i>
-                                    <h3><span><?php echo $number_of_lessons; ?></span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('number_of_lessons'); ?></p>
+                                    <h3><span><?php echo $number_of_الدروس; ?></span></h3>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('number_of_الدروس'); ?></p>
                                 </div>
                             </div>
                         </a>

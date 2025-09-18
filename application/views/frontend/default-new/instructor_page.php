@@ -131,7 +131,7 @@ $total_students = $this->db->get('enrol')->num_rows();
 	                			if($key == 119) break;
 
 	                			$course = $this->crud_model->get_course_by_id($course_id)->row_array();
-	                			$lessons = $this->crud_model->get_lessons('course', $course['id']);
+	                			$الدروس = $this->crud_model->get_الدروس('course', $course['id']);
 			                    $instructor_details = $this->user_model->get_all_user($course['creator'])->row_array();
 			                    $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course['id']);
 			                    $total_rating =  $this->crud_model->get_ratings('course', $course['id'], true)->row()->rating;
@@ -195,7 +195,7 @@ $total_students = $this->db->get('enrol')->num_rows();
 															<?php if(is_purchased($course['id'])): ?>
 																<span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($course['title']).'/'.$course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
 															<?php else: ?>
-																<span class="enrollBtn"><?php echo site_phrase('Enroll Now')?></span>
+																<span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
 															<?php endif; ?>
 														</div>
 				                                    </div>

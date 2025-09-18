@@ -1,6 +1,6 @@
 <?php
 // $param2 is Quiz id
-$quiz_details = $this->crud_model->get_lessons('lesson', $param2)->row_array();
+$quiz_details = $this->crud_model->get_الدروس('lesson', $param2)->row_array();
 $questions = $this->crud_model->get_quiz_questions($param2)->result_array();
 ?>
 <?php if (count($quiz_details)): ?>

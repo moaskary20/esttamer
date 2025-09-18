@@ -1,5 +1,5 @@
 <?php
-$quiz_details = $this->crud_model->get_lessons('lesson', $param2)->row_array();
+$quiz_details = $this->crud_model->get_الدروس('lesson', $param2)->row_array();
 $sections = $this->crud_model->get_section('course', $param3)->result_array();
 ?>
 <form action="<?php echo site_url('user/quizes/'.$param3.'/edit/'.$param2); ?>" method="post">

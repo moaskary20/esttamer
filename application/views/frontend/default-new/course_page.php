@@ -1,6 +1,6 @@
 <?php
 $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
-$lessons = $this->crud_model->get_lessons('course', $course_details['id']);
+$الدروس = $this->crud_model->get_الدروس('course', $course_details['id']);
 $instructor_details = $this->user_model->get_all_user($course_details['creator'])->row_array();
 $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course_details['id']);
 $number_of_enrolments = $this->crud_model->enrol_history($course_details['id'])->num_rows();
@@ -344,11 +344,11 @@ if ($number_of_ratings > 0) {
                                 <?php endif; ?>
                             <?php else : ?>
                                 <?php if ($course_details['is_free_course'] == 1) : ?>
-                                    <a href="<?php echo site_url('home/get_enrolled_to_free_course/' . $course_details['id']); ?>"><?php echo get_phrase('Enroll Now'); ?></a>
+                                    <a href="<?php echo site_url('home/get_enrolled_to_free_course/' . $course_details['id']); ?>"><?php echo get_phrase('سجل الآن'); ?></a>
                                 <?php else : ?>
 
                                     <!-- Cart button -->
-                                    <a id="added_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?> active" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>');"><i class="fas fa-minus"></i> <?php echo get_phrase('Remove from cart'); ?></a>
+                                    <a id="added_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?> active" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>');"><i class="fas fa-minus"></i> <?php echo get_phrase('إزالة من سلة'); ?></a>
                                     <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('أضف إلى السلة'); ?></a>
                                     <!-- Cart button ended-->
 
@@ -441,7 +441,7 @@ if ($number_of_ratings > 0) {
                 <?php $related_courses = $this->crud_model->get_related_courses($course_details['category_id'], $course_details['sub_category_id'], $course_details['id'], 12)->result_array(); ?>
                 <?php foreach ($related_courses as $key => $course) :
 
-                    $lessons = $this->crud_model->get_lessons('course', $course['id']);
+                    $الدروس = $this->crud_model->get_الدروس('course', $course['id']);
                     $instructor_details = $this->user_model->get_all_user($course['user_id'])->row_array();
                     $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course['id']);
                     $total_rating =  $this->crud_model->get_ratings('course', $course['id'], true)->row()->rating;
@@ -507,7 +507,7 @@ if ($number_of_ratings > 0) {
                                           <?php if(is_purchased($course['id'])): ?>
                                                 <span class="enrollBtn"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
                                               <?php else: ?>
-                                           <span class="enrollBtn"><?php echo site_phrase('Enroll Now')?></span>
+                                           <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                            <?php endif; ?>
                                          </div>
                                     </div>

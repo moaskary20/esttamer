@@ -1,10 +1,10 @@
 <?php
   if(is_array($watch_history) && !empty($watch_history['completed_lesson'])):
-    $completed_lessons = json_decode($watch_history['completed_lesson'], true);
+    $completed_الدروس = json_decode($watch_history['completed_lesson'], true);
   else:
-    $completed_lessons = array();
+    $completed_الدروس = array();
   endif;
-  $completed_lessons = is_array($completed_lessons) ? $completed_lessons : array();
+  $completed_الدروس = is_array($completed_الدروس) ? $completed_الدروس : array();
   $user_id = $this->session->userdata('user_id');
   $is_course_instructor = $this->crud_model->is_course_instructor($course_details['id'], $user_id);
   $is_locked = 0;
@@ -85,8 +85,8 @@
               <ul class="course-content-items" style="<?php if($is_restricted) echo 'filter: blur(1px);' ?>">
 
                 <?php
-                $lessons = $this->crud_model->get_lessons('section', $section['id'])->result_array();
-                foreach($lessons as $key => $lesson):
+                $الدروس = $this->crud_model->get_الدروس('section', $section['id'])->result_array();
+                foreach($الدروس as $key => $lesson):
 
                   //Check is bundle or course
                   if(isset($bundle_id) && $bundle_id > 0):
@@ -100,7 +100,7 @@
 
                   <li class="item <?php if($lesson['id'] == $lesson_details['id']) echo 'active'; ?>">
                     <a href="<?php echo $lesson_url; ?>" class="d-flex align-items-baseline w-100 checkbox-box-a">
-                      <?php if(in_array($lesson['id'], $completed_lessons)){
+                      <?php if(in_array($lesson['id'], $completed_الدروس)){
                         $chekbox = 'title="'.get_phrase('Uncheck').'" data-bs-toggle="tooltip" checked';
                       }else{
                         $chekbox = 'title="'.get_phrase('Mark as Complete').'" data-bs-toggle="tooltip"';
@@ -110,7 +110,7 @@
                         <?php if($is_locked): ?>
                           <i class="fas fa-lock" title="<?php echo get_phrase('Complete previous lesson to unlock it'); ?>" data-bs-toggle="tooltip"></i>
                         <?php else: ?>
-                          <?php $is_lesson_completed = in_array($lesson['id'], $completed_lessons); ?>
+                          <?php $is_lesson_completed = in_array($lesson['id'], $completed_الدروس); ?>
                           <?php if($is_lesson_completed && $lesson['lesson_type'] == 'video' || $is_lesson_completed && $lesson['lesson_type'] == 'quiz' || $is_lesson_completed && $lesson['lesson_type'] == 'audio'): ?>
                             <i class="fas fa-check" title="<?php echo get_phrase('Completed'); ?>" data-bs-toggle="tooltip"></i>
                           <?php else: ?>
@@ -157,7 +157,7 @@
                   //check dripcontent
                   if($is_locked) $locked_lesson_ids[] = $lesson['id'];
                   if(
-                    !in_array($lesson['id'], $completed_lessons)
+                    !in_array($lesson['id'], $completed_الدروس)
                     && $is_locked == 0
                     && $course_details['enable_drip_content'] == 1
                     && $this->session->userdata('user_login') == 1

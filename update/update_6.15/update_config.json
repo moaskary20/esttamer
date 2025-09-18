@@ -50,8 +50,8 @@
         },
 
         {
-            "root_directory": "update/update_6.15/application/views/lessons/general_course_content_body.php",
-            "update_directory": "application/views/lessons/general_course_content_body.php"
+            "root_directory": "update/update_6.15/application/views/الدروس/general_course_content_body.php",
+            "update_directory": "application/views/الدروس/general_course_content_body.php"
         }
        
  

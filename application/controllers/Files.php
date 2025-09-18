@@ -42,7 +42,7 @@ class Files extends CI_Controller
             $course_id = $this->input->get('course_id');
             $lesson_id = $this->input->get('lesson_id');
             $multi_instructors = explode(',', $this->crud_model->get_course_by_id($course_id)->row('user_id'));
-            $lesson = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+            $lesson = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
             $get_lesson_type = get_lesson_type($lesson_id);
 
             if (enroll_status($course_id) == 'valid' || $this->session->userdata('admin_login') == '1' || in_array($user_id, $multi_instructors)) {

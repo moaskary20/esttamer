@@ -149,7 +149,7 @@ class User extends CI_Controller
                 $instructor_details = $this->user_model->get_all_user($row->user_id)->row_array();
                 $category_details = $this->crud_model->get_category_details_by_id($row->sub_category_id)->row_array();
                 $sections = $this->crud_model->get_section('course', $row->id);
-                $lessons = $this->crud_model->get_lessons('course', $row->id);
+                $الدروس = $this->crud_model->get_الدروس('course', $row->id);
                 $enroll_history = $this->crud_model->enrol_history($row->id);
 
                 $status_badge = "badge-success-lighten";
@@ -246,7 +246,7 @@ class User extends CI_Controller
                 } elseif ($row->course_type == 'general') {
                     $nestedData['lesson_and_section'] = '
                     <small class="text-muted"><b>' . get_phrase('total_section') . '</b>: ' . $sections->num_rows() . '</small><br>
-                    <small class="text-muted"><b>' . get_phrase('total_lesson') . '</b>: ' . $lessons->num_rows() . '</small>';
+                    <small class="text-muted"><b>' . get_phrase('total_lesson') . '</b>: ' . $الدروس->num_rows() . '</small>';
                 }
 
                 $nestedData['enrolled_student'] = '<small class="text-muted"><b>' . get_phrase('total_enrolment') . '</b>: ' . $enroll_history->num_rows() . '</small>';
@@ -425,7 +425,7 @@ class User extends CI_Controller
         redirect(site_url('user/course_form/course_edit/' . $param1));
     }
 
-    public function lessons($course_id = "", $param1 = "", $param2 = "")
+    public function الدروس($course_id = "", $param1 = "", $param2 = "")
     {
         if ($this->session->userdata('user_login') != true) {
             redirect(site_url('login'), 'refresh');
@@ -455,12 +455,12 @@ class User extends CI_Controller
             $this->session->set_flashdata('flash_message', get_phrase('lesson_has_been_deleted_successfully'));
             redirect('user/course_form/course_edit/' . $course_id);
         } elseif ($param1 == 'filter') {
-            redirect('user/lessons/' . $this->input->post('course_id'));
+            redirect('user/الدروس/' . $this->input->post('course_id'));
         }
-        $page_data['page_name'] = 'lessons';
-        $page_data['lessons'] = $this->crud_model->get_lessons('course', $course_id);
+        $page_data['page_name'] = 'الدروس';
+        $page_data['الدروس'] = $this->crud_model->get_الدروس('course', $course_id);
         $page_data['course_id'] = $course_id;
-        $page_data['page_title'] = get_phrase('lessons');
+        $page_data['page_title'] = get_phrase('الدروس');
         $this->load->view('backend/index', $page_data);
     }
 
@@ -493,7 +493,7 @@ class User extends CI_Controller
         if ($this->session->userdata('user_login') != true) {
             redirect(site_url('login'), 'refresh');
         }
-        $quiz_details = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
+        $quiz_details = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
 
         if ($action == 'add' || $action == 'edit') {
             echo $this->crud_model->manage_quiz_questions($quiz_id, $question_id, $action);
@@ -836,7 +836,7 @@ class User extends CI_Controller
 
     function start_quiz($quiz_id = "", $retake = "")
     {
-        $quiz_details = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
+        $quiz_details = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
 
         $data['quiz_id'] = $quiz_details['id'];
         $data['user_id'] = $this->session->userdata('user_id');
@@ -863,7 +863,7 @@ class User extends CI_Controller
 
         $page_data['quiz_questions'] = $this->db->get_where('question', array('quiz_id' => $quiz_id));
         $page_data['quiz_id'] = $quiz_id;
-        $this->load->view('lessons/quiz_answer_sheet', $page_data);
+        $this->load->view('الدروس/quiz_answer_sheet', $page_data);
     }
 
     function submit_quiz_answer($quiz_id = "", $question_id = "", $question_type = "")
@@ -871,7 +871,7 @@ class User extends CI_Controller
 
         //Quize details
         $user_id = $this->session->userdata('user_id');
-        $quiz_details = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
+        $quiz_details = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
         $total_seconds = time_to_seconds($quiz_details['duration']);
         $total_marks = json_decode($quiz_details['attachment'], true)['total_marks'];
 
@@ -963,12 +963,12 @@ class User extends CI_Controller
         $this->db->update('quiz_results', $data);
 
         //Mark this quiz as completed
-        $lesson = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
-        $completed_lessons = $this->crud_model->get_watch_histories($user_id, $lesson['course_id'])->row_array();
+        $lesson = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
+        $completed_الدروس = $this->crud_model->get_watch_histories($user_id, $lesson['course_id'])->row_array();
         $course_details = $this->crud_model->get_course_by_id($lesson['course_id'])->row_array();
         $quiz_results = $this->db->where('user_id', $user_id)->where('quiz_id', $quiz_id)->order_by('quiz_result_id', 'DESC')->get('quiz_results')->row_array();
-        $completed_lessons = json_decode($completed_lessons['completed_lesson'], true);
-        if (!is_array($completed_lessons) || !in_array($quiz_id, $completed_lessons)) {
+        $completed_الدروس = json_decode($completed_الدروس['completed_lesson'], true);
+        if (!is_array($completed_الدروس) || !in_array($quiz_id, $completed_الدروس)) {
 
             //check passing mark
             $quiz_attribute = json_decode($lesson['attachment'], true);

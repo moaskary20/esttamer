@@ -5,7 +5,7 @@
     <div class="courses-card courses-list-view-card">
         <?php foreach ($courses as $course) : ?>
             <?php
-            $lessons = $this->crud_model->get_lessons('course', $course['id']);
+            $الدروس = $this->crud_model->get_الدروس('course', $course['id']);
             $instructor_details = $this->user_model->get_all_user($course['user_id'])->row_array();
             $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course['id']);
             $total_rating =  $this->crud_model->get_ratings('course', $course['id'], true)->row()->rating;
@@ -59,7 +59,7 @@
                                 <p>(<?php echo $number_of_ratings; ?> <?php echo get_phrase('Reviews') ?>)</p>
                             </div>
                             <div class="courses-price-right gap-2 align-items-center">
-                                <p class="me-2"><i class="fa-regular fa-list-alt p-0 text-15px me-1"></i> <?php echo $lessons->num_rows() . ' ' . get_phrase('lessons'); ?></p>
+                                <p class="me-2"><i class="fa-regular fa-list-alt p-0 text-15px me-1"></i> <?php echo $الدروس->num_rows() . ' ' . get_phrase('الدروس'); ?></p>
                                 
                                <div class="review-btn">
                                     <span class="compare-img checkPropagation echecks" data-bs-toggle="tooltip" data-bs-title="<?php echo site_phrase('Compare')?>" onclick="redirectTo('<?php echo base_url('home/compare?course-1=' . slugify($course['title']) . '&course-id-1=' . $course['id']); ?>');">
@@ -74,7 +74,7 @@
                                <?php if(is_purchased($course['id'])): ?>
                                 <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($course['title']).'/'.$course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
                                 <?php else: ?>
-                                    <span class="enrollBtn"><?php echo site_phrase('Enroll Now')?></span>
+                                    <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                 <?php endif; ?>
                             </div>
                         </div>

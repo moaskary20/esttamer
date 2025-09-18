@@ -286,14 +286,14 @@ class Api extends REST_Controller {
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
-  //Get all lessons, section wise.
-  public function section_wise_lessons_get() {
+  //Get all الدروس, section wise.
+  public function section_wise_الدروس_get() {
     $response = array();
     $auth_token = $_GET['auth_token'];
     $section_id = $_GET['section_id'];
     $logged_in_user_details = json_decode($this->token_data_get($auth_token), true);
     if ($logged_in_user_details['user_id'] > 0) {
-      $response = $this->api_model->section_wise_lessons($section_id, $logged_in_user_details['user_id']);
+      $response = $this->api_model->section_wise_الدروس($section_id, $logged_in_user_details['user_id']);
     }else{
     }
     return $this->set_response($response, REST_Controller::HTTP_OK);
@@ -376,7 +376,7 @@ class Api extends REST_Controller {
     $page_data['submitted_quiz_info']   = $submitted_quiz_info;
     $page_data['total_correct_answers'] = $total_correct_answers;
     $page_data['total_questions'] = count($quiz_questions);
-    $this->load->view('lessons/quiz_result', $page_data);
+    $this->load->view('الدروس/quiz_result', $page_data);
   }
 
   public function save_course_progress_get() {

@@ -40,15 +40,15 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                         
                         <h5 class="card-title" class="mb-3" style="min-height: 45px;"><span class="font-weight-light"><?php echo get_phrase('section').' '.++$key; ?></span>: <?php echo $section['title']; ?>
                             <div class="justify-content-center alignToTitle float-right display-none" id = "widgets-of-section-<?php echo $section['id']; ?>">
-                                <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm" name="button" onclick="showLargeModal('<?php echo site_url('modal/popup/sort_lesson/'.$section['id']); ?>', '<?php echo get_phrase('sort_lessons'); ?>')" ><i class="mdi mdi-sort-variant"></i> <?php echo get_phrase('sort_lesson'); ?></button>
+                                <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm" name="button" onclick="showLargeModal('<?php echo site_url('modal/popup/sort_lesson/'.$section['id']); ?>', '<?php echo get_phrase('sort_الدروس'); ?>')" ><i class="mdi mdi-sort-variant"></i> <?php echo get_phrase('sort_lesson'); ?></button>
                                 <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="showAjaxModal('<?php echo site_url('modal/popup/section_edit/'.$section['id'].'/'.$course_id); ?>', '<?php echo get_phrase('update_section'); ?>')" ><i class="mdi mdi-pencil-outline"></i> <?php echo get_phrase('edit_section'); ?></button>
                                 <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="confirm_modal('<?php echo site_url('user/sections/'.$course_id.'/delete'.'/'.$section['id']); ?>');"><i class="mdi mdi-window-close"></i> <?php echo get_phrase('delete_section'); ?></button>
                             </div>
                         </h5>
                         <div class="clearfix"></div>
                         <?php
-                        $lessons = $this->crud_model->get_lessons('section', $section['id'])->result_array();
-                        foreach ($lessons as $index => $lesson):?>
+                        $الدروس = $this->crud_model->get_الدروس('section', $section['id'])->result_array();
+                        foreach ($الدروس as $index => $lesson):?>
                         <div class="col-md-12">
                             <!-- Portlet card -->
                             <div class="card text-secondary on-hover-action mb-2 w-100" id = "<?php echo 'lesson-'.$lesson['id']; ?>">
@@ -65,7 +65,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                                             
                                             <a href="javascript:;" onclick="showAjaxModal('<?php echo site_url('modal/popup/lesson_edit/'.$lesson['id'].'/'.$course_id); ?>', '<?php echo get_phrase('update_lesson'); ?>')" data-toggle="tooltip" title="<?php echo get_phrase('edit'); ?>"><i class="mdi mdi-pencil-outline"></i></a>
                                         <?php endif; ?>
-                                        <a href="javascript:;" onclick="confirm_modal('<?php echo site_url('user/lessons/'.$course_id.'/delete'.'/'.$lesson['id']); ?>');" data-toggle="tooltip" title="<?php echo get_phrase('delete'); ?>"><i class="mdi mdi-window-close"></i></a>
+                                        <a href="javascript:;" onclick="confirm_modal('<?php echo site_url('user/الدروس/'.$course_id.'/delete'.'/'.$lesson['id']); ?>');" data-toggle="tooltip" title="<?php echo get_phrase('delete'); ?>"><i class="mdi mdi-window-close"></i></a>
                                     </div>
                                     <h5 class="card-title mb-0">
                                         <span class="font-weight-light">

@@ -128,7 +128,7 @@
         $instructor_details = $this->user_model->get_all_user($top_course['creator'])->row_array();
         $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($top_course['id']);
         $number_of_enrolled_students = $this->crud_model->enrol_history($top_course['id'], true)->num_rows();
-        $lessons = $this->crud_model->get_lessons('course', $top_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $top_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $top_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $top_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -241,7 +241,7 @@
       foreach($upcoming_courses->result_array() as $upcoming_course):
         $instructor_details = $this->user_model->get_all_user($upcoming_course['creator'])->row_array();
          $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($upcoming_course['id']);
-         $lessons = $this->crud_model->get_lessons('course', $upcoming_course['id']);
+         $الدروس = $this->crud_model->get_الدروس('course', $upcoming_course['id']);
 
          $image_url = $upcoming_course['upcoming_image_thumbnail'] 
          ? 'uploads/thumbnails/upcoming_thumbnails/' . $upcoming_course['upcoming_image_thumbnail'] 
@@ -275,7 +275,7 @@
                 <div class="upcoming-course-six-info">
                   <div class="item">
                     <p class="subtitle"><?php echo get_phrase('Lesson') ?></p>
-                    <p class="title"><?php echo $lessons->num_rows(); ?></p>
+                    <p class="title"><?php echo $الدروس->num_rows(); ?></p>
                   </div>
                   <div class="item">
                     <p class="subtitle"><?php echo get_phrase('Duration') ?></p>
@@ -329,7 +329,7 @@
         $instructor_details = $this->user_model->get_all_user($latest_course['creator'])->row_array();
         $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($latest_course['id']);
         $number_of_enrolled_students = $this->crud_model->enrol_history($latest_course['id'], true)->num_rows();
-        $lessons = $this->crud_model->get_lessons('course', $latest_course['id']);
+        $الدروس = $this->crud_model->get_الدروس('course', $latest_course['id']);
         $total_rating =  $this->crud_model->get_ratings('course', $latest_course['id'], true)->row()->rating;
         $number_of_ratings = $this->crud_model->get_ratings('course', $latest_course['id'])->num_rows();
         if ($number_of_ratings > 0) {
@@ -429,7 +429,7 @@
         <!-- Title -->
         <div class="title-two text-center pb-50">
           <h4 class="title"><?php echo get_phrase('Popular Instructor') ?></h4>
-          <p class="info"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging lessons, making learning a delightful and enriching experience.') ?></p>
+          <p class="info"><?php echo get_phrase('Our popular instructor is a charismatic and knowledgeable individual who captivates students with engaging الدروس, making learning a delightful and enriching experience.') ?></p>
         </div>
       </div>
     </div>

@@ -549,42 +549,42 @@ if (!function_exists('course_progress')) {
 
         // Fetch watch history for the user and course
         $watch_history = $CI->crud_model->get_watch_histories($user_id, $course_id)->row_array();
-        $completed_lessons = isset($watch_history['completed_lesson']) ? json_decode($watch_history['completed_lesson'], true) : [];
+        $completed_الدروس = isset($watch_history['completed_lesson']) ? json_decode($watch_history['completed_lesson'], true) : [];
 
-        // Ensure $completed_lessons is always an array
-        if (!is_array($completed_lessons)) {
-            $completed_lessons = [];
+        // Ensure $completed_الدروس is always an array
+        if (!is_array($completed_الدروس)) {
+            $completed_الدروس = [];
         }
 
         // Get all valid lesson IDs for the course
         $lesson_ids = $CI->db->select('id')
             ->where('course_id', $course_id)
-            ->get('lesson') // Assuming 'lessons' is the table name
+            ->get('lesson') // Assuming 'الدروس' is the table name
             ->result_array();
 
         $lesson_ids = array_column($lesson_ids, 'id'); // Extract lesson IDs into a flat array
 
-        // Filter out completed lessons that are no longer valid
-        $filtered_completed_lessons = array_intersect($completed_lessons, $lesson_ids);
+        // Filter out completed الدروس that are no longer valid
+        $filtered_completed_الدروس = array_intersect($completed_الدروس, $lesson_ids);
 
         // If return type is "completed_lesson_ids", return the filtered list
         if ($return_type == "completed_lesson_ids") {
-            return $filtered_completed_lessons;
+            return $filtered_completed_الدروس;
         }
 
         // Recalculate course progress
-        $total_lessons = count($lesson_ids);
-        $completed_count = count($filtered_completed_lessons);
-        $calculated_progress = $total_lessons > 0 ? ($completed_count / $total_lessons) * 100 : 0;
+        $total_الدروس = count($lesson_ids);
+        $completed_count = count($filtered_completed_الدروس);
+        $calculated_progress = $total_الدروس > 0 ? ($completed_count / $total_الدروس) * 100 : 0;
 
         // Update the watch history if it exists and there are changes
         if (!empty($watch_history)) {
             $existing_progress = isset($watch_history['course_progress']) ? $watch_history['course_progress'] : 0;
             $watch_history_id = isset($watch_history['watch_history_id']) ? $watch_history['watch_history_id'] : null;
 
-            if ($completed_lessons !== $filtered_completed_lessons || $calculated_progress != $existing_progress) {
+            if ($completed_الدروس !== $filtered_completed_الدروس || $calculated_progress != $existing_progress) {
                 $updated_data = [
-                    'completed_lesson' => json_encode($filtered_completed_lessons),
+                    'completed_lesson' => json_encode($filtered_completed_الدروس),
                     'course_progress'  => $calculated_progress
                 ];
 
@@ -735,8 +735,8 @@ if (!function_exists('next_lesson')) {
         $CI = &get_instance();
         $CI->load->database();
 
-        // Get lessons for the given course
-        $lesson_list = $CI->crud_model->get_lessons('course', $course_id)->result_array();
+        // Get الدروس for the given course
+        $lesson_list = $CI->crud_model->get_الدروس('course', $course_id)->result_array();
 
         // Find the current lesson position in the list
         $current_index = -1;

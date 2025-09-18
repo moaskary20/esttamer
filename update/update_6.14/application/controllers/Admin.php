@@ -998,7 +998,7 @@ class Admin extends CI_Controller
                 $instructor_details = $this->user_model->get_all_user($row['creator'])->row_array();
                 $category_details = $this->crud_model->get_category_details_by_id($row['sub_category_id'])->row_array();
                 $sections = $this->crud_model->get_section('course', $row['id']);
-                $lessons = $this->crud_model->get_lessons('course', $row['id']);
+                $الدروس = $this->crud_model->get_الدروس('course', $row['id']);
                 $enroll_history = $this->crud_model->enrol_history($row['id']);
 
                 $status_badge = "badge-success-lighten";
@@ -1110,7 +1110,7 @@ class Admin extends CI_Controller
                 } elseif ($row['course_type'] == 'general') {
                     $nestedData['lesson_and_section'] = '
                     <small class="text-muted"><b>' . get_phrase('Section') . '</b>: ' . $sections->num_rows() . '</small><br>
-                    <small class="text-muted"><b>' . get_phrase('Lesson') . '</b>: ' . $lessons->num_rows() . '</small>';
+                    <small class="text-muted"><b>' . get_phrase('Lesson') . '</b>: ' . $الدروس->num_rows() . '</small>';
                 }
 
                 $nestedData['enrolled_student'] = '<small class="text-muted"><b>' . get_phrase('Enrollments') . '</b>: ' . $enroll_history->num_rows() . '</small>';
@@ -1300,7 +1300,7 @@ class Admin extends CI_Controller
         redirect(site_url('admin/course_form/course_edit/' . $param1));
     }
 
-    public function lessons($course_id = "", $param1 = "", $param2 = "")
+    public function الدروس($course_id = "", $param1 = "", $param2 = "")
     {
         // CHECK ACCESS PERMISSION
         check_permission('course');
@@ -1321,12 +1321,12 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('flash_message', get_phrase('lesson_has_been_deleted_successfully'));
             redirect('admin/course_form/course_edit/' . $course_id);
         } elseif ($param1 == 'filter') {
-            redirect('admin/lessons/' . $this->input->post('course_id'));
+            redirect('admin/الدروس/' . $this->input->post('course_id'));
         }
-        $page_data['page_name'] = 'lessons';
-        $page_data['lessons'] = $this->crud_model->get_lessons('course', $course_id);
+        $page_data['page_name'] = 'الدروس';
+        $page_data['الدروس'] = $this->crud_model->get_الدروس('course', $course_id);
         $page_data['course_id'] = $course_id;
-        $page_data['page_title'] = get_phrase('lessons');
+        $page_data['page_title'] = get_phrase('الدروس');
         $this->load->view('backend/index', $page_data);
     }
 
@@ -1335,7 +1335,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != true) {
             redirect(site_url('login'), 'refresh');
         }
-        $lesson_details          = $this->crud_model->get_lessons('lesson', $lesson_id)->row_array();
+        $lesson_details          = $this->crud_model->get_الدروس('lesson', $lesson_id)->row_array();
         $page_data['provider']   = $lesson_details['video_type'];
         $page_data['video_url']  = $lesson_details['video_url'];
         $page_data['lesson_id']  = $lesson_id;
@@ -1610,7 +1610,7 @@ class Admin extends CI_Controller
         if ($this->session->userdata('admin_login') != true) {
             redirect(site_url('login'), 'refresh');
         }
-        $quiz_details = $this->crud_model->get_lessons('lesson', $quiz_id)->row_array();
+        $quiz_details = $this->crud_model->get_الدروس('lesson', $quiz_id)->row_array();
 
         if ($action == 'add' || $action == 'edit') {
             echo $this->crud_model->manage_quiz_questions($quiz_id, $question_id, $action);
@@ -3487,7 +3487,7 @@ class Admin extends CI_Controller
         $enrolments = $this->db->where('course_id', $course_id)->get('enrol')->result_array();
     
         // Initialize an array to hold the CSV data
-        $csv_data = '"ID","Enrolment ID","Student","Date Enrolled","Last Seen","Completed On","Progress","Completed Lessons","Watched Duration"' . "\n";
+        $csv_data = '"ID","Enrolment ID","Student","Date Enrolled","Last Seen","Completed On","Progress","Completed الدروس","Watched Duration"' . "\n";
     
         // Initialize incremental ID
         $incremental_id = 1;
@@ -3500,7 +3500,7 @@ class Admin extends CI_Controller
             // Fetch watch history for the student
             $watch_history = $this->db->where('course_id', $course_id)->where('student_id', $enrolment['user_id'])->get('watch_histories')->row_array();
             
-            // Handle completed lessons and course progress
+            // Handle completed الدروس and course progress
             $completed_lesson_arr = isset($watch_history['completed_lesson']) ? json_decode($watch_history['completed_lesson'], true) : [];
             $completed_lesson = is_array($completed_lesson_arr) ? count($completed_lesson_arr) : 0;
             $course_progress = isset($watch_history['course_progress']) ? $watch_history['course_progress'] : 0;
