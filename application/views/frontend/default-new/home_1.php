@@ -944,7 +944,7 @@
                             <span style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
                             <span style="position:absolute;bottom:-30px;left:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
                             <!-- صورة أطفال للبطاقة الأولى -->
-                            <img src="<?php echo base_url('assets/frontend/default-new/image/kids-student-1.png'); ?>" alt="أطفال يتعلمون" style="width:90px; position:absolute; top:10px; right:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/student-1.png'); ?>" alt="أطفال يتعلمون" style="width:90px; position:absolute; top:10px; right:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
                             <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-graduation-cap me-2"></i><?php echo site_phrase('join_now_to_start_learning'); ?></h2>
                             <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;"><?php echo site_phrase('Learn from our quality instructors!')?></p>
                             <?php if(get_settings('public_signup') == 'enable'): ?>
@@ -958,7 +958,7 @@
                             <span style="position:absolute;top:-40px;left:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
                             <span style="position:absolute;bottom:-30px;right:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
                             <!-- صورة أطفال للبطاقة الثانية -->
-                            <img src="<?php echo base_url('assets/frontend/default-new/image/kids-instructor-2.png'); ?>" alt="أطفال مع معلم" style="width:90px; position:absolute; top:10px; left:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/student-2.png'); ?>" alt="أطفال مع معلم" style="width:90px; position:absolute; top:10px; left:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
                             <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-chalkboard-user me-2"></i>انضم إلينا كـ معلم</h2>
                             <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;">علّم آلاف الطلاب واكسب المال</p>
                             <?php if(get_settings('public_signup') == 'enable'): ?>
@@ -973,7 +973,7 @@
             <?php endif; ?>
         </div>
         <!-- Decorative shapes -->
-        <span style="position:absolute;left:0;top:0;width:120px;height:120px;background:#754FFE22;border-radius:50%;z-index:0;"></span>
+    <span style="position:absolute;left:0;top:0;width:120px;height:120px;background:#03826122;border-radius:50%;z-index:0;"></span>
         <span style="position:absolute;right:0;bottom:0;width:180px;height:180px;background:#22c55e22;border-radius:50%;z-index:0;"></span>
     </div>
 </section>
