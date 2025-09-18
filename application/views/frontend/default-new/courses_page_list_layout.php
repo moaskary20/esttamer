@@ -1,3 +1,19 @@
+<style>
+    .enrollBtn {
+        background-color: #038261;
+    }
+    .list-btn:hover, .list-btn.active {
+        background-color: #038261;
+        border: 1.5px solid #038261;
+    }
+    .form-check-input:checked {
+        background-color: #038261;
+        border-color: #038261;
+    }
+    .courses-card-body:hover .courses-text h5 {
+        color: #038261;
+    }
+</style>
 <div class="grid-view-body courses courses-list-view-body">
 
     <?php include 'courses_page_sorting_section.php'; ?>
