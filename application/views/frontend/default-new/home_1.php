@@ -943,7 +943,8 @@
                         <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start position-relative animate__animated animate__fadeInLeft" style="min-height:320px; background: linear-gradient(135deg, #038261 80%, #fff 100%); overflow:hidden;">
                             <span style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
                             <span style="position:absolute;bottom:-30px;left:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
-                            <img src='<?php echo base_url('assets/frontend/default-new/image/creative-student.svg'); ?>' alt="ابدأ الآن" style="width:60px; position:absolute; top:-30px; right:-30px; opacity:0.12;z-index:2;">
+                            <!-- صورة أطفال للبطاقة الأولى -->
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/kids-student-1.png'); ?>" alt="أطفال يتعلمون" style="width:90px; position:absolute; top:10px; right:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
                             <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-graduation-cap me-2"></i><?php echo site_phrase('join_now_to_start_learning'); ?></h2>
                             <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;"><?php echo site_phrase('Learn from our quality instructors!')?></p>
                             <?php if(get_settings('public_signup') == 'enable'): ?>
@@ -956,7 +957,8 @@
                         <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start position-relative animate__animated animate__fadeInRight" style="min-height:320px; background: linear-gradient(135deg, #fff 0%, #038261 90%); overflow:hidden;">
                             <span style="position:absolute;top:-40px;left:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
                             <span style="position:absolute;bottom:-30px;right:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
-                            <img src='<?php echo base_url('assets/frontend/default-new/image/creative-instructor.svg'); ?>' alt="انضم الآن" style="width:60px; position:absolute; top:-30px; left:-30px; opacity:0.12;z-index:2;">
+                            <!-- صورة أطفال للبطاقة الثانية -->
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/kids-instructor-2.png'); ?>" alt="أطفال مع معلم" style="width:90px; position:absolute; top:10px; left:20px; z-index:2; border-radius:18px; box-shadow:0 4px 16px #03826122;">
                             <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-chalkboard-user me-2"></i>انضم إلينا كـ معلم</h2>
                             <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;">علّم آلاف الطلاب واكسب المال</p>
                             <?php if(get_settings('public_signup') == 'enable'): ?>
