@@ -936,54 +936,39 @@
 
 <?php if(get_frontend_settings('promotional_section') == 1): ?>
 <!------------- Become Students Section start --------->
-<section class="student py-5 pt-0">
+<section class="student-creative-section py-5 pt-0 position-relative" style="background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%); overflow: hidden;">
     <div class="container">
-        <div class="row eStudent">
-            <div class="col-lg-6  <?php if (get_settings('allow_instructor') != 1) echo 'w-100'; ?> wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="650">
-                <div class="student-body-1">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12">
-                            <div class="student-body-text">
-                                <!-- <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/2.png')?>"> -->
-                                <h1><?php echo site_phrase('join_now_to_start_learning'); ?></h1>
-                                <p><?php echo site_phrase('Learn from our quality instructors!')?> </p>
-                                 <?php if(get_settings('public_signup') == 'enable'): ?>  
-                                   <a href="<?php echo site_url('sign_up'); ?>"><?php echo site_phrase('get_started'); ?></a>
-                                 <?php endif;?>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 ">
-                            <!-- <img loading="lazy" class="man" src="<?php echo base_url('assets/frontend/default-new/image/instractorN.png')?>"> -->
-                        </div>
-                     </div>
-                </div>      
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start bg-white position-relative animate__animated animate__fadeInLeft" style="min-height:320px;">
+                    <img src='<?php echo base_url('assets/frontend/default-new/image/creative-student.svg'); ?>' alt="ابدأ الآن" style="width:60px; position:absolute; top:-30px; right:-30px; opacity:0.12;">
+                    <h2 class="mb-3 fw-bold" style="color:#754FFE;"><i class="fa-solid fa-graduation-cap me-2"></i><?php echo site_phrase('join_now_to_start_learning'); ?></h2>
+                    <p class="mb-4" style="font-size:1.15rem; color:#555;"><?php echo site_phrase('Learn from our quality instructors!')?></p>
+                    <?php if(get_settings('public_signup') == 'enable'): ?>
+                        <a href="<?php echo site_url('sign_up'); ?>" class="btn btn-lg btn-primary px-4 py-2 rounded-pill shadow-sm" style="background:#754FFE; border:none;"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i><?php echo site_phrase('get_started'); ?></a>
+                    <?php endif;?>
+                </div>
             </div>
             <?php if (get_settings('allow_instructor') == 1) : ?>
-                <div class="col-lg-6  wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="700">
-                    <div class="student-body-2">
-                    <div class="row">
-                            <div class="col-lg-8  col-md-8 col-sm-12">
-                                <div class="student-body-text">
-                                  <!-- <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/2.png')?>"> -->
-                                    <h1>انضم الينا كا معلم</h1>
-                                    <p><?php echo site_phrase('Teach_thousands_of_students_and_earn_money!')?> </p>
-                                       <?php if(get_settings('public_signup') == 'enable'): ?>  
-                                            <?php if($this->session->userdata('user_id')): ?>
-                                            <a  href="<?php echo site_url('user/become_an_instructor'); ?>"><?php echo site_phrase('join_now'); ?></a>
-                                            <?php else: ?>
-                                                <a  href="<?php echo site_url('sign_up?instructor=yes'); ?>"><?php echo site_phrase('join_now'); ?></a>
-                                            <?php endif; ?>
-                                     <?php endif;?>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                            <!-- <img loading="lazy" class="man" src="<?php echo base_url('assets/frontend/default-new/image/student-2.png')?>"> -->
-                            </div>
-                        </div>  
-                    </div> 
+            <div class="col-lg-5 col-md-6">
+                <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start bg-white position-relative animate__animated animate__fadeInRight" style="min-height:320px;">
+                    <img src='<?php echo base_url('assets/frontend/default-new/image/creative-instructor.svg'); ?>' alt="انضم الآن" style="width:60px; position:absolute; top:-30px; left:-30px; opacity:0.12;">
+                    <h2 class="mb-3 fw-bold" style="color:#0D0C23;"><i class="fa-solid fa-chalkboard-user me-2"></i>انضم إلينا كـ معلم</h2>
+                    <p class="mb-4" style="font-size:1.15rem; color:#555;">علّم آلاف الطلاب واكسب المال</p>
+                    <?php if(get_settings('public_signup') == 'enable'): ?>
+                        <?php if($this->session->userdata('user_id')): ?>
+                            <a href="<?php echo site_url('user/become_an_instructor'); ?>" class="btn btn-lg btn-success px-4 py-2 rounded-pill shadow-sm" style="background:#22c55e; border:none;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
+                        <?php else: ?>
+                            <a href="<?php echo site_url('sign_up?instructor=yes'); ?>" class="btn btn-lg btn-success px-4 py-2 rounded-pill shadow-sm" style="background:#22c55e; border:none;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
+                        <?php endif; ?>
+                    <?php endif;?>
                 </div>
+            </div>
             <?php endif; ?>
         </div>
+        <!-- Decorative shapes -->
+        <span style="position:absolute;left:0;top:0;width:120px;height:120px;background:#754FFE22;border-radius:50%;z-index:0;"></span>
+        <span style="position:absolute;right:0;bottom:0;width:180px;height:180px;background:#22c55e22;border-radius:50%;z-index:0;"></span>
     </div>
 </section>
 <?php endif; ?>
