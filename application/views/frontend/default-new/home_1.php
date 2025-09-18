@@ -939,31 +939,35 @@
 <section class="student-creative-section py-5 pt-0 position-relative" style="background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%); overflow: hidden;">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start bg-white position-relative animate__animated animate__fadeInLeft" style="min-height:320px;">
-                    <img src='<?php echo base_url('assets/frontend/default-new/image/creative-student.svg'); ?>' alt="ابدأ الآن" style="width:60px; position:absolute; top:-30px; right:-30px; opacity:0.12;">
-                    <h2 class="mb-3 fw-bold" style="color:#754FFE;"><i class="fa-solid fa-graduation-cap me-2"></i><?php echo site_phrase('join_now_to_start_learning'); ?></h2>
-                    <p class="mb-4" style="font-size:1.15rem; color:#555;"><?php echo site_phrase('Learn from our quality instructors!')?></p>
-                    <?php if(get_settings('public_signup') == 'enable'): ?>
-                        <a href="<?php echo site_url('sign_up'); ?>" class="btn btn-lg btn-primary px-4 py-2 rounded-pill shadow-sm" style="background:#754FFE; border:none;"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i><?php echo site_phrase('get_started'); ?></a>
-                    <?php endif;?>
-                </div>
-            </div>
+                    <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                        <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start position-relative animate__animated animate__fadeInLeft" style="min-height:320px; background: linear-gradient(135deg, #038261 80%, #fff 100%); overflow:hidden;">
+                            <span style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
+                            <span style="position:absolute;bottom:-30px;left:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
+                            <img src='<?php echo base_url('assets/frontend/default-new/image/creative-student.svg'); ?>' alt="ابدأ الآن" style="width:60px; position:absolute; top:-30px; right:-30px; opacity:0.12;z-index:2;">
+                            <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-graduation-cap me-2"></i><?php echo site_phrase('join_now_to_start_learning'); ?></h2>
+                            <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;"><?php echo site_phrase('Learn from our quality instructors!')?></p>
+                            <?php if(get_settings('public_signup') == 'enable'): ?>
+                                <a href="<?php echo site_url('sign_up'); ?>" class="btn btn-lg btn-light px-4 py-2 rounded-pill shadow-sm" style="color:#038261; background:#fff; border:none;z-index:2;"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i><?php echo site_phrase('get_started'); ?></a>
+                            <?php endif;?>
+                        </div>
+                    </div>
             <?php if (get_settings('allow_instructor') == 1) : ?>
-            <div class="col-lg-5 col-md-6">
-                <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start bg-white position-relative animate__animated animate__fadeInRight" style="min-height:320px;">
-                    <img src='<?php echo base_url('assets/frontend/default-new/image/creative-instructor.svg'); ?>' alt="انضم الآن" style="width:60px; position:absolute; top:-30px; left:-30px; opacity:0.12;">
-                    <h2 class="mb-3 fw-bold" style="color:#0D0C23;"><i class="fa-solid fa-chalkboard-user me-2"></i>انضم إلينا كـ معلم</h2>
-                    <p class="mb-4" style="font-size:1.15rem; color:#555;">علّم آلاف الطلاب واكسب المال</p>
-                    <?php if(get_settings('public_signup') == 'enable'): ?>
-                        <?php if($this->session->userdata('user_id')): ?>
-                            <a href="<?php echo site_url('user/become_an_instructor'); ?>" class="btn btn-lg btn-success px-4 py-2 rounded-pill shadow-sm" style="background:#22c55e; border:none;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
-                        <?php else: ?>
-                            <a href="<?php echo site_url('sign_up?instructor=yes'); ?>" class="btn btn-lg btn-success px-4 py-2 rounded-pill shadow-sm" style="background:#22c55e; border:none;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
-                        <?php endif; ?>
-                    <?php endif;?>
-                </div>
-            </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="creative-card shadow-lg rounded-4 p-5 h-100 d-flex flex-column justify-content-center align-items-start position-relative animate__animated animate__fadeInRight" style="min-height:320px; background: linear-gradient(135deg, #fff 0%, #038261 90%); overflow:hidden;">
+                            <span style="position:absolute;top:-40px;left:-40px;width:120px;height:120px;background:rgba(3,130,97,0.18);border-radius:50%;z-index:1;"></span>
+                            <span style="position:absolute;bottom:-30px;right:-30px;width:80px;height:80px;background:rgba(3,130,97,0.10);border-radius:50%;z-index:1;"></span>
+                            <img src='<?php echo base_url('assets/frontend/default-new/image/creative-instructor.svg'); ?>' alt="انضم الآن" style="width:60px; position:absolute; top:-30px; left:-30px; opacity:0.12;z-index:2;">
+                            <h2 class="mb-3 fw-bold" style="color:#fff;z-index:2;"><i class="fa-solid fa-chalkboard-user me-2"></i>انضم إلينا كـ معلم</h2>
+                            <p class="mb-4" style="font-size:1.15rem; color:#e0f7ef;z-index:2;">علّم آلاف الطلاب واكسب المال</p>
+                            <?php if(get_settings('public_signup') == 'enable'): ?>
+                                <?php if($this->session->userdata('user_id')): ?>
+                                    <a href="<?php echo site_url('user/become_an_instructor'); ?>" class="btn btn-lg btn-light px-4 py-2 rounded-pill shadow-sm" style="color:#038261; background:#fff; border:none;z-index:2;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
+                                <?php else: ?>
+                                    <a href="<?php echo site_url('sign_up?instructor=yes'); ?>" class="btn btn-lg btn-light px-4 py-2 rounded-pill shadow-sm" style="color:#038261; background:#fff; border:none;z-index:2;"><i class="fa-solid fa-user-plus me-2"></i><?php echo site_phrase('join_now'); ?></a>
+                                <?php endif; ?>
+                            <?php endif;?>
+                        </div>
+                    </div>
             <?php endif; ?>
         </div>
         <!-- Decorative shapes -->
