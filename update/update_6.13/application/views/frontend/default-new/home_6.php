@@ -544,7 +544,7 @@
       <div class="row justify-content-between">
         <div class="col-lg-4">
           <div class="title-two">
-            <h4 class="title"><?php echo get_phrase('Frequently Asked Questions') ?></h4>
+            <h4 class="title"><?php echo get_phrase('الأسئلة المتكررةs') ?></h4>
           </div>
         </div>
         <div class="col-lg-7">

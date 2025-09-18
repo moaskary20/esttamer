@@ -322,7 +322,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row"><i class="fa-solid fa-bars"></i><?php echo get_phrase('Total Lectures') ?></th>
+                      <th scope="row"><i class="fa-solid fa-bars"></i><?php echo get_phrase('Total المحاضرات') ?></th>
                       <td>
                       	<?php if(isset($course_1_details['title'])): ?>
                       		<i class="fa-solid fa-book-open-reader"></i>

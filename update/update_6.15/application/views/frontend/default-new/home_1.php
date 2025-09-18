@@ -809,7 +809,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('Frequently Asked Questions') ?></h1>
+                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('الأسئلة المتكررةs') ?></h1>
                 <p class="text-center mt-4 mb-24"><?php echo get_phrase('Have something to know?') ?> <?php echo get_phrase('Check here if you have any questions about us.') ?></p>
             </div>
             <div class="col-lg-2"></div>

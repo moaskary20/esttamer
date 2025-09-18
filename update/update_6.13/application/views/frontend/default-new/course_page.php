@@ -233,7 +233,7 @@ if ($number_of_ratings > 0) {
                                     <path d="M12.5 18.9583C12.4167 18.9583 12.3417 18.9417 12.2583 18.9083C12.025 18.8083 11.875 18.5833 11.875 18.3333V15.8333C11.875 13.8167 12.9833 12.7083 15 12.7083H17.5C17.75 12.7083 17.9833 12.8583 18.075 13.0917C18.175 13.325 18.1167 13.5917 17.9417 13.775L12.9417 18.775C12.825 18.8917 12.6667 18.9583 12.5 18.9583ZM15 13.9583C13.6833 13.9583 13.125 14.5167 13.125 15.8333V16.825L15.9917 13.9583H15Z" fill="#68768B"/>
                                     </svg>
                               </span>
-                                <h4><?php echo get_phrase('Lectures') ?></h4>
+                                <h4><?php echo get_phrase('المحاضرات') ?></h4>
                             </div>
                             <h5><?php echo $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type !=' => 'quiz'])->num_rows(); ?></h5>
                         </div>
@@ -288,7 +288,7 @@ if ($number_of_ratings > 0) {
                                     </svg>
 
                                 </span>
-                                <h4><?php echo get_phrase('Skill level') ?></h4>
+                                <h4><?php echo get_phrase('مستوى المهارة') ?></h4>
                             </div>
                             <h5><?php echo get_phrase($course_details['level']); ?></h5>
                         </div>
@@ -381,7 +381,7 @@ if ($number_of_ratings > 0) {
                     </div>
                     <div class="eSocialShare d-flex align-items-center w-100">
                             <?php $share_url = site_url('home/course/' . slugify($course_details['title']) . '/' . $course_details['id']); ?>
-                            <p><?php echo  site_phrase('Share this course');?></p>
+                            <p><?php echo  site_phrase('شارك هذه الدورة');?></p>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>&ref=<?php echo $ref; ?>" target="_blank" class="p-2" style="color: #316FF6;" data-bs-toggle="tooltip" title="<?php echo get_phrase('Share on Facebook'); ?>" data-bs-placement="top">
                                 <svg width="19" height="19" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_30_3727)">

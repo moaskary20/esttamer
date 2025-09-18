@@ -686,14 +686,14 @@ $(".testimonial-5").slick({
 
 
 
-// Set the skill level for Skill 1 (between 0 and 5)
+// Set the مستوى المهارة for Skill 1 (between 0 and 5)
 let skillLevel1 = 3;
 
 // Get the skill bar element for Skill 1
 let skillBar1 = document.getElementById("skill-bar-1");
 
 if ($('#skill-bar-1').length > 0) {
-  // Add the class for the skill level to the skill bar
+  // Add the class for the مستوى المهارة to the skill bar
   skillBar1.classList.add("skill-" + skillLevel1);
 }
 

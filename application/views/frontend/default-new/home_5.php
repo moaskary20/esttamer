@@ -572,7 +572,7 @@
   <div class="container">
     <!-- Title -->
     <div class="title-two text-center pb-50">
-      <h4 class="title"><?php echo get_phrase('Frequently Asked Questions') ?></h4>
+      <h4 class="title"><?php echo get_phrase('الأسئلة المتكررةs') ?></h4>
     </div>
     <!-- FAQs -->
     <div class="accordion custom-accordion-two faq-5" id="accordionFaq">

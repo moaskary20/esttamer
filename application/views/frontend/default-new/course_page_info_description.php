@@ -4,7 +4,7 @@
 </div>
 
 <div class="course-description">
-    <h3 class="description-head"><?php echo get_phrase('What will i learn?') ?></h3>
+    <h3 class="description-head"><?php echo get_phrase('ماذا سأتعلم؟') ?></h3>
     <ul class="step-down">
         <?php foreach (json_decode($course_details['outcomes']) as $outcome) : ?>
             <?php if ($outcome != "") : ?>
@@ -29,7 +29,7 @@
     $counter = 0;
   if(is_array($faqs) && count($faqs) > 0): ?>
     <div class="course-description">
-        <h3 class="description-head"><?php echo get_phrase('Frequently asked question') ?></h3>
+        <h3 class="description-head"><?php echo get_phrase('الأسئلة المتكررة') ?></h3>
 
         <div class="faq-accrodion m-0">
             <?php foreach($faqs as $faq_question => $faq): ?>

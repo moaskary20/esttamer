@@ -523,7 +523,7 @@
       <div class="col-lg-7">
         <!-- Title -->
         <div class="title-one pb-50">
-          <h4 class="title"><?php echo get_phrase('Frequently Asked Questions') ?></h4>
+          <h4 class="title"><?php echo get_phrase('الأسئلة المتكررةs') ?></h4>
         </div>
         <!-- FAQs -->
         <div class="accordion custom-accordion-two" id="accordionFaq">

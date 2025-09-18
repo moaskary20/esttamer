@@ -765,7 +765,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h1 class="text-center mb-2"><?php echo get_phrase('Frequently Asked Questions') ?></h1>
+                <h1 class="text-center mb-2"><?php echo get_phrase('الأسئلة المتكررةs') ?></h1>
                 <p class="text-center  mb-5"><?php echo get_phrase('Have something to know?') ?> <?php echo get_phrase('Check here if you have any questions about us.') ?></p>
             </div>
             <div class="col-lg-2"></div>

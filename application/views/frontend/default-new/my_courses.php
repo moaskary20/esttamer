@@ -17,7 +17,7 @@
                             $course_details = $this->crud_model->get_course_by_id($enrolment['course_id'])->row_array();
                             $instructor_details = $this->user_model->get_all_user($course_details['creator'])->row_array();
                             $course_duration = $this->crud_model->get_total_duration_of_lesson_by_course_id($course_details['id']);
-                            $lectures = $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type !=' => 'quiz']);
+                            $المحاضرات = $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type !=' => 'quiz']);
                             $quizzes = $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type' => 'quiz']);
                             $watch_history = $this->crud_model->get_watch_histories($this->session->userdata('user_id'), $course_details['id'])->row_array();
                             $course_progress = course_progress($course_details['id'], $this->session->userdata('user_id'));
@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="my-course-1-lesson-text mb-2">
                                             <div class="icon-1">
-                                                <p><i class="far fa-play-circle"></i> <?php echo get_phrase('Lectures').' '.$lectures->num_rows(); ?></p>
+                                                <p><i class="far fa-play-circle"></i> <?php echo get_phrase('المحاضرات').' '.$المحاضرات->num_rows(); ?></p>
                                             </div>
                                             <div class="icon-1">
                                                 <p><i class="far fa-question-circle"></i> <?php echo get_phrase('Quizzes').' '.$quizzes->num_rows(); ?></p>

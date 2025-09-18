@@ -11,18 +11,18 @@
         white-space: normal;
     }
     .enrollBtn {
-        background-color: #198754;
+        background-color: #038261;
     }
     .list-btn:hover, .list-btn.active {
-        background-color: #198754;
-        border: 1.5px solid #198754;
+        background-color: #038261;
+        border: 1.5px solid #038261;
     }
     .form-check-input:checked {
-        background-color: #198754;
-        border-color: #198754;
+        background-color: #038261;
+        border-color: #038261;
     }
     .courses-card-body:hover .courses-text h5 {
-        color: #198754;
+        color: #038261;
     }
 </style>
 
@@ -823,7 +823,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('Frequently Asked Questions') ?></h1>
+                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('الأسئلة المتكررةs') ?></h1>
                 <p class="text-center mt-4 mb-24"><?php echo get_phrase('Have something to know?') ?> <?php echo get_phrase('Check here if you have any questions about us.') ?></p>
             </div>
             <div class="col-lg-2"></div>
