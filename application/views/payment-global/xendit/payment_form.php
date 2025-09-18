@@ -36,7 +36,7 @@ $test_mode = $payment_gateway['enabled_test_mode'];
             xenditResponseContainer.innerHTML = '<p>'+result.error.message+'</p>';
         }
         xenditBuyBtn.disabled = false;
-        xenditBuyBtn.textContent = 'Buy Now';
+        xenditBuyBtn.textContent = 'اشتري الآن';
     };
 
     xenditBuyBtn.addEventListener("click", function (evt) {

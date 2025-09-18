@@ -492,7 +492,7 @@ $request->getBody()->addFile(new PostFile('file_key', fopen('/path/to/content', 
 
 #### Streaming responses
 
-Streaming requests can now be created by a client directly, returning a
+Streaming requests can now be تم الإنشاء بواسطة a client directly, returning a
 `GuzzleHttp\Message\ResponseInterface` object that contains a body stream
 referencing an open PHP HTTP stream.
 

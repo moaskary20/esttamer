@@ -101,7 +101,7 @@
                         </td>
 
                         <td class="table-action">
-                          <a href="<?php echo $item['url']; ?>" data-toggle="tooltip" title="Buy now" class="action-icon" target="_blank"><i class="mdi mdi-cart-outline"></i></a>
+                          <a href="<?php echo $item['url']; ?>" data-toggle="tooltip" title="اشتري الآن" class="action-icon" target="_blank"><i class="mdi mdi-cart-outline"></i></a>
                           <a href="<?php echo $demo_url; ?>" data-toggle="tooltip" title="Watch demo" class="action-icon" target="_blank"><i class="mdi mdi-open-in-new"></i></a>
                         </td>
                       </tr>

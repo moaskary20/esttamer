@@ -294,7 +294,7 @@ class Home extends CI_Controller
 
     public function instructor_page($instructor_id = "")
     {
-        // Total number of courses created by the user
+        // Total number of courses تم الإنشاء بواسطة the user
         $course_count = $this->db->where('creator', $instructor_id)->where('status', 'active')->count_all_results('course');
         // --- Course Earned badge --- 
         $earned_badge = $this->db->where('type', 'course_count')->where('condition_from <=', $course_count)->where('condition_to >=', $course_count)->limit(1)->get('badges')->row_array();
@@ -302,7 +302,7 @@ class Home extends CI_Controller
             $earned_badge = $this->db->where('type', 'course_count')->where('condition_to <', $course_count)->order_by('condition_to', 'desc')->limit(1)->get('badges')->row_array();
         }
 
-         // Get all course IDs created by this user
+         // Get all course IDs تم الإنشاء بواسطة this user
          $this->db->select('id');
          $this->db->from('course');
          $this->db->where('creator', $instructor_id);
@@ -2167,7 +2167,7 @@ class Home extends CI_Controller
 
             $user_id = $this->session->userdata('user_id');
 
-            // Total number of courses created by the user
+            // Total number of courses تم الإنشاء بواسطة the user
             $course_count = $this->db->where('creator', $user_id)->where('status', 'active')->count_all_results('course');
             // --- Course Earned badge --- 
             $earned_badge = $this->db->where('type', 'course_count')->where('condition_from <=', $course_count)->where('condition_to >=', $course_count)->limit(1)->get('badges')->row_array();
@@ -2175,7 +2175,7 @@ class Home extends CI_Controller
                 $earned_badge = $this->db->where('type', 'course_count')->where('condition_to <', $course_count)->order_by('condition_to', 'desc')->limit(1)->get('badges')->row_array();
             }
 
-            // Get all course IDs created by this user
+            // Get all course IDs تم الإنشاء بواسطة this user
             $this->db->select('id');
             $this->db->from('course');
             $this->db->where('creator', $user_id);

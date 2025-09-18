@@ -710,7 +710,7 @@ S2.define('select2/utils',[
   };
 
   Utils.hasScroll = function (index, el) {
-    // Adapted from the function created by @ShadowScripter
+    // Adapted from the function تم الإنشاء بواسطة @ShadowScripter
     // and adapted by @BillBarry on the Stack Exchange Code Review website.
     // The original code can be found at
     // http://codereview.stackexchange.com/q/13338

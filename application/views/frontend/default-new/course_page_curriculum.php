@@ -1,4 +1,4 @@
-<div class="accordion curriculum-accordion mx-2">
+<div class="accordionالدروس-accordion mx-2">
     <?php
     $sections = $this->crud_model->get_section('course', $course_id)->result_array();
     foreach ($sections as $key => $section) : ?>

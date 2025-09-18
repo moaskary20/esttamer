@@ -24,7 +24,7 @@
                     <?php endif; ?>
 
                     <?php if(!$course_details['is_free_course']): ?>
-                        <span onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id'].'/from_wishlist'); ?>');" id="add_to_cart_btn_from_wishlist<?php echo $course_details['id']; ?>" class="checkPropagation float-end me-4 <?php if(in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" data-bs-toggle="tooltip" title="<?php echo get_phrase('Add to cart'); ?>"><i class="fas fa-cart-plus text-13px p-1"></i></span>
+                        <span onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id'].'/from_wishlist'); ?>');" id="add_to_cart_btn_from_wishlist<?php echo $course_details['id']; ?>" class="checkPropagation float-end me-4 <?php if(in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" data-bs-toggle="tooltip" title="<?php echo get_phrase('أضف إلى السلة'); ?>"><i class="fas fa-cart-plus text-13px p-1"></i></span>
 
                         <span onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id'].'/from_wishlist'); ?>');" id="added_to_cart_btn_from_wishlist<?php echo $course_details['id']; ?>" class="checkPropagation float-end me-4 <?php if(!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" data-bs-toggle="tooltip" title="<?php echo get_phrase('Remove from cart'); ?>"><i class="fas fa-minus-circle text-13px p-1"></i></span>
                     <?php endif; ?>

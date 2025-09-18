@@ -6,7 +6,7 @@ namespace Stripe;
  * This is an object representing a file hosted on Stripe's servers. The file may
  * have been uploaded by yourself using the <a
  * href="https://stripe.com/docs/api#create_file">create file</a> request (for
- * example, when uploading dispute evidence) or it may have been created by Stripe
+ * example, when uploading dispute evidence) or it may have been تم الإنشاء بواسطة Stripe
  * (for example, the results of a <a href="#scheduled_queries">Sigma scheduled
  * query</a>).
  *

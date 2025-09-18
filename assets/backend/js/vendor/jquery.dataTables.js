@@ -1680,7 +1680,7 @@
 	
 	/**
 	 * Convert from camel case parameters to Hungarian, based on a Hungarian map
-	 * created by _fnHungarianMap.
+	 * تم الإنشاء بواسطة _fnHungarianMap.
 	 *  @param {object} src The model object which holds all parameters that can be
 	 *    mapped.
 	 *  @param {object} user The object to convert from camel case to Hungarian.
@@ -5536,7 +5536,7 @@
 		}
 	
 		/* If the number of columns in the DOM equals the number that we have to
-		 * process in DataTables, then we can use the offsets that are created by
+		 * process in DataTables, then we can use the offsets that are تم الإنشاء بواسطة
 		 * the web- browser. No custom sizes can be set in order for this to happen,
 		 * nor scrolling used
 		 */

@@ -2180,7 +2180,7 @@
 ## 3.237.1 - 2022-09-30
 
 * `Aws\CodeDeploy` - This release allows you to override the alarm configurations when creating a deployment.
-* `Aws\DLM` - This release adds support for archival of single-volume snapshots created by Amazon Data Lifecycle Manager policies
+* `Aws\DLM` - This release adds support for archival of single-volume snapshots تم الإنشاء بواسطة Amazon Data Lifecycle Manager policies
 * `Aws\DevOpsGuru` - This release adds filter feature on AddNotificationChannel API, enable customer to configure the SNS notification messages by Severity or MessageTypes
 * `Aws\SSOOIDC` - Documentation updates for the IAM Identity Center OIDC CLI Reference.
 * `Aws\SageMaker` - A new parameter called ExplainerConfig is added to CreateEndpointConfig API to enable SageMaker Clarify online explainability feature.
@@ -2442,7 +2442,7 @@
 
 ## 3.232.5 - 2022-08-10
 
-* `Aws\DLM` - This release adds support for excluding specific data (non-boot) volumes from multi-volume snapshot sets created by snapshot lifecycle policies
+* `Aws\DLM` - This release adds support for excluding specific data (non-boot) volumes from multi-volume snapshot sets تم الإنشاء بواسطة snapshot lifecycle policies
 * `Aws\EC2` - This release adds support for excluding specific data (non-root) volumes from multi-volume snapshot sets created from instances.
 
 ## 3.232.4 - 2022-08-09
@@ -3308,7 +3308,7 @@
 
 * `Aws\CustomerProfiles` - This release introduces apis CreateIntegrationWorkflow, DeleteWorkflow, ListWorkflows, GetWorkflow and GetWorkflowSteps. These apis are used to manage and view integration workflows.
 * `Aws\DynamoDB` - DynamoDB ExecuteStatement API now supports Limit as a request parameter to specify the maximum number of items to evaluate. If specified, the service will process up to the Limit and the results will include a LastEvaluatedKey value to continue the read in a subsequent operation.
-* `Aws\imagebuilder` - This release adds support to enable faster launching for Windows AMIs created by EC2 Image Builder.
+* `Aws\imagebuilder` - This release adds support to enable faster launching for Windows AMIs تم الإنشاء بواسطة EC2 Image Builder.
 
 ## 3.209.27 - 2022-02-18
 
@@ -5987,7 +5987,7 @@
 * `Aws\S3Control` - Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
 * `Aws\S3Outposts` - Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
 * `Aws\SecurityHub` - Added several new resource details objects. Added additional details for CloudFront distributions, IAM roles, and IAM access keys. Added a new ResourceRole attribute for resources.
-* `Aws\imagebuilder` - EC2 Image Builder adds support for copying AMIs created by Image Builder to accounts specific to each Region.
+* `Aws\imagebuilder` - EC2 Image Builder adds support for copying AMIs تم الإنشاء بواسطة Image Builder to accounts specific to each Region.
 
 ## 3.156.0 - 2020-09-29
 
@@ -6564,7 +6564,7 @@
 * `Aws\ECS` - This release adds support for deleting capacity providers.
 * `Aws\IoTDataPlane` - As part of this release, we are introducing a new feature called named shadow, which extends the capability of AWS IoT Device Shadow to support multiple shadows for a single IoT device. With this release, customers can store different device state data into different shadows, and as a result access only the required state data when needed and reduce individual shadow size.
 * `Aws\LexModelBuildingService` - This change adds the built-in AMAZON.KendraSearchIntent that enables integration with Amazon Kendra.
-* `Aws\imagebuilder` - EC2 Image Builder now supports specifying a custom working directory for your build and test workflows. In addition, Image Builder now supports defining tags that are applied to ephemeral resources created by EC2 Image Builder as part of the image creation workflow. 
+* `Aws\imagebuilder` - EC2 Image Builder now supports specifying a custom working directory for your build and test workflows. In addition, Image Builder now supports defining tags that are applied to ephemeral resources تم الإنشاء بواسطة EC2 Image Builder as part of the image creation workflow. 
 
 ## 3.141.0 - 2020-06-10
 
@@ -7508,7 +7508,7 @@
 * `Aws\CloudTrail` -  1. This release adds two new APIs, GetInsightSelectors and PutInsightSelectors, which let you configure CloudTrail Insights event delivery on a trail. An Insights event is a new type of event that is generated when CloudTrail detects unusual activity in your AWS account. In this release, only "ApiCallRateInsight" is a supported Insights event type. 2. This release also adds the new "ExcludeManagementEventSource" option to the existing PutEventSelectors API. This field currently supports only AWS Key Management Services.
 * `Aws\CodeCommit` - This release adds support for creating pull request approval rules and pull request approval rule templates in AWS CodeCommit. This allows developers to block merges of pull requests, contingent on the approval rules being satisfiied.
 * `Aws\Credentials` - Tweak instance profile provider fallback behavior.
-* `Aws\DLM` - DLM now supports Fast Snapshot Restore. You can enable Fast Restore on snapshots created by DLM, provide the AZs and the number of snapshots to be enabled with this capability.
+* `Aws\DLM` - DLM now supports Fast Snapshot Restore. You can enable Fast Restore on snapshots تم الإنشاء بواسطة DLM, provide the AZs and the number of snapshots to be enabled with this capability.
 * `Aws\DataSync` - Update to configure task to run periodically on a schedule
 * `Aws\EC2` - This release of Amazon Elastic Compute Cloud (Amazon EC2) introduces support for Amazon Elastic Block Store (Amazon EBS) fast snapshot restores.
 * `Aws\ECS` - Added support for CPU and memory task-level overrides on the RunTask and StartTask APIs. Added location information to Tasks.
@@ -9377,7 +9377,7 @@
 ## 3.67.8 - 2018-09-07
 
 * `Aws\CloudWatchLogs` - * Adding a log prefix parameter for filter log events API and minor updates to the documentation
-* `Aws\ConfigService` - Adding a new field "createdBy" to the ConfigRule data model. The field is populated only if the rule is service linked i.e the rule is created by a service. The field is empty for normal rules created by customer.
+* `Aws\ConfigService` - Adding a new field "createdBy" to the ConfigRule data model. The field is populated only if the rule is service linked i.e the rule is تم الإنشاء بواسطة a service. The field is empty for normal rules تم الإنشاء بواسطة customer.
 
 ## 3.67.7 - 2018-09-06
 
@@ -10412,7 +10412,7 @@
 * `Aws\Batch` - Add support for Array Jobs which allow users to easily submit many copies of a job with a single API call. This change also enhances the job dependency model to support N_TO_N and sequential dependency chains. The ListJobs and DescribeJobs APIs now have the ability to list or describe the status of entire Array Jobs or individual elements within the array.
 * `Aws\CodeDeploy` - Support for AWS Lambda function deployment - AWS CodeDeploy now supports the deployment of AWS Lambda functions. A Lambda deployment uses a Lambda function alias to shift traffic to a new version. You select a deployment configuration that specifies exactly how traffic shifts to your new version. Success of a deployment can be validated using Lambda functions that are referenced by the deployment. This provides the opportunity to rollback if necessary.
 * `Aws\CognitoIdentityProvider` - AWS Cognito SDK has been updated to support new Cognito user-pool objects and operations for advanced security
-* `Aws\EC2` - Adds the following updates: 1. You are now able to host a service powered by AWS PrivateLink to provide private connectivity to other VPCs. You are now also able to create endpoints to other services powered by PrivateLink including AWS services, Marketplace Seller services or custom services created by yourself or other AWS VPC customers. 2. You are now able to save launch parameters in a single template that can be used with Auto Scaling, Spot Fleet, Spot, and On Demand instances. 3. You are now able to launch Spot instances via the RunInstances API, using a single additional parameter. RunInstances will response synchronously with an instance ID should capacity be available for your Spot request. 4. A simplified Spot pricing model which delivers low, predictable prices that adjust gradually, based on long-term trends in supply and demand. 5. Amazon EC2 Spot can now hibernate Amazon EBS-backed instances in the event of an interruption, so your workloads pick up from where they left off. Spot can fulfill your request by resuming instances from a hibernated state when capacity is available.
+* `Aws\EC2` - Adds the following updates: 1. You are now able to host a service powered by AWS PrivateLink to provide private connectivity to other VPCs. You are now also able to create endpoints to other services powered by PrivateLink including AWS services, Marketplace Seller services or custom services تم الإنشاء بواسطة yourself or other AWS VPC customers. 2. You are now able to save launch parameters in a single template that can be used with Auto Scaling, Spot Fleet, Spot, and On Demand instances. 3. You are now able to launch Spot instances via the RunInstances API, using a single additional parameter. RunInstances will response synchronously with an instance ID should capacity be available for your Spot request. 4. A simplified Spot pricing model which delivers low, predictable prices that adjust gradually, based on long-term trends in supply and demand. 5. Amazon EC2 Spot can now hibernate Amazon EBS-backed instances in the event of an interruption, so your workloads pick up from where they left off. Spot can fulfill your request by resuming instances from a hibernated state when capacity is available.
 * `Aws\GuardDuty` - Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads. You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service. 
 * `Aws\Lambda` - Lambda aliases can now shift traffic between two function versions, based on preassigned weights.
 * `Aws\MQ` - This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud. 
@@ -10480,7 +10480,7 @@
 
 * `Aws\ECS` - Added new mode for Task Networking in ECS, called awsvpc mode. Mode configuration parameters to be passed in via awsvpcConfiguration. Updated APIs now use/show this new mode - RegisterTaskDefinition, CreateService, UpdateService, RunTask, StartTask.
 * `Aws\Lightsail` - Lightsail now supports attached block storage, which allows you to scale your applications and protect application data with additional SSD-backed storage disks. This feature allows Lightsail customers to attach secure storage disks to their Lightsail instances and manage their attached disks, including creating and deleting disks, attaching and detaching disks from instances, and backing up disks via snapshot.
-* `Aws\Route53` - When a Route 53 health check or hosted zone is created by a linked AWS service, the object now includes information about the service that created it. Hosted zones or health checks that are created by a linked service can't be updated or deleted using Route 53.
+* `Aws\Route53` - When a Route 53 health check or hosted zone is تم الإنشاء بواسطة a linked AWS service, the object now includes information about the service that created it. Hosted zones or health checks that are تم الإنشاء بواسطة a linked service can't be updated or deleted using Route 53.
 * `Aws\SSM` - EC2 Systems Manager GetInventory API adds support for aggregation.
 
 ## 3.38.1 - 2017-11-09
@@ -10843,7 +10843,7 @@
 ## 3.31.9 - 2017-07-24
 
 * `Aws\AppStream` - Amazon AppStream 2.0 image builders and fleets can now access applications and network resources that rely on Microsoft Active Directory (AD) for authentication and permissions. This new feature allows you to join your streaming instances to your AD, so you can use your existing AD user management tools. 
-* `Aws\EC2` - Spot Fleet tagging capability allows customers to automatically tag instances launched by Spot Fleet. You can use this feature to label or distinguish instances created by distinct Spot Fleets. Tagging your EC2 instances also enables you to see instance cost allocation by tag in your AWS bill.
+* `Aws\EC2` - Spot Fleet tagging capability allows customers to automatically tag instances launched by Spot Fleet. You can use this feature to label or distinguish instances تم الإنشاء بواسطة distinct Spot Fleets. Tagging your EC2 instances also enables you to see instance cost allocation by tag in your AWS bill.
 
 ## 3.31.8 - 2017-07-20
 
@@ -12971,7 +12971,7 @@ for details about any changes you may need to make to your code for this upgrade
 * Updated the Amazon CloudFront client to use the 2014-01-31 API version. See [their release
   notes](http://aws.amazon.com/releasenotes/1900016175520505).
 * Updates the AWS OpsWorks client to the latest API version.
-* Amazon S3 Stream Wrapper now works correctly with pseudo folder keys created by the AWS Management Console.
+* Amazon S3 Stream Wrapper now works correctly with pseudo folder keys تم الإنشاء بواسطة the AWS Management Console.
 * Amazon S3 Stream Wrapper now implements `mkdir()` for nested folders similar to the AWS Management Console.
 * Addressed an issue with Amazon S3 presigned-URLs where X-Amz-* headers were not being added to the query string.
 * Addressed an issue with the Amazon S3 directory sync where paths that contained dot-segments were not properly.
@@ -13322,7 +13322,7 @@ for details about any changes you may need to make to your code for this upgrade
   `DescribeVpcAttribute` operations
 * Added `ObjectURL` to the output of an Amazon S3 PutObject operation so that you can more easily retrieve the URL of an
   object after uploading
-* Added a `createPresignedUrl()` method to any command object created by the Amazon S3 client to more easily create
+* Added a `createPresignedUrl()` method to any command object تم الإنشاء بواسطة the Amazon S3 client to more easily create
   presigned URLs
 
 ## 2.2.0 - 2013-03-11

@@ -349,10 +349,10 @@ if ($number_of_ratings > 0) {
 
                                     <!-- Cart button -->
                                     <a id="added_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?> active" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>');"><i class="fas fa-minus"></i> <?php echo get_phrase('Remove from cart'); ?></a>
-                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('Add to cart'); ?></a>
+                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('أضف إلى السلة'); ?></a>
                                     <!-- Cart button ended-->
 
-                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> <?php echo get_phrase('Buy Now'); ?></a>
+                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> <?php echo get_phrase('اشتري الآن'); ?></a>
                                 <?php endif; ?>
                             <?php endif; ?>
 

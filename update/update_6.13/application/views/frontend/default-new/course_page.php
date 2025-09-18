@@ -35,7 +35,7 @@ if ($number_of_ratings > 0) {
                                 <div class="col-12 course-heading-info">
                                     <div class="info-tag eInfo">
                                         <img loading="lazy" width="30px" height="30px" class="rounded-circle object-fit-cover me-2" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']); ?>">
-                                        <p class="me-1 f-14"><?php echo get_phrase('Created By'); ?></p>
+                                        <p class="me-1 f-14"><?php echo get_phrase('تم الإنشاء بواسطة'); ?></p>
                                         <p>
                                             <a class="created-by-instructor" href="<?php echo site_url('home/instructor_page/' . $course_details['creator']); ?>"><?php echo $instructor_details['first_name'] . ' ' . $instructor_details['last_name']; ?></a>
                                         </p>
@@ -349,10 +349,10 @@ if ($number_of_ratings > 0) {
 
                                     <!-- Cart button -->
                                     <a id="added_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?> active" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>');"><i class="fas fa-minus"></i> <?php echo get_phrase('Remove from cart'); ?></a>
-                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('Add to cart'); ?></a>
+                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('أضف إلى السلة'); ?></a>
                                     <!-- Cart button ended-->
 
-                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> <?php echo get_phrase('Buy Now'); ?></a>
+                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> <?php echo get_phrase('اشتري الآن'); ?></a>
                                 <?php endif; ?>
                             <?php endif; ?>
 

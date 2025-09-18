@@ -303,7 +303,7 @@
                                             <i class="fas fa-minus me-2"></i> <?php echo get_phrase('Remove from cart'); ?>
                                         </a>
                                         <a id="add_to_cart_btn_top_course<?php echo $top_course['id']; ?>" class="purchase-btn align-items-center me-auto <?php if(in_array($top_course['id'], $cart_items)) echo 'd-hidden'; ?>" href="javascript:void(0)" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $top_course['id'].'/top_course'); ?>'); ">
-                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('Add to cart'); ?>
+                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('أضف إلى السلة'); ?>
                                         </a>
                                         <!-- Cart button ended-->
                                     <?php endif; ?>
@@ -605,7 +605,7 @@
                                             <i class="fas fa-minus me-2"></i> <?php echo get_phrase('Remove from cart'); ?>
                                         </a>
                                         <a id="add_to_cart_btn_latest_course<?php echo $latest_course['id']; ?>" class="purchase-btn align-items-center me-auto <?php if(in_array($latest_course['id'], $cart_items)) echo 'd-hidden'; ?>" href="javascript:void(0)" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $latest_course['id'].'/latest_course'); ?>'); ">
-                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('Add to cart'); ?>
+                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('أضف إلى السلة'); ?>
                                         </a>
                                         <!-- Cart button ended-->
                                     <?php endif; ?>

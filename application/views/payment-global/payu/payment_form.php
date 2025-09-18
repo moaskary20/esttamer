@@ -36,7 +36,7 @@ $test_mode = $payment_gateway['enabled_test_mode'];
             responseContainer.innerHTML = '<p>' + result.error.message + '</p>';
         }
         payuBuyBtn.disabled = false;
-        payuBuyBtn.textContent = 'Buy Now';
+        payuBuyBtn.textContent = 'اشتري الآن';
     };
 
     payuBuyBtn.addEventListener("click", function(evt) {

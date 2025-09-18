@@ -1018,11 +1018,11 @@ interfaces.
 * See UPGRADING.md for more information on how to upgrade.
 * Requests now support the ability to specify an array of $options when creating a request to more easily modify a
   request. You can pass a 'request.options' configuration setting to a client to apply default request options to
-  every request created by a client (e.g. default query string variables, headers, curl options, etc.).
+  every request تم الإنشاء بواسطة a client (e.g. default query string variables, headers, curl options, etc.).
 * Added a static facade class that allows you to use Guzzle with static methods and mount the class to `\Guzzle`.
   See `Guzzle\Http\StaticClient::mount`.
 * Added `command.request_options` to `Guzzle\Service\Command\AbstractCommand` to pass request options to requests
-      created by a command (e.g. custom headers, query string variables, timeout settings, etc.).
+      تم الإنشاء بواسطة a command (e.g. custom headers, query string variables, timeout settings, etc.).
 * Stream size in `Guzzle\Stream\PhpStreamRequestFactory` will now be set if Content-Length is returned in the
   headers of a response
 * Added `Guzzle\Common\Collection::setPath($path, $value)` to set a value into an array using a nested key
@@ -1145,7 +1145,7 @@ interfaces.
   non-existent key
 * Bug: All __call() method arguments are now required (helps with mocking frameworks)
 * Deprecating Response::getRequest() and now using a shallow clone of a request object to remove a circular reference
-  to help with refcount based garbage collection of resources created by sending a request
+  to help with refcount based garbage collection of resources تم الإنشاء بواسطة sending a request
 * Deprecating ZF1 cache and log adapters. These will be removed in the next major version.
 * Deprecating `Response::getPreviousResponse()` (method signature still exists, but it's deprecated). Use the
   HistoryPlugin for a history.
@@ -1617,7 +1617,7 @@ interfaces.
 * [BC] Simplifying Guzzle\Common\Collection.  Please check to see if you are using features that are now deprecated.
 * [BC] Using a custom validation system that allows a flyweight implementation for much faster validation. No longer using Symfony2 Validation component.
 * [BC] No longer supporting "{{ }}" for injecting into command or UriTemplates.  Use "{}"
-* Added the ability to passed parameters to all requests created by a client
+* Added the ability to passed parameters to all requests تم الإنشاء بواسطة a client
 * Added callback functionality to the ExponentialBackoffPlugin
 * Using microtime in ExponentialBackoffPlugin to allow more granular backoff strategies.
 * Rewinding request stream bodies when retrying requests

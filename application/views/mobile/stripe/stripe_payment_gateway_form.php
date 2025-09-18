@@ -46,7 +46,7 @@ var handleResult = function (result) {
         responseContainer.innerHTML = '<p>'+result.error.message+'</p>';
     }
     buyBtn.disabled = false;
-    buyBtn.textContent = 'Buy Now';
+    buyBtn.textContent = 'اشتري الآن';
 };
 
 // Specify Stripe publishable key to initialize Stripe.js

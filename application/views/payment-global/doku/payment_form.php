@@ -41,7 +41,7 @@ $test_mode = $payment_gateway['enabled_test_mode'];
             dokuResponseContainer.innerHTML = '<p>'+result.error.message+'</p>';
         }
         dokuBuyBtn.disabled = false;
-        dokuBuyBtn.textContent = 'Buy Now';
+        dokuBuyBtn.textContent = 'اشتري الآن';
     };
 
     dokuBuyBtn.addEventListener("click", function (evt) {

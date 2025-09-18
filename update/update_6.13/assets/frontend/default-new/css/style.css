@@ -3087,7 +3087,7 @@ margin-right: 8px;
   background-color: var(--bg-white);
 }
 
-/* Curriculum section */
+/*الدروس section */
 .course-left-side .accordion-button::after {
   margin-left: -35px;
   background-size: 13px;

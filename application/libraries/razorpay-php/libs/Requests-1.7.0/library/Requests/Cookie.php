@@ -136,7 +136,7 @@ class Requests_Cookie {
 	 */
 	public function domain_matches($string) {
 		if (!isset($this->attributes['domain'])) {
-			// Cookies created manually; cookies created by Requests will set
+			// Cookies created manually; cookies تم الإنشاء بواسطة Requests will set
 			// the domain to the requested domain
 			return true;
 		}
@@ -190,7 +190,7 @@ class Requests_Cookie {
 		}
 
 		if (!isset($this->attributes['path'])) {
-			// Cookies created manually; cookies created by Requests will set
+			// Cookies created manually; cookies تم الإنشاء بواسطة Requests will set
 			// the path to the requested path
 			return true;
 		}
