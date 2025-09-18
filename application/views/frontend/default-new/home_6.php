@@ -706,8 +706,8 @@
                      </div>
                 </div>      
             </div>
-            <?php if (get_settings('allow_instructor') == 1) : ?>
-                <div class="col-lg-6 ">
+      <?php if (get_settings('allow_instructor') == 1) : ?>
+        <div class="col-lg-6 " dir="rtl" lang="ar">
                     <div class="student-body-2">
                     <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8 col-8 ">
