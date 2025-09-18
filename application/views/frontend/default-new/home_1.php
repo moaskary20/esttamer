@@ -13,6 +13,17 @@
     .enrollBtn {
         background-color: #198754;
     }
+    .list-btn:hover, .list-btn.active {
+        background-color: #198754;
+        border: 1.5px solid #198754;
+    }
+    .form-check-input:checked {
+        background-color: #198754;
+        border-color: #198754;
+    }
+    .courses-card-body:hover .courses-text h5 {
+        color: #198754;
+    }
 </style>
 
 
