@@ -29,7 +29,7 @@
                         if ($key == 1) { 
                             echo $value . '<br>';
                         } elseif ($key == count($banner_title_arr) - 1) { 
-                            echo '<span class="d-inline-block">'.$value.'</span>';
+                            echo '<span class="d-inline-block" style="color:#038261;">'.$value.'</span>';
                         } else {
                             echo $value . ' ';
                         }
