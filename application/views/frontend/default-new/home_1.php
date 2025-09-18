@@ -10,6 +10,9 @@
         text-overflow: ellipsis; 
         white-space: normal;
     }
+    .enrollBtn {
+        background-color: #198754;
+    }
 </style>
 
 
