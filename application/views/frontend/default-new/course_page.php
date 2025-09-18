@@ -35,7 +35,7 @@ if ($number_of_ratings > 0) {
                                 <div class="col-12 course-heading-info">
                                     <div class="info-tag eInfo">
                                         <img loading="lazy" width="30px" height="30px" class="rounded-circle object-fit-cover me-2" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']); ?>">
-                                        <p class="me-1 f-14"><?php echo get_phrase('Created By'); ?></p>
+                                        <p class="me-1 f-14"><?php echo get_phrase('created_by'); ?></p>
                                         <p>
                                             <a class="created-by-instructor" href="<?php echo site_url('home/instructor_page/' . $course_details['creator']); ?>"><?php echo $instructor_details['first_name'] . ' ' . $instructor_details['last_name']; ?></a>
                                         </p>
@@ -51,7 +51,7 @@ if ($number_of_ratings > 0) {
                                                         <li class="me-0"><i class="fa-solid fa-star text-shadow text-15px  mt-7px"></i></li>
                                                     <?php endif; ?>
                                                 <?php endfor; ?>
-                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . get_phrase('Reviews'); ?>)</p>
+                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . get_phrase('reviews'); ?>)</p>
                                             </ul>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@ if ($number_of_ratings > 0) {
                                             <path d="M13.7546 15.5625C13.4921 15.5625 13.2596 15.3825 13.2071 15.1125C13.1471 14.805 13.3421 14.5125 13.6421 14.445C14.1146 14.3475 14.5496 14.16 14.8871 13.8975C15.3146 13.575 15.5471 13.17 15.5471 12.7425C15.5471 12.315 15.3146 11.91 14.8946 11.595C14.5646 11.34 14.1521 11.16 13.6646 11.0475C13.3646 10.98 13.1696 10.68 13.2371 10.3725C13.3046 10.0725 13.6046 9.87751 13.9121 9.94501C14.5571 10.0875 15.1196 10.3425 15.5771 10.695C16.2746 11.22 16.6721 11.9625 16.6721 12.7425C16.6721 13.5225 16.2671 14.265 15.5696 14.7975C15.1046 15.1575 14.5196 15.42 13.8746 15.5475C13.8296 15.5625 13.7921 15.5625 13.7546 15.5625Z" fill="#0D0C23"/>
                                             </svg>
 
-                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments ?> <?php echo get_phrase('Enrolled'); ?></p>
+                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments ?> <?php echo get_phrase('enrolled'); ?></p>
                                     </div>
 
                                 </div>
@@ -133,7 +133,7 @@ if ($number_of_ratings > 0) {
                                 </svg>
 
 
-                                <span class="ms-1"><?php echo get_phrase('Overview'); ?></button></span>
+                                <span class="ms-1"><?php echo get_phrase('overview'); ?></button></span>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="false">
@@ -142,7 +142,7 @@ if ($number_of_ratings > 0) {
                                 <path d="M7.08311 14.7417C6.57478 14.7417 6.10811 14.5583 5.76645 14.225C5.35811 13.8167 5.18311 13.225 5.27478 12.6L5.63311 10.0917C5.69978 9.60832 6.01645 8.98332 6.35811 8.64165L12.9248 2.07499C14.5831 0.416655 16.2664 0.416655 17.9248 2.07499C18.8331 2.98332 19.2414 3.90832 19.1581 4.83332C19.0831 5.58332 18.6831 6.31665 17.9248 7.06665L11.3581 13.6333C11.0164 13.975 10.3914 14.2917 9.90811 14.3583L7.39978 14.7167C7.29145 14.7417 7.18311 14.7417 7.08311 14.7417ZM13.8081 2.95832L7.24145 9.52499C7.08311 9.68332 6.89978 10.05 6.86645 10.2667L6.50811 12.775C6.47478 13.0167 6.52478 13.2167 6.64978 13.3417C6.77478 13.4667 6.97478 13.5167 7.21645 13.4833L9.72478 13.125C9.94145 13.0917 10.3164 12.9083 10.4664 12.75L17.0331 6.18332C17.5748 5.64165 17.8581 5.15832 17.8998 4.70832C17.9498 4.16665 17.6664 3.59165 17.0331 2.94999C15.6998 1.61665 14.7831 1.99165 13.8081 2.95832Z" fill="#68768B"/>
                                 <path d="M16.5413 8.19167C16.483 8.19167 16.4246 8.18334 16.3746 8.16667C14.183 7.55 12.4413 5.80834 11.8246 3.61667C11.733 3.28334 11.9246 2.94167 12.258 2.84167C12.5913 2.75 12.933 2.94167 13.0246 3.275C13.5246 5.05 14.933 6.45834 16.708 6.95834C17.0413 7.05 17.233 7.4 17.1413 7.73334C17.0663 8.01667 16.8163 8.19167 16.5413 8.19167Z" fill="#68768B"/>
                                 </svg>
-                            <span class="ms-1"><?php echo get_phrase('Curriculum') ?></span></button>
+                            <span class="ms-1"><?php echo get_phrase('curriculum') ?></span></button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="instructor-tab" data-bs-toggle="tab" data-bs-target="#instructor" type="button" role="tab" aria-controls="contact" aria-selected="false">
@@ -233,7 +233,7 @@ if ($number_of_ratings > 0) {
                                     <path d="M12.5 18.9583C12.4167 18.9583 12.3417 18.9417 12.2583 18.9083C12.025 18.8083 11.875 18.5833 11.875 18.3333V15.8333C11.875 13.8167 12.9833 12.7083 15 12.7083H17.5C17.75 12.7083 17.9833 12.8583 18.075 13.0917C18.175 13.325 18.1167 13.5917 17.9417 13.775L12.9417 18.775C12.825 18.8917 12.6667 18.9583 12.5 18.9583ZM15 13.9583C13.6833 13.9583 13.125 14.5167 13.125 15.8333V16.825L15.9917 13.9583H15Z" fill="#68768B"/>
                                     </svg>
                               </span>
-                                <h4><?php echo get_phrase('Lectures') ?></h4>
+                                <h4><?php echo get_phrase('lectures') ?></h4>
                             </div>
                             <h5><?php echo $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type !=' => 'quiz'])->num_rows(); ?></h5>
                         </div>
@@ -469,7 +469,7 @@ if ($number_of_ratings > 0) {
                                         <div class="review-icon-star align-item-center">
                                         <p><i class="fa-solid fa-star <?php if ($number_of_ratings > 0) echo 'filled'; ?>"></i></p>
                                             <p class="mr-5px"><?php echo $average_ceil_rating; ?></p>
-                                            <p>(<?php echo $number_of_ratings; ?> <?php echo get_phrase('Reviews') ?>)</p>
+                                            <p>(<?php echo $number_of_ratings; ?> <?php echo get_phrase('reviews') ?>)</p>
                                         </div>
                                     <div class="review-btn">
                                         <span data-bs-toggle="tooltip" data-bs-title="<?php echo site_phrase('Compare')?>" class="compare-img echecks  checkPropagation" onclick="redirectTo('<?php echo base_url('home/compare?course-1=' . slugify($course['title']) . '&course-id-1=' . $course['id']); ?>');">

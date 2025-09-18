@@ -567,5 +567,16 @@
     "phrase_updated": "تم تحديث العبارة",
     "language_direction_updated_successfully": "تم تحديث اتجاه اللغة بنجاح",
     "language_file_import_successfully": "تم استيراد ملف اللغة بنجاح",
-    "إعدادات_متعددة_اللغات": null
+    "إعدادات_متعددة_اللغات": null,
+    "created_by": "أنشأها",
+    "reviews": "المراجعات",
+    "hours": "ساعات",
+    "enrolled": "مسجل",
+    "overview": "نظرة عامة",
+    "curriculum": "المنهج الدراسي",
+    "skill_level": "مستوى المهارة",
+    "lectures": "محاضرات",
+    "add_to_cart": "أضف إلى السلة",
+    "buy_now": "اشتر الآن",
+    "related_courses": "دورات ذات صلة"
 }
