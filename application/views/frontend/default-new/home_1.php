@@ -17,6 +17,7 @@
 <section class="h-1-banner bannar-area pb-100">
     <div class="container">
         <div class="row">
+            <h1>askary</h1>
             <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-2 order-lg-1">
                 <div class="h-1-banner-text EbannerLeft position-relative">
                 <?php
