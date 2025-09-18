@@ -2888,7 +2888,7 @@ margin-right: 8px;
   width: 100%; 
 }
 .course-decription li .nav-link:hover{
-  color: var(--color-4);
+  color: #198754 !important;
 }
 
 .course-left-side .nav-tabs .nav-item.show .nav-link,
