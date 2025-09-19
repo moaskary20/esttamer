@@ -6214,10 +6214,10 @@ Course play page
 }
 
 .course-play-tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: var(--bs-nav-tabs-link-active-color);
+  color: #038261;
   background-color: var(--bs-nav-tabs-link-active-bg);
   border-color: #fff;
-  border-bottom: 2px solid #754FFE;
+  border-bottom: 2px solid #038261;
   color: #754FFE;
  
 }
