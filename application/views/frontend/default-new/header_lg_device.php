@@ -10,11 +10,11 @@
       <li>
         <div class="search-item">
           <span class="m-cross-icon"><i class="fa-solid fa-xmark"></i></span>
-          <span class="m-search-icon"> <i class="fa-solid fa-magnifying-glass"></i></span>
+          <span class="m-search-icon"> <i class="fa-solid fa-search"></i></span>
         </div>
       </li>
       <li>
-        <a href="#" class="btn-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-sharp fa-solid fa-bars"></i></a>
+  <a href="#" class="btn-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-list"></i></a>
       </li>
     </ul>
 
@@ -49,7 +49,7 @@
         <li class="nav-item">
           <a class="nav-link text-nowrap" href="#" id="navbarDropdown1">
             <span>
-              <i class="fa-solid fa-bars pr-2"></i> <!-- Ensure correct icon class -->
+              <i class="fa-solid fa-list pr-2"></i>
               <?php echo get_phrase('Courses'); ?>
               <i class="fa-solid fa-angle-down ms-2"></i> <!-- Ensure correct icon class -->
             </span>
@@ -429,7 +429,7 @@
     <!-- Mobile Device Form -->
     <form action="<?php echo site_url('home/courses'); ?>" method="get" class="inline-form">
       <div class="mobile-search test">
-        <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+  <button type="submit" class="search-btn"><i class="fa-solid fa-search"></i></button>
         <input value="<?php echo isset($_GET['query']) ? $_GET['query']:''; ?>" name="query" class="form-control" type="text" placeholder="<?php echo get_phrase('Search'); ?>" />
       </div>
     </form>
