@@ -122,9 +122,9 @@
 /*Start courses page*/
 .list-btn:hover, 
 .list-btn.active{
-	background-color: var(--color-4);
+	background-color: #038261;
     color: var(--color-9);
-    border: 1.5px solid var(--color-4);
+    border: 1.5px solid #038261;
 }
 .list-btn  svg path{
     fill: #0D0C23;
@@ -184,8 +184,8 @@
  .page-link:hover, .page-item a:hover {
     z-index: 2;
     color: #fff;
-    background-color: var(--color-4);
-    border-color: var(--color-4);
+    background-color: #038261;
+    border-color: #038261;
 }
 /*End pegination*/
 .instructor-item .content .social-nav a {
@@ -216,7 +216,7 @@
 /*Instructor page social button*/
 .social-btn{
     display: grid;
-    color: var(--color-4);
+    color: #038261;
     border-radius: 10px;
     padding: 15px 10px;
     min-width: 80px;
@@ -226,7 +226,7 @@
 }
 .social-btn:hover, .social-btn:focus{
     color: var(--bg-white-2);
-    background-color: var(--color-4);
+    background-color: #038261;
     transition: .5s;
 }
 .social-btn svg{
@@ -302,7 +302,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: var(--color-4);
+      background-color: #038261;
       left: -18px;
       top: 6px;
     }
@@ -356,7 +356,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: var(--color-4);
+      background-color: #038261;
       left: -18px;
       top: 6px;
     }
@@ -398,7 +398,7 @@
     }
 
     .course-right-section .button a:hover, .course-right-section .button a.active{
-        background-color: var(--color-4);
+        background-color: #038261;
         color: #fff;
     }
 
@@ -491,17 +491,17 @@
 /*Button*/
 .btn-primary{
     border: 1.5px solid #6e798a45;
-    background-color: var(--color-4);
+    background-color: #038261;
     padding: 12px 30px;
     color: var(color-9);
 }
 .btn-primary:hover{
-    background-color: var(--color-4);
+    background-color: #038261;
 }
 /*Button end*/
 /*Color*/
 .bg-primary{
-    background-color: var(--color-4) !important;
+    background-color: #038261 !important;
 }
 /*End color*/
 
@@ -557,7 +557,7 @@
     margin: 2px 0px;
 }
 .btn-profile-menu:hover, .btn-profile-menu.active{
-    background-color: var(--color-4);
+    background-color: #038261;
     color: var(--color-9);
     transition: .5s;
 }
@@ -922,7 +922,7 @@
     color: var(--color-5) !important;
 }
 .course-left-side .nav-link.active svg *, .course-left-side .nav-link:hover svg *{
-    fill: var(--color-4);
+    fill: #038261;
 }
 .instructor .instructor-icon i{
     width: 38px;

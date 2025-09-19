@@ -367,14 +367,14 @@ p{
 }
 .sign-in-box .sign-up-btn {
 	color: var(--color-9) !important;
-	background-color: var(--color-4);
-	border: 1px solid var(--color-4);
+	background-color: #038261;
+	border: 1px solid #038261;
 }
 /* Home Page 1 Area Start */
 .sub-header .icon-left i{
     padding: 12px 5px;
     font-size: 17px;
-    color: var(--color-4);
+    color: #038261;
 }
 .sub-header  .right-icon i{
     padding: 15px;
@@ -399,7 +399,7 @@ p{
     display: none;
 }
 .menubar li .header-dropdown{
-    color: var(--color-4);
+    color: #038261;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -1197,7 +1197,7 @@ p{
 
 }
 .signUp-btn{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: var(--color-9) !important;
 }
 .logIn-btn{
@@ -1395,7 +1395,7 @@ p{
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background-color: var(--color-4);
+	background-color: #038261;
 }
 .outCome{
   margin: 16px 0;
@@ -1414,7 +1414,7 @@ p{
 	margin-top: 0;
 	font-size: 13px;
   color: var(--bg-white);
-  background-color: var(--color-4);
+  background-color: #038261;
   justify-content: flex-end;
 }
 .gift-btn {
@@ -1422,8 +1422,8 @@ p{
 	width: 40px;
 	display: inline-block;
 	border-radius: 50%;
-	border: 1px solid var(--color-4);
-  color: var(--color-4) !important ;
+	border: 1px solid #038261;
+  color: #038261 !important ;
 	text-align: center;
 	line-height: 40px;
   display: flex;
@@ -1852,7 +1852,7 @@ p{
   color:var(--color-1) ;
 }
 .category-product .category-product-body:hover{
-    background-color: var(--color-4);
+    background-color: #038261;
 }
 .category-product .category-product-body:hover h5{
    color: var(--color-9) !important;
@@ -1923,7 +1923,7 @@ p{
  }
  .expert-instructor .instructor-card .instructor-card-text .icon a {
     padding: 0px;
-    color: var(--color-4);
+    color: #038261;
   }
   .expert-instructor .instructor-card .instructor-card-text .icon a svg {
     margin-right: 8px;
@@ -1978,7 +1978,7 @@ p{
     box-shadow: none;
   }
   .accordion-button:not(.collapsed) {
-    color: var(--color-4);
+    color: #038261;
     background-color: var(--bg-white);
     box-shadow: none;
   }
@@ -2514,9 +2514,9 @@ p{
   background-color: var(--bg-white);
 }
 .list-btn.active {
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
-  border: 1.5 px solid var(--color-4);
+  border: 1.5 px solid #038261;
 }
 .form-select {
   display: block;
@@ -2602,18 +2602,18 @@ p{
   background-color: var(--bg-white-2);
 }
 .course-category a:hover{
-  color: var(--color-4);
+  color: #038261;
 }
 .course-price a:hover{
-  color: var(--color-4);
+  color: #038261;
 }
 .course-category span {
   font-size: 14px !important;
   font-weight: 400;
 }
 .form-check-input:checked {
-  background-color: var(--color-4);
-  border-color: var(--color-4);
+  background-color: #038261;
+  border-color: #038261;
 }
 #flexCheckChecked:focus-visible {
   box-shadow: none;
@@ -2720,7 +2720,7 @@ p{
 .page-item:first-child .page-link {
     border-radius: 5px;
 	  border: none;
-	  background-color: var(--color-4);
+	  background-color: #038261;
     color: var(--color-9);
 }
  .page-link:focus {
@@ -2731,8 +2731,8 @@ p{
  .page-link:hover {
 	z-index: 2;
 	color: #fff;
-	background-color: var(--color-4);
-	border-color: var(--color-4);
+	background-color: #038261;
+	border-color: #038261;
 }
 
 /*==================
@@ -2762,7 +2762,7 @@ courses-list View Page
 }
 .courses-list-view-card-body .courses-text .courses-d-flex-text .compare-img{
   text-decoration: none;
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 6px 16px;
   border-radius: 5px;
   color: var(--color-9);
@@ -2800,7 +2800,7 @@ courses-list View Page
   font-size: 14px;
 }
 .courses-list-view-card-body .courses-card-image .red-heart i{
-  color: var(--color-4);
+  color: #038261;
 }
 /*================
 course details Page 
@@ -2871,7 +2871,7 @@ margin-right: 8px;
   position: absolute;
   height: 2px;
   width: 0;
-  background-color: var(--color-4);
+  background-color: #038261;
   bottom: -1px;
   left: 0;
   transition: .5s;
@@ -2881,7 +2881,7 @@ margin-right: 8px;
   width: 100%; 
 }
 .course-decription li .nav-link:hover{
-  color: var(--color-4);
+  color: #038261;
 }
 
 .course-left-side .nav-tabs .nav-item.show .nav-link,
@@ -3016,8 +3016,8 @@ margin-right: 8px;
 .course-right-section .button a{
   text-decoration: none;
   background-color: var(--bg-white-2);
-  border: 1.5px solid var(--color-4);
-  color:  var(--color-4);
+  border: 1.5px solid #038261;
+  color:  #038261;
   text-align: center;
   border-radius: 10px;
   margin-top: 14px;
@@ -3027,7 +3027,7 @@ margin-right: 8px;
   transition: .5s;
 }
 .course-right-section .button a:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
 }
 .course-right-section .course-card .enrol:last-child{
@@ -3081,7 +3081,7 @@ margin-right: 8px;
   font-size: 14px;
 }
 .courses-card-image .red-heart i {
-  color: var(--color-4);
+  color: #038261;
 }
 .course-details-card{
   background-color: var(--bg-white);
@@ -3242,7 +3242,7 @@ margin-right: 8px;
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: var(--color-4);
+  background-color: #038261;
   bottom: -6px;
   left: 0;
   transition: .5s;
@@ -3281,7 +3281,7 @@ margin-right: 8px;
 }
 .student-feed-back-text a{
   text-decoration: none;
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 7px 18px;
   border-radius: 5px;
   color: #fff;
@@ -3350,7 +3350,7 @@ margin-right: 8px;
   color: #68768B;
 }
 .comment #exampleFormControlInput1:focus-visible {
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .single-input label{ 
  font-size: 14px;
@@ -3358,7 +3358,7 @@ margin-right: 8px;
  color: var(--color-6);
 }
 .message-btn{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
   padding: 10px 20px;
   border-radius: 7px;  
@@ -3684,7 +3684,7 @@ Trams & condition
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--color-4);
+  background-color: #038261;
   left: -18px;
   top: 6px;
 }
@@ -3841,14 +3841,14 @@ Trams & condition
   width: 1.5px;
   height: 100%;
   position: absolute;
-  background-color: var(--color-4);
+  background-color: #038261;
   left: 0px;
   opacity: 0;
   transition: .5s;
 }
 .blog-body .right-section .categories ul li a:hover{
   padding-left: 15px;
-  color: var(--color-4);
+  color: #038261;
   font-weight: 600;
 }
 .blog-body .right-section .categories ul li a:hover:after{
@@ -3972,7 +3972,7 @@ Sign Up Page
   width: 100%;
   margin-top: 30px;
   margin-left: 0;
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 12px 30px;
   color: var(color-9);
   margin-bottom: 30px;
@@ -4027,7 +4027,7 @@ Sign Up Page
   margin-left: 0;
   margin-bottom: 50px;
   padding: 11px 20px;
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .sing-up-right .social-media .btn:hover {
   background-color: var(--bg-white-2);
@@ -4047,7 +4047,7 @@ Sign Up Page
   color: var(--color-1);
   width: 44px;
   border: none;
-  border-bottom: 2px solid var(--color-4);
+  border-bottom: 2px solid #038261;
   background-color: transparent;
   display: inline;
   margin: 0px 21px 8px 2px;
@@ -4056,7 +4056,7 @@ Sign Up Page
   border: 1.5px solid #6e798a45;
   margin-top: 0px;
   margin-left: 0;
-  background-color: var(--color-4);
+  background-color: #038261;
   margin-bottom: 30px;
   padding: 12px 14px 12px 14px;
 }
@@ -4112,7 +4112,7 @@ Sign Up Page
 }
 .instructor-1 .instructor-about .pro-heading .name a{
   text-decoration: none;
-  color: var(--color-4);
+  color: #038261;
 }
 .instructor-1 .instructor-about .pro-heading .name p{
   font-size: 14px;
@@ -4172,7 +4172,7 @@ Sign Up Page
   display: inline-block;
 }
 .instructor-1 .instructor-about .about-text ul li a:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
 }
 
@@ -4207,7 +4207,7 @@ Sign Up Page
 .instructor-1 .instructor-about .skill .skill-point .skill-point-1 h1 {
 	font-size: 36px;
 	font-weight: 600;
-	color: var(--color-4);
+	color: #038261;
 }
 .instructor-1 .instructor-about .skill .skill-point .skill-point-1 h4{
   font-size: 15px;
@@ -4235,7 +4235,7 @@ Sign Up Page
   border-bottom: none;
 }
 .instructon-contact .instructon-icon i{
-  color: var(--color-4);
+  color: #038261;
   font-size: 27px;
   margin: 8px 30px 12px 17px;
 }
@@ -4265,13 +4265,13 @@ Sign Up Page
   margin-right: 10px;
 }
 .instructor-right .instructor-msg .btn{
-  background-color: var(--color-4);
+  background-color: #038261;
   width: 100%;
   margin-top: 30px;
   margin-left: 0;
 }
 .instructor-right .instructor-msg .btn:hover{
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .instructor-right .instructor-msg .btn-primary{
   padding: 14px 0;
@@ -4353,7 +4353,7 @@ Sign Up Page
   font-size: 17px;
 }
 .wish-list-course .my-cosre:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .wish-list-course .my-cosre:hover i,
 .wish-list-course .my-cosre:hover a{
@@ -4420,7 +4420,7 @@ Sign Up Page
 }
 .message .conversation .conversation-1 a{
   text-decoration: none;
-  color: var(--color-4);
+  color: #038261;
   font-size: 13px;
   font-weight: 700;
   transition: .5s;
@@ -4658,7 +4658,7 @@ Sign Up Page
   position: relative;
 }
 .conversation-sending .sending{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: var(--color-9);
   padding: 9px 19px;
   position: absolute;
@@ -4875,7 +4875,7 @@ tbody, td, tfoot, th, thead, tr:last-child{
  
  }
  .profile .profile-parrent .profile-child-btn a:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
  }
  .profile-input-1{
@@ -5152,7 +5152,7 @@ Price Page start
 .price-card .price-card-full-body  .price-btn a{
   text-decoration: none;
   color: #fff;
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 14px 54px;
   border-radius: 10px;
   font-size: 15px;
@@ -5163,22 +5163,22 @@ Price Page start
   margin-bottom: 40px;
 }
 .price-card-full-body:hover{
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .price-card-full-body:hover .price-card-heading a{
-  color: var(--color-4);
+  color: #038261;
 }
 .price-card-full-body:hover .ammount {
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .price-card-full-body:hover .ammount h6{
- color: var(--color-4);
+ color: #038261;
 }
 .price-card-full-body:hover .ammount h1{
-  color: var(--color-4);
+  color: #038261;
 }
 .price-card-full-body:hover .ammount h5{
-  color: var(--color-4);
+  color: #038261;
 }
 /*====================
   contact page start
@@ -5236,7 +5236,7 @@ Price Page start
   margin-bottom: 32px;
 }
 .contact-page .office-hour .icon i{
-  color: var(--color-4);
+  color: #038261;
   margin-right: 20px;
   font-size: 16px;
 }
@@ -5282,7 +5282,7 @@ Price Page start
 .form-section .form-btn a{
   text-decoration:none;
   color: var(--color-9);
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 14px 35px;
   border-radius: 7px;
   font-size: 15px;
@@ -5390,7 +5390,7 @@ Price Page start
 .cart-total .cart-total-btn a{
   text-decoration: none;
   color: var(--color-9);
-  background-color: var(--color-4);
+  background-color: #038261;
   border-radius: 10px;
   padding: 14px 37px;
   font-size: 14px;
@@ -5485,14 +5485,14 @@ Price Page start
   margin-bottom: 30px;
 }
 .check-out-contact #exampleFormControlInput1:focus-visible {
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .check-out-contact .form-select:focus-visible{
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 .payment-imformation-card .form-check-input:checked {
-  background-color: var(--color-4);
-  border-color: var(--color-4);
+  background-color: #038261;
+  border-color: #038261;
   padding: 12px;
   border-radius: 50%;
 }
@@ -5534,7 +5534,7 @@ Price Page start
     margin-bottom: 30px;
 }
 .payment-imformation-card:hover{
-  border-color:  var(--color-4);
+  border-color:  #038261;
 }
 
 .check-out-contact .date-control .form-control {
@@ -5557,7 +5557,7 @@ Price Page start
   margin-bottom: 30px;
 }
 .check-out-contact #exampleFormControlInput2:focus-visible {
-  border-color: var(--color-4);
+  border-color: #038261;
 }
 
 .payment-imformation-card .form-check #flexCheckDefault{
@@ -5601,7 +5601,7 @@ Price Page start
   font-weight: 600;
 }
 .invoice-no .invoice-color{
-  color: var(--color-4);
+  color: #038261;
   margin-right: 6px;
 }
 .invoice-heading{
@@ -5619,7 +5619,7 @@ Price Page start
 .invoice-bill .invoice-total h2{
   font-size: 30px;
   font-weight: 600;
-  color: var(--color-4);
+  color: #038261;
 }
 .invoice-bill h6{
   font-weight: 500;
@@ -5636,7 +5636,7 @@ Price Page start
 .invoice-bill::after{
   content: '';
   position: absolute;
-  background-color: var(--color-4);
+  background-color: #038261;
   height: 4px;
   width: 100%;
   bottom: 0;
@@ -5645,7 +5645,7 @@ Price Page start
 .invoice-dec h6{
   font-size: 15px;
   font-weight: 500;
-  color: var(--color-4);
+  color: #038261;
 }
 .invoice-dec p{
   font-size: 15px;
@@ -5660,7 +5660,7 @@ Price Page start
 .invoice-dec .print-btn a {
 	text-decoration: none;
 	color: var(--color-9);
-	background-color: var(--color-4);
+	background-color: #038261;
 	padding: 11px 33px;
 	border-radius: 5px;
 	font-size: 15px;
@@ -5722,7 +5722,7 @@ Price Page start
   font-weight: 400;
 }
 .invoice-2 .invoice-bill h2 span{
-  color: var(--color-4);
+  color: #038261;
 }
 .invoice-2 .invoice-total .invoice-no-2{
   display: flex;
@@ -5756,7 +5756,7 @@ Price Page start
   display: none;
 }
 .invoice-2-table-head{
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .invoice-2-table-head h6{
   color: var(--color-9);
@@ -5776,7 +5776,7 @@ Price Page start
 .invoice-2-payment h5{
   font-size: 15px;
   font-weight: 600;
-  color: var(--color-4);
+  color: #038261;
   margin-top: 30px;
   margin-bottom: 16px;
 }
@@ -5850,7 +5850,7 @@ Price Page start
 .about-us h3{
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-4);
+  color: #038261;
   margin-bottom: 20px;
 }
 .about-us h1{
@@ -6335,7 +6335,7 @@ Compare Page Start
 .compare-card .empty-card{
   height: 340px;
   width: 100%;
-  border: 1.5px solid var(--color-4);
+  border: 1.5px solid #038261;
   border-radius: 10px;
 }
 .compare-card .empty-card .icon {
@@ -6347,7 +6347,7 @@ Compare Page Start
 .compare-card .empty-card .icon a{
   text-decoration: none;
   color: #fff;
-  background-color: var(--color-4);
+  background-color: #038261;
   border-radius: 50%;
   padding: 9px 15px;
   font-size: 21px;
@@ -6585,7 +6585,7 @@ Compare Page Start
 Compare page-2 
 ===================*/
 .compare-2 .compare-2-table{
-  border: 1px solid var(--color-4);
+  border: 1px solid #038261;
   border-radius: 10px;
   padding: 8px 30px;
   overflow: auto;
@@ -7595,7 +7595,7 @@ Privacy Policy
   margin-top: 8px;
 }
 .my-course-1-last  .my-course-1-btn .btn{
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 5px 28px;
   display: block;
 }
@@ -7653,7 +7653,7 @@ Privacy Policy
 
 .skill-bar {
   height: 5px;
-  background-color: var(--color-4);
+  background-color: #038261;
   border-radius: 10px;
   margin-right: 10px;
   width: 0;
@@ -7797,7 +7797,7 @@ Privacy Policy
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .s_Sidebar_one .title h4{
   font-size: 18px;
@@ -7823,7 +7823,7 @@ Privacy Policy
   left: 0;
   width: 32px;
   height: 2px;
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .s_Sidebar_checkbox_one input{
   margin-top: 5px;
@@ -7831,7 +7831,7 @@ Privacy Policy
   box-shadow: 0 0 0 #00000000 !important;
 }
 .s_Sidebar_checkbox_one input:checked ~ label{
-  color: var(--color-4);
+  color: #038261;
 }
 .s_Sidebar_checkbox_one label{
   font-size: 12px;
@@ -7849,7 +7849,7 @@ Privacy Policy
   transition: all 0.3s;
 }
 .s_Sidebar_checkbox_one:has(input:checked) ~ span.no{
-  color: var(--color-4);
+  color: #038261;
 }
 .s_course_item_one{
   padding: 20px;
@@ -7907,7 +7907,7 @@ Privacy Policy
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: var(--color-4);
+  background-color: #038261;
 }
 .s_course_item_one .content .info{
   font-size: 12px;
@@ -7941,7 +7941,7 @@ Privacy Policy
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
-  color: var(--color-4) !important;
+  color: #038261 !important;
 }
 .rating-icon{
   display: flex;
@@ -8039,7 +8039,7 @@ text-align: center;
   align-items: center;
   padding: 12px;
   border-radius: 10px;
-  background-color: var(--color-4);
+  background-color: #038261;
   box-shadow: 0 10px 30px rgb(100 121 150 / 20%);
   font-size: 15px;
   font-weight: 600;
@@ -8155,7 +8155,7 @@ text-align: center;
   transition: all 0.3s;
 }
 .instructor_social li a:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff !important;
 }
 .s_list_one li{
@@ -8224,7 +8224,7 @@ display: none;
   align-items: center;
   padding: 14px;
   border-radius: 10px;
-  background-color: var(--color-4);
+  background-color: #038261;
   font-size: 15px;
   font-weight: 600;
   line-height: 15px;
@@ -8362,7 +8362,7 @@ display: none;
 .sTutor-about .item h4{
   font-size: 54px;
   font-weight: 700;
-  color: var(--color-4);
+  color: #038261;
 }
 .sTutor-about .item .info{
   font-size: 15px;
@@ -8417,7 +8417,7 @@ display: none;
   padding: 14px 25px;
   border-radius: 6px;
   border: none;
-  background-color: var(--color-4);
+  background-color: #038261;
   box-shadow: 0 10px 18px rgb(46 31 100 / 0.3);
   font-size: 14px;
   font-weight: 500;
@@ -8488,7 +8488,7 @@ display: none;
   transition: all 0.3s;
 }
 .sSchedule-item.active .date{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
 }
 .schedule-slide-month{
@@ -8507,7 +8507,7 @@ display: none;
 }
 .schedule-slide-month .slick-prev,
 .schedule-slide-month .slick-next{
-  color: var(--color-4);
+  color: #038261;
 }
 .schedule-slide-day .slick-track{
   gap: 0;
@@ -8533,7 +8533,7 @@ display: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-4);
+  background-color: #038261;
   padding: 14px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgb(46 31 100 / 0.1);
@@ -9214,7 +9214,7 @@ display: none;
 }
 
 .popover-btns .purchase-btn {
-	border-color: var(--color-4);
+	border-color: #038261;
 }
 
 /* Homepage 2 */
@@ -9544,7 +9544,7 @@ display: none;
   border: none;
 }
 .course-category .form-control:focus{
-  border-color: var(--color-4) ;
+  border-color: #038261 ;
 }
 
 .form-check-label.active span{
