@@ -10,6 +10,14 @@
         text-overflow: ellipsis; 
         white-space: normal;
     }
+    .EbannerTop .search-option .form-control {
+
+    border: 1px solid #038261;
+
+}
+.popover-btns .purchase-btn {
+    border-color: #038261;
+}
     .enrollBtn {
         background-color: #038261;
     }

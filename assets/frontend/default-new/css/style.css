@@ -3034,8 +3034,11 @@ margin-right: 8px;
   transition: .5s;
 }
 .course-right-section .button a:hover{
-  background-color: var(--color-4);
+  background-color: #038261;
   color: #fff;
+}
+.course-right-section .button a.active {
+  background-color: #038261;
 }
 .course-right-section .course-card .enrol:last-child{
   border: none;
