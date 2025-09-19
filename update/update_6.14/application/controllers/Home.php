@@ -372,7 +372,7 @@ class Home extends CI_Controller
 
 
         $page_data['page_name'] = "instructor_page";
-        $page_data['page_title'] = site_phrase('Educator Profile');
+        $page_data['page_title'] = site_phrase('الملف الشخصي للمعلم');
         $page_data['instructor_id'] = $instructor_id;
         $page_data['earned_badge'] = $earned_badge;
         $page_data['sale_badge'] = $sale_badge;
