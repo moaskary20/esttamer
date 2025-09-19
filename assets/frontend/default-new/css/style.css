@@ -58,7 +58,7 @@
   --color-1 :  #1E293B;
   --color-2 :  #000;
   --color-3 :  #505763;
-  --color-4 :  #754FFE;
+  --color-4 :  #038261;
   --color-5 :  #000;
   --color-6 :  #676C7D;
   --color-7 :  #261954;
@@ -66,10 +66,10 @@
   --color-9 :  #fff;
   --color-10 :  #1E293B;
   --color-11 :   #6E798A;
-  --color-12: #754ffe3a;
+  --color-12: #0382613a;
   --color-13: #6D7487;
   --color-14: #212534;
-  --color-15: #754ffe58;
+  --color-15: #03826158;
   --color-16:  #6e798aab;
   --color-17 :  #0080FF;
   --hover-color :  #f2f3f5;
@@ -581,7 +581,7 @@ p{
   height: 18px;
 }
 .menu_pro_tgl_bg ul li:hover a{
-  color: #754FFE;
+  color: #038261;
   margin-left: 10px;
   
 }
@@ -598,7 +598,7 @@ p{
   position: absolute;
   height: 100%;
   width: 3px;
-  background-color: #754FFE;
+  background-color: #038261;
   top: 0;
   left: 0;
  
