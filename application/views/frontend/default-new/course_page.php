@@ -35,7 +35,7 @@ if ($number_of_ratings > 0) {
                                 <div class="col-12 course-heading-info">
                                     <div class="info-tag eInfo">
                                         <img loading="lazy" width="30px" height="30px" class="rounded-circle object-fit-cover me-2" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']); ?>">
-                                        <p class="me-1 f-14"><?php echo get_phrase('created_by'); ?></p>
+                                        <p class="me-1 f-14"><?php echo get_phrase('بواسطة'); ?></p>
                                         <p>
                                             <a class="created-by-instructor" href="<?php echo site_url('home/instructor_page/' . $course_details['creator']); ?>"><?php echo $instructor_details['first_name'] . ' ' . $instructor_details['last_name']; ?></a>
                                         </p>
@@ -51,7 +51,7 @@ if ($number_of_ratings > 0) {
                                                         <li class="me-0"><i class="fa-solid fa-star text-shadow text-15px  mt-7px"></i></li>
                                                     <?php endif; ?>
                                                 <?php endfor; ?>
-                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . get_phrase('reviews'); ?>)</p>
+                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . get_phrase('مشاهدات'); ?>)</p>
                                             </ul>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@ if ($number_of_ratings > 0) {
                                     <div class="info-tag">
                                         <?php if ($course_duration) : ?>
                                             <i class="fa-regular fa-clock text-15px mt-7px me-2"></i>
-                                            <p class="text-15px mt-1"><?php echo $course_duration . ' ' . get_phrase('hours'); ?></p>
+                                            <p class="text-15px mt-1"><?php echo $course_duration . ' ' . get_phrase('ساعات'); ?></p>
                                         <?php endif; ?>
                                     </div>
                                     <div class="info-tag">
@@ -70,7 +70,7 @@ if ($number_of_ratings > 0) {
                                             <path d="M13.7546 15.5625C13.4921 15.5625 13.2596 15.3825 13.2071 15.1125C13.1471 14.805 13.3421 14.5125 13.6421 14.445C14.1146 14.3475 14.5496 14.16 14.8871 13.8975C15.3146 13.575 15.5471 13.17 15.5471 12.7425C15.5471 12.315 15.3146 11.91 14.8946 11.595C14.5646 11.34 14.1521 11.16 13.6646 11.0475C13.3646 10.98 13.1696 10.68 13.2371 10.3725C13.3046 10.0725 13.6046 9.87751 13.9121 9.94501C14.5571 10.0875 15.1196 10.3425 15.5771 10.695C16.2746 11.22 16.6721 11.9625 16.6721 12.7425C16.6721 13.5225 16.2671 14.265 15.5696 14.7975C15.1046 15.1575 14.5196 15.42 13.8746 15.5475C13.8296 15.5625 13.7921 15.5625 13.7546 15.5625Z" fill="#0D0C23"/>
                                             </svg>
 
-                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments . ' ' . get_phrase('enrolled'); ?></p>
+                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments . ' ' . get_phrase('مشترك'); ?></p>
                                     </div>
 
                                 </div>
@@ -95,7 +95,7 @@ if ($number_of_ratings > 0) {
                                             </svg>
 
                                        </p>
-                                        <p class="f-14 mt-1 me-1"><?php echo get_phrase('last_updated'); ?></p>
+                                        <p class="f-14 mt-1 me-1"><?php echo get_phrase('اخر تحديث'); ?></p>
                                         <p class="f-14 mt-1">
                                             <?php if ($course_details['last_modified'] > 0) : ?>
                                                 <?php echo date('D, d-M-Y', $course_details['last_modified']); ?>
@@ -133,7 +133,7 @@ if ($number_of_ratings > 0) {
                                 </svg>
 
 
-                                <span class="ms-1"><?php echo get_phrase('overview'); ?></span></button>
+                                <span class="ms-1"><?php echo get_phrase('الملخص'); ?></span></button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#الدروس" type="button" role="tab" aria-controls="الدروس" aria-selected="false">
