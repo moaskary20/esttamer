@@ -9,12 +9,12 @@
     <ul class="menu-offcanves">
       <li>
         <div class="search-item">
-          <span class="m-cross-icon"><i class="fa-solid fa-xmark"></i></span>
-          <span class="m-search-icon"> <i class="fa-solid fa-search"></i></span>
+          <span class="m-cross-icon" style="font-size: 1.5rem; cursor:pointer;">×</span>
+          <span class="m-search-icon" style="font-size: 1.3rem; cursor:pointer;">🔍</span>
         </div>
       </li>
       <li>
-  <a href="#" class="btn-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-list"></i></a>
+  <a href="#" class="btn-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" style="font-size:1.5rem;">☰</a>
       </li>
     </ul>
 
