@@ -129,7 +129,7 @@
                         <span id="check_gift_user_message" class="text-12px"></span>
                     </div>
                     <div class="cart-total-btn mt-3">
-                        <button id="payment-button" type="submit" class="btn btn-primary px-2 w-100"><?php echo get_phrase('Continue to Payment') ?></button>
+                        <button id="payment-button" type="submit" class="btn btn-primary px-2 w-100"><?php echo get_phrase('متابعة الدفع') ?></button>
                     </div>
                 </form>
             <?php endif; ?>
