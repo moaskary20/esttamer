@@ -338,7 +338,7 @@ if ($number_of_ratings > 0) {
                         <div class="button">
                             <?php $cart_items = $this->session->userdata('cart_items'); ?>
                             <?php if (is_purchased($course_details['id'])) : ?>
-                                <a href="<?php echo site_url('home/lesson/' . slugify($course_details['title']) . '/' . $course_details['id']) ?>"><i class="far fa-play-circle"></i> <?php echo get_phrase('Start Now'); ?></a>
+                                <a href="<?php echo site_url('home/lesson/' . slugify($course_details['title']) . '/' . $course_details['id']) ?>"><i class="far fa-play-circle"></i> <?php echo get_phrase('ابدأ الآن'); ?></a>
                                 <?php if ($course_details['is_free_course'] != 1) : ?>
                                     <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id'] . '?gift=1'); ?>')"><i class="fas fa-gift"></i> <?php echo get_phrase('Gift someone else'); ?></a>
                                 <?php endif; ?>
@@ -505,7 +505,7 @@ if ($number_of_ratings > 0) {
                                         </div>
                                         <div class="courses-price-right ">
                                           <?php if(is_purchased($course['id'])): ?>
-                                                <span class="enrollBtn"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
+                                                <span class="enrollBtn"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('ابدأ الآن'); ?></span>
                                               <?php else: ?>
                                            <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                            <?php endif; ?>

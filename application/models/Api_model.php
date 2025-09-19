@@ -590,7 +590,7 @@ class Api_model extends CI_Model
 	    return $response;
   	}
 
-	// My Courses
+	// دوراتىs
 	public function my_courses_get($user_id = "")
 	{
 		$my_courses = array();

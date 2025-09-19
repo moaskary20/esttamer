@@ -17,7 +17,7 @@ $unreaded_message = $this->db->get('message')->num_rows();
     <div class="wish-list-course">
         <a class="btn-profile-menu <?php if($page_name == 'my_courses') echo 'active'; ?>" href="<?php echo site_url('home/my_courses'); ?>">
             <i class="fa-solid fa-book-open-reader me-2"></i>
-            <?php echo get_phrase('My Courses'); ?>
+            <?php echo get_phrase('دوراتىs'); ?>
         </a>
 
         <?php if (addon_status('course_bundle')) : ?>

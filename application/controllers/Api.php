@@ -244,7 +244,7 @@ class Api extends REST_Controller {
     $this->set_response($course, REST_Controller::HTTP_OK);
   }
   //Protected APIs. This APIs will require Authorization.
-  // My Courses API
+  // دوراتىs API
   public function my_courses_get() {
     $response = array();
     $auth_token = $_GET['auth_token'];
@@ -258,7 +258,7 @@ class Api extends REST_Controller {
     return $this->set_response($response, REST_Controller::HTTP_OK);
   }
 
-  // My Courses API
+  // دوراتىs API
   public function my_wishlist_get() {
     $response = array();      
     $auth_token = $_GET['auth_token'];

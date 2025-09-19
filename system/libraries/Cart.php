@@ -38,11 +38,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Shopping Cart Class
+ * عربة التسوق Class
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
- * @category	Shopping Cart
+ * @category	عربة التسوق
  * @author		EllisLab Dev Team
  * @link		https://codeigniter.com/user_guide/libraries/cart.html
  * @deprecated	3.0.0	This class is too specific for CI.
@@ -91,7 +91,7 @@ class CI_Cart {
 	/**
 	 * Shopping Class Constructor
 	 *
-	 * The constructor loads the Session class, used to store the shopping cart contents.
+	 * The constructor loads the Session class, used to store the عربة التسوق contents.
 	 *
 	 * @param	array
 	 * @return	void
@@ -107,7 +107,7 @@ class CI_Cart {
 		// Load the Sessions class
 		$this->CI->load->driver('session', $config);
 
-		// Grab the shopping cart array from the session table
+		// Grab the عربة التسوق array from the session table
 		$this->_cart_contents = $this->CI->session->userdata('cart_contents');
 		if ($this->_cart_contents === NULL)
 		{

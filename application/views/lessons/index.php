@@ -117,7 +117,7 @@ if($language_dirs){
 				</a>
 			<?php else: ?>
 				<a href="<?php echo site_url('home/my_courses'); ?>" class="btn btn-outline-secondary">
-					<span class="d-none d-sm-inline-block"><?php echo get_phrase('My Courses'); ?></span>
+					<span class="d-none d-sm-inline-block"><?php echo get_phrase('دوراتىs'); ?></span>
 					<i class="fas fa-angle-right ms-1 me-1"></i>
 				</a>
 			<?php endif; ?>

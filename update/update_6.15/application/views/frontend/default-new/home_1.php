@@ -200,7 +200,7 @@
                                         </div>
                                         <div class="courses-price-right ">
                                              <?php if(is_purchased($top_course['id'])): ?>
-                                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($top_course['title']).'/'.$top_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
+                                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($top_course['title']).'/'.$top_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('ابدأ الآن'); ?></span>
                                             <?php else: ?>
                                                 <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                             <?php endif; ?>
@@ -275,7 +275,7 @@
                             <div class="popover-btns">
                                 <?php $cart_items = $this->session->userdata('cart_items'); ?>
                                 <?php if(is_purchased($top_course['id'])): ?>
-                                    <a href="<?php echo site_url('home/lesson/'.slugify($top_course['title']).'/'.$top_course['id']) ?>" class="purchase-btn d-flex align-items-center  me-auto"><i class="far fa-play-circle me-2"></i> <?php echo get_phrase('Start Now'); ?></a>
+                                    <a href="<?php echo site_url('home/lesson/'.slugify($top_course['title']).'/'.$top_course['id']) ?>" class="purchase-btn d-flex align-items-center  me-auto"><i class="far fa-play-circle me-2"></i> <?php echo get_phrase('ابدأ الآن'); ?></a>
                                     <?php if ($top_course['is_free_course'] != 1) : ?>
                                         <button type="button" class="gift-btn ms-auto" title="<?php echo get_phrase('Gift someone else'); ?>" data-bs-toggle="tooltip" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $top_course['id'].'?gift=1'); ?>')"><i class="fas fa-gift"></i></button>
                                     <?php endif; ?>
@@ -501,7 +501,7 @@
                                         </div>
                                         <div class="courses-price-right ">
                                             <?php if(is_purchased($latest_course['id'])): ?>
-                                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($latest_course['title']).'/'.$latest_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
+                                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($latest_course['title']).'/'.$latest_course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('ابدأ الآن'); ?></span>
                                             <?php else: ?>
                                                 <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                             <?php endif; ?>
@@ -577,7 +577,7 @@
                             <div class="popover-btns">
                                 <?php $cart_items = $this->session->userdata('cart_items'); ?>
                                 <?php if(is_purchased($latest_course['id'])): ?>
-                                    <a href="<?php echo site_url('home/lesson/'.slugify($latest_course['title']).'/'.$latest_course['id']) ?>" class="purchase-btn d-flex align-items-center  me-auto"><i class="far fa-play-circle me-2"></i> <?php echo get_phrase('Start Now'); ?></a>
+                                    <a href="<?php echo site_url('home/lesson/'.slugify($latest_course['title']).'/'.$latest_course['id']) ?>" class="purchase-btn d-flex align-items-center  me-auto"><i class="far fa-play-circle me-2"></i> <?php echo get_phrase('ابدأ الآن'); ?></a>
                                     <?php if ($latest_course['is_free_course'] != 1) : ?>
                                         <button type="button" class="gift-btn ms-auto" title="<?php echo get_phrase('Gift someone else'); ?>" data-bs-toggle="tooltip" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $latest_course['id'].'?gift=1'); ?>')"><i class="fas fa-gift"></i></button>
                                     <?php endif; ?>
@@ -630,8 +630,8 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('Our Expert Instructor ') ?></h1>
-                <p class="text-center mt-4 mb-30"><?php echo get_phrase('They efficiently serve large number of students on our platform') ?></p>
+                <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('مدربنا الخبير ') ?></h1>
+                <p class="text-center mt-4 mb-30"><?php echo get_phrase('إنهم يخدمون عددًا كبيرًا من الطلاب على منصتنا بكفاءة') ?></p>
             </div>
             <div class="col-lg-3 "></div>
         </div>

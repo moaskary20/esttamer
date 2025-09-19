@@ -88,7 +88,7 @@
                                 </span>
                                </div>
                                <?php if(is_purchased($course['id'])): ?>
-                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($course['title']).'/'.$course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('Start Now'); ?></span>
+                                <span class="enrollBtn checkPropagation" onclick="redirectTo('<?php echo site_url('home/lesson/'.slugify($course['title']).'/'.$course['id']) ?>');"><i class="far fa-play-circle text-white"></i> <?php echo get_phrase('ابدأ الآن'); ?></span>
                                 <?php else: ?>
                                     <span class="enrollBtn"><?php echo site_phrase('سجل الآن')?></span>
                                 <?php endif; ?>

@@ -120,7 +120,7 @@
                                 $('#gift_email').prop('required', true);
                             }"
                             value="1" <?php if(isset($_GET['gift'])) echo 'checked'; ?>>
-                        <label for="is_gift" class="ms-2 text-14px"><?php echo get_phrase('Send as a gift') ?></label>
+                        <label for="is_gift" class="ms-2 text-14px"><?php echo get_phrase('أرسل كهدية') ?></label>
                     </div>
                     <div id="gift_email_section" class="<?php if(isset($_GET['gift'])): else:echo 'd-hidden'; endif; ?>">
                         <div class="input-group mb-0">

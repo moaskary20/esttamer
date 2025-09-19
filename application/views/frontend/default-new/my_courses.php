@@ -97,7 +97,7 @@
                                                 <?php else: ?>
                                                     <a class="btn btn-primary text-14px py-1" href="<?php echo site_url('home/lesson/'.slugify($course_details['title']).'/'.$course_details['id']) ?>">
                                                         <i class="far fa-play-circle"></i>
-                                                        <?php echo get_phrase('Start Now'); ?>
+                                                        <?php echo get_phrase('ابدأ الآن'); ?>
                                                     </a>
                                                 <?php endif; ?>
                                             </div>

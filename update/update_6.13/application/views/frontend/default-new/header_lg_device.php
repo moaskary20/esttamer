@@ -232,7 +232,7 @@
       <div class="right-menubar ms-auto ">
 
         <?php if($user_login): ?>
-          <li><a class="dropdown-item" href="<?php echo site_url('home/my_courses') ?>"><?php echo site_phrase('My Course') ?></a></li>
+          <li><a class="dropdown-item" href="<?php echo site_url('home/my_courses') ?>"><?php echo site_phrase('دوراتى') ?></a></li>
         <?php elseif($admin_login): ?>
           <li><a class="dropdown-item" href="<?php echo site_url('admin'); ?>"><?php echo get_phrase('Administration') ?></a></li>           
         <?php endif; ?>
