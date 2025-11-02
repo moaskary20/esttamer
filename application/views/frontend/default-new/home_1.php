@@ -201,22 +201,65 @@ for ($i = 1; $i <= 3; $i++) {
         </div>
 
         <div class="row mt-5 justify-content-center gx-4">
-            <?php foreach($home_cards as $idx => $card): $type = 'type-'.($idx+1);?>
-                <div class="col-lg-4 col-md-6 mb-4 wow animate__animated animate__fadeIn" data-wow-duration="800" data-wow-delay="<?php echo 200 + ($idx*100); ?>">
-                    <div class="hm-card <?php echo $type; ?>">
-                        <div class="card-image text-center">
-                            <img loading="lazy" src="<?php echo $card['image']; ?>" alt="<?php echo htmlspecialchars($card['title']); ?>" class="card-img">
+            <div class="col-12 position-relative">
+                <button class="btn btn-sm btn-light hm-prev" style="position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:10;border-radius:50%;">&larr;</button>
+                <button class="btn btn-sm btn-light hm-next" style="position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:10;border-radius:50%;">&rarr;</button>
+
+                <div class="hm-carousel-row d-flex overflow-hidden" style="scroll-behavior:smooth;">
+                    <?php
+                    // If admin provided explicit home cards, use them; otherwise use a default list requested by the user.
+                    $provided_cards = $home_cards;
+                    $default_titles = [
+                        'علاج النطق و اللغة',
+                        'السمع و التأهيل السمعي',
+                        'العلاج الوظيفي',
+                        'العلاج الطبيعي',
+                        'طب الأسرة و المهارات الوالدية'
+                    ];
+
+                    // Build final cards list: prefer provided settings, then defaults
+                    $final_cards = [];
+                    if (!empty($provided_cards)) {
+                        foreach ($provided_cards as $c) $final_cards[] = $c;
+                    }
+                    // Append defaults if less than needed
+                    foreach ($default_titles as $i => $t) {
+                        if (count($final_cards) >= 6) break;
+                        $final_cards[] = array(
+                            'title' => $t,
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h'.((($i)%3)+1).'.svg'),
+                            'link' => site_url('home')
+                        );
+                    }
+
+                    // Try to resolve links to category pages when category with same name exists
+                    foreach ($final_cards as $idx => $card) :
+                        $title = $card['title'];
+                        // search category by name
+                        $category = $this->db->get_where('category', array('name' => $title))->row_array();
+                        $link = $card['link'];
+                        if (!empty($category) && isset($category['slug'])) {
+                            $link = site_url('home/courses?category=' . $category['slug']);
+                        }
+                    ?>
+                        <div class="hm-item" style="flex:0 0 calc(100%/3);max-width:calc(100%/3);padding:0 12px;box-sizing:border-box;">
+                            <div class="hm-card <?php echo 'type-'.((($idx)%3)+1); ?>">
+                                <div class="card-image text-center">
+                                    <img loading="lazy" src="<?php echo $card['image']; ?>" alt="<?php echo htmlspecialchars($card['title']); ?>" class="card-img">
+                                </div>
+                                <div class="card-sep"></div>
+                                <h4><?php echo $card['title']; ?></h4>
+                                <?php if($card['subtitle'] != ''): ?><p><?php echo $card['subtitle']; ?></p><?php endif; ?>
+                                <a href="<?php echo $link; ?>" class="cta mt-auto">
+                                    <span class="icon"><i class="far fa-play-circle"></i></span>
+                                    <span><?php echo get_phrase('ابدأ الآن'); ?></span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-sep"></div>
-                        <h4><?php echo $card['title']; ?></h4>
-                        <?php if($card['subtitle'] != ''): ?><p><?php echo $card['subtitle']; ?></p><?php endif; ?>
-                        <a href="<?php echo $card['link']; ?>" class="cta mt-auto">
-                            <span class="icon"><i class="far fa-play-circle"></i></span>
-                            <span><?php echo get_phrase('ابدأ الآن'); ?></span>
-                        </a>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </section>
