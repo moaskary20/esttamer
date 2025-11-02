@@ -358,6 +358,39 @@ for ($i = 1; $i <= 3; $i++) {
     </div>
 </section>
 
+<!-- قسم تحميل التطبيق -->
+<section class="app-download-section py-5" style="background: linear-gradient(180deg, #f3fbfa 0%, #ffffff 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center">
+                <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/h-banner-img.png'); ?>" alt="app preview" style="max-width:100%;height:auto;box-shadow:0 20px 50px rgba(3,130,97,0.06);border-radius:18px;">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="f-36" style="color:#1f6b64;">حمل تطبيق منصه استمر الآن</h2>
+                <p class="text-muted" style="font-size:18px;">احصل على مزايا إضافية مثل التحدث مع الأخصائي عبر خاصية الدردشة، بالإضافة إلى سهولة حجز وحضور الجلسات عبر تحميلك لتطبيق منصه استمر.</p>
+
+                <div style="margin-top:22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                    <a href="#" class="app-badge d-inline-flex align-items-center" style="background:#000;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;">
+                        <i class="fab fa-google-play" style="font-size:20px;margin-right:10px"></i>
+                        <div style="text-align:left;line-height:1">
+                            <div style="font-size:12px;opacity:0.8">GET IT ON</div>
+                            <div style="font-weight:700">Google Play</div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="app-badge d-inline-flex align-items-center" style="background:#000;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;">
+                        <i class="fab fa-apple" style="font-size:20px;margin-right:10px"></i>
+                        <div style="text-align:left;line-height:1">
+                            <div style="font-size:12px;opacity:0.8">Download on the</div>
+                            <div style="font-weight:700">App Store</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
 <section class="courses eTopcourse Ecourse grid-view-body pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
