@@ -18,7 +18,7 @@
       </li>
     </ul>
 
-    <div class="navbar-collapse" id="navbarSupportedContent">
+  <div class="navbar-collapse show d-flex" id="navbarSupportedContent" aria-expanded="true" style="display:flex !important;">
       <?php $custom_page_menus = $this->crud_model->get_custom_pages('', 'header'); ?>
         <?php if($custom_page_menus->num_rows() == 1): ?>
           <?php $header_menu_counter += 1; ?>
