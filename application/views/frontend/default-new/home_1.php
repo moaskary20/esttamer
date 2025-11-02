@@ -142,7 +142,7 @@
 </section>
 <!---------- Banner Section End ---------------->
 
-<!-- Custom Main Services Section (first section after header) -->
+<!-- Custom Main Services Section (styled like provided image) -->
 <?php
 // Build 3 cards from frontend settings when available. Fallbacks are provided.
 $home_cards = array();
@@ -166,25 +166,54 @@ for ($i = 1; $i <= 3; $i++) {
 }
 ?>
 
-<section class="home-main-services pb-100">
+<style>
+    /* Section background and header */
+    .home-main-services-section{background:#3f7a71;padding:60px 0;direction:rtl}
+    .home-main-services-section .section-title h1{color:#fff;font-weight:700;margin-bottom:8px}
+    .home-main-services-section .section-title p{color:#e7efeceb;margin:0 0 28px}
+
+    /* Cards layout */
+    .hm-card{border-radius:12px;padding:36px 26px;display:flex;flex-direction:column;align-items:center;min-height:420px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .hm-card .card-img{max-width:260px;width:100%;height:auto;margin-bottom:18px}
+    .hm-card .card-sep{width:70%;height:1px;background:rgba(0,0,0,0.06);margin:18px 0}
+    .hm-card h4{font-size:20px;color:#1e2a2a;margin-bottom:10px;font-weight:700}
+    .hm-card p{color:#6b6b6b;margin-bottom:22px}
+    .hm-card .cta{display:inline-flex;align-items:center;gap:8px;color:#2f7f74;text-decoration:none;font-weight:600}
+    .hm-card.type-1{background:#dff3ee}
+    .hm-card.type-2{background:#dceffb}
+    .hm-card.type-3{background:#f6e0e0}
+
+    /* Button circle */
+    .hm-card .cta .icon{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:2px solid rgba(47,127,116,0.15);color:#2f7f74}
+
+    @media (max-width:991px){
+        .hm-card{min-height:360px}
+    }
+</style>
+
+<section class="home-main-services-section">
     <div class="container">
-        <div class="row justify-content-center wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
-            <div class="col-lg-10 text-center">
-                <h1 class="pt-0 f-36"><?php echo site_phrase('start_learning_from_best_platform'); ?></h1>
-                <p class="mt-3"><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
+        <div class="row justify-content-center section-title text-center">
+            <div class="col-lg-10">
+                <h1 class="f-36"><?php echo site_phrase('start_learning_from_best_platform'); ?></h1>
+                <p><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
             </div>
         </div>
 
-        <div class="row mt-5 justify-content-center">
-            <?php foreach($home_cards as $card): ?>
-                <div class="col-lg-4 col-md-6 mb-4 wow  animate__animated animate__fadeIn" data-wow-duration="800" data-wow-delay="200">
-                    <div class="service-card text-center shadow-sm" style="border-radius:12px; padding:30px; background:#f6f6f6;">
-                        <div class="service-image mb-4">
-                            <img loading="lazy" src="<?php echo $card['image']; ?>" alt="<?php echo $card['title']; ?>" style="max-width:220px; width:100%; height:auto;">
+        <div class="row mt-5 justify-content-center gx-4">
+            <?php foreach($home_cards as $idx => $card): $type = 'type-'.($idx+1);?>
+                <div class="col-lg-4 col-md-6 mb-4 wow animate__animated animate__fadeIn" data-wow-duration="800" data-wow-delay="<?php echo 200 + ($idx*100); ?>">
+                    <div class="hm-card <?php echo $type; ?>">
+                        <div class="card-image text-center">
+                            <img loading="lazy" src="<?php echo $card['image']; ?>" alt="<?php echo htmlspecialchars($card['title']); ?>" class="card-img">
                         </div>
-                        <h4 class="mb-2"><?php echo $card['title']; ?></h4>
-                        <?php if($card['subtitle'] != ''): ?><p class="text-muted mb-3"><?php echo $card['subtitle']; ?></p><?php endif; ?>
-                        <a href="<?php echo $card['link']; ?>" class="btn enrollBtn px-4 py-2 rounded-pill text-white" style="background-color:#2f7f74; border:none;"><?php echo get_phrase('ابدأ الآن'); ?></a>
+                        <div class="card-sep"></div>
+                        <h4><?php echo $card['title']; ?></h4>
+                        <?php if($card['subtitle'] != ''): ?><p><?php echo $card['subtitle']; ?></p><?php endif; ?>
+                        <a href="<?php echo $card['link']; ?>" class="cta mt-auto">
+                            <span class="icon"><i class="far fa-play-circle"></i></span>
+                            <span><?php echo get_phrase('ابدأ الآن'); ?></span>
+                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>
