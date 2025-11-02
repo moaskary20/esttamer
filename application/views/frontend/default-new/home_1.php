@@ -32,6 +32,8 @@
     .courses-card-body:hover .courses-text h5 {
         color: #038261;
     }
+    /* Banner small cards background requested: #dfffe8 */
+    .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
 </style>
 
 
