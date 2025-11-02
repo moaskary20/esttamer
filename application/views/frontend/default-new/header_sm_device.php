@@ -28,6 +28,15 @@
     <div class="offcanvas-body p-0">
       <div class="flex-shrink-0 mt-3">
         <ul class="list-unstyled ps-0">
+          <li>
+            <a href="<?php echo site_url(); ?>" class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500 w-100">الرئيسية</a>
+          </li>
+          <li>
+            <a href="<?php echo site_url('home/about_us'); ?>" class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500 w-100">من نحن</a>
+          </li>
+          <li>
+            <a href="<?php echo site_url('home/contact_us'); ?>" class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500 w-100">الاتصال بنا</a>
+          </li>
           <?php if($user_login): ?>
             <?php if($user_details['is_instructor'] == 1): ?>
               <li><a href="<?php echo site_url('user/dashboard'); ?>" class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500"><i class="fas fa-columns me-2"></i><?php echo site_phrase('Instructor Dashboard'); ?></a></li>

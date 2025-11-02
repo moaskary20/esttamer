@@ -93,6 +93,18 @@
     </ul>
 
   <div class="navbar-collapse show d-flex" id="navbarSupportedContent" aria-expanded="true" style="display:flex !important;">
+      <!-- Primary links: make sure Homepage, About and Contact appear first -->
+      <ul class="navbar-nav main-nav-wrap mb-2 mb-lg-0 me-3">
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-600" href="<?php echo site_url(); ?>">الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-600" href="<?php echo site_url('home/about_us'); ?>">من نحن</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-600" href="<?php echo site_url('home/contact_us'); ?>">الاتصال بنا</a>
+        </li>
+      </ul>
       <?php $custom_page_menus = $this->crud_model->get_custom_pages('', 'header'); ?>
         <?php if($custom_page_menus->num_rows() == 1): ?>
           <?php $header_menu_counter += 1; ?>

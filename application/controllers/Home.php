@@ -1917,6 +1917,13 @@ class Home extends CI_Controller
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
     }
 
+    function about_us()
+    {
+        $page_data['page_name'] = 'about_us';
+        $page_data['page_title'] = 'من نحن';
+        $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
+    }
+
     // function get_remote_video_duration(){
     //     $video_url = 'https://www.w3schools.com/tags/movie.mp4';//$this->input->post('video_url');
     //     $duration_as_seconds = $this->video_model->get_remote_video_duration($video_url);
