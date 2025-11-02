@@ -1,18 +1,76 @@
 <?php $header_menu_counter = 0; ?>
 <nav class="navbar navbar-expand-lg navbar-light">
   <style>
-    /* Keep the Courses dropdown open and horizontal on desktop (>=992px) only */
+    /* Desktop-only: turn the Courses dropdown into a horizontal mega panel */
     @media (min-width: 992px) {
+      /* Make the parent li a positioning context */
+      .open-on-desktop {
+        position: relative;
+        align-items: center;
+      }
+
+      /* Show the dropdown as a horizontal flex panel */
       .open-on-desktop > .navbarHover {
-        display: block !important;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 8px);
+        display: flex !important;
+        flex-wrap: nowrap;
+        gap: 24px;
+        padding: 14px 18px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(13,12,35,0.08);
+        z-index: 1050;
+        min-width: 520px;
+        max-width: 900px;
         opacity: 1 !important;
         visibility: visible !important;
         transform: none !important;
         pointer-events: auto !important;
       }
-      /* Ensure the parent li aligns items horizontally */
-      .open-on-desktop {
+
+      /* Each top-level category becomes a column */
+      .open-on-desktop > .navbarHover > li {
+        list-style: none;
+        position: relative;
+        min-width: 180px;
+        max-width: 260px;
+      }
+
+      .open-on-desktop > .navbarHover > li > a {
+        display: flex;
         align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        color: #0d0c23;
+        font-weight: 600;
+      }
+
+      /* Sub-category menu appears as a block under each column on hover */
+      .open-on-desktop .sub-category-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: calc(100% + 6px);
+        background: #fff;
+        padding: 8px 10px;
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(13,12,35,0.06);
+        min-width: 160px;
+        z-index: 1060;
+      }
+
+      .open-on-desktop > .navbarHover > li:hover .sub-category-menu {
+        display: block !important;
+      }
+
+      /* Small visual tweaks for the links inside sub-category */
+      .open-on-desktop .sub-category-menu li a {
+        display: block;
+        padding: 6px 10px;
+        color: #222;
+        white-space: nowrap;
       }
     }
   </style>
