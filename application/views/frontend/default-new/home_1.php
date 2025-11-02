@@ -142,6 +142,57 @@
 </section>
 <!---------- Banner Section End ---------------->
 
+<!-- Custom Main Services Section (first section after header) -->
+<?php
+// Build 3 cards from frontend settings when available. Fallbacks are provided.
+$home_cards = array();
+for ($i = 1; $i <= 3; $i++) {
+    $title_key = 'home_1_card_' . $i . '_title';
+    $subtitle_key = 'home_1_card_' . $i . '_subtitle';
+    $image_key = 'home_1_card_' . $i . '_image';
+    $link_key = 'home_1_card_' . $i . '_link';
+
+    $title_val = trim(get_frontend_settings($title_key));
+    $subtitle_val = trim(get_frontend_settings($subtitle_key));
+    $image_val = trim(get_frontend_settings($image_key));
+    $link_val = trim(get_frontend_settings($link_key));
+
+    $home_cards[] = array(
+        'title' => $title_val ? site_phrase($title_val) : site_phrase('start_learning_from_best_platform'),
+        'subtitle' => $subtitle_val ? site_phrase($subtitle_val) : '',
+        'image' => $image_val ? base_url('uploads/system/' . $image_val) : base_url('assets/frontend/default-new/image/h'. $i .'.svg'),
+        'link' => $link_val ? $link_val : site_url('home')
+    );
+}
+?>
+
+<section class="home-main-services pb-100">
+    <div class="container">
+        <div class="row justify-content-center wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
+            <div class="col-lg-10 text-center">
+                <h1 class="pt-0 f-36"><?php echo site_phrase('start_learning_from_best_platform'); ?></h1>
+                <p class="mt-3"><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
+            </div>
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+            <?php foreach($home_cards as $card): ?>
+                <div class="col-lg-4 col-md-6 mb-4 wow  animate__animated animate__fadeIn" data-wow-duration="800" data-wow-delay="200">
+                    <div class="service-card text-center shadow-sm" style="border-radius:12px; padding:30px; background:#f6f6f6;">
+                        <div class="service-image mb-4">
+                            <img loading="lazy" src="<?php echo $card['image']; ?>" alt="<?php echo $card['title']; ?>" style="max-width:220px; width:100%; height:auto;">
+                        </div>
+                        <h4 class="mb-2"><?php echo $card['title']; ?></h4>
+                        <?php if($card['subtitle'] != ''): ?><p class="text-muted mb-3"><?php echo $card['subtitle']; ?></p><?php endif; ?>
+                        <a href="<?php echo $card['link']; ?>" class="btn enrollBtn px-4 py-2 rounded-pill text-white" style="background-color:#2f7f74; border:none;"><?php echo get_phrase('ابدأ الآن'); ?></a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+
 
 
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
@@ -149,7 +200,6 @@
 <section class="courses eTopcourse Ecourse grid-view-body pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
     <div class="container">
         <div class="cTitle text-center">
-<h1>mohamed1</h1>
 
             <h1 class="pt-0 f-36"><?php echo site_phrase('top_courses'); ?></h1>
             <p><?php echo site_phrase('These_are_the_most_popular_courses_among_Listen_Courses_learners_worldwide')?></p>
