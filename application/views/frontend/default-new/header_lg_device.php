@@ -509,4 +509,29 @@
     </form>
 
   </div>
+  <script>
+    // Ensure the Courses mega panel is visible on desktop (fallback when CSS is overridden)
+    (function(){
+      function toggleCoursesMega(){
+        var li = document.querySelector('.nav-item.open-on-desktop');
+        if(!li) return;
+        var panel = li.querySelector('.navbarHover');
+        if(!panel) return;
+        if(window.innerWidth >= 992){
+          panel.style.display = 'flex';
+          panel.style.opacity = '1';
+          panel.style.visibility = 'visible';
+          panel.style.pointerEvents = 'auto';
+        } else {
+          // revert to stylesheet behavior on small screens
+          panel.style.display = '';
+          panel.style.opacity = '';
+          panel.style.visibility = '';
+          panel.style.pointerEvents = '';
+        }
+      }
+      document.addEventListener('DOMContentLoaded', toggleCoursesMega);
+      window.addEventListener('resize', toggleCoursesMega);
+    })();
+  </script>
 </nav>
