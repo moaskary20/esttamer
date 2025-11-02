@@ -1159,7 +1159,20 @@ for ($i = 1; $i <= 3; $i++) {
                 <button class="btn btn-sm blog-prev" style="position:absolute;left:0;top:40%;z-index:10;border-radius:50%;">&larr;</button>
                 <button class="btn btn-sm blog-next" style="position:absolute;right:0;top:40%;z-index:10;border-radius:50%;">&rarr;</button>
 
-                <div class="blog-scroll d-flex overflow-auto" style="scroll-behavior:smooth;gap:18px;padding:12px 36px;">
+                <style>
+                    /* Blog scroll: show 3 items on large, 2 on md, 1 on small */
+                    .blog-scroll{scroll-behavior:smooth;gap:18px;padding:12px 36px;}
+                    .blog-scroll .blog-item{flex:0 0 calc((100% - 36px) / 3);max-width:calc((100% - 36px) / 3);box-sizing:border-box}
+                    @media (max-width:991px){
+                        .blog-scroll .blog-item{flex:0 0 calc((100% - 18px) / 2);max-width:calc((100% - 18px) / 2)}
+                    }
+                    @media (max-width:575px){
+                        .blog-scroll{padding:12px}
+                        .blog-scroll .blog-item{flex:0 0 100%;max-width:100%}
+                    }
+                </style>
+
+                <div class="blog-scroll d-flex overflow-auto">
                     <?php foreach($latest_blogs->result_array() as $latest_blog):
                         $user_details = $this->user_model->get_all_user($latest_blog['user_id'])->row_array();
                         $blog_category = $this->crud_model->get_blog_categories($latest_blog['blog_category_id'])->row_array(); ?>
@@ -1208,9 +1221,14 @@ for ($i = 1; $i <= 3; $i++) {
             if(!wrapper) return;
             var prev = document.querySelector('.blog-prev');
             var next = document.querySelector('.blog-next');
-            var step = wrapper.clientWidth * 0.8 || 600;
-            prev && prev.addEventListener('click', function(){ wrapper.scrollBy({left: -step, behavior:'smooth'}); });
-            next && next.addEventListener('click', function(){ wrapper.scrollBy({left: step, behavior:'smooth'}); });
+            // scroll by one "page" (3 items on large screens, 2 on md, 1 on small)
+            function getStep(){
+                var item = wrapper.querySelector('.blog-item');
+                if(!item) return wrapper.clientWidth;
+                return item.getBoundingClientRect().width + 18; // item width + gap
+            }
+            prev && prev.addEventListener('click', function(){ wrapper.scrollBy({left: -getStep(), behavior:'smooth'}); });
+            next && next.addEventListener('click', function(){ wrapper.scrollBy({left: getStep(), behavior:'smooth'}); });
         })();
     </script>
 
