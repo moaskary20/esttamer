@@ -10,9 +10,9 @@
         <div class="row">
             <div class="col-lg-6 col-md-8">
                 <div class="contact-heading">
-                    <h3><?php echo get_phrase('Contact Us') ?></h3>
-                    <p><?php echo get_phrase('Connect with us to experience seamless communication. We value open dialogue and are eager to engage with you. Whether you have questions, ideas, or feedback, we are here to listen and respond.') ?></p>
-                </div>               
+                            <h3><?php echo get_phrase('Contact Us') ?></h3>
+                            <p>تواصل معنا لتجربة تواصل سلس. نُقدّر الحوار المفتوح ونتطلع للتفاعل معك. سواء كانت لديك أسئلة أو أفكار أو ملاحظات، نحن هنا للاستماع والرد.</p>
+                        </div>               
             </div>
             <div class="col-lg-6 col-md-4">
                 <!-- no content -->
