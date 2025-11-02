@@ -32,6 +32,8 @@
                         }
                         ?>
                     </h1>
+<h1>mohamed3</h1>
+
                     <p class="animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500"><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
                 </div>
                 <div class="search-option animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">

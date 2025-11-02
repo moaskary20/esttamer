@@ -39,6 +39,8 @@
               <input class="form-control" type="text" placeholder="<?php echo get_phrase('What do you want to learn'); ?>" name="query">
               <button class="submit-cls" type="submit"><i class="fa fa-search"></i><?php echo get_phrase('Search') ?></button>
             </form>
+<h1>mohamed5</h1>
+
           </div>
           <div class="students-rating">
             <div class="row">

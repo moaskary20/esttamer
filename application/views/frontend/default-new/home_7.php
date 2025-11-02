@@ -46,6 +46,8 @@
                 <img loading="lazy" width="100%" src="<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>" alt="">
             </div>
         </div> 
+<h1>mohamed7</h1>
+
         <div class="row animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">
             <div class="col-lg-6">
                 <div class="students-rating">

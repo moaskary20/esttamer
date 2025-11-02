@@ -43,6 +43,8 @@
           <a href="<?php echo site_url('sign_up'); ?>" class="btn-six  animate__animated  animate__fadeInUp " data-wow-duration="1000" data-wow-delay="500"><?php echo get_phrase('Join for free'); ?></a>
              <?php endif;?>
         </div>
+<h1>mohamed6</h1>
+
         <div class="brand-4  animate__animated  animate__fadeInUp " data-wow-duration="1000" data-wow-delay="500">
           <div class="item">
             <?php $all_students = $this->db->get_where('users', ['role_id !=' => 1]); ?>
