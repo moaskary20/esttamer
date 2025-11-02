@@ -280,6 +280,42 @@ for ($i = 1; $i <= 3; $i++) {
 <?php
 // Insert 'لماذا منصة استمر' section
 ?>
+<script>
+    (function(){
+        var wrapper = document.querySelector('.hm-carousel-row');
+        if(!wrapper) return;
+        var prev = document.querySelector('.hm-prev');
+        var next = document.querySelector('.hm-next');
+
+        function getStep(){
+            var item = wrapper.querySelector('.hm-item');
+            if(!item) return wrapper.clientWidth;
+            // include horizontal gap/padding automatically by using bounding width
+            return item.getBoundingClientRect().width;
+        }
+
+        function isRTL(elem){
+            try{ return getComputedStyle(elem).direction === 'rtl'; }catch(e){ return false; }
+        }
+
+        prev && prev.addEventListener('click', function(){
+            var step = getStep();
+            if(isRTL(wrapper)) wrapper.scrollBy({left: step, behavior: 'smooth'});
+            else wrapper.scrollBy({left: -step, behavior: 'smooth'});
+        });
+
+        next && next.addEventListener('click', function(){
+            var step = getStep();
+            if(isRTL(wrapper)) wrapper.scrollBy({left: -step, behavior: 'smooth'});
+            else wrapper.scrollBy({left: step, behavior: 'smooth'});
+        });
+    })();
+</script>
+
+
+<?php
+// Insert 'لماذا منصة استمر' section
+?>
 <section class="why-estmar-section py-5">
     <div class="container">
         <div class="row justify-content-center mb-4">
