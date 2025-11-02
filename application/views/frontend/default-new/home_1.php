@@ -363,7 +363,7 @@ for ($i = 1; $i <= 3; $i++) {
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 text-center">
-                <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/h-banner-img.png'); ?>" alt="app preview" style="max-width:100%;height:auto;box-shadow:0 20px 50px rgba(3,130,97,0.06);border-radius:18px;">
+                <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/app-screenshoots-ar.svg'); ?>" alt="app preview" style="max-width:100%;height:auto;box-shadow:0 20px 50px rgba(3,130,97,0.06);border-radius:18px;">
             </div>
             <div class="col-lg-6">
                 <h2 class="f-36" style="color:#1f6b64;">حمل تطبيق منصه استمر الآن</h2>
