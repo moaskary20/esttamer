@@ -277,6 +277,87 @@ for ($i = 1; $i <= 3; $i++) {
 
 
 
+<?php
+// Insert 'لماذا منصة استمر' section
+?>
+<section class="why-estmar-section py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="f-36 mb-2">لماذا منصة استمر</h2>
+                <p class="text-muted">اكتشف مزايا منصتنا التي تساعدك على بدء العلاج والدعم بسهولة وأمان.</p>
+            </div>
+        </div>
+
+        <style>
+            .why-estmar-section{background:#fff;direction:rtl}
+            .why-estmar-feature{display:flex;align-items:center;gap:18px}
+            .why-estmar-feature .icon{flex:0 0 96px;text-align:center}
+            .why-estmar-feature .icon img{width:88px;height:auto}
+            .why-estmar-feature .content h4{margin:0;font-size:20px;font-weight:700;color:#1b3f3a}
+            .why-estmar-feature .content p{margin:6px 0 0;color:#6b6b6b}
+            .why-estmar-cta{margin-top:28px;text-align:center}
+            .why-estmar-cta .btn{background:#b94b47;border:none;color:#fff;padding:10px 28px;border-radius:6px}
+            @media (max-width:991px){ .why-estmar-feature{flex-direction:row;gap:12px} }
+            @media (max-width:575px){ .why-estmar-feature{flex-direction:row;gap:10px} .why-estmar-feature .icon img{width:64px} }
+        </style>
+
+        <div class="row gy-4">
+            <div class="col-lg-6 col-md-6">
+                <div class="why-estmar-feature">
+                    <div class="icon">
+                        <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/analysis.png'); ?>" alt="معالجون معتمدون">
+                    </div>
+                    <div class="content">
+                        <h4>معالجون معتمدون</h4>
+                        <p>نخبة من الأخصائيين والمعالجين النفسيين الحاصلين على درجات علمية متقدمة وخبرة في مجالات متعددة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="why-estmar-feature">
+                    <div class="icon">
+                        <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/privacy-1.png'); ?>" alt="سرية تامة">
+                    </div>
+                    <div class="content">
+                        <h4>سرية تامة</h4>
+                        <p>نحافظ على خصوصيتك. جميع الجلسات والمعلومات الشخصية محمية ولا يمكن لأي جهة الاطلاع عليها.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="why-estmar-feature">
+                    <div class="icon">
+                        <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/student-1.png'); ?>" alt="سهولة الاستخدام">
+                    </div>
+                    <div class="content">
+                        <h4>سهولة الاستخدام</h4>
+                        <p>تجربة استخدام مريحة عبر تطبيقنا، تبدأ بالتسجيل وحتى حجز الجلسات الفردية والجماعية وإرسال الرسائل بسهولة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="why-estmar-feature">
+                    <div class="icon">
+                        <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/h-1-bnar-c-3.png'); ?>" alt="مرونة في المواعيد">
+                    </div>
+                    <div class="content">
+                        <h4>مرونة في المواعيد</h4>
+                        <p>اختر الوقت الذي يناسبك واحجز جلساتك بشكل مرن وابدأ العلاج من أي مكان دون تعارض مع التزاماتك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-estmar-cta">
+            <a href="<?php echo site_url('sign_up'); ?>" class="btn">إنشاء حساب</a>
+        </div>
+    </div>
+</section>
+
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
 <section class="courses eTopcourse Ecourse grid-view-body pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
