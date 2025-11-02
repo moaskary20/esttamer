@@ -168,7 +168,8 @@ for ($i = 1; $i <= 3; $i++) {
 
 <style>
     /* Section background and header */
-    .home-main-services-section{background:#3f7a71;padding:60px 0;direction:rtl}
+    /* Background set to requested color #66ef89 */
+    .home-main-services-section{background:#66ef89;padding:60px 0;direction:rtl}
     .home-main-services-section .section-title h1{color:#fff;font-weight:700;margin-bottom:8px}
     .home-main-services-section .section-title p{color:#e7efeceb;margin:0 0 28px}
 
