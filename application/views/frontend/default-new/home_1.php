@@ -209,35 +209,42 @@ for ($i = 1; $i <= 3; $i++) {
                     <?php
                     // Use the exact categories and links provided by the user.
                     // Each card will display the category name and link to the provided URL.
+                    // Use the three provided animation SVGs in rotation for the cards.
+                    $anim_images = [
+                        base_url('assets/frontend/default-new/image/boy-animation.svg'),
+                        base_url('assets/frontend/default-new/image/couple-animation.svg'),
+                        base_url('assets/frontend/default-new/image/girl-animation.svg'),
+                    ];
+
                     $final_cards = [
                         [
                             'title' => 'علاج النطق و اللغة',
                             'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h1.svg'),
+                            'image' => $anim_images[0],
                             'link' => 'https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9'
                         ],
                         [
                             'title' => 'السمع و التأهيل السمعي',
                             'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h2.svg'),
+                            'image' => $anim_images[1],
                             'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9-%D9%88-%D8%A7%D9%84%D8%AA%D8%A3%D9%87%D9%8A%D9%84-%D8%A7%D9%84%D8%B3%D9%85%D8%B9%D9%8A'
                         ],
                         [
                             'title' => 'العلاج الوظيفي',
                             'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h3.svg'),
+                            'image' => $anim_images[2],
                             'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A'
                         ],
                         [
                             'title' => 'العلاج الطبيعي',
                             'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h1.svg'),
+                            'image' => $anim_images[0],
                             'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A'
                         ],
                         [
                             'title' => 'طب الأسرة و المهارات الوالدية',
                             'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h2.svg'),
+                            'image' => $anim_images[1],
                             'link' => 'https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9'
                         ]
                     ];
