@@ -207,41 +207,44 @@ for ($i = 1; $i <= 3; $i++) {
 
                 <div class="hm-carousel-row d-flex overflow-hidden" style="scroll-behavior:smooth;">
                     <?php
-                    // If admin provided explicit home cards, use them; otherwise use a default list requested by the user.
-                    $provided_cards = $home_cards;
-                    $default_titles = [
-                        'علاج النطق و اللغة',
-                        'السمع و التأهيل السمعي',
-                        'العلاج الوظيفي',
-                        'العلاج الطبيعي',
-                        'طب الأسرة و المهارات الوالدية'
+                    // Use the exact categories and links provided by the user.
+                    // Each card will display the category name and link to the provided URL.
+                    $final_cards = [
+                        [
+                            'title' => 'علاج النطق و اللغة',
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h1.svg'),
+                            'link' => 'https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9'
+                        ],
+                        [
+                            'title' => 'السمع و التأهيل السمعي',
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h2.svg'),
+                            'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9-%D9%88-%D8%A7%D9%84%D8%AA%D8%A3%D9%87%D9%8A%D9%84-%D8%A7%D9%84%D8%B3%D9%85%D8%B9%D9%8A'
+                        ],
+                        [
+                            'title' => 'العلاج الوظيفي',
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h3.svg'),
+                            'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A'
+                        ],
+                        [
+                            'title' => 'العلاج الطبيعي',
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h1.svg'),
+                            'link' => 'https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A'
+                        ],
+                        [
+                            'title' => 'طب الأسرة و المهارات الوالدية',
+                            'subtitle' => '',
+                            'image' => base_url('assets/frontend/default-new/image/h2.svg'),
+                            'link' => 'https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9'
+                        ]
                     ];
 
-                    // Build final cards list: prefer provided settings, then defaults
-                    $final_cards = [];
-                    if (!empty($provided_cards)) {
-                        foreach ($provided_cards as $c) $final_cards[] = $c;
-                    }
-                    // Append defaults if less than needed
-                    foreach ($default_titles as $i => $t) {
-                        if (count($final_cards) >= 6) break;
-                        $final_cards[] = array(
-                            'title' => $t,
-                            'subtitle' => '',
-                            'image' => base_url('assets/frontend/default-new/image/h'.((($i)%3)+1).'.svg'),
-                            'link' => site_url('home')
-                        );
-                    }
-
-                    // Try to resolve links to category pages when category with same name exists
+                    // No DB lookup here — use the provided links directly. Iterate and render.
                     foreach ($final_cards as $idx => $card) :
-                        $title = $card['title'];
-                        // search category by name
-                        $category = $this->db->get_where('category', array('name' => $title))->row_array();
                         $link = $card['link'];
-                        if (!empty($category) && isset($category['slug'])) {
-                            $link = site_url('home/courses?category=' . $category['slug']);
-                        }
                     ?>
                         <div class="hm-item" style="flex:0 0 calc(100%/3);max-width:calc(100%/3);padding:0 12px;box-sizing:border-box;">
                             <div class="hm-card <?php echo 'type-'.((($idx)%3)+1); ?>">
