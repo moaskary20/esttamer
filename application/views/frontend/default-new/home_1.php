@@ -93,7 +93,7 @@
                  </div>
             </div>
         </div> 
-    <div class="bannar-card  Ebaner-card wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="400" style="background: linear-gradient(120deg, #e6f7f3 60%, #b2e5d9 100%); border-radius: 24px; box-shadow: 0 4px 24px #03826118;">
+    <div class="bannar-card  Ebaner-card wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="400" style="background: #dfffe8; border-radius: 24px; box-shadow: 0 4px 24px #03826118;">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6 arrow-side">
                     <div class="banner-card-1">
