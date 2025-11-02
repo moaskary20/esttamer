@@ -1,5 +1,21 @@
 <?php $header_menu_counter = 0; ?>
 <nav class="navbar navbar-expand-lg navbar-light">
+  <style>
+    /* Keep the Courses dropdown open and horizontal on desktop (>=992px) only */
+    @media (min-width: 992px) {
+      .open-on-desktop > .navbarHover {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        pointer-events: auto !important;
+      }
+      /* Ensure the parent li aligns items horizontally */
+      .open-on-desktop {
+        align-items: center;
+      }
+    }
+  </style>
   <div class="container">
     <a class="navbar-brand logo pt-0" href="<?php echo site_url(); ?>">
       <img loading="lazy" src="<?php echo site_url('uploads/system/'.get_frontend_settings('dark_logo')) ?>" alt="Logo" />
@@ -27,7 +43,7 @@
         <?php elseif($custom_page_menus->num_rows() > 1): ?>
           <?php $header_menu_counter += 1; ?>
           <ul class="navbar-nav main-nav-wrap mb-2 mb-lg-0 ms-2">
-            <li class="nav-item">
+        <li class="nav-item open-on-desktop">
               <a class="nav-link header-dropdown  bg-white text-dark fw-600 d-flex" href="#" id="navbarDropdown">
                 <span class="ms-2"><?php echo get_phrase('Home'); ?></span>
                 <i class="fas fa-angle-down ms-2"></i>
