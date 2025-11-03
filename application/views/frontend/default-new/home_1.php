@@ -41,7 +41,7 @@
 <section class="h-1-banner bannar-area pb-100">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-2 order-lg-1">
+        <section class="student-creative-section py-5 pt-0 position-relative" style="background: #038260; overflow: hidden;">
                 <div class="h-1-banner-text EbannerLeft position-relative">
                 <?php
                     $banner_title = site_phrase(get_frontend_settings('banner_title'));
