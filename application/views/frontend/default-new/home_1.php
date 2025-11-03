@@ -11,13 +11,11 @@
         white-space: normal;
     }
     .EbannerTop .search-option .form-control {
-
-    border: 1px solid #038261;
-
-}
-.popover-btns .purchase-btn {
-    border-color: #038261;
-}
+        border: 1px solid #038261;
+    }
+    .popover-btns .purchase-btn {
+        border-color: #038261;
+    }
     .enrollBtn {
         background-color: #038261;
     }
@@ -32,33 +30,120 @@
     .courses-card-body:hover .courses-text h5 {
         color: #038261;
     }
+    
     /* Banner small cards background requested: #dfffe8 */
-    .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
-    /* Make the main banner image span full viewport width (full-bleed) */
-    .h-1-banner { position: relative; overflow: visible; }
-    /* make banner-full absolute so it truly spans the viewport (full-bleed) */
+    .bannar-card .banner-card-1{
+        background:#dfffe8;
+        border-radius:12px;
+        padding:12px;
+    }
+    
+    /* جعل البانر يأخذ عرض الشاشة بالكامل */
+    .h-1-banner { 
+        position: relative; 
+        overflow: visible;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* صورة البانر بعرض كامل الشاشة */
     .h-1-banner .banner-full{
         position: absolute;
         left: 0;
         top: 0;
-        width: 100vw;
+        width: 100%;
         height: 520px;
         background-size: cover;
         background-position: center center;
         z-index: 1;
         margin: 0;
     }
-    /* ensure the page content/container appears above the background */
-    .h-1-banner > .container{position:relative; z-index: 5}
-    /* reduce any top spacing so visual aligns */
-    .h-1-banner.bannar-area.pb-100{padding-bottom:0}
-    /* Banner overlay (restore and style) */
-    .h-1-banner .h-1-banner-text{display:block; position:absolute; top:60px; right:6%; width:38%; z-index:5; color:#fff}
-    .h-1-banner .h-1-banner-text h1{color:#fff;font-size:44px;line-height:1.05;margin-bottom:12px}
-    .h-1-banner .EbannerTop p{color:rgba(255,255,255,0.95)}
-    .h-1-banner .search-option .form-control{background:rgba(255,255,255,0.95);border-radius:28px;padding:12px 18px}
-    /* Override final section background to white when needed (uses !important to override inline style) */
-    section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
+    
+    /* محتوى البانر يظهر فوق الصورة */
+    .h-1-banner > .container{
+        position: relative; 
+        z-index: 5;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* تقليل المسافات */
+    .h-1-banner.bannar-area.pb-100{
+        padding-bottom: 0;
+    }
+    
+    /* النص فوق البانر */
+    .h-1-banner .h-1-banner-text{
+        display: block; 
+        position: absolute; 
+        top: 60px; 
+        right: 6%; 
+        width: 38%; 
+        z-index: 5; 
+        color: #fff;
+    }
+    
+    .h-1-banner .h-1-banner-text h1{
+        color: #fff;
+        font-size: 44px;
+        line-height: 1.05;
+        margin-bottom: 12px;
+    }
+    
+    .h-1-banner .EbannerTop p{
+        color: rgba(255,255,255,0.95);
+    }
+    
+    .h-1-banner .search-option .form-control{
+        background: rgba(255,255,255,0.95);
+        border-radius: 28px;
+        padding: 12px 18px;
+    }
+    
+    /* البطاقات الصغيرة أسفل البانر */
+    .bannar-card.Ebaner-card {
+        position: relative;
+        z-index: 10;
+        margin-top: -60px;
+    }
+    
+    /* Override final section background to white when needed */
+    section.student-creative-section.py-5.pt-0.position-relative { 
+        background: #ffffff !important; 
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+        .h-1-banner .banner-full {
+            height: 420px;
+        }
+        .h-1-banner .h-1-banner-text {
+            width: 50%;
+            top: 40px;
+        }
+        .h-1-banner .h-1-banner-text h1 {
+            font-size: 32px;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .h-1-banner .banner-full {
+            height: 350px;
+        }
+        .h-1-banner .h-1-banner-text {
+            width: 90%;
+            right: 5%;
+            top: 30px;
+        }
+        .h-1-banner .h-1-banner-text h1 {
+            font-size: 24px;
+        }
+    }
 </style>
 
 
