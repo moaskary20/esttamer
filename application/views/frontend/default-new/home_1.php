@@ -34,6 +34,15 @@
     }
     /* Banner small cards background requested: #dfffe8 */
     .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
+    /* Make the main banner image span full viewport width (full-bleed) */
+    .h-1-banner .Ebanner img{
+        width:100vw;
+        max-width:100vw;
+        margin-left: calc(50% - 50vw);
+        display:block;
+    }
+    /* Override final section background to white when needed (uses !important to override inline style) */
+    section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
 </style>
 
 
