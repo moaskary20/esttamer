@@ -1,21 +1,97 @@
 <style>
-
+    /* إخفاء العناصر غير المطلوبة */
     h1.animate__animated.animate__fadeInUp {
-    display: none;
-}
-.search-option.mb-0
-Specificity: (0,2,0)
- {
-    display: none;
-}
+        display: none;
+    }
+    .search-option.mb-0 {
+        display: none;
+    }
+    .EbannerTop.animate__animated.animate__fadeInUp.opacityOnUp {
+        display: none;
+    }
+    
+    /* تعديل البانر */
+    .EbannerRight {
+        display: contents;
+    }
+    .col-lg-12.col-md-12.col-sm-12.col-12.order-md-2.order-1.order-lg-1.pt-0.pt-md-5 {
+        padding-top: 0px !important;
+    }
 
-.EbannerTop.animate__animated.animate__fadeInUp.opacityOnUp {
-    display: none;
-}
+    /* جعل section البانر بعرض كامل الشاشة */
+    .h-1-banner {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 0 !important;
+    }
 
+    /* container داخل البانر */
+    .h-1-banner > .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* الصف داخل البانر */
+    .h-1-banner .container > .row {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* القسم الأخضر مع الصورة */
+    .h-1-banner .student-creative-section {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    /* div الذي يحتوي على الصورة */
+    .h-1-banner .Ebanner {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* الصورة نفسها تأخذ العرض الكامل */
+    .h-1-banner .Ebanner img {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* إزالة أي padding من الأعمدة */
+    .h-1-banner .col-lg-12 {
+        padding: 0 !important;
+    }
+
+    /* البطاقات الصغيرة أسفل البانر */
+    .bannar-card.Ebaner-card {
+        position: relative;
+        z-index: 10;
+        margin: -60px auto 0;
+        max-width: 1320px;
+        padding: 0 15px;
+    }
+
+    .bannar-card .banner-card-1 {
+        background: #dfffe8;
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    /* باقي الأنماط */
     .eImage span {
         width: auto !important;
     }
+    
     .course-item-one .content .title {
         display: -webkit-box!important; 
         -webkit-line-clamp: 1; 
@@ -24,32 +100,51 @@ Specificity: (0,2,0)
         text-overflow: ellipsis; 
         white-space: normal;
     }
+    
     .EbannerTop .search-option .form-control {
-
-    border: 1px solid #038261;
-
-}
-.popover-btns .purchase-btn {
-    border-color: #038261;
-}
+        border: 1px solid #038261;
+    }
+    
+    .popover-btns .purchase-btn {
+        border-color: #038261;
+    }
+    
     .enrollBtn {
         background-color: #038261;
     }
+    
     .list-btn:hover, .list-btn.active {
         background-color: #038261;
         border: 1.5px solid #038261;
     }
+    
     .form-check-input:checked {
         background-color: #038261;
         border-color: #038261;
     }
+    
     .courses-card-body:hover .courses-text h5 {
         color: #038261;
     }
-    /* Banner small cards background requested: #dfffe8 */
-    .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
-    /* Override final section background to white when needed (uses !important to override inline style) */
-    section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
+
+    /* Override section background */
+    section.student-creative-section.py-5.pt-0.position-relative { 
+        background: #ffffff !important; 
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+        .bannar-card.Ebaner-card {
+            margin-top: -40px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .bannar-card.Ebaner-card {
+            margin-top: -30px;
+            padding: 0 10px;
+        }
+    }
 </style>
 
 
