@@ -1,4 +1,18 @@
 <style>
+
+    h1.animate__animated.animate__fadeInUp {
+    display: none;
+}
+.search-option.mb-0
+Specificity: (0,2,0)
+ {
+    display: none;
+}
+
+.EbannerTop.animate__animated.animate__fadeInUp.opacityOnUp {
+    display: none;
+}
+
     .eImage span {
         width: auto !important;
     }
