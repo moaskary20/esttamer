@@ -35,16 +35,23 @@
     /* Banner small cards background requested: #dfffe8 */
     .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
     /* Make the main banner image span full viewport width (full-bleed) */
-    .h-1-banner .Ebanner img{
+    .h-1-banner { position: relative; overflow: visible; }
+    .h-1-banner .banner-full{
         width:100vw;
         max-width:100vw;
         margin-left: calc(50% - 50vw);
         display:block;
+        background-size:cover;
+        background-position:center;
+        min-height:520px;
+        position:relative;
+        z-index:1;
     }
-        /* Hide all overlay text on the banner image */
-        .h-1-banner .h-1-banner-text{display:none !important}
-        /* remove any top padding so image aligns with page edge */
-        .h-1-banner.bannar-area.pb-100{padding-bottom:0}
+    /* Banner overlay (restore and style) */
+    .h-1-banner .h-1-banner-text{display:block; position:absolute; top:60px; right:6%; width:38%; z-index:5; color:#fff}
+    .h-1-banner .h-1-banner-text h1{color:#fff;font-size:44px;line-height:1.05;margin-bottom:12px}
+    .h-1-banner .EbannerTop p{color:rgba(255,255,255,0.95)}
+    .h-1-banner .search-option .form-control{background:rgba(255,255,255,0.95);border-radius:28px;padding:12px 18px}
     /* Override final section background to white when needed (uses !important to override inline style) */
     section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
 </style>
