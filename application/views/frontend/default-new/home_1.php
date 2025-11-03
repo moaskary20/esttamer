@@ -107,9 +107,9 @@
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-md-2 order-1  order-lg-1 pt-0 pt-md-5 ">
                  <div class="EbannerRight">
-                    <div class="Ebanner  animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">
-                       <img loading="lazy" width="100%" src="<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>">
-                    </div>
+                          <div class="Ebanner  animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">
+                                  <div class="banner-full" style="background-image: url('<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>');" aria-hidden="true"></div>
+                              </div>
                  </div>
             </div>
         </div> 
