@@ -41,6 +41,10 @@
         margin-left: calc(50% - 50vw);
         display:block;
     }
+        /* Hide all overlay text on the banner image */
+        .h-1-banner .h-1-banner-text{display:none !important}
+        /* remove any top padding so image aligns with page edge */
+        .h-1-banner.bannar-area.pb-100{padding-bottom:0}
     /* Override final section background to white when needed (uses !important to override inline style) */
     section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
 </style>
