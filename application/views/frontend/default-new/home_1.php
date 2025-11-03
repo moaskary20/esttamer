@@ -26,7 +26,7 @@
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        padding: 0 !important;
+        padding-top: 20px;
     }
 
     /* container داخل البانر */
