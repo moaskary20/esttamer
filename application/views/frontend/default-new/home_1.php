@@ -34,29 +34,6 @@
     }
     /* Banner small cards background requested: #dfffe8 */
     .bannar-card .banner-card-1{background:#dfffe8;border-radius:12px;padding:12px}
-    /* Make the main banner image span full viewport width (full-bleed) */
-    .h-1-banner { position: relative; overflow: visible; }
-    /* make banner-full absolute so it truly spans the viewport (full-bleed) */
-    .h-1-banner .banner-full{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 520px;
-        background-size: cover;
-        background-position: center center;
-        z-index: 1;
-        margin: 0;
-    }
-    /* ensure the page content/container appears above the background */
-    .h-1-banner > .container{position:relative; z-index: 5}
-    /* reduce any top spacing so visual aligns */
-    .h-1-banner.bannar-area.pb-100{padding-bottom:0}
-    /* Banner overlay (restore and style) */
-    .h-1-banner .h-1-banner-text{display:block; position:absolute; top:60px; right:6%; width:38%; z-index:5; color:#fff}
-    .h-1-banner .h-1-banner-text h1{color:#fff;font-size:44px;line-height:1.05;margin-bottom:12px}
-    .h-1-banner .EbannerTop p{color:rgba(255,255,255,0.95)}
-    .h-1-banner .search-option .form-control{background:rgba(255,255,255,0.95);border-radius:28px;padding:12px 18px}
     /* Override final section background to white when needed (uses !important to override inline style) */
     section.student-creative-section.py-5.pt-0.position-relative { background: #ffffff !important; }
 </style>
@@ -112,9 +89,9 @@
 
             <div class="col-lg-12 col-md-12 col-sm-12 col-12 order-md-2 order-1  order-lg-1 pt-0 pt-md-5 ">
                  <div class="EbannerRight">
-                          <div class="Ebanner  animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">
-                                  <div class="banner-full" style="background-image: url('<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>');" aria-hidden="true"></div>
-                              </div>
+                    <div class="Ebanner  animate__animated  animate__fadeInUp" data-wow-duration="1000" data-wow-delay="500">
+                       <img loading="lazy" width="100%" src="<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>">
+                    </div>
                  </div>
             </div>
         </div> 
