@@ -934,8 +934,7 @@
 <?php endif; ?>
 <?php endif; ?>
 
-<?php if(get_frontend_settings('promotional_section') == 1): ?>
-<!------------- Become Students Section - REMOVED --------->
+<!------------- Promotional Section Removed --------->
 
 <div class="py-4 w-100"></div>
 
