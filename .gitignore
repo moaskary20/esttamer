@@ -1,0 +1,39 @@
+# ملفات التحديث التلقائي (يجب عدم رفعها للأمان)
+apply_update.php
+update_about_content.php
+
+# ملفات التكوين والإعدادات
+application/config/database.php
+application/config/config.php
+
+# ملفات الرفع والمستخدمين
+uploads/*
+!uploads/system/
+backups/*
+
+# ملفات النظام
+application/cache/*
+application/logs/*
+.DS_Store
+Thumbs.db
+
+# ملفات IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ملفات Composer و Dependencies
+vendor/
+composer.lock
+
+# Node modules إذا كانت موجودة
+node_modules/
+package-lock.json
+
+# ملفات مؤقتة
+*.tmp
+*.temp
+*.log
+
