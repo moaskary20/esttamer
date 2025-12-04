@@ -1,3 +1,19 @@
+/* Tajawal Font - Apply to all elements */
+* {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+body, html {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, button,
+input, textarea, select,
+label, li, td, th {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
 .d-hidden{
     display: none;
 }

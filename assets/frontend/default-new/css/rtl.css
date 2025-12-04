@@ -1,3 +1,8 @@
+/* Tajawal Font for RTL */
+* {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
 /* custom.css */
 .me-5px{margin-left: 5px !important;}
 .me-6px{margin-left: 6px !important;}
