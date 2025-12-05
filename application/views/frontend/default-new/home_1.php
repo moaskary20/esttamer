@@ -572,6 +572,104 @@
 </style>
 <!---------- Why Estamer Platform Section End --------------->
 
+<!---------- Start Learning Section Start ---------------->
+<section class="start-learning-section py-100 wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="main-title mb-3">ابداء التعلم من افضله منصه</h2>
+                    <div class="title-divider mx-auto"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Cards -->
+        <div class="row g-4 justify-content-center wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="700">
+            <!-- Card 1: Speech and Language Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not2.png'); ?>" alt="علاج النطق و اللغة">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">علاج النطق و اللغة</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 2: Occupational Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/wazefy.png'); ?>" alt="العلاج الوظيفي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الوظيفي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 3: Physical Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/taby3y.png'); ?>" alt="العلاج الطبيعي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الطبيعي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 4: Hearing -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/sama3.png'); ?>" alt="السمع">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">السمع</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!---------- Start Learning Section End --------------->
 
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
@@ -768,105 +866,6 @@
 </section>
 <!---------- Top courses Section End --------------->
 <?php endif; ?>
-
-<!---------- Start Learning Section Start ---------------->
-<section class="start-learning-section py-100 wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
-    <div class="container">
-        <!-- Section Title -->
-        <div class="row mb-5">
-            <div class="col-12">
-                <div class="section-title text-center">
-                    <h2 class="main-title mb-3">ابداء التعلم من افضله منصه</h2>
-                    <div class="title-divider mx-auto"></div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Category Cards -->
-        <div class="row g-4 justify-content-center wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="700">
-            <!-- Card 1: Speech and Language Therapy -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
-                    <div class="category-card">
-                        <div class="category-card-image">
-                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not2.png'); ?>" alt="علاج النطق و اللغة">
-                        </div>
-                        <div class="category-card-content">
-                            <h3 class="category-card-title">علاج النطق و اللغة</h3>
-                            <div class="category-card-button">
-                                <span>ابدأ الآن</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Card 2: Occupational Therapy -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
-                    <div class="category-card">
-                        <div class="category-card-image">
-                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/wazefy.png'); ?>" alt="العلاج الوظيفي">
-                        </div>
-                        <div class="category-card-content">
-                            <h3 class="category-card-title">العلاج الوظيفي</h3>
-                            <div class="category-card-button">
-                                <span>ابدأ الآن</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Card 3: Physical Therapy -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
-                    <div class="category-card">
-                        <div class="category-card-image">
-                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/taby3y.png'); ?>" alt="العلاج الطبيعي">
-                        </div>
-                        <div class="category-card-content">
-                            <h3 class="category-card-title">العلاج الطبيعي</h3>
-                            <div class="category-card-button">
-                                <span>ابدأ الآن</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Card 4: Hearing -->
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
-                    <div class="category-card">
-                        <div class="category-card-image">
-                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/sama3.png'); ?>" alt="السمع">
-                        </div>
-                        <div class="category-card-content">
-                            <h3 class="category-card-title">السمع</h3>
-                            <div class="category-card-button">
-                                <span>ابدأ الآن</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!---------- Start Learning Section End ---------------->
 
 <?php if(get_frontend_settings('latest_course_section') == 1): ?>
 <!---------- Latest courses Section start --------------->
