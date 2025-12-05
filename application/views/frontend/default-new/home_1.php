@@ -938,13 +938,47 @@
 <section class="mobile-app-section pb-100 pt-100">
     <div class="container">
         <div class="row align-items-center">
-            <!-- Right Side: Mobile App Screenshots -->
-            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 text-center">
-                <div class="mobile-screens-container">
-                    <img src="<?php echo base_url('assets/frontend/default-new/image/mobile-app-mockup.png'); ?>" 
-                         alt="تطبيق استمر للموبايل" 
-                         class="img-fluid mobile-mockup"
-                         style="max-width: 500px;">
+            <!-- Right Side: Mobile App Mockup -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                <div class="mobile-screens-container position-relative" style="height: 500px;">
+                    <!-- Phone 1 -->
+                    <div class="mobile-phone phone-1">
+                        <div class="phone-screen">
+                            <div class="phone-content">
+                                <div class="app-icon mb-3">
+                                    <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #667eea;"></i>
+                                </div>
+                                <h6 style="color: #2c3e50; font-weight: bold;">المواعيد</h6>
+                                <p style="font-size: 0.8rem; color: #666;">احجز مواعيدك بسهولة</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone 2 (Center) -->
+                    <div class="mobile-phone phone-2">
+                        <div class="phone-screen">
+                            <div class="phone-content">
+                                <div class="app-icon mb-3">
+                                    <i class="fas fa-comments" style="font-size: 3rem; color: #667eea;"></i>
+                                </div>
+                                <h6 style="color: #2c3e50; font-weight: bold;">المحادثة</h6>
+                                <p style="font-size: 0.8rem; color: #666;">تواصل مع مدربيك</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone 3 -->
+                    <div class="mobile-phone phone-3">
+                        <div class="phone-screen">
+                            <div class="phone-content">
+                                <div class="app-icon mb-3">
+                                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #667eea;"></i>
+                                </div>
+                                <h6 style="color: #2c3e50; font-weight: bold;">الدورات</h6>
+                                <p style="font-size: 0.8rem; color: #666;">الوصول لجميع الدورات</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -998,8 +1032,84 @@
     background: #65f088;
 }
 
-.mobile-mockup {
+.mobile-screens-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.mobile-phone {
+    width: 180px;
+    height: 360px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    position: relative;
     animation: float 3s ease-in-out infinite;
+    border: 8px solid #2c3e50;
+}
+
+.phone-1 {
+    transform: rotate(-5deg) translateY(20px);
+    z-index: 1;
+    animation-delay: 0s;
+}
+
+.phone-2 {
+    transform: scale(1.1);
+    z-index: 3;
+    animation-delay: 0.5s;
+}
+
+.phone-3 {
+    transform: rotate(5deg) translateY(20px);
+    z-index: 1;
+    animation-delay: 1s;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.phone-content {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.app-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
 }
 
 @keyframes float {
@@ -1007,7 +1117,46 @@
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-15px);
+    }
+}
+
+.phone-1 {
+    animation: float1 3s ease-in-out infinite;
+}
+
+.phone-2 {
+    animation: float2 3s ease-in-out infinite;
+}
+
+.phone-3 {
+    animation: float3 3s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: rotate(-5deg) translateY(20px);
+    }
+    50% {
+        transform: rotate(-5deg) translateY(0px);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: scale(1.1) translateY(0px);
+    }
+    50% {
+        transform: scale(1.1) translateY(-20px);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: rotate(5deg) translateY(20px);
+    }
+    50% {
+        transform: rotate(5deg) translateY(0px);
     }
 }
 
@@ -1048,6 +1197,22 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-phone {
+        width: 140px;
+        height: 280px;
+    }
+    
+    .app-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .app-icon i {
+        font-size: 2rem !important;
     }
 }
 </style>
