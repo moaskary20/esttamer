@@ -1,5 +1,5 @@
 <div class="course-description">
-    <h3 class="description-head"><?php echo get_phrase('Course Description') ?></h3>
+    <h3 class="description-head">وصف الدورة</h3>
     <?php echo $course_details['description']; ?>
 </div>
 
