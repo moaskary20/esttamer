@@ -10,6 +10,135 @@
         text-overflow: ellipsis; 
         white-space: normal;
     }
+    
+    /* Start Learning Section Styles */
+    .start-learning-section {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .start-learning-section .section-title .main-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+    }
+    
+    .start-learning-section .title-divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #20E3B2 0%, #29FFC6 100%);
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    .category-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+    
+    .category-card-link:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .category-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 30px 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .category-card-image {
+        width: 100%;
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .category-card-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    
+    .category-card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .category-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .category-card-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(90deg, #20E3B2 0%, #29FFC6 100%);
+        color: #ffffff;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        margin-top: auto;
+    }
+    
+    .category-card-button svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .category-card:hover .category-card-button {
+        background: linear-gradient(90deg, #29FFC6 0%, #20E3B2 100%);
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .start-learning-section .section-title .main-title {
+            font-size: 2rem;
+        }
+        
+        .category-card {
+            padding: 25px 15px;
+        }
+        
+        .category-card-image {
+            max-width: 150px;
+            height: 150px;
+        }
+        
+        .category-card-title {
+            font-size: 1.25rem;
+        }
+    }
 </style>
 
 
@@ -367,7 +496,104 @@
 <!---------- Top Categories end ------------->
 <?php endif; ?>
 
-
+<!---------- Start Learning Section Start ---------------->
+<section class="start-learning-section py-100">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="main-title mb-3">ابداء التعلم من افضله منصه</h2>
+                    <div class="title-divider mx-auto"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category Cards -->
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1: Speech and Language Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not2.png'); ?>" alt="علاج النطق و اللغة">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">علاج النطق و اللغة</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 2: Occupational Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/wazefy.png'); ?>" alt="العلاج الوظيفي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الوظيفي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 3: Physical Therapy -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/taby3y.png'); ?>" alt="العلاج الطبيعي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الطبيعي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 4: Hearing -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/sama3.png'); ?>" alt="السمع">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">السمع</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!---------- Start Learning Section End ---------------->
 
 <?php if(get_frontend_settings('upcoming_course_section') == 1): ?>
 <!-- Start Upcoming Courses -->
