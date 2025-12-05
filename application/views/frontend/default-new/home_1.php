@@ -40,41 +40,92 @@
     }
     
     .banner-features {
-        background: linear-gradient(90deg, #F5E6D3 0%, #E8D5E8 50%, #E8D5E8 100%);
-        padding: 40px 0;
+        background: linear-gradient(135deg, #028161 0%, #1a9d6f 25%, #3db87d 50%, #5dd38b 75%, #65f089 100%);
+        padding: 50px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .banner-features::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(101, 240, 137, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(2, 129, 97, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(101, 240, 137, 0.2) 0%, transparent 60%);
+        pointer-events: none;
+    }
+    
+    .banner-features::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(101, 240, 137, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
     }
     
     .feature-card {
         display: flex;
         align-items: center;
         gap: 20px;
-        padding: 20px;
+        padding: 25px;
         height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .feature-card:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
     
     .feature-icon {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(2, 129, 97, 0.1);
-        border-radius: 12px;
-        color: #028161;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        border-radius: 16px;
+        color: #ffffff;
         flex-shrink: 0;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover .feature-icon {
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1) rotate(5deg);
     }
     
     .feature-content h6 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: 700;
-        color: #1E293B;
+        color: #ffffff;
         margin-bottom: 8px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
     
     .feature-content p {
-        font-size: 0.95rem;
-        color: #6E798A;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
         margin: 0;
+        line-height: 1.6;
     }
     
     @media (max-width: 768px) {
