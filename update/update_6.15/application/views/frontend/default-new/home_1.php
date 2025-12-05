@@ -882,8 +882,8 @@
 <?php if($latest_blogs->num_rows() > 0): ?>
 <section class="courses blog pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
     <div class="container">
-        <h1 class="text-center f-36 pt-0"><span><?php echo site_phrase('Visit our latest blogs')?></span></h1>
-        <p class="text-center mb-40"><?php echo site_phrase('Visit our valuable articles to get more information.')?>
+        <h1 class="text-center f-36 pt-0"><span>أحدث المقالات</span></h1>
+        <p class="text-center mb-40">قم بزيارة مقالاتنا القيمة للحصول على المزيد من المعلومات
         <div class="courses-card">
             <div class="row">
                <?php foreach($latest_blogs->result_array() as $latest_blog):
