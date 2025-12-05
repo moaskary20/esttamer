@@ -878,18 +878,18 @@
 
 <?php if(get_frontend_settings('blog_visibility_on_the_home_page') == 1): ?>
 <!------------- Blog Section Start ------------>
-<?php $latest_blogs = $this->crud_model->get_latest_blogs(3); ?>
+<?php $latest_blogs = $this->crud_model->get_latest_blogs(6); ?>
 <?php if($latest_blogs->num_rows() > 0): ?>
 <section class="courses blog pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
     <div class="container">
         <h1 class="text-center f-36 pt-0"><span><?php echo site_phrase('Visit our latest blogs')?></span></h1>
         <p class="text-center mb-40"><?php echo site_phrase('Visit our valuable articles to get more information.')?>
         <div class="courses-card">
-            <div class="row">
+            <div class="course-group-slider blog-slider">
                <?php foreach($latest_blogs->result_array() as $latest_blog):
                 $user_details = $this->user_model->get_all_user($latest_blog['user_id'])->row_array();
                 $blog_category = $this->crud_model->get_blog_categories($latest_blog['blog_category_id'])->row_array(); ?>  
-                <div class="col-lg-4 col-md-6 mb-3 wow  animate__animated animate__fadeIn" data-wow-duration="1000" data-wow-delay="700">
+                <div class="single-popup-course epopCourse position-relative">
                     <a href="<?php echo site_url('blog/details/'.slugify($latest_blog['title']).'/'.$latest_blog['blog_id']); ?>" class="courses-card-body blogCard">
                         <div class="courses-card-image">
                             <?php $blog_thumbnail = 'uploads/blog/thumbnail/'.$latest_blog['thumbnail'];

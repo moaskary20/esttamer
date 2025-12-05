@@ -449,7 +449,7 @@ $('.clients-logo-carousel').slick({
   ]
 });
 // Course Slider Index
-$('.course-group-slider').slick({
+$('.course-group-slider').not('.blog-slider').slick({
   rtl: is_RTL,
   dots: false,
   arrows: true,
@@ -478,6 +478,34 @@ $('.course-group-slider').slick({
       settings: {
         centerMode: false,
         slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+// Blog Slider - Show 3 items
+$('.blog-slider').slick({
+  rtl: is_RTL,
+  dots: false,
+  arrows: true,
+  autoplay: false,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        centerMode: false,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        centerMode: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
       },
     },
   ],
