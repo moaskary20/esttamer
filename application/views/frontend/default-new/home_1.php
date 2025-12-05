@@ -156,22 +156,23 @@
     
     .testimonial-slider-wrapper {
         position: relative;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
+        overflow: hidden;
     }
     
     .testimonial-slider {
         position: relative;
-        overflow: hidden;
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
     }
     
     .testimonial-slide {
-        display: none;
+        flex: 0 0 calc(33.333% - 14px);
+        min-width: 0;
         animation: fadeIn 0.5s ease-in-out;
-    }
-    
-    .testimonial-slide:first-child {
-        display: block;
     }
     
     @keyframes fadeIn {
@@ -189,20 +190,27 @@
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         border-radius: 20px;
-        padding: 40px;
+        padding: 30px;
         text-align: center;
         border: 1px solid rgba(255, 255, 255, 0.2);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     .quote-icon {
         margin-bottom: 20px;
     }
     
+    .testimonial-content {
+        flex: 1;
+    }
+    
     .testimonial-text {
         color: #ffffff;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 30px;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 25px;
         font-style: italic;
     }
     
@@ -275,25 +283,7 @@
     }
     
     .slider-dots {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 30px;
-    }
-    
-    .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .dot.active {
-        background: #ffffff;
-        width: 30px;
-        border-radius: 6px;
+        display: none;
     }
     
     @media (max-width: 991px) {
@@ -305,16 +295,28 @@
             left: 10px;
         }
         
+        .testimonial-slide {
+            flex: 0 0 calc(50% - 10px);
+        }
+        
         .testimonial-card {
-            padding: 30px 20px;
+            padding: 25px 20px;
         }
         
         .testimonial-text {
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
     }
     
     @media (max-width: 768px) {
+        .testimonial-slide {
+            flex: 0 0 100%;
+        }
+        
+        .testimonial-slider {
+            gap: 15px;
+        }
+        
         .testimonial-card {
             padding: 25px 15px;
         }
@@ -330,6 +332,10 @@
         
         .author-role {
             font-size: 0.85rem;
+        }
+        
+        .testimonial-text {
+            font-size: 0.9rem;
         }
     }
 </style>
@@ -1478,12 +1484,6 @@
                 </svg>
             </button>
             
-            <!-- Dots Indicator -->
-            <div class="slider-dots">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
         </div>
     </div>
 </section>
@@ -1491,36 +1491,54 @@
 <script>
 let currentTestimonialIndex = 0;
 const testimonials = document.querySelectorAll('.testimonial-slide');
-const dots = document.querySelectorAll('.dot');
+const slider = document.getElementById('testimonialSlider');
+const totalSlides = testimonials.length;
+const slidesPerView = window.innerWidth > 991 ? 3 : (window.innerWidth > 768 ? 2 : 1);
 
-function showSlide(index) {
-    if (index >= testimonials.length) {
+function updateSlider() {
+    const slideWidth = 100 / slidesPerView;
+    const maxIndex = Math.max(0, totalSlides - slidesPerView);
+    
+    if (currentTestimonialIndex > maxIndex) {
+        currentTestimonialIndex = maxIndex;
+    }
+    if (currentTestimonialIndex < 0) {
         currentTestimonialIndex = 0;
-    } else if (index < 0) {
-        currentTestimonialIndex = testimonials.length - 1;
-    } else {
-        currentTestimonialIndex = index;
     }
     
-    testimonials.forEach((slide, i) => {
-        slide.style.display = i === currentTestimonialIndex ? 'block' : 'none';
-    });
-    
-    dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentTestimonialIndex);
-    });
+    const translateX = -(currentTestimonialIndex * slideWidth);
+    slider.style.transform = `translateX(${translateX}%)`;
 }
 
 function moveSlider(direction) {
-    showSlide(currentTestimonialIndex + direction);
+    const maxIndex = Math.max(0, totalSlides - (window.innerWidth > 991 ? 3 : (window.innerWidth > 768 ? 2 : 1)));
+    currentTestimonialIndex += direction;
+    
+    if (currentTestimonialIndex > maxIndex) {
+        currentTestimonialIndex = 0;
+    } else if (currentTestimonialIndex < 0) {
+        currentTestimonialIndex = maxIndex;
+    }
+    
+    updateSlider();
 }
 
 function currentSlide(index) {
-    showSlide(index - 1);
+    currentTestimonialIndex = index - 1;
+    updateSlider();
 }
 
 // Initialize
-showSlide(0);
+updateSlider();
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        updateSlider();
+    }, 250);
+});
 
 // Auto slide every 5 seconds
 setInterval(() => {
