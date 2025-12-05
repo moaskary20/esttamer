@@ -934,7 +934,130 @@
 <?php endif; ?>
 <?php endif; ?>
 
-<!------------- Promotional Section Removed --------->
+<!------------- Mobile App Promotional Section Start ------------>
+<section class="mobile-app-section pb-100 pt-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Right Side: Mobile App Screenshots -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0 text-center">
+                <div class="mobile-screens-container">
+                    <img src="<?php echo base_url('assets/frontend/default-new/image/mobile-app-mockup.png'); ?>" 
+                         alt="تطبيق استمر للموبايل" 
+                         class="img-fluid mobile-mockup"
+                         style="max-width: 500px;">
+                </div>
+            </div>
+            
+            <!-- Left Side: Content -->
+            <div class="col-lg-6 col-md-12">
+                <div class="app-promo-content">
+                    <h2 class="app-promo-title mb-4" style="font-size: 2.5rem; color: #2c3e50; font-weight: bold;">
+                        حمل تطبيق استمر الآن
+                    </h2>
+                    <p class="app-promo-description mb-4" style="font-size: 1.2rem; color: #555; line-height: 1.8;">
+                        احصل على ميزات إضافية مثل التحدث مع المدربين عبر خاصية المحادثة. بالإضافة إلى سهولة حجز وحضور الدورات عبر تحميلك لتطبيق استمر!
+                    </p>
+                    
+                    <!-- App Store Buttons -->
+                    <div class="app-buttons d-flex gap-3 flex-wrap">
+                        <!-- Google Play Button -->
+                        <a href="#" class="app-store-btn" style="display: inline-block;">
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/google-play-badge.png'); ?>" 
+                                 alt="متوفر على Google Play" 
+                                 style="height: 60px;"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                            <div style="display: none; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold;">
+                                <i class="fab fa-google-play me-2"></i> GET IT ON Google Play
+                            </div>
+                        </a>
+                        
+                        <!-- App Store Button -->
+                        <a href="#" class="app-store-btn" style="display: inline-block;">
+                            <img src="<?php echo base_url('assets/frontend/default-new/image/app-store-badge.png'); ?>" 
+                                 alt="متوفر على App Store" 
+                                 style="height: 60px;"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                            <div style="display: none; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold;">
+                                <i class="fab fa-apple me-2"></i> Download on the App Store
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Features List -->
+                    <div class="app-features mt-5">
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
+                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
+                                تعلم في أي وقت وأي مكان
+                            </li>
+                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
+                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
+                                وصول غير محدود لجميع الدورات
+                            </li>
+                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
+                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
+                                تنزيل الدروس ومشاهدتها دون اتصال
+                            </li>
+                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
+                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
+                                تواصل مباشر مع المدربين
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.mobile-app-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.mobile-mockup {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.app-store-btn {
+    transition: transform 0.3s ease;
+}
+
+.app-store-btn:hover {
+    transform: translateY(-5px);
+}
+
+.app-features li {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.app-features li:nth-child(1) { animation-delay: 0.1s; }
+.app-features li:nth-child(2) { animation-delay: 0.2s; }
+.app-features li:nth-child(3) { animation-delay: 0.3s; }
+.app-features li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+<!------------- Mobile App Promotional Section End ------------>
 
 <div class="py-4 w-100"></div>
 
