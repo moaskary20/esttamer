@@ -961,14 +961,8 @@
                     <!-- App Store Button -->
                     <div class="app-buttons mb-4">
                         <!-- Google Play Button -->
-                        <a href="#" class="app-store-btn" style="display: inline-block;">
-                            <img src="<?php echo base_url('assets/frontend/default-new/image/google-play-badge.png'); ?>" 
-                                 alt="متوفر على Google Play" 
-                                 style="height: 60px;"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                            <div style="display: none; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold;">
-                                <i class="fab fa-google-play me-2"></i> GET IT ON Google Play
-                            </div>
+                        <a href="#" class="app-store-btn google-play-button" style="display: inline-block; background: #000; color: #fff; padding: 15px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fab fa-google-play me-2"></i> حمّل من Google Play
                         </a>
                     </div>
                     
@@ -1018,11 +1012,22 @@
 }
 
 .app-store-btn {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-store-btn:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.google-play-button {
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.google-play-button i {
+    font-size: 1.5rem;
 }
 
 .app-features li {
