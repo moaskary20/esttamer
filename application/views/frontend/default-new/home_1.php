@@ -958,8 +958,8 @@
                         احصل على ميزات إضافية مثل التحدث مع المدربين عبر خاصية المحادثة. بالإضافة إلى سهولة حجز وحضور الدورات عبر تحميلك لتطبيق استمر!
                     </p>
                     
-                    <!-- App Store Buttons -->
-                    <div class="app-buttons d-flex gap-3 flex-wrap">
+                    <!-- App Store Button -->
+                    <div class="app-buttons mb-4">
                         <!-- Google Play Button -->
                         <a href="#" class="app-store-btn" style="display: inline-block;">
                             <img src="<?php echo base_url('assets/frontend/default-new/image/google-play-badge.png'); ?>" 
@@ -968,17 +968,6 @@
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
                             <div style="display: none; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold;">
                                 <i class="fab fa-google-play me-2"></i> GET IT ON Google Play
-                            </div>
-                        </a>
-                        
-                        <!-- App Store Button -->
-                        <a href="#" class="app-store-btn" style="display: inline-block;">
-                            <img src="<?php echo base_url('assets/frontend/default-new/image/app-store-badge.png'); ?>" 
-                                 alt="متوفر على App Store" 
-                                 style="height: 60px;"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                            <div style="display: none; background: #000; color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: bold;">
-                                <i class="fab fa-apple me-2"></i> Download on the App Store
                             </div>
                         </a>
                     </div>
