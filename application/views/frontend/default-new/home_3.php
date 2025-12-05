@@ -245,7 +245,7 @@
                                           <i class="fa-solid fa-star <?php if($number_of_ratings > 0) echo 'filled'; ?>"></i>
                                        </p>
                                         <p class="mr-5px"><?php echo $average_ceil_rating; ?></p>
-                                        <p>(<?php echo $number_of_ratings; ?> <?php echo get_phrase('Reviews') ?>)</p>
+                                        <p>(<?php echo $number_of_ratings; ?> تقييم)</p>
                                     </div>
                                     <div class="review-btn d-flex align-items-center">
                                        <span data-bs-toggle="tooltip" data-bs-title="<?php echo site_phrase('Compare')?>" class="echecks checkPropagation" onclick="redirectTo('<?php echo base_url('home/compare?course-1='.slugify($top_course['title']).'&course-id-1='.$top_course['id']); ?>');">
@@ -366,7 +366,7 @@
                                             <i class="fas fa-minus me-2"></i> <?php echo get_phrase('Remove from cart'); ?>
                                         </a>
                                         <a id="add_to_cart_btn_top_course<?php echo $top_course['id']; ?>" class="purchase-btn align-items-center me-auto <?php if(in_array($top_course['id'], $cart_items)) echo 'd-hidden'; ?>" href="javascript:void(0)" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $top_course['id'].'/top_course'); ?>'); ">
-                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('Add to cart'); ?>
+                                            <i class="fas fa-plus me-2"></i> أضف إلى السلة
                                         </a>
                                         <!-- Cart button ended-->
                                     <?php endif; ?>
@@ -435,7 +435,7 @@
                                     <div class="review-icon-star align-items-center">
                                         <p><i class="fa-solid fa-star <?php if($number_of_ratings > 0) echo 'filled'; ?>"></i></p>
                                         <p class="mr-5px"><?php echo $average_ceil_rating; ?></p>
-                                        <p>(<?php echo $number_of_ratings; ?> <?php echo get_phrase('Reviews') ?>)</p>
+                                        <p>(<?php echo $number_of_ratings; ?> تقييم)</p>
                                     </div>
                                     <div class="review-btn d-flex align-items-center">
                                        <span class="compare-img echecks checkPropagation" data-bs-toggle="tooltip" data-bs-title="<?php echo site_phrase('Compare')?>" onclick="redirectTo('<?php echo base_url('home/compare?course-1='.slugify($latest_course['title']).'&course-id-1='.$latest_course['id']); ?>');">
@@ -554,7 +554,7 @@
                                             <i class="fas fa-minus me-2"></i> <?php echo get_phrase('Remove from cart'); ?>
                                         </a>
                                         <a id="add_to_cart_btn_latest_course<?php echo $latest_course['id']; ?>" class="purchase-btn align-items-center me-auto <?php if(in_array($latest_course['id'], $cart_items)) echo 'd-hidden'; ?>" href="javascript:void(0)" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $latest_course['id'].'/latest_course'); ?>'); ">
-                                            <i class="fas fa-plus me-2"></i> <?php echo get_phrase('Add to cart'); ?>
+                                            <i class="fas fa-plus me-2"></i> أضف إلى السلة
                                         </a>
                                         <!-- Cart button ended-->
                                     <?php endif; ?>

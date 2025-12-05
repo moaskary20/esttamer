@@ -35,7 +35,7 @@ if ($number_of_ratings > 0) {
                                 <div class="col-12 course-heading-info">
                                     <div class="info-tag eInfo">
                                         <img loading="lazy" width="30px" height="30px" class="rounded-circle object-fit-cover me-2" src="<?php echo $this->user_model->get_user_image_url($instructor_details['id']); ?>">
-                                        <p class="me-1 f-14"><?php echo get_phrase('Created By'); ?></p>
+                                        <p class="me-1 f-14">أنشئ بواسطة</p>
                                         <p>
                                             <a class="created-by-instructor" href="<?php echo site_url('home/instructor_page/' . $course_details['creator']); ?>"><?php echo $instructor_details['first_name'] . ' ' . $instructor_details['last_name']; ?></a>
                                         </p>
@@ -51,7 +51,7 @@ if ($number_of_ratings > 0) {
                                                         <li class="me-0"><i class="fa-solid fa-star text-shadow text-15px  mt-7px"></i></li>
                                                     <?php endif; ?>
                                                 <?php endfor; ?>
-                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . get_phrase('Reviews'); ?>)</p>
+                                                <p class="text-15px mt-1">(<?php echo $number_of_ratings . ' ' . 'تقييم'; ?>)</p>
                                             </ul>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@ if ($number_of_ratings > 0) {
                                             <path d="M13.7546 15.5625C13.4921 15.5625 13.2596 15.3825 13.2071 15.1125C13.1471 14.805 13.3421 14.5125 13.6421 14.445C14.1146 14.3475 14.5496 14.16 14.8871 13.8975C15.3146 13.575 15.5471 13.17 15.5471 12.7425C15.5471 12.315 15.3146 11.91 14.8946 11.595C14.5646 11.34 14.1521 11.16 13.6646 11.0475C13.3646 10.98 13.1696 10.68 13.2371 10.3725C13.3046 10.0725 13.6046 9.87751 13.9121 9.94501C14.5571 10.0875 15.1196 10.3425 15.5771 10.695C16.2746 11.22 16.6721 11.9625 16.6721 12.7425C16.6721 13.5225 16.2671 14.265 15.5696 14.7975C15.1046 15.1575 14.5196 15.42 13.8746 15.5475C13.8296 15.5625 13.7921 15.5625 13.7546 15.5625Z" fill="#0D0C23"/>
                                             </svg>
 
-                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments ?> <?php echo get_phrase('Enrolled'); ?></p>
+                                        <p class="text-15px mt-1"><?php echo $number_of_enrolments ?> ملتحق</p>
                                     </div>
 
                                 </div>
@@ -95,7 +95,7 @@ if ($number_of_ratings > 0) {
                                             </svg>
 
                                        </p>
-                                        <p class="f-14 mt-1 me-1"><?php echo get_phrase('Last Updated'); ?></p>
+                                        <p class="f-14 mt-1 me-1">آخر تحديث</p>
                                         <p class="f-14 mt-1">
                                             <?php if ($course_details['last_modified'] > 0) : ?>
                                                 <?php echo date('D, d-M-Y', $course_details['last_modified']); ?>
@@ -162,7 +162,7 @@ if ($number_of_ratings > 0) {
                                 <path d="M14.0837 15.8417C13.8253 15.8417 13.567 15.7667 13.342 15.6167L12.542 15.0917C12.317 14.9417 12.2087 14.6584 12.2837 14.4C12.342 14.2084 12.367 13.9833 12.367 13.7333V10.3417C12.367 8.98332 11.517 8.13335 10.1587 8.13335H4.50032C4.40032 8.13335 4.30866 8.1417 4.21699 8.15003C4.04199 8.15837 3.87533 8.10002 3.742 7.98336C3.60866 7.86669 3.54199 7.70003 3.54199 7.52503V5.21668C3.54199 2.76668 5.25866 1.05002 7.70866 1.05002H14.792C17.242 1.05002 18.9587 2.76668 18.9587 5.21668V9.46666C18.9587 10.675 18.5503 11.7417 17.8003 12.475C17.2003 13.0833 16.367 13.475 15.417 13.5917V14.5167C15.417 15.0167 15.142 15.4667 14.7087 15.7C14.5087 15.7917 14.292 15.8417 14.0837 15.8417ZM13.5837 14.275L14.1253 14.5833C14.1753 14.5583 14.1753 14.5167 14.1753 14.5083V13C14.1753 12.6583 14.4587 12.375 14.8003 12.375C15.6753 12.375 16.417 12.1 16.9253 11.5834C17.4503 11.0667 17.717 10.3333 17.717 9.45832V5.20834C17.717 3.43334 16.5753 2.29168 14.8003 2.29168H7.71699C5.94199 2.29168 4.80032 3.43334 4.80032 5.20834V6.87501H10.167C12.2003 6.87501 13.6253 8.30003 13.6253 10.3334V13.725C13.617 13.9167 13.6087 14.1 13.5837 14.275Z" fill="#68768B"/>
                                 <path d="M5.05866 18.9583C4.87533 18.9583 4.68366 18.9167 4.50866 18.825C4.117 18.6167 3.87532 18.2167 3.87532 17.7667V17.1333C3.14199 17.0167 2.492 16.7083 2.00866 16.225C1.37533 15.5916 1.04199 14.725 1.04199 13.725V10.3334C1.04199 8.45002 2.27532 7.06668 4.10865 6.89168C4.24199 6.88335 4.36699 6.875 4.50032 6.875H10.1587C12.192 6.875 13.617 8.30002 13.617 10.3334V13.725C13.617 14.0916 13.5753 14.4333 13.4837 14.7417C13.1087 16.2417 11.8337 17.1833 10.1587 17.1833H8.08366L5.72532 18.75C5.52532 18.8917 5.292 18.9583 5.05866 18.9583ZM4.50032 8.125C4.40032 8.125 4.30866 8.13335 4.21699 8.14168C3.01699 8.25002 2.29199 9.07502 2.29199 10.3334V13.725C2.29199 14.3916 2.50033 14.95 2.89199 15.3416C3.27533 15.725 3.83365 15.9333 4.50032 15.9333C4.84199 15.9333 5.12532 16.2167 5.12532 16.5583V17.65L7.54199 16.0417C7.64199 15.975 7.76699 15.9333 7.89199 15.9333H10.1587C11.2587 15.9333 12.0337 15.3833 12.2753 14.4167C12.3337 14.2083 12.367 13.975 12.367 13.725V10.3334C12.367 8.97502 11.517 8.125 10.1587 8.125H4.50032Z" fill="#68768B"/>
                                 </svg>
-                                <span class="ms-1"><?php echo get_phrase('Reviews') ?></span></button>
+                                <span class="ms-1">التقييمات</span></button>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -233,7 +233,7 @@ if ($number_of_ratings > 0) {
                                     <path d="M12.5 18.9583C12.4167 18.9583 12.3417 18.9417 12.2583 18.9083C12.025 18.8083 11.875 18.5833 11.875 18.3333V15.8333C11.875 13.8167 12.9833 12.7083 15 12.7083H17.5C17.75 12.7083 17.9833 12.8583 18.075 13.0917C18.175 13.325 18.1167 13.5917 17.9417 13.775L12.9417 18.775C12.825 18.8917 12.6667 18.9583 12.5 18.9583ZM15 13.9583C13.6833 13.9583 13.125 14.5167 13.125 15.8333V16.825L15.9917 13.9583H15Z" fill="#68768B"/>
                                     </svg>
                               </span>
-                                <h4><?php echo get_phrase('Lectures') ?></h4>
+                                <h4>المحاضرات</h4>
                             </div>
                             <h5><?php echo $this->db->get_where('lesson', ['course_id' => $course_details['id'], 'lesson_type !=' => 'quiz'])->num_rows(); ?></h5>
                         </div>
@@ -344,15 +344,15 @@ if ($number_of_ratings > 0) {
                                 <?php endif; ?>
                             <?php else : ?>
                                 <?php if ($course_details['is_free_course'] == 1) : ?>
-                                    <a href="<?php echo site_url('home/get_enrolled_to_free_course/' . $course_details['id']); ?>"><?php echo get_phrase('Enroll Now'); ?></a>
+                                    <a href="<?php echo site_url('home/get_enrolled_to_free_course/' . $course_details['id']); ?>">سجل الآن</a>
                                 <?php else : ?>
 
                                     <!-- Cart button -->
                                     <a id="added_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (!in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?> active" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>');"><i class="fas fa-minus"></i> <?php echo get_phrase('Remove from cart'); ?></a>
-                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> <?php echo get_phrase('Add to cart'); ?></a>
+                                    <a id="add_to_cart_btn_<?php echo $course_details['id']; ?>" class="<?php if (in_array($course_details['id'], $cart_items)) echo 'd-hidden'; ?>" href="#" onclick="actionTo('<?php echo site_url('home/handle_cart_items/' . $course_details['id']); ?>'); "><i class="fas fa-plus"></i> أضف إلى السلة</a>
                                     <!-- Cart button ended-->
 
-                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> <?php echo get_phrase('Buy Now'); ?></a>
+                                    <a href="#" onclick="actionTo('<?php echo site_url('home/handle_buy_now/' . $course_details['id']); ?>')"><i class="fas fa-credit-card"></i> اشتري الآن</a>
                                 <?php endif; ?>
                             <?php endif; ?>
 
@@ -381,7 +381,7 @@ if ($number_of_ratings > 0) {
                     </div>
                     <div class="eSocialShare d-flex align-items-center w-100">
                             <?php $share_url = site_url('home/course/' . slugify($course_details['title']) . '/' . $course_details['id']); ?>
-                            <p><?php echo  site_phrase('Share this course');?></p>
+                            <p>شارك هذه الدورة</p>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_url; ?>&ref=<?php echo $ref; ?>" target="_blank" class="p-2" style="color: #316FF6;" data-bs-toggle="tooltip" title="<?php echo get_phrase('Share on Facebook'); ?>" data-bs-placement="top">
                                 <svg width="19" height="19" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_30_3727)">
