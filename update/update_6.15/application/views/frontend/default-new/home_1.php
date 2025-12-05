@@ -13,9 +13,13 @@
     
     /* Start Learning Section Styles */
     .start-learning-section {
-        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%) !important;
         position: relative;
-        overflow: hidden;
+        overflow: visible !important;
+        min-height: 400px;
+        padding: 80px 0 !important;
+        display: block !important;
+        visibility: visible !important;
     }
     
     .start-learning-section .section-title .main-title {
@@ -50,6 +54,7 @@
         border-radius: 20px;
         padding: 30px 20px;
         height: 100%;
+        min-height: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,7 +62,7 @@
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         position: relative;
-        overflow: hidden;
+        overflow: visible;
     }
     
     .category-card:hover {
@@ -79,6 +84,8 @@
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
+        width: auto;
+        height: auto;
     }
     
     .category-card-content {
@@ -497,7 +504,7 @@
 <?php endif; ?>
 
 <!---------- Start Learning Section Start ---------------->
-<section class="start-learning-section py-100">
+<section class="start-learning-section py-100 wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
     <div class="container">
         <!-- Section Title -->
         <div class="row mb-5">
@@ -510,7 +517,7 @@
         </div>
         
         <!-- Category Cards -->
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center wow animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="700">
             <!-- Card 1: Speech and Language Therapy -->
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
