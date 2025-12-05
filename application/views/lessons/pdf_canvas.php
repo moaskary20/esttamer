@@ -30,7 +30,7 @@
         width: 50%;
         max-width: 200px;
         height: 100%;
-        background-color: #754ffe;
+        background-color: #038261;
         border: none;
         cursor: pointer;
         color: #fff;
@@ -40,7 +40,7 @@
         width: 50%;
         max-width: 200px;
         height: 100%;
-        background-color: #754ffe;
+        background-color: #038261;
         border: none;
         cursor: pointer;
         color: #fff;
@@ -50,7 +50,7 @@
         height: 48px;
         width: 100%;
         border: none;
-        background-color: #754ffe;
+        background-color: #038261;
         text-align: center;
         font-weight: 900;
         font-size: 18px;
