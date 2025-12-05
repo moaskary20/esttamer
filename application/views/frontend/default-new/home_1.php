@@ -121,6 +121,321 @@
 <!---------- Banner Section End ---------------->
 
 
+<!---------- Why Estamer Platform Section Start --------------->
+<section class="why-estamer-section py-100">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="main-title mb-3">لماذا منصة استمر؟</h2>
+                    <div class="title-divider mx-auto"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Grid -->
+        <div class="row g-4 mb-5">
+            <!-- Feature 1: Certified Trainers -->
+            <div class="col-lg-6 col-md-6">
+                <div class="why-feature-card">
+                    <div class="feature-content">
+                        <div class="feature-icon-wrapper mb-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="icon-decoration"></div>
+                        </div>
+                        <h3 class="feature-title mb-3">مدربون و أخصائيون معتمدون</h3>
+                        <p class="feature-description">
+                            مدربون أصحاب خبرات أكاديمية و عملية في مجالات التأهيل المختلفة و الطب و التغذية و غيرها، و مع الفئات العمرية المختلفة.
+                        </p>
+                    </div>
+                    <div class="feature-illustration">
+                        <div class="illustration-circle circle-1"></div>
+                        <div class="illustration-circle circle-2"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 2: Ease of Use -->
+            <div class="col-lg-6 col-md-6">
+                <div class="why-feature-card">
+                    <div class="feature-content">
+                        <div class="feature-icon-wrapper mb-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="icon-decoration"></div>
+                        </div>
+                        <h3 class="feature-title mb-3">سهولة الإستخدام</h3>
+                        <p class="feature-description">
+                            اعتماد أسلوب الدورات المسجلة مسبقاً، يسهل الوصول للدورات في أي وقت، بالإضافة تقسيم الدورات إلى دروس متسلسلة لتسهيل عملية الدراسة و المتابعة.
+                        </p>
+                    </div>
+                    <div class="feature-illustration">
+                        <div class="illustration-circle circle-1"></div>
+                        <div class="illustration-circle circle-2"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 3: Certificates & Exams -->
+            <div class="col-lg-6 col-md-6">
+                <div class="why-feature-card">
+                    <div class="feature-content">
+                        <div class="feature-icon-wrapper mb-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="icon-decoration"></div>
+                        </div>
+                        <h3 class="feature-title mb-3">شهادات و امتحانات</h3>
+                        <p class="feature-description">
+                            يحصل الطالب على شهادة بعد الانتهاء من كل دورة، بشرط اجتياز امتحان قصير متعلق بمادة الدورة و بعلامة 80%.
+                        </p>
+                    </div>
+                    <div class="feature-illustration">
+                        <div class="illustration-circle circle-1"></div>
+                        <div class="illustration-circle circle-2"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 4: Affordable Prices -->
+            <div class="col-lg-6 col-md-6">
+                <div class="why-feature-card">
+                    <div class="feature-content">
+                        <div class="feature-icon-wrapper mb-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <div class="icon-decoration"></div>
+                        </div>
+                        <h3 class="feature-title mb-3">الأسعار المناسبة</h3>
+                        <p class="feature-description">
+                            تم اعتماد شريحة من الأسعار المناسبة للدورات على المنصة، بالإضافة إلى توفر مادة مجانية كبيرة من المقالات العلمية و السهلة و المقدمة بلغة مباشرة و سهلة.
+                        </p>
+                    </div>
+                    <div class="feature-illustration">
+                        <div class="illustration-circle circle-1"></div>
+                        <div class="illustration-circle circle-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.why-estamer-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-estamer-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(32, 227, 178, 0.08) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+    border-radius: 50%;
+}
+
+.section-title .main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.title-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #20E3B2 0%, #29FFC6 100%);
+    border-radius: 10px;
+}
+
+.why-feature-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 35px;
+    height: 100%;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.why-feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+    border-color: rgba(32, 227, 178, 0.3);
+}
+
+.feature-icon-wrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(32, 227, 178, 0.25);
+}
+
+.feature-icon i {
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+.icon-decoration {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(32, 227, 178, 0.2) 0%, rgba(41, 255, 198, 0.2) 100%);
+    border-radius: 20px;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.feature-illustration {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+}
+
+.illustration-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+}
+
+.circle-1 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    bottom: 20px;
+    right: 20px;
+    animation: pulse1 3s ease-in-out infinite;
+}
+
+.circle-2 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #29FFC6 0%, #20E3B2 100%);
+    bottom: 60px;
+    right: 80px;
+    animation: pulse2 3s ease-in-out infinite;
+}
+
+@keyframes pulse1 {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.25;
+    }
+}
+
+@keyframes pulse2 {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.25;
+    }
+}
+
+/* Animation on scroll */
+.why-feature-card {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.why-feature-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.why-feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.why-feature-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.why-feature-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@media (max-width: 992px) {
+    .section-title .main-title {
+        font-size: 2rem;
+    }
+    
+    .why-feature-card {
+        padding: 30px 25px;
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .feature-title {
+        font-size: 1.2rem;
+    }
+    
+    .feature-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title .main-title {
+        font-size: 1.75rem;
+    }
+}
+</style>
+<!---------- Why Estamer Platform Section End --------------->
+
 
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
