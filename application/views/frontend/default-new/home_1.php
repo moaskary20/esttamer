@@ -13,7 +13,7 @@
     
     /* Start Learning Section Styles */
     .start-learning-section {
-        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%) !important;
+        background: linear-gradient(180deg, #2D9A7A 0%, #20B2AA 100%) !important;
         position: relative;
         overflow: visible !important;
         min-height: 400px;
@@ -25,7 +25,7 @@
     .start-learning-section .section-title .main-title {
         font-size: 2.5rem;
         font-weight: 800;
-        color: #1a1a1a;
+        color: #ffffff;
         margin-bottom: 15px;
     }
     
