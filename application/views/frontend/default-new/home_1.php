@@ -673,7 +673,7 @@
 
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
-<section class="courses eTopcourse Ecourse grid-view-body pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
+<section class="courses eTopcourse Ecourse grid-view-body pb-100 pt-50 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="500" data-wow-delay="300">
     <div class="container">
         <div class="cTitle text-center">
             <h1 class="pt-0 f-36"><?php echo site_phrase('top_courses'); ?></h1>
