@@ -474,7 +474,7 @@
 
 
 <!---------- Why Estamer Platform Section Start --------------->
-<section class="why-estamer-section py-100">
+<section class="why-estamer-section py-100 pt-50">
     <div class="container">
         <!-- Section Title -->
         <div class="row mb-5">
