@@ -19,171 +19,24 @@
     }
     
     .banner-main-content {
-        background: linear-gradient(135deg, #028161 0%, #20B2AA 50%, #2D9A7A 100%);
-        padding: 80px 0 60px;
-        position: relative;
-    }
-    
-    .banner-main-content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
-        pointer-events: none;
-    }
-    
-    .banner-left-content {
-        position: relative;
-        z-index: 2;
-        padding: 20px;
-    }
-    
-    .certification-badge {
-        position: absolute;
-        top: -20px;
-        left: 0;
-        z-index: 10;
-    }
-    
-    .badge-circle {
-        width: 120px;
-        height: 120px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        position: relative;
-    }
-    
-    .badge-inner {
-        width: 60px;
-        height: 60px;
-        background: #028161;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .badge-text {
-        position: absolute;
-        font-size: 8px;
-        font-weight: 700;
-        color: #ffffff;
-        text-align: center;
-        line-height: 1.2;
         width: 100%;
-        padding: 0 10px;
-    }
-    
-    .banner-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin: 40px 0 20px;
-        line-height: 1.2;
-    }
-    
-    .banner-subtitle {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 30px;
-    }
-    
-    .banner-search {
-        margin-bottom: 40px;
-    }
-    
-    .search-input-wrapper {
         position: relative;
-        display: flex;
-        align-items: center;
-        background: #ffffff;
-        border-radius: 50px;
-        padding: 5px 5px 5px 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 0;
+        margin: 0;
     }
     
-    .search-icon {
-        margin-left: 10px;
-        color: #1E293B;
-    }
-    
-    .search-input-wrapper .form-control {
-        border: none;
-        background: transparent;
-        flex: 1;
-        padding: 15px 10px;
-        font-size: 1rem;
-    }
-    
-    .search-input-wrapper .form-control:focus {
-        outline: none;
-        box-shadow: none;
-    }
-    
-    .search-btn {
-        background: #028161;
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-    
-    .search-btn:hover {
-        background: #20B2AA;
-        transform: scale(1.05);
-    }
-    
-    .banner-stats {
-        display: flex;
-        gap: 40px;
-        flex-wrap: wrap;
-    }
-    
-    .stat-item {
-        text-align: center;
-    }
-    
-    .stat-number {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #ffffff;
-        margin-bottom: 5px;
-    }
-    
-    .stat-label {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    
-    .banner-right-content {
+    .banner-image-fullwidth {
+        width: 100%;
+        height: auto;
         position: relative;
-        z-index: 1;
-    }
-    
-    .banner-image-wrapper {
-        position: relative;
-        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
     
-    .banner-image-wrapper img {
+    .banner-image-fullwidth img {
         width: 100%;
         height: auto;
         display: block;
+        object-fit: cover;
     }
     
     .banner-features {
@@ -224,47 +77,7 @@
         margin: 0;
     }
     
-    @media (max-width: 991px) {
-        .banner-title {
-            font-size: 2.5rem;
-        }
-        
-        .banner-main-content {
-            padding: 60px 0 40px;
-        }
-        
-        .certification-badge {
-            position: relative;
-            top: 0;
-            margin-bottom: 20px;
-        }
-        
-        .banner-stats {
-            gap: 30px;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-        }
-    }
-    
     @media (max-width: 768px) {
-        .banner-title {
-            font-size: 2rem;
-        }
-        
-        .banner-subtitle {
-            font-size: 1rem;
-        }
-        
-        .banner-stats {
-            gap: 20px;
-        }
-        
-        .stat-number {
-            font-size: 1.8rem;
-        }
-        
         .feature-card {
             flex-direction: column;
             text-align: center;
@@ -604,91 +417,8 @@
 <!---------- Banner Section Start ---------------->
 <section class="new-banner-section">
     <div class="banner-main-content">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <!-- Left Content -->
-                <div class="col-lg-6 col-md-12">
-                    <div class="banner-left-content">
-                        <!-- Certification Badge -->
-                        <div class="certification-badge">
-                            <div class="badge-circle">
-                                <div class="badge-inner">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="badge-text">CERTIFICATION<br>GUARANTEE</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Title -->
-                        <?php
-                            $banner_title = site_phrase(get_frontend_settings('banner_title'));
-                            $banner_title_arr = explode(' ', $banner_title);
-                        ?>
-                        <h1 class="banner-title">
-                            <?php
-                            foreach($banner_title_arr as $key => $value){
-                                if ($key == 1) { 
-                                    echo $value . '<br>';
-                                } elseif ($key == count($banner_title_arr) - 1) { 
-                                    echo '<span class="d-inline-block">'.$value.'</span>';
-                                } else {
-                                    echo $value . ' ';
-                                }
-                            }
-                            ?>
-                        </h1>
-                        
-                        <!-- Subtitle -->
-                        <p class="banner-subtitle"><?php echo site_phrase(get_frontend_settings('banner_sub_title')); ?></p>
-                        
-                        <!-- Search Bar -->
-                        <div class="banner-search">
-                            <form action="<?php echo site_url('home/search'); ?>" method="get">
-                                <div class="search-input-wrapper">
-                                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.58439 17.5017C13.9566 17.5017 17.5011 13.9573 17.5011 9.585C17.5011 5.21275 13.9566 1.66833 9.58439 1.66833C5.21214 1.66833 1.66772 5.21275 1.66772 9.585C1.66772 13.9573 5.21214 17.5017 9.58439 17.5017Z" stroke="#1E293B" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M17.892 18.7769C18.1361 19.021 18.5318 19.021 18.7759 18.7769C19.02 18.5328 19.02 18.1371 18.7759 17.893L17.892 18.7769ZM16.2759 15.393L15.834 14.9511L14.9501 15.835L15.392 16.2769L16.2759 15.393ZM18.7759 17.893L16.2759 15.393L15.392 16.2769L17.892 18.7769L18.7759 17.893Z" fill="#1E293B"/>
-                                    </svg>
-                                    <input type="text" class="form-control" placeholder="<?php echo get_phrase('What do you want to learn'); ?>" name="query">
-                                    <button type="submit" class="search-btn">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.58439 17.5017C13.9566 17.5017 17.5011 13.9573 17.5011 9.585C17.5011 5.21275 13.9566 1.66833 9.58439 1.66833C5.21214 1.66833 1.66772 5.21275 1.66772 9.585C1.66772 13.9573 5.21214 17.5017 9.58439 17.5017Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M17.892 18.7769C18.1361 19.021 18.5318 19.021 18.7759 18.7769C19.02 18.5328 19.02 18.1371 18.7759 17.893L17.892 18.7769ZM16.2759 15.393L15.834 14.9511L14.9501 15.835L15.392 16.2769L16.2759 15.393ZM18.7759 17.893L16.2759 15.393L15.392 16.2769L17.892 18.7769L18.7759 17.893Z" fill="white"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        
-                        <!-- Stats -->
-                        <div class="banner-stats">
-                            <?php
-                                $status_wise_courses = $this->crud_model->get_status_wise_courses_front();
-                                $number_of_courses = $status_wise_courses['active']->num_rows();
-                            ?>
-                            <div class="stat-item">
-                                <div class="stat-number"><?php echo $number_of_courses; ?>+</div>
-                                <div class="stat-label"><?php echo site_phrase('online_courses'); ?></div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">25k+</div>
-                                <div class="stat-label"><?php echo site_phrase('Users'); ?></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Image -->
-                <div class="col-lg-6 col-md-12">
-                    <div class="banner-right-content">
-                        <div class="banner-image-wrapper">
-                            <img loading="lazy" src="<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>" alt="Banner">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="banner-image-fullwidth">
+            <img loading="lazy" src="<?php echo base_url("uploads/system/" . get_current_banner('banner_image')); ?>" alt="Banner">
         </div>
     </div>
     
