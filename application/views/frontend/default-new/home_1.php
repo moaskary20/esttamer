@@ -270,7 +270,6 @@
             text-align: center;
         }
     }
-</style>
     
     /* Start Learning Section Styles */
     .start-learning-section {
