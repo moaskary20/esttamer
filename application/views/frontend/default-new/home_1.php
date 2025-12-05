@@ -925,41 +925,79 @@
             <!-- Left Side: Content -->
             <div class="col-lg-6 col-md-12">
                 <div class="app-promo-content">
-                    <h2 class="app-promo-title mb-4" style="font-size: 2.5rem; color: #2c3e50; font-weight: bold;">
-                        حمل تطبيق استمر الآن
+                    <!-- Badge -->
+                    <div class="app-badge mb-3">
+                        <span style="background: rgba(255, 255, 255, 0.9); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; color: #20E3B2; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <i class="fas fa-mobile-alt me-2"></i>تطبيق جديد
+                        </span>
+                    </div>
+                    
+                    <h2 class="app-promo-title mb-4" style="font-size: 3rem; color: #1a1a1a; font-weight: 800; line-height: 1.2;">
+                        حمل تطبيق <span style="color: #20E3B2;">استمر</span> الآن
                     </h2>
-                    <p class="app-promo-description mb-4" style="font-size: 1.2rem; color: #555; line-height: 1.8;">
-                        احصل على ميزات إضافية مثل التحدث مع المدربين عبر خاصية المحادثة. بالإضافة إلى سهولة حجز وحضور الدورات عبر تحميلك لتطبيق استمر!
+                    <p class="app-promo-description mb-4" style="font-size: 1.15rem; color: #2c3e50; line-height: 1.8;">
+                        استمتع بتجربة تعليمية فريدة مع تطبيق استمر! تحدث مع المدربين مباشرة، احجز الدورات بسهولة، وتعلم في أي وقت ومن أي مكان.
                     </p>
                     
                     <!-- App Store Button -->
-                    <div class="app-buttons mb-4">
-                        <!-- Google Play Button -->
-                        <a href="#" class="app-store-btn google-play-button" style="display: inline-block; background: #000; color: #fff; padding: 15px 30px; border-radius: 8px; font-weight: bold; text-decoration: none; transition: all 0.3s ease;">
-                            <i class="fab fa-google-play me-2"></i> حمّل من Google Play
+                    <div class="app-buttons mb-5">
+                        <a href="#" class="app-store-btn google-play-button">
+                            <i class="fab fa-google-play"></i>
+                            <div class="button-text">
+                                <small>حمّل من</small>
+                                <strong>Google Play</strong>
+                            </div>
                         </a>
                     </div>
                     
                     <!-- Features List -->
-                    <div class="app-features mt-5">
-                        <ul style="list-style: none; padding: 0;">
-                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
-                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
-                                تعلم في أي وقت وأي مكان
-                            </li>
-                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
-                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
-                                وصول غير محدود لجميع الدورات
-                            </li>
-                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
-                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
-                                تنزيل الدروس ومشاهدتها دون اتصال
-                            </li>
-                            <li class="mb-3" style="font-size: 1.1rem; color: #555;">
-                                <i class="fas fa-check-circle me-2" style="color: #667eea;"></i>
-                                تواصل مباشر مع المدربين
-                            </li>
-                        </ul>
+                    <div class="app-features">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h6>تعلم في أي وقت</h6>
+                                        <p>وصول دائم 24/7</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-infinity"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h6>وصول غير محدود</h6>
+                                        <p>جميع الدورات متاحة</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-download"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h6>تعلم دون اتصال</h6>
+                                        <p>حمّل المحتوى وشاهده</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h6>تواصل مباشر</h6>
+                                        <p>دردشة مع المدربين</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -969,7 +1007,31 @@
 
 <style>
 .mobile-app-section {
-    background: #65f088;
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-app-section::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+}
+
+.mobile-app-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -100px;
 }
 
 .mobile-screens-container {
@@ -983,38 +1045,35 @@
 .mobile-phone {
     width: 180px;
     height: 360px;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 35px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    padding: 12px;
     position: relative;
-    animation: float 3s ease-in-out infinite;
-    border: 8px solid #2c3e50;
+    border: 3px solid #1a1a1a;
 }
 
 .phone-1 {
-    transform: rotate(-5deg) translateY(20px);
+    animation: float1 4s ease-in-out infinite;
     z-index: 1;
-    animation-delay: 0s;
 }
 
 .phone-2 {
-    transform: scale(1.1);
+    animation: float2 4s ease-in-out infinite;
     z-index: 3;
-    animation-delay: 0.5s;
+    transform: scale(1.15);
 }
 
 .phone-3 {
-    transform: rotate(5deg) translateY(20px);
+    animation: float3 4s ease-in-out infinite;
     z-index: 1;
-    animation-delay: 1s;
 }
 
 .phone-screen {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
-    border-radius: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1025,12 +1084,12 @@
 .phone-screen::before {
     content: '';
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 50px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
 
@@ -1041,98 +1100,171 @@
 }
 
 .app-icon {
-    background: rgba(255, 255, 255, 0.2);
-    width: 80px;
-    height: 80px;
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    width: 70px;
+    height: 70px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    backdrop-filter: blur(10px);
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-.phone-1 {
-    animation: float1 3s ease-in-out infinite;
-}
-
-.phone-2 {
-    animation: float2 3s ease-in-out infinite;
-}
-
-.phone-3 {
-    animation: float3 3s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(32, 227, 178, 0.3);
 }
 
 @keyframes float1 {
     0%, 100% {
-        transform: rotate(-5deg) translateY(20px);
+        transform: rotate(-8deg) translateY(20px);
     }
     50% {
-        transform: rotate(-5deg) translateY(0px);
+        transform: rotate(-8deg) translateY(-10px);
     }
 }
 
 @keyframes float2 {
     0%, 100% {
-        transform: scale(1.1) translateY(0px);
+        transform: scale(1.15) translateY(0px);
     }
     50% {
-        transform: scale(1.1) translateY(-20px);
+        transform: scale(1.15) translateY(-25px);
     }
 }
 
 @keyframes float3 {
     0%, 100% {
-        transform: rotate(5deg) translateY(20px);
+        transform: rotate(8deg) translateY(20px);
     }
     50% {
-        transform: rotate(5deg) translateY(0px);
+        transform: rotate(8deg) translateY(-10px);
     }
 }
 
-.app-store-btn {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.app-badge {
+    animation: fadeInDown 0.6s ease;
 }
 
-.app-store-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .google-play-button {
-    font-size: 1.1rem;
     display: inline-flex;
     align-items: center;
+    gap: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 18px 35px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.google-play-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    background: #2d2d2d;
+    color: #fff;
 }
 
 .google-play-button i {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
-.app-features li {
-    animation: fadeInUp 0.5s ease forwards;
-    opacity: 0;
+.google-play-button .button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.3;
 }
 
-.app-features li:nth-child(1) { animation-delay: 0.1s; }
-.app-features li:nth-child(2) { animation-delay: 0.2s; }
-.app-features li:nth-child(3) { animation-delay: 0.3s; }
-.app-features li:nth-child(4) { animation-delay: 0.4s; }
+.google-play-button small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.google-play-button strong {
+    font-size: 1.1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(32, 227, 178, 0.3);
+}
+
+.feature-icon i {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h6 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.feature-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.app-features .row .col-md-6:nth-child(1) .feature-item {
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+}
+
+.app-features .row .col-md-6:nth-child(2) .feature-item {
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+}
+
+.app-features .row .col-md-6:nth-child(3) .feature-item {
+    animation: fadeInUp 0.6s ease 0.3s backwards;
+}
+
+.app-features .row .col-md-6:nth-child(4) .feature-item {
+    animation: fadeInUp 0.6s ease 0.4s backwards;
+}
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -1147,12 +1279,20 @@
     }
     
     .app-icon {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     
     .app-icon i {
         font-size: 2rem !important;
+    }
+    
+    .app-promo-title {
+        font-size: 2rem !important;
+    }
+    
+    .feature-item {
+        padding: 15px;
     }
 }
 </style>
