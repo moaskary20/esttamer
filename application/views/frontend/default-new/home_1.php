@@ -946,10 +946,10 @@
                         <div class="phone-screen">
                             <div class="phone-content">
                                 <div class="app-icon mb-3">
-                                    <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #667eea;"></i>
+                                    <i class="fas fa-calendar-alt" style="font-size: 3rem; color: #fff;"></i>
                                 </div>
-                                <h6 style="color: #2c3e50; font-weight: bold;">المواعيد</h6>
-                                <p style="font-size: 0.8rem; color: #666;">احجز مواعيدك بسهولة</p>
+                                <h6 style="color: #fff; font-weight: bold;">المواعيد</h6>
+                                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.9);">احجز مواعيدك بسهولة</p>
                             </div>
                         </div>
                     </div>
@@ -959,10 +959,10 @@
                         <div class="phone-screen">
                             <div class="phone-content">
                                 <div class="app-icon mb-3">
-                                    <i class="fas fa-comments" style="font-size: 3rem; color: #667eea;"></i>
+                                    <i class="fas fa-comments" style="font-size: 3rem; color: #fff;"></i>
                                 </div>
-                                <h6 style="color: #2c3e50; font-weight: bold;">المحادثة</h6>
-                                <p style="font-size: 0.8rem; color: #666;">تواصل مع مدربيك</p>
+                                <h6 style="color: #fff; font-weight: bold;">المحادثة</h6>
+                                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.9);">تواصل مع مدربيك</p>
                             </div>
                         </div>
                     </div>
@@ -972,10 +972,10 @@
                         <div class="phone-screen">
                             <div class="phone-content">
                                 <div class="app-icon mb-3">
-                                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #667eea;"></i>
+                                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #fff;"></i>
                                 </div>
-                                <h6 style="color: #2c3e50; font-weight: bold;">الدورات</h6>
-                                <p style="font-size: 0.8rem; color: #666;">الوصول لجميع الدورات</p>
+                                <h6 style="color: #fff; font-weight: bold;">الدورات</h6>
+                                <p style="font-size: 0.8rem; color: rgba(255,255,255,0.9);">الوصول لجميع الدورات</p>
                             </div>
                         </div>
                     </div>
@@ -1073,7 +1073,7 @@
 .phone-screen {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
     border-radius: 20px;
     display: flex;
     align-items: center;
