@@ -146,6 +146,192 @@
             font-size: 1.25rem;
         }
     }
+    
+    /* Review Testimonial Section Styles */
+    .review-testimonial-section {
+        background-color: #028161 !important;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonial-slider-wrapper {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .testimonial-slider {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonial-slide {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    .testimonial-slide:first-child {
+        display: block;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .quote-icon {
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-text {
+        color: #ffffff;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        font-style: italic;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .author-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .author-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .author-info {
+        text-align: right;
+    }
+    
+    .author-name {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .author-role {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+    
+    .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    
+    .slider-nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .prev-btn {
+        right: -70px;
+    }
+    
+    .next-btn {
+        left: -70px;
+    }
+    
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+        background: #ffffff;
+        width: 30px;
+        border-radius: 6px;
+    }
+    
+    @media (max-width: 991px) {
+        .prev-btn {
+            right: 10px;
+        }
+        
+        .next-btn {
+            left: 10px;
+        }
+        
+        .testimonial-card {
+            padding: 30px 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .testimonial-card {
+            padding: 25px 15px;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .author-name {
+            font-size: 1rem;
+        }
+        
+        .author-role {
+            font-size: 0.85rem;
+        }
+    }
 </style>
 
 
@@ -1190,52 +1376,159 @@
 
 <!-- Start Review Section -->
 <?php if(get_frontend_settings('review_section') == 1): ?>
-<section class="expert-instructor top-categories pb-100 pt-0 ">
+<!-- Start Review Section -->
+<section class="review-testimonial-section pb-100 pt-100">
     <div class="container">
-       <div class="row">
-            <div class="col-lg-3"></div>
-                <div class="col-lg-6 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
-                    <h1 class="text-center f-36 mt-0 pt-0"><?php echo get_phrase('What the people Thinks About Us'); ?></h1>
-                    <p class="text-center mt-4 mb-30"><?php echo get_phrase('It highlights feedback and testimonials from users, reflecting their experiences and satisfaction.') ?></p>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center mb-5">
+                    <h1 class="text-white f-36 mt-0 pt-0"><?php echo get_phrase('What the people Thinks About Us'); ?></h1>
+                    <p class="text-white mt-4 mb-30"><?php echo get_phrase('It highlights feedback and testimonials from users, reflecting their experiences and satisfaction.') ?></p>
                 </div>
-                <div class="col-lg-3"></div>
             </div>
-         <div class="course-group-slider  wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
-                 <?php 
-                    $reviews = $this->db->where('ratable_type', NULL)->where('ratable_id', NULL)->get('rating')->result();
-                    foreach ($reviews as $review): 
-                        $user_data = $this->db->get_where('users', ['id' => $review->user_id])->row_array();
-                    ?>
-                    <div class="elegant-testimonial-slide">
-                        <div class="ele-testimonial-profile-area d-flex">
-                            <div class="profile">
-                                <img src="<?php echo $this->user_model->get_user_image_url($user_data['id']); ?>" alt="">
+        </div>
+        
+        <div class="testimonial-slider-wrapper">
+            <div class="testimonial-slider" id="testimonialSlider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30C14.4772 30 10 25.5228 10 20Z" fill="rgba(255,255,255,0.2)"/>
+                                    <path d="M15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18Z" fill="white"/>
+                                    <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
+                                </svg>
                             </div>
-                            <div class="ele-testimonial-profile-name">
-                                <h6 class="name"><?php echo $user_data['first_name'].' '.$user_data['last_name']; ?></h6>
-                                <p class="time"><?php echo date('h:i A', $review->date_added); ?></p>
-                                <ul class="rating d-flex align-items-center">
-                                    <?php 
-                                    for($i=1; $i<=5; $i++):
-                                        if($i <= $review->rating):
-                                    ?>
-                                        <li><i class="fas fa-star"></i></li>
-                                    <?php else: ?>
-                                        <li class="thin"><i class="far fa-star"></i></li>
-                                    <?php 
-                                        endif;
-                                    endfor;
-                                    ?>
-                                </ul>
+                            <p class="testimonial-text">منصة استمر منصة رائعة ساعدتني في تطوير مهاراتي في العلاج الطبيعي. المحتوى غني والمدربون محترفون جداً. أنصح الجميع بالانضمام!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-1.jpg'); ?>" alt="أحمد محمد" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">أحمد محمد</h5>
+                                <p class="author-role">أخصائي علاج طبيعي</p>
                             </div>
                         </div>
-                        <p class="review fw-400"><?php echo $review->review; ?></p>
                     </div>
-                    <?php endforeach; ?> 
-          </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30C14.4772 30 10 25.5228 10 20Z" fill="rgba(255,255,255,0.2)"/>
+                                    <path d="M15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18Z" fill="white"/>
+                                    <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">تجربة ممتازة مع منصة استمر! الدورات في علاج النطق واللغة شاملة ومفيدة جداً. استفدت كثيراً وأصبحت أكثر كفاءة في عملي.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-2.jpg'); ?>" alt="فاطمة علي" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">فاطمة علي</h5>
+                                <p class="author-role">أخصائية نطق ولغة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30C14.4772 30 10 25.5228 10 20Z" fill="rgba(255,255,255,0.2)"/>
+                                    <path d="M15 18C15 16.3431 16.3431 15 18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21C16.3431 21 15 19.6569 15 18Z" fill="white"/>
+                                    <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">منصة احترافية بكل معنى الكلمة. محتوى العلاج الوظيفي ممتاز والشرح واضح. شكراً لكم على هذه الخدمة المميزة!</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-3.jpg'); ?>" alt="خالد إبراهيم" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                            </div>
+                            <div class="author-info">
+                                <h5 class="author-name">خالد إبراهيم</h5>
+                                <p class="author-role">أخصائي علاج وظيفي</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="slider-nav prev-btn" onclick="moveSlider(-1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="slider-nav next-btn" onclick="moveSlider(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
     </div>
 </section>
+
+<script>
+let currentTestimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+    if (index >= testimonials.length) {
+        currentTestimonialIndex = 0;
+    } else if (index < 0) {
+        currentTestimonialIndex = testimonials.length - 1;
+    } else {
+        currentTestimonialIndex = index;
+    }
+    
+    testimonials.forEach((slide, i) => {
+        slide.style.display = i === currentTestimonialIndex ? 'block' : 'none';
+    });
+    
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentTestimonialIndex);
+    });
+}
+
+function moveSlider(direction) {
+    showSlide(currentTestimonialIndex + direction);
+}
+
+function currentSlide(index) {
+    showSlide(index - 1);
+}
+
+// Initialize
+showSlide(0);
+
+// Auto slide every 5 seconds
+setInterval(() => {
+    moveSlider(1);
+}, 5000);
+</script>
 <?php endif; ?>
+<!-- End Review Section -->
 <!-- End Review Section -->
 
 <?php if(get_frontend_settings('faq_section') == 1): ?>
