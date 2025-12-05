@@ -1629,7 +1629,7 @@ setInterval(() => {
 <!------------- Blog Section Start ------------>
 <?php $latest_blogs = $this->crud_model->get_latest_blogs(6); ?>
 <?php if($latest_blogs->num_rows() > 0): ?>
-<section class="courses blog pb-100 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
+<section class="courses blog pb-100 pt-50 wow  animate__animated animate__fadeInUp opacityOnUp" data-wow-duration="1000" data-wow-delay="500">
     <div class="container">
         <h1 class="text-center f-36 pt-0"><span>أحدث المقالات</span></h1>
         <p class="text-center mb-40">قم بزيارة مقالاتنا القيمة للحصول على المزيد من المعلومات
