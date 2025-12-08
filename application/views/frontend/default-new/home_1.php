@@ -1069,6 +1069,26 @@
                             </div>
                         </a>
                     </div>
+                    
+                    <!-- Card 5: Family Medicine -->
+                    <div class="category-slide">
+                        <a href="https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9" class="category-card-link">
+                            <div class="category-card">
+                                <div class="category-card-image">
+                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not3320.png'); ?>" alt="طب الأسرة">
+                                </div>
+                                <div class="category-card-content">
+                                    <h3 class="category-card-title">طب الأسرة</h3>
+                                    <div class="category-card-button">
+                                        <span>ابدأ الآن</span>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
             
