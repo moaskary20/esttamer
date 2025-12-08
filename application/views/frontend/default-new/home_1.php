@@ -1282,8 +1282,8 @@ function moveCategorySlider(direction) {
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
     // Update index based on direction
-    // Right arrow (direction = 1) -> see next slides (increase index, move content left = negative translateX)
-    // Left arrow (direction = -1) -> see previous slides (decrease index, move content right = positive translateX)
+    // Right arrow (direction = 1) -> see next slides (increase index)
+    // Left arrow (direction = -1) -> see previous slides (decrease index)
     currentCategoryIndex += direction;
     
     // Handle wrapping
@@ -1297,17 +1297,24 @@ function moveCategorySlider(direction) {
     const slideWidthPercent = 100 / slidesToShow;
     
     // Calculate translateX
-    // Negative translateX moves content LEFT (reveals content on the RIGHT = next slides)
-    // Positive translateX moves content RIGHT (reveals content on the LEFT = previous slides)
+    // In a slider, to show content on the RIGHT, we move the container to the LEFT (negative translateX)
+    // To show content on the LEFT, we move the container to the RIGHT (positive translateX)
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25% to move left and show right/next content)
-    // When clicking RIGHT arrow (direction = 1): index increases, translateX becomes more negative (moves left)
+    // Index 1: show slides 2-5 (translateX = -25% to move left and reveal right content)
+    // When clicking RIGHT arrow: we want to see NEXT slides (on the right), so move container LEFT (negative)
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
     // Apply transform
     categorySlider.style.transform = `translateX(${translateXPercent}%)`;
     categorySlider.style.display = 'flex';
+    
+    // Ensure all slides are visible after movement
+    categorySlides.forEach(function(slide) {
+        slide.style.display = 'block';
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+    });
 }
 
 // Initialize on load
