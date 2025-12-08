@@ -2248,6 +2248,11 @@ setInterval(() => {
         padding: 15px;
     }
 }
+
+.py-4 {
+    padding-top: 0em !important;
+    padding-bottom: 0;
+}
 </style>
 <!------------- Mobile App Promotional Section End ------------>
 
