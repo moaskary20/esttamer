@@ -295,6 +295,13 @@
         }
     }
     
+    /* Ensure all 5 cards are visible */
+    .category-slide {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
     .category-slide:nth-child(5) {
         display: block !important;
         visibility: visible !important;
