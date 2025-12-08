@@ -1274,6 +1274,9 @@ function moveCategorySlider(direction) {
     // Calculate max index based on total slides and slides to show
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
+    // Update index based on direction
+    // Right arrow (direction = 1) -> move to next set (increase index)
+    // Left arrow (direction = -1) -> move to previous set (decrease index)
     currentCategoryIndex += direction;
     
     // Handle wrapping
@@ -1284,13 +1287,14 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate slide width - each slide is 25% of container (4 slides visible)
-    // CSS uses calc(25% - 15px) but for transform we use simple percentage
     const slideWidthPercent = 100 / slidesToShow;
     
-    // Calculate translateX - move by one slide width for each index
+    // Calculate translateX - in standard LTR layout
+    // Negative translateX moves content left, revealing content on the right
+    // Positive translateX moves content right, revealing content on the left
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25%)
+    // Index 1: show slides 2-5 (translateX = -25% to move left and show right content)
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
     // Apply transform
