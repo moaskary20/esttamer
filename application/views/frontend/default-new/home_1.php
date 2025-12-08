@@ -2251,7 +2251,7 @@ setInterval(() => {
 
 .py-4 {
     padding-top: 0em !important;
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
 }
 </style>
 <!------------- Mobile App Promotional Section End ------------>
