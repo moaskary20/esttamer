@@ -14,6 +14,36 @@
         -webkit-font-smoothing: antialiased !important;
     }
     
+    /* Fix mobile sidebar menu icons */
+    .offcanvas i,
+    .btn-toggle-list i,
+    .btn-toggle i,
+    .mobile-view-offcanves i,
+    .offcanvas-body i {
+        font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        display: inline-block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-rendering: auto !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
+    /* Fix Font Awesome Regular icons (far) */
+    .offcanvas .far,
+    .btn-toggle-list .far,
+    .btn-toggle .far {
+        font-weight: 400 !important;
+    }
+    
+    /* Fix Font Awesome Brands icons (fab) */
+    .offcanvas .fab,
+    .btn-toggle-list .fab,
+    .btn-toggle .fab {
+        font-weight: 400 !important;
+    }
+    
     .eImage span {
         width: auto !important;
     }
