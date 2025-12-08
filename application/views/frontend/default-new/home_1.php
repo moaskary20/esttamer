@@ -220,7 +220,7 @@
     
     .category-slider {
         display: flex !important;
-        transition: transform 0.5s ease;
+        transition: transform 0.8s ease-in-out;
         gap: 20px;
         will-change: transform;
     }
@@ -1077,16 +1077,7 @@
         <div class="category-slider-wrapper position-relative">
             <div class="category-slider-container">
                 <div class="category-slider" id="categorySlider">
-                    <!-- Card 1: Empty Placeholder -->
-                    <div class="category-slide">
-                        <div class="category-card-empty">
-                            <div class="category-card" style="background: transparent; box-shadow: none; border: 2px dashed rgba(255, 255, 255, 0.3);">
-                                <!-- Empty card placeholder -->
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 2: Family Medicine -->
+                    <!-- Card 1: Family Medicine -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9" class="category-card-link">
                             <div class="category-card">
@@ -1292,8 +1283,8 @@ function moveCategorySlider(direction) {
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
     // Update index based on direction
-    // Right arrow (direction = 1) -> see next slides (increase index)
-    // Left arrow (direction = -1) -> see previous slides (decrease index)
+    // Right arrow (direction = 1) -> see next slides (increase index, move left)
+    // Left arrow (direction = -1) -> see previous slides (decrease index, move right)
     currentCategoryIndex += direction;
     
     // Handle wrapping
@@ -1307,24 +1298,16 @@ function moveCategorySlider(direction) {
     const slideWidthPercent = 100 / slidesToShow;
     
     // Calculate translateX
-    // In a slider, to show content on the RIGHT, we move the container to the LEFT (negative translateX)
-    // To show content on the LEFT, we move the container to the RIGHT (positive translateX)
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25% to move left and reveal right content)
-    // When clicking RIGHT arrow: we want to see NEXT slides (on the right), so move container LEFT (negative)
+    // Index 1: show slides 2-5 (translateX = -25% to move left and show slide 5)
+    // Negative translateX moves content LEFT (reveals content on the RIGHT)
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
-    // Apply transform
+    // Apply transform with smooth transition
+    categorySlider.style.transition = 'transform 0.8s ease-in-out';
     categorySlider.style.transform = `translateX(${translateXPercent}%)`;
     categorySlider.style.display = 'flex';
-    
-    // Ensure all slides are visible after movement
-    categorySlides.forEach(function(slide) {
-        slide.style.display = 'block';
-        slide.style.visibility = 'visible';
-        slide.style.opacity = '1';
-    });
 }
 
 // Initialize on load
