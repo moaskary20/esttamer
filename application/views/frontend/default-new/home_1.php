@@ -1295,27 +1295,19 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex;
     }
     
-    // Calculate slide width using the actual rendered width of the first slide
-    const firstSlide = categorySlides[0];
-    if (!firstSlide) return;
+    // Calculate movement using percentage (more reliable with flex)
+    const slideWidthPercent = 100 / slidesToShow;
     
-    const slideWidth = firstSlide.offsetWidth;
-    const gap = 20; // CSS gap value
-    
-    // Calculate translateX in pixels
+    // Calculate translateX in percentage
     // For 5 slides showing 4 at a time:
-    // Index 0: show slides 1-4 (translateX = 0px)
-    // Index 1: show slides 2-5 (translateX = -slideWidth - gap)
-    // When moving right (direction = 1), we move left (negative) to show right content
-    const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
-    
-    // Ensure slider has enough width to show all cards
-    categorySlider.style.width = 'auto';
-    categorySlider.style.minWidth = '100%';
+    // Index 0: show slides 1-4 (translateX = 0%)
+    // Index 1: show slides 2-5 (translateX = -25%)
+    // Negative translateX moves content LEFT (reveals content on the RIGHT)
+    const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
     // Apply transform with smooth transition
     categorySlider.style.transition = 'transform 0.8s ease-in-out';
-    categorySlider.style.transform = `translateX(${translateXPixels}px)`;
+    categorySlider.style.transform = `translateX(${translateXPercent}%)`;
     categorySlider.style.display = 'flex';
 }
 
@@ -1382,7 +1374,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateSlidesToShow();
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0px)';
+        categorySlider.style.transform = 'translateX(0%)';
         categorySlider.style.display = 'flex';
         categorySlider.style.transition = 'transform 0.8s ease-in-out';
     }
@@ -1397,7 +1389,7 @@ window.addEventListener('resize', function() {
     updateSlidesToShow();
     currentCategoryIndex = 0;
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0px)';
+        categorySlider.style.transform = 'translateX(0%)';
         categorySlider.style.transition = 'transform 0.8s ease-in-out';
     }
 });
