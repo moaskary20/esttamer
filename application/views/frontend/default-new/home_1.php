@@ -1181,10 +1181,29 @@ function moveCategorySlider(direction) {
     updateSlidesToShow();
     
     // Ensure all slides are visible
-    categorySlides.forEach(function(slide) {
+    categorySlides.forEach(function(slide, index) {
         slide.style.display = 'block';
         slide.style.visibility = 'visible';
         slide.style.opacity = '1';
+        slide.style.flex = '0 0 25%';
+        slide.style.minWidth = '25%';
+        slide.style.maxWidth = '25%';
+        
+        // Ensure card inside is visible
+        const card = slide.querySelector('.category-card');
+        if (card) {
+            card.style.display = 'flex';
+            card.style.visibility = 'visible';
+            card.style.opacity = '1';
+        }
+        
+        // Ensure image is visible
+        const img = slide.querySelector('.category-card-image img');
+        if (img) {
+            img.style.display = 'block';
+            img.style.visibility = 'visible';
+            img.style.opacity = '1';
+        }
     });
     
     // Calculate max index based on total slides and slides to show
