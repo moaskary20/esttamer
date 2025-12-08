@@ -220,11 +220,13 @@
         display: flex;
         transition: transform 0.5s ease;
         gap: 20px;
+        width: 100%;
     }
     
     .category-slide {
         flex: 0 0 calc(25% - 15px);
         min-width: calc(25% - 15px);
+        flex-shrink: 0;
     }
     
     @media (max-width: 991px) {
@@ -1111,9 +1113,9 @@
 <script>
 // Category Slider Functionality
 let currentCategoryIndex = 0;
-const categorySlides = document.querySelectorAll('.category-slide');
-const categorySlider = document.getElementById('categorySlider');
-const totalCategorySlides = categorySlides.length;
+let categorySlides;
+let categorySlider;
+let totalCategorySlides;
 let slidesToShow = 4;
 
 function updateSlidesToShow() {
@@ -1127,6 +1129,13 @@ function updateSlidesToShow() {
 }
 
 function moveCategorySlider(direction) {
+    // Re-query elements to ensure we have the latest count
+    categorySlides = document.querySelectorAll('.category-slide');
+    categorySlider = document.getElementById('categorySlider');
+    totalCategorySlides = categorySlides.length;
+    
+    if (!categorySlider || totalCategorySlides === 0) return;
+    
     updateSlidesToShow();
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
@@ -1145,6 +1154,10 @@ function moveCategorySlider(direction) {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
+    categorySlides = document.querySelectorAll('.category-slide');
+    categorySlider = document.getElementById('categorySlider');
+    totalCategorySlides = categorySlides.length;
+    
     updateSlidesToShow();
     if (categorySlider) {
         categorySlider.style.transform = 'translateX(0%)';
@@ -1153,6 +1166,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Update on resize
 window.addEventListener('resize', function() {
+    categorySlides = document.querySelectorAll('.category-slide');
+    categorySlider = document.getElementById('categorySlider');
+    totalCategorySlides = categorySlides.length;
+    
     updateSlidesToShow();
     currentCategoryIndex = 0;
     if (categorySlider) {
