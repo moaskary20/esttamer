@@ -85,7 +85,7 @@
     }
     
     .banner-features {
-        background: linear-gradient(135deg, #65f089 0%, #7ff5a0 30%, #8ff8b0 60%, #9ffac0 100%);
+        background: #64f088;
         padding: 50px 0;
         position: relative;
         overflow: hidden;
