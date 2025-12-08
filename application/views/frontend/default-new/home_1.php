@@ -630,6 +630,8 @@
 </section>
 
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 .why-estamer-section {
     background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
     position: relative;
@@ -698,8 +700,17 @@
 }
 
 .feature-icon i {
-    font-size: 2.2rem;
-    color: #fff;
+    font-size: 2.2rem !important;
+    color: #fff !important;
+    display: block !important;
+    line-height: 1 !important;
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 .icon-decoration {
