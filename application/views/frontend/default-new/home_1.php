@@ -221,12 +221,15 @@
         display: flex;
         transition: transform 0.5s ease;
         gap: 20px;
+        will-change: transform;
     }
     
     .category-slide {
         flex: 0 0 calc(25% - 15px);
         min-width: calc(25% - 15px);
         flex-shrink: 0;
+        opacity: 1;
+        visibility: visible;
     }
     
     @media (max-width: 991px) {
@@ -1163,9 +1166,17 @@ document.addEventListener('DOMContentLoaded', function() {
     categorySlider = document.getElementById('categorySlider');
     totalCategorySlides = categorySlides.length;
     
+    // Ensure all slides are visible
+    categorySlides.forEach(function(slide, index) {
+        slide.style.display = 'block';
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+    });
+    
     updateSlidesToShow();
     if (categorySlider) {
         categorySlider.style.transform = 'translateX(0%)';
+        categorySlider.style.display = 'flex';
     }
 });
 
