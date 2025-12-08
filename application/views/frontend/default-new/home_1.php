@@ -223,7 +223,8 @@
         transition: transform 0.8s ease-in-out;
         gap: 20px;
         will-change: transform;
-        width: auto;
+        width: max-content;
+        min-width: 100%;
     }
     
     .category-slide {
