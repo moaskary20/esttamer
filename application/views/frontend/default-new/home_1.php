@@ -2253,6 +2253,25 @@ setInterval(() => {
     padding-top: 0em !important;
     padding-bottom: 0 !important;
 }
+
+/* Header menu spacing - keep all items on one line */
+.navbar-collapse {
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.navbar-collapse > a.text-15px {
+    margin-left: 0.4rem !important;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-wrap: nowrap;
+    }
+}
 </style>
 <!------------- Mobile App Promotional Section End ------------>
 
