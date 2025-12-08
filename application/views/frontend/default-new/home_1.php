@@ -2005,6 +2005,20 @@ setInterval(() => {
     box-shadow: 0 10px 30px rgba(32, 227, 178, 0.3);
 }
 
+.app-icon i {
+    font-size: 3rem !important;
+    color: #fff !important;
+    display: block !important;
+    line-height: 1 !important;
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
 @keyframes float1 {
     0%, 100% {
         transform: rotate(-8deg) translateY(20px);
