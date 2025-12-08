@@ -1,6 +1,16 @@
 <?php if(get_frontend_settings('recaptcha_status_v3')): ?>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php endif; ?>
+<style>
+/* Footer Newsletter Button Green */
+.form-arrow {
+    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%) !important;
+}
+
+.form-arrow:hover {
+    background: linear-gradient(135deg, #29FFC6 0%, #20E3B2 100%) !important;
+}
+</style>
 <!--------- footer Section Start--------------->
 <section class="footer wow  animate__animated animate__fadeIn" data-wow-duration="1000" data-wow-delay="500" data-wow-duration="1000" data-wow-delay="600">
     <div class="container">

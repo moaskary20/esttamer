@@ -510,7 +510,7 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div class="section-title text-center">
-                    <h2 class="main-title mb-3">ابداء التعلم من افضله منصه</h2>
+                    <h2 class="main-title mb-3">ابداء التعلم من افضل منصه</h2>
                     <div class="title-divider mx-auto"></div>
                 </div>
             </div>
