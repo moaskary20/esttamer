@@ -214,13 +214,13 @@
     .category-slider-container {
         overflow: hidden;
         position: relative;
+        width: 100%;
     }
     
     .category-slider {
         display: flex;
         transition: transform 0.5s ease;
         gap: 20px;
-        width: 100%;
     }
     
     .category-slide {
@@ -1137,18 +1137,23 @@ function moveCategorySlider(direction) {
     if (!categorySlider || totalCategorySlides === 0) return;
     
     updateSlidesToShow();
+    
+    // Calculate max index based on total slides and slides to show
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
     currentCategoryIndex += direction;
     
+    // Handle wrapping
     if (currentCategoryIndex > maxIndex) {
         currentCategoryIndex = 0;
     } else if (currentCategoryIndex < 0) {
         currentCategoryIndex = maxIndex;
     }
     
-    const slideWidth = 100 / slidesToShow;
-    const translateX = -(currentCategoryIndex * slideWidth);
+    // Calculate slide width as percentage
+    const slideWidthPercent = 100 / slidesToShow;
+    const translateX = -(currentCategoryIndex * slideWidthPercent);
+    
     categorySlider.style.transform = `translateX(${translateX}%)`;
 }
 
