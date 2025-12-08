@@ -298,6 +298,23 @@
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        flex: 0 0 25% !important;
+        min-width: 25% !important;
+        max-width: 25% !important;
+    }
+    
+    .category-slide:nth-child(5) .category-card {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .category-slide:nth-child(5) .category-card-image img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: auto !important;
     }
     
     .category-card-link {
@@ -349,6 +366,17 @@
         object-fit: contain;
         width: auto;
         height: auto;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Ensure 5th card image displays */
+    .category-slide:nth-child(5) .category-card-image,
+    .category-slide:nth-child(5) .category-card-image img {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .category-card-content {
@@ -1190,6 +1218,25 @@ document.addEventListener('DOMContentLoaded', function() {
         slide.style.display = 'block';
         slide.style.visibility = 'visible';
         slide.style.opacity = '1';
+        slide.style.flex = '0 0 25%';
+        slide.style.minWidth = '25%';
+        slide.style.maxWidth = '25%';
+        
+        // Ensure card inside is visible
+        const card = slide.querySelector('.category-card');
+        if (card) {
+            card.style.display = 'flex';
+            card.style.visibility = 'visible';
+            card.style.opacity = '1';
+        }
+        
+        // Ensure image is visible
+        const img = slide.querySelector('.category-card-image img');
+        if (img) {
+            img.style.display = 'block';
+            img.style.visibility = 'visible';
+            img.style.opacity = '1';
+        }
     });
     
     updateSlidesToShow();
