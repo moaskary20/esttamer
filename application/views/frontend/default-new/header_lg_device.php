@@ -51,6 +51,12 @@
       <!-- Contact Us Link -->
       <a class="text-dark fw-600 text-15px ms-3" href="<?php echo site_url('home/contact_us'); ?>"><?php echo site_phrase('contact_us'); ?></a>
       
+      <!-- Category Direct Links -->
+      <a class="text-dark fw-600 text-15px ms-3" href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9">علاج النطق و اللغة</a>
+      <a class="text-dark fw-600 text-15px ms-3" href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A">العلاج الوظيفي</a>
+      <a class="text-dark fw-600 text-15px ms-3" href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A">العلاج الطبيعي</a>
+      <a class="text-dark fw-600 text-15px ms-3" href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9">السمع</a>
+      
       <!-- Small Device Hide -->
       <ul class="navbar-nav main-nav-wrap mb-2 mb-lg-0">
         <li class="nav-item">
