@@ -1284,25 +1284,18 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate slide width - each slide is 25% of container (4 slides visible)
+    // CSS uses calc(25% - 15px) but for transform we use simple percentage
     const slideWidthPercent = 100 / slidesToShow;
     
-    // Calculate translateX in percentage
+    // Calculate translateX - move by one slide width for each index
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
     // Index 1: show slides 2-5 (translateX = -25%)
-    // We move by one slide width (25%) for each index
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
-    // Apply transform with smooth transition
+    // Apply transform
     categorySlider.style.transform = `translateX(${translateXPercent}%)`;
     categorySlider.style.display = 'flex';
-    
-    // Ensure all slides maintain their visibility
-    categorySlides.forEach(function(slide) {
-        slide.style.display = 'block';
-        slide.style.visibility = 'visible';
-        slide.style.opacity = '1';
-    });
 }
 
 // Initialize on load
