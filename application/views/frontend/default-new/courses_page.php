@@ -31,6 +31,19 @@
     position: relative;
     z-index: 1;
 }
+
+.bread-crumb .book-img {
+    position: relative;
+    z-index: 2;
+}
+
+.bread-crumb .book-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+}
 </style>
 
 <?php include "breadcrumb.php"; ?>
