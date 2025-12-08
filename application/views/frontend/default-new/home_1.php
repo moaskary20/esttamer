@@ -299,23 +299,58 @@
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        flex: 0 0 25% !important;
-        min-width: 25% !important;
-        max-width: 25% !important;
+        flex: 0 0 calc(25% - 15px) !important;
+        min-width: calc(25% - 15px) !important;
+        max-width: calc(25% - 15px) !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
     }
     
     .category-slide:nth-child(5) .category-card {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        background: #ffffff !important;
+        border-radius: 20px !important;
+        padding: 30px 20px !important;
+        height: 100% !important;
+        min-height: 350px !important;
+    }
+    
+    .category-slide:nth-child(5) .category-card-image {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 200px !important;
+        height: 200px !important;
+        margin-bottom: 20px !important;
     }
     
     .category-slide:nth-child(5) .category-card-image img {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        width: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+        width: auto !important;
         height: auto !important;
+    }
+    
+    .category-slide:nth-child(5) .category-card-title {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 1.5rem !important;
+        font-weight: 700 !important;
+        color: #1a1a1a !important;
+    }
+    
+    .category-slide:nth-child(5) .category-card-button {
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .category-card-link {
@@ -1197,6 +1232,15 @@ function moveCategorySlider(direction) {
             card.style.display = 'flex';
             card.style.visibility = 'visible';
             card.style.opacity = '1';
+            card.style.background = '#ffffff';
+        }
+        
+        // Ensure image container is visible
+        const imageContainer = slide.querySelector('.category-card-image');
+        if (imageContainer) {
+            imageContainer.style.display = 'flex';
+            imageContainer.style.visibility = 'visible';
+            imageContainer.style.opacity = '1';
         }
         
         // Ensure image is visible
@@ -1205,6 +1249,25 @@ function moveCategorySlider(direction) {
             img.style.display = 'block';
             img.style.visibility = 'visible';
             img.style.opacity = '1';
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            img.style.objectFit = 'contain';
+        }
+        
+        // Ensure title is visible
+        const title = slide.querySelector('.category-card-title');
+        if (title) {
+            title.style.display = 'block';
+            title.style.visibility = 'visible';
+            title.style.opacity = '1';
+        }
+        
+        // Ensure button is visible
+        const button = slide.querySelector('.category-card-button');
+        if (button) {
+            button.style.display = 'inline-flex';
+            button.style.visibility = 'visible';
+            button.style.opacity = '1';
         }
     });
     
@@ -1250,6 +1313,15 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.display = 'flex';
             card.style.visibility = 'visible';
             card.style.opacity = '1';
+            card.style.background = '#ffffff';
+        }
+        
+        // Ensure image container is visible
+        const imageContainer = slide.querySelector('.category-card-image');
+        if (imageContainer) {
+            imageContainer.style.display = 'flex';
+            imageContainer.style.visibility = 'visible';
+            imageContainer.style.opacity = '1';
         }
         
         // Ensure image is visible
@@ -1258,6 +1330,25 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.display = 'block';
             img.style.visibility = 'visible';
             img.style.opacity = '1';
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            img.style.objectFit = 'contain';
+        }
+        
+        // Ensure title is visible
+        const title = slide.querySelector('.category-card-title');
+        if (title) {
+            title.style.display = 'block';
+            title.style.visibility = 'visible';
+            title.style.opacity = '1';
+        }
+        
+        // Ensure button is visible
+        const button = slide.querySelector('.category-card-button');
+        if (button) {
+            button.style.display = 'inline-flex';
+            button.style.visibility = 'visible';
+            button.style.opacity = '1';
         }
     });
     
