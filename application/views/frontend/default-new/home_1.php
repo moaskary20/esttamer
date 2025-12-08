@@ -223,6 +223,7 @@
         transition: transform 0.8s ease-in-out;
         gap: 20px;
         will-change: transform;
+        width: auto;
     }
     
     .category-slide {
@@ -1295,18 +1296,24 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate slide width - each slide is 25% of container (4 slides visible)
-    const slideWidthPercent = 100 / slidesToShow;
+    // But we need to account for the gap between slides
+    const containerWidth = categorySlider.parentElement.offsetWidth;
+    const gap = 20;
     
-    // Calculate translateX
+    // Each slide takes calc(25% - 15px), so we calculate based on container width
+    // slideWidth = (containerWidth - (3 gaps)) / 4
+    const slideWidth = (containerWidth - (gap * 3)) / 4;
+    const slideWidthPercent = (slideWidth / containerWidth) * 100;
+    
+    // Calculate translateX in pixels for more accuracy
     // For 5 slides showing 4 at a time:
-    // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25% to move left and show slide 5)
-    // Negative translateX moves content LEFT (reveals content on the RIGHT)
-    const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
+    // Index 0: show slides 1-4 (translateX = 0px)
+    // Index 1: show slides 2-5 (translateX = -slideWidth - gap to show slide 5)
+    const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
     
     // Apply transform with smooth transition
     categorySlider.style.transition = 'transform 0.8s ease-in-out';
-    categorySlider.style.transform = `translateX(${translateXPercent}%)`;
+    categorySlider.style.transform = `translateX(${translateXPixels}px)`;
     categorySlider.style.display = 'flex';
 }
 
@@ -1373,9 +1380,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateSlidesToShow();
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
+        categorySlider.style.transform = 'translateX(0px)';
         categorySlider.style.display = 'flex';
-        categorySlider.style.width = 'auto';
+        categorySlider.style.transition = 'transform 0.8s ease-in-out';
     }
 });
 
@@ -1388,7 +1395,8 @@ window.addEventListener('resize', function() {
     updateSlidesToShow();
     currentCategoryIndex = 0;
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
+        categorySlider.style.transform = 'translateX(0px)';
+        categorySlider.style.transition = 'transform 0.8s ease-in-out';
     }
 });
 </script>
