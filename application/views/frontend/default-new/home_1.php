@@ -1297,6 +1297,9 @@ function moveCategorySlider(direction) {
     // Apply transform
     categorySlider.style.transform = `translateX(${translateX}%)`;
     categorySlider.style.display = 'flex';
+    
+    // Force reflow to ensure transform is applied
+    categorySlider.offsetHeight;
 }
 
 // Initialize on load
