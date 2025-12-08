@@ -1496,7 +1496,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-1.jpg'); ?>" alt="أحمد محمد" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                                <img src="https://i.pravatar.cc/150?img=12" alt="أحمد محمد" onerror="this.src='https://ui-avatars.com/api/?name=أحمد+محمد&background=20E3B2&color=fff&size=150'">
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">أحمد محمد</h5>
@@ -1521,7 +1521,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-2.jpg'); ?>" alt="فاطمة علي" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="فاطمة علي" onerror="this.src='https://ui-avatars.com/api/?name=فاطمة+علي&background=20E3B2&color=fff&size=150'">
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">فاطمة علي</h5>
@@ -1546,7 +1546,7 @@
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image">
-                                <img src="<?php echo base_url('assets/frontend/default-new/image/testimonial-3.jpg'); ?>" alt="خالد إبراهيم" onerror="this.src='<?php echo base_url('assets/frontend/default-new/image/placeholder-user.png'); ?>'">
+                                <img src="https://i.pravatar.cc/150?img=33" alt="خالد إبراهيم" onerror="this.src='https://ui-avatars.com/api/?name=خالد+إبراهيم&background=20E3B2&color=fff&size=150'">
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">خالد إبراهيم</h5>
