@@ -222,20 +222,24 @@
         transition: transform 0.5s ease;
         gap: 20px;
         will-change: transform;
+        width: 100%;
     }
     
     .category-slide {
-        flex: 0 0 calc(25% - 15px);
-        min-width: calc(25% - 15px);
+        flex: 0 0 25%;
+        min-width: 25%;
+        max-width: 25%;
         flex-shrink: 0;
-        opacity: 1;
-        visibility: visible;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
     
     @media (max-width: 991px) {
         .category-slide {
-            flex: 0 0 calc(50% - 10px);
-            min-width: calc(50% - 10px);
+            flex: 0 0 50%;
+            min-width: 50%;
+            max-width: 50%;
         }
     }
     
@@ -243,6 +247,7 @@
         .category-slide {
             flex: 0 0 100%;
             min-width: 100%;
+            max-width: 100%;
         }
     }
     
@@ -287,6 +292,12 @@
             width: 40px;
             height: 40px;
         }
+    }
+    
+    .category-slide:nth-child(5) {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .category-card-link {
@@ -1141,6 +1152,13 @@ function moveCategorySlider(direction) {
     
     updateSlidesToShow();
     
+    // Ensure all slides are visible
+    categorySlides.forEach(function(slide) {
+        slide.style.display = 'block';
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+    });
+    
     // Calculate max index based on total slides and slides to show
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
@@ -1153,11 +1171,12 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex;
     }
     
-    // Calculate slide width as percentage
+    // Calculate slide width as percentage (including gap)
     const slideWidthPercent = 100 / slidesToShow;
     const translateX = -(currentCategoryIndex * slideWidthPercent);
     
     categorySlider.style.transform = `translateX(${translateX}%)`;
+    categorySlider.style.display = 'flex';
 }
 
 // Initialize on load
