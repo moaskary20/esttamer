@@ -1275,8 +1275,8 @@ function moveCategorySlider(direction) {
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
     // Update index based on direction
-    // Right arrow (direction = 1) -> move to next set (increase index)
-    // Left arrow (direction = -1) -> move to previous set (decrease index)
+    // Right arrow (direction = 1) -> see next slides (increase index, move content left = negative translateX)
+    // Left arrow (direction = -1) -> see previous slides (decrease index, move content right = positive translateX)
     currentCategoryIndex += direction;
     
     // Handle wrapping
@@ -1289,12 +1289,13 @@ function moveCategorySlider(direction) {
     // Calculate slide width - each slide is 25% of container (4 slides visible)
     const slideWidthPercent = 100 / slidesToShow;
     
-    // Calculate translateX - in standard LTR layout
-    // Negative translateX moves content left, revealing content on the right
-    // Positive translateX moves content right, revealing content on the left
+    // Calculate translateX
+    // Negative translateX moves content LEFT (reveals content on the RIGHT = next slides)
+    // Positive translateX moves content RIGHT (reveals content on the LEFT = previous slides)
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25% to move left and show right content)
+    // Index 1: show slides 2-5 (translateX = -25% to move left and show right/next content)
+    // When clicking RIGHT arrow (direction = 1): index increases, translateX becomes more negative (moves left)
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
     // Apply transform
