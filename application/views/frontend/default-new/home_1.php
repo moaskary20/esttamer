@@ -1283,10 +1283,18 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex;
     }
     
-    // Calculate slide width as percentage (including gap)
+    // Calculate slide width as percentage
+    // Each slide takes 25% of container width (4 slides visible)
+    // When moving to next slide, we move by one slide width
     const slideWidthPercent = 100 / slidesToShow;
+    
+    // Calculate translateX - move by one slide width for each index
+    // For 5 slides showing 4 at a time:
+    // Index 0: show slides 1-4 (translateX = 0%)
+    // Index 1: show slides 2-5 (translateX = -25%)
     const translateX = -(currentCategoryIndex * slideWidthPercent);
     
+    // Apply transform
     categorySlider.style.transform = `translateX(${translateX}%)`;
     categorySlider.style.display = 'flex';
 }
