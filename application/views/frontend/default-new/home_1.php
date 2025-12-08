@@ -1077,7 +1077,16 @@
         <div class="category-slider-wrapper position-relative">
             <div class="category-slider-container">
                 <div class="category-slider" id="categorySlider">
-                    <!-- Card 1: Family Medicine -->
+                    <!-- Card 1: Empty Placeholder -->
+                    <div class="category-slide">
+                        <div class="category-card-empty">
+                            <div class="category-card" style="background: transparent; box-shadow: none; border: 2px dashed rgba(255, 255, 255, 0.3);">
+                                <!-- Empty card placeholder -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Family Medicine -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9" class="category-card-link">
                             <div class="category-card">
@@ -1097,7 +1106,7 @@
                         </a>
                     </div>
                     
-                    <!-- Card 2: Speech and Language Therapy -->
+                    <!-- Card 3: Speech and Language Therapy -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
                             <div class="category-card">
@@ -1117,7 +1126,7 @@
                         </a>
                     </div>
                     
-                    <!-- Card 3: Occupational Therapy -->
+                    <!-- Card 4: Occupational Therapy -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
                             <div class="category-card">
@@ -1137,7 +1146,7 @@
                         </a>
                     </div>
                     
-                    <!-- Card 4: Physical Therapy -->
+                    <!-- Card 5: Physical Therapy -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
                             <div class="category-card">
@@ -1157,7 +1166,7 @@
                         </a>
                     </div>
                     
-                    <!-- Card 5: Hearing -->
+                    <!-- Card 6: Hearing -->
                     <div class="category-slide">
                         <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
                             <div class="category-card">
@@ -1177,14 +1186,6 @@
                         </a>
                     </div>
                     
-                    <!-- Card 6: Empty Placeholder -->
-                    <div class="category-slide">
-                        <div class="category-card-empty">
-                            <div class="category-card" style="background: transparent; box-shadow: none; border: 2px dashed rgba(255, 255, 255, 0.3);">
-                                <!-- Empty card placeholder -->
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
