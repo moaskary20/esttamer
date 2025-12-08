@@ -1296,20 +1296,23 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate slide width - each slide is 25% of container (4 slides visible)
-    // But we need to account for the gap between slides
     const containerWidth = categorySlider.parentElement.offsetWidth;
     const gap = 20;
     
-    // Each slide takes calc(25% - 15px), so we calculate based on container width
-    // slideWidth = (containerWidth - (3 gaps)) / 4
+    // Calculate actual slide width including gap
+    // Formula: (containerWidth - (3 gaps)) / 4 = slideWidth
     const slideWidth = (containerWidth - (gap * 3)) / 4;
-    const slideWidthPercent = (slideWidth / containerWidth) * 100;
     
-    // Calculate translateX in pixels for more accuracy
+    // Calculate translateX in pixels
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0px)
-    // Index 1: show slides 2-5 (translateX = -slideWidth - gap to show slide 5)
+    // Index 1: show slides 2-5 (translateX = -slideWidth - gap)
+    // When moving right (direction = 1), we move left (negative) to show right content
     const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
+    
+    // Ensure slider has enough width to show all cards
+    categorySlider.style.width = 'auto';
+    categorySlider.style.minWidth = '100%';
     
     // Apply transform with smooth transition
     categorySlider.style.transition = 'transform 0.8s ease-in-out';
