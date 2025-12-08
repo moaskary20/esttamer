@@ -1176,6 +1176,15 @@
                             </div>
                         </a>
                     </div>
+                    
+                    <!-- Card 6: Empty Placeholder -->
+                    <div class="category-slide">
+                        <div class="category-card-empty">
+                            <div class="category-card" style="background: transparent; box-shadow: none; border: 2px dashed rgba(255, 255, 255, 0.3);">
+                                <!-- Empty card placeholder -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
