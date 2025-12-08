@@ -181,7 +181,7 @@
     
     /* Start Learning Section Styles */
     .start-learning-section {
-        background: linear-gradient(180deg, #2D9A7A 0%, #20B2AA 100%) !important;
+        background: #028161 !important;
         position: relative;
         overflow: visible !important;
         min-height: 400px;
