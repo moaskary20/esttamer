@@ -1283,23 +1283,26 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex;
     }
     
-    // Calculate slide width as percentage
-    // Each slide takes 25% of container width (4 slides visible)
-    // When moving to next slide, we move by one slide width
+    // Calculate slide width - each slide is 25% of container (4 slides visible)
     const slideWidthPercent = 100 / slidesToShow;
     
-    // Calculate translateX - move by one slide width for each index
+    // Calculate translateX in percentage
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
     // Index 1: show slides 2-5 (translateX = -25%)
-    const translateX = -(currentCategoryIndex * slideWidthPercent);
+    // We move by one slide width (25%) for each index
+    const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
     
-    // Apply transform
-    categorySlider.style.transform = `translateX(${translateX}%)`;
+    // Apply transform with smooth transition
+    categorySlider.style.transform = `translateX(${translateXPercent}%)`;
     categorySlider.style.display = 'flex';
     
-    // Force reflow to ensure transform is applied
-    categorySlider.offsetHeight;
+    // Ensure all slides maintain their visibility
+    categorySlides.forEach(function(slide) {
+        slide.style.display = 'block';
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+    });
 }
 
 // Initialize on load
