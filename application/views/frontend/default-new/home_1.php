@@ -215,24 +215,25 @@
         overflow: hidden;
         position: relative;
         width: 100%;
+        max-width: 100%;
     }
     
     .category-slider {
-        display: flex;
+        display: flex !important;
         transition: transform 0.5s ease;
         gap: 20px;
         will-change: transform;
-        width: 100%;
     }
     
     .category-slide {
-        flex: 0 0 25%;
-        min-width: 25%;
-        max-width: 25%;
-        flex-shrink: 0;
+        flex: 0 0 calc(25% - 15px) !important;
+        min-width: calc(25% - 15px) !important;
+        max-width: calc(25% - 15px) !important;
+        flex-shrink: 0 !important;
         opacity: 1 !important;
         visibility: visible !important;
         display: block !important;
+        position: relative !important;
     }
     
     @media (max-width: 991px) {
@@ -1185,9 +1186,10 @@ function moveCategorySlider(direction) {
         slide.style.display = 'block';
         slide.style.visibility = 'visible';
         slide.style.opacity = '1';
-        slide.style.flex = '0 0 25%';
-        slide.style.minWidth = '25%';
-        slide.style.maxWidth = '25%';
+        slide.style.flex = '0 0 calc(25% - 15px)';
+        slide.style.minWidth = 'calc(25% - 15px)';
+        slide.style.maxWidth = 'calc(25% - 15px)';
+        slide.style.flexShrink = '0';
         
         // Ensure card inside is visible
         const card = slide.querySelector('.category-card');
@@ -1237,9 +1239,10 @@ document.addEventListener('DOMContentLoaded', function() {
         slide.style.display = 'block';
         slide.style.visibility = 'visible';
         slide.style.opacity = '1';
-        slide.style.flex = '0 0 25%';
-        slide.style.minWidth = '25%';
-        slide.style.maxWidth = '25%';
+        slide.style.flex = '0 0 calc(25% - 15px)';
+        slide.style.minWidth = 'calc(25% - 15px)';
+        slide.style.maxWidth = 'calc(25% - 15px)';
+        slide.style.flexShrink = '0';
         
         // Ensure card inside is visible
         const card = slide.querySelector('.category-card');
@@ -1262,6 +1265,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (categorySlider) {
         categorySlider.style.transform = 'translateX(0%)';
         categorySlider.style.display = 'flex';
+        categorySlider.style.width = 'auto';
     }
 });
 
