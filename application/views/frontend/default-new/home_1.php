@@ -1827,7 +1827,7 @@ setInterval(() => {
                     </div>
                     
                     <h2 class="app-promo-title mb-4" style="font-size: 3rem; color: #1a1a1a; font-weight: 800; line-height: 1.2;">
-                        حمل تطبيق <span style="color: #20E3B2;">استمر</span> الآن
+                        حمل تطبيق <span style="color: #ffffff; background: rgba(26, 26, 26, 0.9); padding: 5px 15px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);">استمر</span> الآن
                     </h2>
                     <p class="app-promo-description mb-4" style="font-size: 1.15rem; color: #2c3e50; line-height: 1.8;">
                         استمتع بتجربة تعليمية فريدة مع تطبيق استمر! تحدث مع المدربين مباشرة، احجز الدورات بسهولة، وتعلم في أي وقت ومن أي مكان.
