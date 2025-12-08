@@ -1946,7 +1946,7 @@ setInterval(() => {
 
 <style>
 .mobile-app-section {
-    background: linear-gradient(135deg, #20E3B2 0%, #29FFC6 100%);
+    background: #64f088;
     position: relative;
     overflow: hidden;
 }
