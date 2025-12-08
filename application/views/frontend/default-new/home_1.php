@@ -1295,13 +1295,12 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex;
     }
     
-    // Calculate slide width - each slide is 25% of container (4 slides visible)
-    const containerWidth = categorySlider.parentElement.offsetWidth;
-    const gap = 20;
+    // Calculate slide width using the actual rendered width of the first slide
+    const firstSlide = categorySlides[0];
+    if (!firstSlide) return;
     
-    // Calculate actual slide width including gap
-    // Formula: (containerWidth - (3 gaps)) / 4 = slideWidth
-    const slideWidth = (containerWidth - (gap * 3)) / 4;
+    const slideWidth = firstSlide.offsetWidth;
+    const gap = 20; // CSS gap value
     
     // Calculate translateX in pixels
     // For 5 slides showing 4 at a time:
