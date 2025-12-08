@@ -1,4 +1,19 @@
 <style>
+    /* Fix mobile view icons */
+    .menu-offcanves i,
+    .m-search-icon i,
+    .m-cross-icon i,
+    .btn-bar i {
+        font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", "FontAwesome" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        display: inline-block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-rendering: auto !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
     .eImage span {
         width: auto !important;
     }
