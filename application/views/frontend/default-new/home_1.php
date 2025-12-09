@@ -1160,15 +1160,20 @@ function moveCategorySlider(direction) {
         currentCategoryIndex = maxIndex; // Go to end
     }
     
-    // Calculate translateX using percentage
-    // Each slide takes 25% width (100% / 4 slides)
-    // To show slide 5, we need to move by 1 slide = 25% + gap
-    const slideWidth = 100 / slidesToShow; // 25% for 4 slides
-    const translateXPercent = -(currentCategoryIndex * slideWidth);
+    // Calculate translateX using actual pixel values to account for gap
+    const container = categorySlider.parentElement;
+    const containerWidth = container.offsetWidth;
+    const gap = 20; // 20px gap between slides
+    
+    // Calculate slide width including gap
+    // For 4 slides: (containerWidth - 3*gap) / 4 = width per slide
+    // Then add gap for each slide we move
+    const slideWidth = (containerWidth - (slidesToShow - 1) * gap) / slidesToShow;
+    const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
     
     // Apply transform
     categorySlider.style.transition = 'transform 0.6s ease-in-out';
-    categorySlider.style.transform = `translateX(${translateXPercent}%)`;
+    categorySlider.style.transform = `translateX(${translateXPixels}px)`;
 }
 
 // Initialize on load
@@ -1188,7 +1193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set initial position
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
+        categorySlider.style.transform = 'translateX(0px)';
     }
 });
 
@@ -1202,7 +1207,7 @@ window.addEventListener('resize', function() {
     currentCategoryIndex = 0;
     
     if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
+        categorySlider.style.transform = 'translateX(0px)';
     }
 });
 </script>
