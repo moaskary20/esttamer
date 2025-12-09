@@ -222,6 +222,7 @@
         transition: transform 0.6s ease-in-out;
         gap: 20px;
         will-change: transform;
+        flex-direction: row-reverse;
     }
     
     .category-slide {
