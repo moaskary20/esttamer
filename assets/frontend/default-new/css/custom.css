@@ -1326,3 +1326,8 @@ label, li, td, th {
         max-width: 10px !important;
     }
 }
+
+/* Apply form.w-100 max-width to all pages (outside media query for all screen sizes) */
+form.w-100 {
+    max-width: 10px !important;
+}
