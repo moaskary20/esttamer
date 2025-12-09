@@ -297,13 +297,15 @@
         }
     }
     
-    /* Ensure all 5 cards are visible */
+    /* Ensure all cards are visible */
     .category-slide {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        flex-shrink: 0 !important;
     }
     
+    /* Ensure 5th card (Hearing) is visible */
     .category-slide:nth-child(5) {
         display: block !important;
         visibility: visible !important;
