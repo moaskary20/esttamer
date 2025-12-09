@@ -1431,16 +1431,22 @@ header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
     padding-right: 15px !important;
 }
 
-/* Make courses dropdown menu vertical (عمودي) */
+/* Make courses dropdown menu vertical (عمودي) - Strong rules */
 .navbarHover,
 .main-nav-wrap li .navbarHover,
 .navbar-nav .navbarHover,
 .menubar .navbarHover,
 .menubar .main-nav-wrap li .navbarHover,
-.menubar .navbar-nav .navbarHover {
+.menubar .navbar-nav .navbarHover,
+.navbar-collapse .navbarHover,
+#navbarSupportedContent .navbarHover,
+header .navbarHover,
+.menubar .navbar-collapse .navbarHover,
+.menubar #navbarSupportedContent .navbarHover {
     display: flex !important;
     flex-direction: column !important;
     flex-wrap: nowrap !important;
+    align-items: stretch !important;
 }
 
 .navbarHover li,
@@ -1448,10 +1454,18 @@ header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
 .navbar-nav .navbarHover li,
 .menubar .navbarHover li,
 .menubar .main-nav-wrap li .navbarHover li,
-.menubar .navbar-nav .navbarHover li {
+.menubar .navbar-nav .navbarHover li,
+.navbar-collapse .navbarHover li,
+#navbarSupportedContent .navbarHover li,
+header .navbarHover li,
+.menubar .navbar-collapse .navbarHover li,
+.menubar #navbarSupportedContent .navbarHover li {
     display: block !important;
     width: 100% !important;
     flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    float: none !important;
+    clear: both !important;
 }
 
 .navbarHover li a,
@@ -1459,7 +1473,39 @@ header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
 .navbar-nav .navbarHover li a,
 .menubar .navbarHover li a,
 .menubar .main-nav-wrap li .navbarHover li a,
-.menubar .navbar-nav .navbarHover li a {
+.menubar .navbar-nav .navbarHover li a,
+.navbar-collapse .navbarHover li a,
+#navbarSupportedContent .navbarHover li a,
+header .navbarHover li a,
+.menubar .navbar-collapse .navbarHover li a,
+.menubar #navbarSupportedContent .navbarHover li a {
     display: block !important;
     width: 100% !important;
+    float: none !important;
+    clear: both !important;
+}
+
+/* Override any flex display on li elements inside navbarHover */
+.navbarHover > li,
+.main-nav-wrap li .navbarHover > li,
+.navbar-nav .navbarHover > li {
+    display: block !important;
+    flex-direction: column !important;
+}
+
+/* Ensure dropdown-submenu items are also vertical */
+.navbarHover .dropdown-submenu,
+.main-nav-wrap li .navbarHover .dropdown-submenu,
+.navbar-nav .navbarHover .dropdown-submenu {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+.navbarHover .dropdown-submenu a,
+.main-nav-wrap li .navbarHover .dropdown-submenu a,
+.navbar-nav .navbarHover .dropdown-submenu a {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
 }
