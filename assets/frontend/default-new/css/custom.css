@@ -1300,3 +1300,38 @@ header #navbarSupportedContent a {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
 }
+
+/* Additional spacing for header links */
+.navbar-collapse > a.text-15px,
+#navbarSupportedContent > a.text-15px {
+    margin-left: 0.4rem !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+}
+
+/* Ensure navbar container doesn't wrap */
+.menubar .navbar .container,
+header .menubar .navbar .container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    overflow: visible !important;
+    width: 100% !important;
+}
+
+/* Ensure all navigation items fit on one line */
+@media (min-width: 992px) {
+    .navbar-collapse,
+    #navbarSupportedContent {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+    }
+    
+    .navbar-collapse > *,
+    #navbarSupportedContent > * {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+    }
+}

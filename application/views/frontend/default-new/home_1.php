@@ -1,35 +1,4 @@
 <style>
-    /* Header - Keep all items on one line */
-    .navbar-collapse {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-    }
-    
-    .navbar-collapse > * {
-        flex-shrink: 0 !important;
-        white-space: nowrap !important;
-    }
-    
-    .navbar-collapse a {
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-    }
-    
-    .navbar-collapse .navbar-nav {
-        flex-wrap: nowrap !important;
-        white-space: nowrap !important;
-    }
-    
-    .right-menubar {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-    }
-    
     /* Fix mobile view icons */
     .menu-offcanves i,
     .m-search-icon i,
@@ -2514,23 +2483,6 @@ setInterval(() => {
 }
 
 /* Header menu spacing - keep all items on one line */
-.navbar-collapse {
-    white-space: nowrap;
-    flex-wrap: nowrap;
-}
-
-.navbar-collapse > a.text-15px {
-    margin-left: 0.4rem !important;
-    white-space: nowrap;
-    display: inline-block;
-}
-
-@media (min-width: 992px) {
-    .navbar-collapse {
-        display: flex !important;
-        flex-wrap: nowrap;
-    }
-}
 </style>
 <!------------- Mobile App Promotional Section End ------------>
 
