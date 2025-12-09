@@ -1176,18 +1176,6 @@ function moveCategorySlider(direction) {
     // When index = 1, we move by exactly one slide width + gap to show the 5th card
     const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
     
-    // Debug: log values to console
-    console.log('Slider Debug:', {
-        containerWidth: containerWidth,
-        slideWidth: slideWidth,
-        gap: gap,
-        currentIndex: currentCategoryIndex,
-        maxIndex: maxIndex,
-        translateX: translateXPixels,
-        totalSlides: totalCategorySlides,
-        slidesToShow: slidesToShow
-    });
-    
     // Apply transform
     categorySlider.style.transition = 'transform 0.6s ease-in-out';
     categorySlider.style.transform = `translateX(${translateXPixels}px)`;
