@@ -1213,26 +1213,41 @@ label, li, td, th {
 	color: #858c8a;
 }
 
-/* Header - Keep all items on one line */
-.navbar-collapse {
+/* Header - Keep all items on one line - Apply to all pages */
+.navbar-collapse,
+#navbarSupportedContent {
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
     white-space: nowrap !important;
+    overflow: visible !important;
 }
 
-.navbar-collapse > * {
+.navbar-collapse > *,
+#navbarSupportedContent > * {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
+    min-width: fit-content !important;
 }
 
-.navbar-collapse a {
+.navbar-collapse a,
+#navbarSupportedContent a {
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+    text-overflow: ellipsis !important;
+    overflow: visible !important;
 }
 
-.navbar-collapse .navbar-nav {
+.navbar-collapse .navbar-nav,
+#navbarSupportedContent .navbar-nav {
     flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    display: flex !important;
+}
+
+.navbar-collapse .navbar-nav .nav-item,
+#navbarSupportedContent .navbar-nav .nav-item {
+    flex-shrink: 0 !important;
     white-space: nowrap !important;
 }
 
@@ -1242,14 +1257,29 @@ label, li, td, th {
     align-items: center !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+    min-width: fit-content !important;
 }
 
 .menubar .navbar {
     flex-wrap: nowrap !important;
+    display: flex !important;
 }
 
 .menubar .container {
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
+    overflow: visible !important;
+}
+
+.menubar .navbar .container {
+    flex-wrap: nowrap !important;
+}
+
+/* Ensure all header links stay on one line */
+.menubar a,
+.navbar-collapse a,
+#navbarSupportedContent a {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
 }
