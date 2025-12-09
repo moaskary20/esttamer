@@ -1161,7 +1161,7 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate translateX using actual pixel values to account for gap
-    const container = categorySlider.parentElement;
+    const container = categorySlider.parentElement; // category-slider-container
     const containerWidth = container.offsetWidth;
     const gap = 20; // 20px gap between slides
     
@@ -1169,7 +1169,22 @@ function moveCategorySlider(direction) {
     // For 4 slides: (containerWidth - 3*gap) / 4 = width per slide
     // Then add gap for each slide we move
     const slideWidth = (containerWidth - (slidesToShow - 1) * gap) / slidesToShow;
+    
+    // Calculate translateX: move by (slideWidth + gap) for each index
+    // When index = 1, we move by exactly one slide width + gap to show the 5th card
     const translateXPixels = -(currentCategoryIndex * (slideWidth + gap));
+    
+    // Debug: log values to console
+    console.log('Slider Debug:', {
+        containerWidth: containerWidth,
+        slideWidth: slideWidth,
+        gap: gap,
+        currentIndex: currentCategoryIndex,
+        maxIndex: maxIndex,
+        translateX: translateXPixels,
+        totalSlides: totalCategorySlides,
+        slidesToShow: slidesToShow
+    });
     
     // Apply transform
     categorySlider.style.transition = 'transform 0.6s ease-in-out';
