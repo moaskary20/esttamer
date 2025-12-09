@@ -1430,3 +1430,36 @@ header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
 .menubar #navbarSupportedContent ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0 {
     padding-right: 15px !important;
 }
+
+/* Make courses dropdown menu vertical (عمودي) */
+.navbarHover,
+.main-nav-wrap li .navbarHover,
+.navbar-nav .navbarHover,
+.menubar .navbarHover,
+.menubar .main-nav-wrap li .navbarHover,
+.menubar .navbar-nav .navbarHover {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+}
+
+.navbarHover li,
+.main-nav-wrap li .navbarHover li,
+.navbar-nav .navbarHover li,
+.menubar .navbarHover li,
+.menubar .main-nav-wrap li .navbarHover li,
+.menubar .navbar-nav .navbarHover li {
+    display: block !important;
+    width: 100% !important;
+    flex-direction: column !important;
+}
+
+.navbarHover li a,
+.main-nav-wrap li .navbarHover li a,
+.navbar-nav .navbarHover li a,
+.menubar .navbarHover li a,
+.menubar .main-nav-wrap li .navbarHover li a,
+.menubar .navbar-nav .navbarHover li a {
+    display: block !important;
+    width: 100% !important;
+}
