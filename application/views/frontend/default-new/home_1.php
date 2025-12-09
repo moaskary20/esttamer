@@ -1304,9 +1304,22 @@ function moveCategorySlider(direction) {
     // Calculate translateX in percentage
     // For 5 slides showing 4 at a time:
     // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25%)
+    // Index 1: show slides 2-5 (translateX = -25% to move left and show slide 5)
     // Negative translateX moves content LEFT (reveals content on the RIGHT)
     const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
+    
+    // Ensure all slides are visible before applying transform
+    categorySlides.forEach(function(slide, index) {
+        slide.style.display = 'block';
+        slide.style.visibility = 'visible';
+        slide.style.opacity = '1';
+        // Ensure 5th card is fully visible
+        if (index === 4) {
+            slide.style.flex = '0 0 calc(25% - 15px)';
+            slide.style.minWidth = 'calc(25% - 15px)';
+            slide.style.maxWidth = 'calc(25% - 15px)';
+        }
+    });
     
     // Apply transform with smooth transition
     categorySlider.style.transition = 'transform 0.8s ease-in-out';
