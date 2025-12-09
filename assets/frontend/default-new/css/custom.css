@@ -1318,4 +1318,11 @@ label, li, td, th {
     .menubar #navbarSupportedContent {
         max-width: none !important;
     }
+    
+    /* Form width in header */
+    .menubar form.w-100,
+    .menubar .navbar-collapse form.w-100,
+    .menubar #navbarSupportedContent form.w-100 {
+        max-width: 10px !important;
+    }
 }
