@@ -1287,15 +1287,15 @@ function moveCategorySlider(direction) {
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
     // Update index based on direction
-    // Right arrow (direction = 1) -> see next slides (increase index, move left)
-    // Left arrow (direction = -1) -> see previous slides (decrease index, move right)
+    // Right arrow (direction = 1) -> see next slides (increase index)
+    // Left arrow (direction = -1) -> see previous slides (decrease index)
     currentCategoryIndex += direction;
     
-    // Handle wrapping
+    // Handle wrapping - allow continuous loop
     if (currentCategoryIndex > maxIndex) {
-        currentCategoryIndex = 0;
+        currentCategoryIndex = 0; // Go back to start
     } else if (currentCategoryIndex < 0) {
-        currentCategoryIndex = maxIndex;
+        currentCategoryIndex = maxIndex; // Go to end (show last slide)
     }
     
     // Calculate movement using percentage (more reliable with flex)
