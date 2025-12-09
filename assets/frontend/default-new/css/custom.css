@@ -1249,6 +1249,8 @@ label, li, td, th {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
         display: inline-flex !important;
+        flex-direction: column !important;
+
     }
 
     .menubar .navbar-collapse a,
@@ -1259,6 +1261,8 @@ label, li, td, th {
         flex-shrink: 0 !important;
         overflow: visible !important;
         display: inline-flex !important;
+        flex-direction: column !important;
+
     }
 
     .menubar .navbar-collapse .navbar-nav,
@@ -1292,6 +1296,8 @@ label, li, td, th {
         margin-right: 0.5rem !important;
         white-space: nowrap !important;
         display: inline-flex !important;
+        flex-direction: column !important;
+
         flex-shrink: 0 !important;
     }
 
@@ -1301,6 +1307,8 @@ label, li, td, th {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
         display: inline-flex !important;
+        flex-direction: column !important;
+
     }
     
     /* Ensure form inside navbar-collapse doesn't break layout */
@@ -1310,6 +1318,8 @@ label, li, td, th {
         white-space: nowrap !important;
         display: inline-flex !important;
         min-width: auto !important;
+        flex-direction: column !important;
+
     }
     
     /* Ensure all text elements don't wrap */
@@ -1372,7 +1382,7 @@ label, li, td, th {
         flex-wrap: nowrap !important;
         margin: 0 !important;
         padding: 0 !important;
-        flex-direction: column;
+        flex-direction: column !important;
     }
     
     /* Reduce padding on nav items */
