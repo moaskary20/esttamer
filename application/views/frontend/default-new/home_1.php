@@ -1150,8 +1150,10 @@ function moveCategorySlider(direction) {
     // Calculate max index - for 5 slides showing 4, max index is 1 (to show slides 2-5)
     const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
     
-    // Update index - REVERSED: right arrow decreases index (shows previous cards), left arrow increases index (shows next cards)
-    currentCategoryIndex -= direction;
+    // Update index
+    // Right arrow (direction = 1): move to next cards (increase index, move slider left)
+    // Left arrow (direction = -1): move to previous cards (decrease index, move slider right)
+    currentCategoryIndex += direction;
     
     // Handle wrapping
     if (currentCategoryIndex > maxIndex) {
