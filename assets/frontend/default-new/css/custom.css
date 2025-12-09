@@ -1383,18 +1383,50 @@ label, li, td, th {
         padding: 0.25rem 0.5rem !important;
     }
     
-    /* Header navbar padding for all pages */
-    ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0 {
+    /* Header navbar padding for all pages - More specific selectors */
+    ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    .navbar-collapse ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    #navbarSupportedContent ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    .menubar .navbar-collapse ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+    .menubar #navbarSupportedContent ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0 {
         padding-right: 15px !important;
+    }
+    
+    /* Form w-100 in header - More specific */
+    .menubar form.w-100,
+    .menubar .navbar-collapse form.w-100,
+    .menubar #navbarSupportedContent form.w-100,
+    header .menubar form.w-100,
+    .navbar-collapse form.w-100,
+    #navbarSupportedContent form.w-100 {
+        max-width: 0px !important;
+        width: 0px !important;
+        overflow: hidden !important;
     }
 }
 
 /* Apply form.w-100 max-width to all pages (outside media query for all screen sizes) */
-form.w-100 {
+form.w-100,
+.menubar form.w-100,
+.navbar-collapse form.w-100,
+#navbarSupportedContent form.w-100,
+header form.w-100,
+.menubar .navbar-collapse form.w-100,
+.menubar #navbarSupportedContent form.w-100 {
     max-width: 0px !important;
+    width: 0px !important;
+    overflow: hidden !important;
 }
 
-/* Header styles for all pages */
-ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0 {
+/* Header styles for all pages - More specific selectors */
+ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+.menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+.navbar-collapse ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+#navbarSupportedContent ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+header .menubar ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+.menubar .navbar-collapse ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0,
+.menubar #navbarSupportedContent ul.navbar-nav.main-nav-wrap.mb-2.mb-lg-0 {
     padding-right: 15px !important;
 }
