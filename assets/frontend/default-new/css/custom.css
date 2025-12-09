@@ -1325,13 +1325,11 @@ label, li, td, th {
         width: auto !important;
     }
     
-    /* Form width in header - allow proper width for search */
+    /* Form width in header */
     .menubar form.w-100,
     .menubar .navbar-collapse form.w-100,
     .menubar #navbarSupportedContent form.w-100 {
-        max-width: 400px !important;
-        min-width: 200px !important;
-        width: auto !important;
+        max-width: 0px !important;
     }
     
     /* Ensure header search container doesn't break */
@@ -1387,9 +1385,6 @@ label, li, td, th {
 }
 
 /* Apply form.w-100 max-width to all pages (outside media query for all screen sizes) */
-@media (min-width: 992px) {
-    .menubar form.w-100 {
-        max-width: 400px !important;
-        min-width: 200px !important;
-    }
+form.w-100 {
+    max-width: 0px !important;
 }
