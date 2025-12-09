@@ -1214,28 +1214,31 @@ label, li, td, th {
 }
 
 /* Header - Keep all items on one line - Apply to all pages */
-header .navbar-collapse,
-header #navbarSupportedContent,
+.menubar .navbar .container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
 .menubar .navbar-collapse,
 .menubar #navbarSupportedContent {
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
     white-space: nowrap !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
     overflow: visible !important;
 }
 
-header .navbar-collapse > *,
-header #navbarSupportedContent > *,
 .menubar .navbar-collapse > *,
 .menubar #navbarSupportedContent > * {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
-    min-width: fit-content !important;
 }
 
-header .navbar-collapse a,
-header #navbarSupportedContent a,
 .menubar .navbar-collapse a,
 .menubar #navbarSupportedContent a {
     white-space: nowrap !important;
@@ -1244,61 +1247,27 @@ header #navbarSupportedContent a,
     overflow: visible !important;
 }
 
-header .navbar-collapse .navbar-nav,
-header #navbarSupportedContent .navbar-nav,
 .menubar .navbar-collapse .navbar-nav,
 .menubar #navbarSupportedContent .navbar-nav {
     flex-wrap: nowrap !important;
     white-space: nowrap !important;
     display: flex !important;
+    flex-shrink: 0 !important;
 }
 
-header .navbar-collapse .navbar-nav .nav-item,
-header #navbarSupportedContent .navbar-nav .nav-item,
 .menubar .navbar-collapse .navbar-nav .nav-item,
 .menubar #navbarSupportedContent .navbar-nav .nav-item {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
 }
 
-.menubar .right-menubar,
-header .right-menubar {
+.menubar .right-menubar {
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
-    min-width: fit-content !important;
-}
-
-.menubar .navbar,
-header .menubar .navbar {
-    flex-wrap: nowrap !important;
-    display: flex !important;
-}
-
-.menubar .container,
-header .menubar .container {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    overflow: visible !important;
-}
-
-.menubar .navbar .container,
-header .menubar .navbar .container {
-    flex-wrap: nowrap !important;
-}
-
-/* Ensure all header links stay on one line */
-.menubar a,
-header .menubar a,
-.navbar-collapse a,
-#navbarSupportedContent a,
-header .navbar-collapse a,
-header #navbarSupportedContent a {
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
+    margin-left: auto !important;
 }
 
 /* Additional spacing for header links */
@@ -1310,27 +1279,25 @@ header #navbarSupportedContent a {
     flex-shrink: 0 !important;
 }
 
-/* Ensure navbar container doesn't wrap */
-.menubar .navbar .container,
-header .menubar .navbar .container {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    overflow: visible !important;
-    width: 100% !important;
+/* Search form should not shrink */
+.search-input-form {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
 }
 
 /* Ensure all navigation items fit on one line */
 @media (min-width: 992px) {
-    .navbar-collapse,
-    #navbarSupportedContent {
+    .menubar .navbar-collapse,
+    .menubar #navbarSupportedContent {
         display: flex !important;
         flex-wrap: nowrap !important;
         white-space: nowrap !important;
+        justify-content: flex-start !important;
+        flex: 1 1 auto !important;
     }
     
-    .navbar-collapse > *,
-    #navbarSupportedContent > * {
+    .menubar .navbar-collapse > *,
+    .menubar #navbarSupportedContent > * {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
     }
