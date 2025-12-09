@@ -1215,11 +1215,16 @@ label, li, td, th {
 
 /* Header - Keep all items on one line - Apply to all pages */
 @media (min-width: 992px) {
+    .menubar .navbar {
+        flex-wrap: nowrap !important;
+    }
+    
     .menubar .navbar .container {
         display: flex !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100% !important;
     }
 
     .menubar .navbar-collapse,
@@ -1240,13 +1245,17 @@ label, li, td, th {
     .menubar #navbarSupportedContent > * {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
+        display: inline-block !important;
     }
 
     .menubar .navbar-collapse a,
-    .menubar #navbarSupportedContent a {
+    .menubar #navbarSupportedContent a,
+    .menubar .navbar-collapse .nav-link,
+    .menubar #navbarSupportedContent .nav-link {
         white-space: nowrap !important;
         flex-shrink: 0 !important;
         overflow: visible !important;
+        display: inline-block !important;
     }
 
     .menubar .navbar-collapse .navbar-nav,
@@ -1255,6 +1264,7 @@ label, li, td, th {
         white-space: nowrap !important;
         display: flex !important;
         flex-shrink: 0 !important;
+        flex-direction: row !important;
     }
 
     .menubar .navbar-collapse .navbar-nav .nav-item,
@@ -1282,9 +1292,11 @@ label, li, td, th {
     }
 
     /* Search form should not shrink */
-    .search-input-form {
+    .search-input-form,
+    .menubar .search-input-form {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
+        display: inline-block !important;
     }
     
     /* Ensure form inside navbar-collapse doesn't break layout */
@@ -1292,5 +1304,18 @@ label, li, td, th {
     .menubar #navbarSupportedContent form {
         flex-shrink: 0 !important;
         white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    
+    /* Ensure all text elements don't wrap */
+    .menubar .navbar-collapse *,
+    .menubar #navbarSupportedContent * {
+        white-space: nowrap !important;
+    }
+    
+    /* Override any max-width that might cause wrapping */
+    .menubar .navbar-collapse,
+    .menubar #navbarSupportedContent {
+        max-width: none !important;
     }
 }
