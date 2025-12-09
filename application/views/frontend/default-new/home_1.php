@@ -212,11 +212,12 @@
         gap: 20px;
     }
     
-    /* Each card takes 20% width (5 cards = 100%) */
+    /* Each card takes larger width and stretches to fill space */
     @media (min-width: 992px) {
         .start-learning-cards > .col-lg {
-            flex: 0 0 calc(20% - 16px);
-            max-width: calc(20% - 16px);
+            flex: 1 1 calc(24% - 16px);
+            min-width: calc(24% - 16px);
+            max-width: none;
         }
     }
     
