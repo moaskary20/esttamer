@@ -6459,7 +6459,7 @@ button.bg-dark:focus {
   width: 75% !important; }
 
 .w-100 {
-  width: 100% !important; }
+  width: 0% !important; }
 
 .w-auto {
   width: auto !important; }
