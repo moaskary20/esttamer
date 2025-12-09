@@ -1163,14 +1163,17 @@ function moveCategorySlider(direction) {
     }
     
     // Calculate translateX using actual pixel values to account for gap
+    // Get the visible container width (category-slider-container)
     const container = categorySlider.parentElement; // category-slider-container
     const containerWidth = container.offsetWidth;
     const gap = 20; // 20px gap between slides
     
-    // Calculate slide width including gap
-    // For 4 slides: (containerWidth - 3*gap) / 4 = width per slide
-    // Then add gap for each slide we move
-    const slideWidth = (containerWidth - (slidesToShow - 1) * gap) / slidesToShow;
+    // Get the first slide to calculate its actual width
+    const firstSlide = categorySlides[0];
+    if (!firstSlide) return;
+    
+    // Get the actual computed width of a slide (including flex calculations)
+    const slideWidth = firstSlide.offsetWidth;
     
     // Calculate translateX: move by (slideWidth + gap) for each index
     // When index = 1, we move by exactly one slide width + gap to show the 5th card
