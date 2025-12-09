@@ -1372,6 +1372,7 @@ label, li, td, th {
         flex-wrap: nowrap !important;
         margin: 0 !important;
         padding: 0 !important;
+        flex-direction: column;
     }
     
     /* Reduce padding on nav items */
