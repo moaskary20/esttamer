@@ -205,163 +205,33 @@
         margin-top: 10px;
     }
     
-    /* Category Slider Styles */
-    .category-slider-wrapper {
-        position: relative;
-        padding: 0 60px;
-    }
-    
-    .category-slider-container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .category-slider {
-        display: flex !important;
-        transition: transform 0.8s ease-in-out;
+    /* Category Cards - Display All 5 Cards Side by Side */
+    .start-learning-cards {
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
-        will-change: transform;
-        width: max-content;
-        min-width: 100%;
     }
     
-    .category-slide {
-        flex: 0 0 calc(25% - 15px) !important;
-        min-width: calc(25% - 15px) !important;
-        max-width: calc(25% - 15px) !important;
-        flex-shrink: 0 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        display: block !important;
-        position: relative !important;
+    /* Each card takes 20% width (5 cards = 100%) */
+    @media (min-width: 992px) {
+        .start-learning-cards > .col-lg {
+            flex: 0 0 calc(20% - 16px);
+            max-width: calc(20% - 16px);
+        }
     }
     
     @media (max-width: 991px) {
-        .category-slide {
-            flex: 0 0 50%;
-            min-width: 50%;
-            max-width: 50%;
+        .start-learning-cards > .col-lg {
+            flex: 0 0 calc(50% - 10px);
+            max-width: calc(50% - 10px);
         }
     }
     
     @media (max-width: 575px) {
-        .category-slide {
+        .start-learning-cards > .col-lg {
             flex: 0 0 100%;
-            min-width: 100%;
             max-width: 100%;
         }
-    }
-    
-    .category-slider-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(32, 227, 178, 0.9);
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(32, 227, 178, 0.3);
-    }
-    
-    .category-slider-nav:hover {
-        background: rgba(32, 227, 178, 1);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 6px 20px rgba(32, 227, 178, 0.4);
-    }
-    
-    .category-prev-btn {
-        left: 0;
-    }
-    
-    .category-next-btn {
-        right: 0;
-    }
-    
-    @media (max-width: 767px) {
-        .category-slider-wrapper {
-            padding: 0 50px;
-        }
-        
-        .category-slider-nav {
-            width: 40px;
-            height: 40px;
-        }
-    }
-    
-    /* Ensure all cards are visible */
-    .category-slide {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        flex-shrink: 0 !important;
-    }
-    
-    /* Ensure 5th card (Hearing) is visible */
-    .category-slide:nth-child(5) {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        flex: 0 0 calc(25% - 15px) !important;
-        min-width: calc(25% - 15px) !important;
-        max-width: calc(25% - 15px) !important;
-        flex-shrink: 0 !important;
-        position: relative !important;
-    }
-    
-    .category-slide:nth-child(5) .category-card {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        background: #ffffff !important;
-        border-radius: 20px !important;
-        padding: 30px 20px !important;
-        height: 100% !important;
-        min-height: 350px !important;
-    }
-    
-    .category-slide:nth-child(5) .category-card-image {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100% !important;
-        max-width: 200px !important;
-        height: 200px !important;
-        margin-bottom: 20px !important;
-    }
-    
-    .category-slide:nth-child(5) .category-card-image img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        max-width: 100% !important;
-        max-height: 100% !important;
-        object-fit: contain !important;
-        width: auto !important;
-        height: auto !important;
-    }
-    
-    .category-slide:nth-child(5) .category-card-title {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        font-size: 1.5rem !important;
-        font-weight: 700 !important;
-        color: #1a1a1a !important;
-    }
-    
-    .category-slide:nth-child(5) .category-card-button {
-        display: inline-flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
     }
     
     .category-card-link {
@@ -414,14 +284,6 @@
         width: auto;
         height: auto;
         display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Ensure 5th card image displays */
-    .category-slide:nth-child(5) .category-card-image,
-    .category-slide:nth-child(5) .category-card-image img {
-        display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
@@ -1077,339 +939,112 @@
             </div>
         </div>
         
-        <!-- Category Cards Slider -->
-        <div class="category-slider-wrapper position-relative">
-            <div class="category-slider-container">
-                <div class="category-slider" id="categorySlider">
-                    <!-- Card 1: Family Medicine -->
-                    <div class="category-slide">
-                        <a href="https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9" class="category-card-link">
-                            <div class="category-card">
-                                <div class="category-card-image">
-                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not3320.png'); ?>" alt="طب الأسرة">
-                                </div>
-                                <div class="category-card-content">
-                                    <h3 class="category-card-title">طب الأسرة</h3>
-                                    <div class="category-card-button">
-                                        <span>ابدأ الآن</span>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
+        <!-- Category Cards - Display All 5 Cards -->
+        <div class="row g-4 justify-content-center start-learning-cards">
+            <!-- Card 1: Family Medicine -->
+            <div class="col-lg col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%B7%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D9%88-%D8%A7%D9%84%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%88%D8%A7%D9%84%D8%AF%D9%8A%D8%A9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not3320.png'); ?>" alt="طب الأسرة">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">طب الأسرة</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                        </a>
+                        </div>
                     </div>
-                    
-                    <!-- Card 3: Speech and Language Therapy -->
-                    <div class="category-slide">
-                        <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
-                            <div class="category-card">
-                                <div class="category-card-image">
-                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not2.png'); ?>" alt="علاج النطق و اللغة">
-                                </div>
-                                <div class="category-card-content">
-                                    <h3 class="category-card-title">علاج النطق و اللغة</h3>
-                                    <div class="category-card-button">
-                                        <span>ابدأ الآن</span>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- Card 4: Occupational Therapy -->
-                    <div class="category-slide">
-                        <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
-                            <div class="category-card">
-                                <div class="category-card-image">
-                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/wazefy.png'); ?>" alt="العلاج الوظيفي">
-                                </div>
-                                <div class="category-card-content">
-                                    <h3 class="category-card-title">العلاج الوظيفي</h3>
-                                    <div class="category-card-button">
-                                        <span>ابدأ الآن</span>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- Card 5: Physical Therapy -->
-                    <div class="category-slide">
-                        <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
-                            <div class="category-card">
-                                <div class="category-card-image">
-                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/taby3y.png'); ?>" alt="العلاج الطبيعي">
-                                </div>
-                                <div class="category-card-content">
-                                    <h3 class="category-card-title">العلاج الطبيعي</h3>
-                                    <div class="category-card-button">
-                                        <span>ابدأ الآن</span>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- Card 6: Hearing -->
-                    <div class="category-slide">
-                        <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
-                            <div class="category-card">
-                                <div class="category-card-image">
-                                    <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/sama3.png'); ?>" alt="السمع">
-                                </div>
-                                <div class="category-card-content">
-                                    <h3 class="category-card-title">السمع</h3>
-                                    <div class="category-card-button">
-                                        <span>ابدأ الآن</span>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    
-                </div>
+                </a>
             </div>
             
-            <!-- Navigation Arrows -->
-            <button class="category-slider-nav category-prev-btn" onclick="moveCategorySlider(-1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button class="category-slider-nav category-next-btn" onclick="moveCategorySlider(1)">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
+            <!-- Card 2: Speech and Language Therapy -->
+            <div class="col-lg col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%86%D8%B7%D9%82-%D9%88-%D8%A7%D9%84%D9%84%D8%BA%D8%A9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/not2.png'); ?>" alt="علاج النطق و اللغة">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">علاج النطق و اللغة</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 3: Occupational Therapy -->
+            <div class="col-lg col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D9%88%D8%B8%D9%8A%D9%81%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/wazefy.png'); ?>" alt="العلاج الوظيفي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الوظيفي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 4: Physical Therapy -->
+            <div class="col-lg col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/taby3y.png'); ?>" alt="العلاج الطبيعي">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">العلاج الطبيعي</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Card 5: Hearing -->
+            <div class="col-lg col-md-6 col-sm-6">
+                <a href="https://esttamer.com/home/courses?category=%D8%A7%D9%84%D8%B3%D9%85%D8%B9" class="category-card-link">
+                    <div class="category-card">
+                        <div class="category-card-image">
+                            <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/sama3.png'); ?>" alt="السمع">
+                        </div>
+                        <div class="category-card-content">
+                            <h3 class="category-card-title">السمع</h3>
+                            <div class="category-card-button">
+                                <span>ابدأ الآن</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 <!---------- Start Learning Section End --------------->
 
-<script>
-// Category Slider Functionality
-let currentCategoryIndex = 0;
-let categorySlides;
-let categorySlider;
-let totalCategorySlides;
-let slidesToShow = 4;
-
-function updateSlidesToShow() {
-    if (window.innerWidth >= 992) {
-        slidesToShow = 4;
-    } else if (window.innerWidth >= 576) {
-        slidesToShow = 2;
-    } else {
-        slidesToShow = 1;
-    }
-}
-
-function moveCategorySlider(direction) {
-    // Re-query elements to ensure we have the latest count
-    categorySlides = document.querySelectorAll('.category-slide');
-    categorySlider = document.getElementById('categorySlider');
-    totalCategorySlides = categorySlides.length;
-    
-    if (!categorySlider || totalCategorySlides === 0) return;
-    
-    updateSlidesToShow();
-    
-    // Ensure all slides are visible
-    categorySlides.forEach(function(slide, index) {
-        slide.style.display = 'block';
-        slide.style.visibility = 'visible';
-        slide.style.opacity = '1';
-        slide.style.flex = '0 0 calc(25% - 15px)';
-        slide.style.minWidth = 'calc(25% - 15px)';
-        slide.style.maxWidth = 'calc(25% - 15px)';
-        slide.style.flexShrink = '0';
-        
-        // Ensure card inside is visible
-        const card = slide.querySelector('.category-card');
-        if (card) {
-            card.style.display = 'flex';
-            card.style.visibility = 'visible';
-            card.style.opacity = '1';
-            card.style.background = '#ffffff';
-        }
-        
-        // Ensure image container is visible
-        const imageContainer = slide.querySelector('.category-card-image');
-        if (imageContainer) {
-            imageContainer.style.display = 'flex';
-            imageContainer.style.visibility = 'visible';
-            imageContainer.style.opacity = '1';
-        }
-        
-        // Ensure image is visible
-        const img = slide.querySelector('.category-card-image img');
-        if (img) {
-            img.style.display = 'block';
-            img.style.visibility = 'visible';
-            img.style.opacity = '1';
-            img.style.maxWidth = '100%';
-            img.style.maxHeight = '100%';
-            img.style.objectFit = 'contain';
-        }
-        
-        // Ensure title is visible
-        const title = slide.querySelector('.category-card-title');
-        if (title) {
-            title.style.display = 'block';
-            title.style.visibility = 'visible';
-            title.style.opacity = '1';
-        }
-        
-        // Ensure button is visible
-        const button = slide.querySelector('.category-card-button');
-        if (button) {
-            button.style.display = 'inline-flex';
-            button.style.visibility = 'visible';
-            button.style.opacity = '1';
-        }
-    });
-    
-    // Calculate max index based on total slides and slides to show
-    const maxIndex = Math.max(0, totalCategorySlides - slidesToShow);
-    
-    // Update index based on direction
-    // Right arrow (direction = 1) -> see next slides (increase index)
-    // Left arrow (direction = -1) -> see previous slides (decrease index)
-    currentCategoryIndex += direction;
-    
-    // Handle wrapping - allow continuous loop
-    if (currentCategoryIndex > maxIndex) {
-        currentCategoryIndex = 0; // Go back to start
-    } else if (currentCategoryIndex < 0) {
-        currentCategoryIndex = maxIndex; // Go to end (show last slide)
-    }
-    
-    // Calculate movement using percentage (more reliable with flex)
-    const slideWidthPercent = 100 / slidesToShow;
-    
-    // Calculate translateX in percentage
-    // For 5 slides showing 4 at a time:
-    // Index 0: show slides 1-4 (translateX = 0%)
-    // Index 1: show slides 2-5 (translateX = -25% to move left and show slide 5)
-    // Negative translateX moves content LEFT (reveals content on the RIGHT)
-    const translateXPercent = -(currentCategoryIndex * slideWidthPercent);
-    
-    // Ensure all slides are visible before applying transform
-    categorySlides.forEach(function(slide, index) {
-        slide.style.display = 'block';
-        slide.style.visibility = 'visible';
-        slide.style.opacity = '1';
-        // Ensure 5th card is fully visible
-        if (index === 4) {
-            slide.style.flex = '0 0 calc(25% - 15px)';
-            slide.style.minWidth = 'calc(25% - 15px)';
-            slide.style.maxWidth = 'calc(25% - 15px)';
-        }
-    });
-    
-    // Apply transform with smooth transition
-    categorySlider.style.transition = 'transform 0.8s ease-in-out';
-    categorySlider.style.transform = `translateX(${translateXPercent}%)`;
-    categorySlider.style.display = 'flex';
-}
-
-// Initialize on load
-document.addEventListener('DOMContentLoaded', function() {
-    categorySlides = document.querySelectorAll('.category-slide');
-    categorySlider = document.getElementById('categorySlider');
-    totalCategorySlides = categorySlides.length;
-    
-    // Ensure all slides are visible
-    categorySlides.forEach(function(slide, index) {
-        slide.style.display = 'block';
-        slide.style.visibility = 'visible';
-        slide.style.opacity = '1';
-        slide.style.flex = '0 0 calc(25% - 15px)';
-        slide.style.minWidth = 'calc(25% - 15px)';
-        slide.style.maxWidth = 'calc(25% - 15px)';
-        slide.style.flexShrink = '0';
-        
-        // Ensure card inside is visible
-        const card = slide.querySelector('.category-card');
-        if (card) {
-            card.style.display = 'flex';
-            card.style.visibility = 'visible';
-            card.style.opacity = '1';
-            card.style.background = '#ffffff';
-        }
-        
-        // Ensure image container is visible
-        const imageContainer = slide.querySelector('.category-card-image');
-        if (imageContainer) {
-            imageContainer.style.display = 'flex';
-            imageContainer.style.visibility = 'visible';
-            imageContainer.style.opacity = '1';
-        }
-        
-        // Ensure image is visible
-        const img = slide.querySelector('.category-card-image img');
-        if (img) {
-            img.style.display = 'block';
-            img.style.visibility = 'visible';
-            img.style.opacity = '1';
-            img.style.maxWidth = '100%';
-            img.style.maxHeight = '100%';
-            img.style.objectFit = 'contain';
-        }
-        
-        // Ensure title is visible
-        const title = slide.querySelector('.category-card-title');
-        if (title) {
-            title.style.display = 'block';
-            title.style.visibility = 'visible';
-            title.style.opacity = '1';
-        }
-        
-        // Ensure button is visible
-        const button = slide.querySelector('.category-card-button');
-        if (button) {
-            button.style.display = 'inline-flex';
-            button.style.visibility = 'visible';
-            button.style.opacity = '1';
-        }
-    });
-    
-    updateSlidesToShow();
-    if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
-        categorySlider.style.display = 'flex';
-        categorySlider.style.transition = 'transform 0.8s ease-in-out';
-    }
-});
-
-// Update on resize
-window.addEventListener('resize', function() {
-    categorySlides = document.querySelectorAll('.category-slide');
-    categorySlider = document.getElementById('categorySlider');
-    totalCategorySlides = categorySlides.length;
-    
-    updateSlidesToShow();
-    currentCategoryIndex = 0;
-    if (categorySlider) {
-        categorySlider.style.transform = 'translateX(0%)';
-        categorySlider.style.transition = 'transform 0.8s ease-in-out';
-    }
-});
-</script>
 
 <?php if(get_frontend_settings('top_course_section') == 1): ?>
 <!---------- Top courses Section start --------------->
