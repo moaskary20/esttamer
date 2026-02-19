@@ -1,3 +1,23 @@
+<style>
+/* نفس ستايل breadcrumb صفحة الدورات (لون أخضر متدرج) */
+.bread-crumb {
+    position: relative;
+    background-image: url("<?php echo base_url('assets/frontend/default-new/image/course-breadcramb.jpg'); ?>");
+    background-size: cover;
+    background-position: center;
+}
+.bread-crumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(32, 227, 178, 0.85) 0%, rgba(41, 255, 198, 0.75) 50%, rgba(101, 240, 137, 0.80) 100%);
+    z-index: 0;
+}
+.bread-crumb .container { position: relative; z-index: 1; }
+</style>
 <?php include "breadcrumb.php"; ?>
 
 <!------- body section Start ------>

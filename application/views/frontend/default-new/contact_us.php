@@ -1,3 +1,23 @@
+<style>
+/* نفس ستايل breadcrumb صفحة الدورات (لون أخضر متدرج) */
+.bread-crumb {
+    position: relative;
+    background-image: url("<?php echo base_url('assets/frontend/default-new/image/course-breadcramb.jpg'); ?>");
+    background-size: cover;
+    background-position: center;
+}
+.bread-crumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(32, 227, 178, 0.85) 0%, rgba(41, 255, 198, 0.75) 50%, rgba(101, 240, 137, 0.80) 100%);
+    z-index: 0;
+}
+.bread-crumb .container { position: relative; z-index: 1; }
+</style>
 <?php include "breadcrumb.php"; ?>
 
 <?php if(get_frontend_settings('recaptcha_status')): ?>
@@ -11,7 +31,14 @@
             <div class="col-lg-6 col-md-8">
                 <div class="contact-heading">
                     <h3><?php echo get_phrase('Contact Us') ?></h3>
-                    <p><?php echo get_phrase('Connect with us to experience seamless communication. We value open dialogue and are eager to engage with you. Whether you have questions, ideas, or feedback, we are here to listen and respond.') ?></p>
+                    <?php
+                    $connect_phrase = 'Connect with us to experience seamless communication. We value open dialogue and are eager to engage with you. Whether you have questions, ideas, or feedback, we are here to listen and respond.';
+                    $connect_text = get_phrase($connect_phrase);
+                    if ($this->session->userdata('language') == 'arabic' && $connect_text === $connect_phrase) {
+                        $connect_text = 'تواصل معنا لتجربة تواصل سلس. نحن نقدّر الحوار المفتوح ونحن متحمسون للتفاعل معك. سواء كان لديك أسئلة أو أفكار أو ملاحظات، نحن هنا نستمع ونجيب.';
+                    }
+                    ?>
+                    <p><?php echo $connect_text; ?></p>
                 </div>               
             </div>
             <div class="col-lg-6 col-md-4">

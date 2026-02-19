@@ -1531,25 +1531,5 @@ header .navbarHover li a,
     flex-direction: column !important;
 }
 
-/* Breadcrumb: من نحن + اتصل بنا — لون أخضر بدل البنفسجي */
-.bread-crumb.bread-crumb-green,
-section .bread-crumb.bread-crumb-green {
-    background: #038261 !important;
-    background-image: none !important;
-    background-color: #038261 !important;
-    background-size: auto !important;
-}
-.bread-crumb-green .breadcrumb span,
-.bread-crumb-green .breadcrumb i,
-.bread-crumb-green .breadcrumb a,
-.bread-crumb-green .breadcrumb-item a,
-.bread-crumb-green .breadcrumb-item.active span,
-.bread-crumb-green h1 {
-    color: #fff !important;
-}
-.bread-crumb-green .breadcrumb a:hover {
-    color: rgba(255,255,255,0.9) !important;
-}
-.bread-crumb-green .breadcrumb .fa-chevron-right {
-    color: rgba(255,255,255,0.8) !important;
-}
+/* Breadcrumb: من نحن + اتصل بنا — نفس شكل صفحة الدورات (التدرج من الـ style داخل الصفحة) */
+/* لا نضع لون خلفية هنا؛ الصفحتان about_us و contact_us تضافان نفس الـ gradient في الصفحة */
