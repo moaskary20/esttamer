@@ -501,9 +501,11 @@
         justify-content: center;
         background: rgba(255, 255, 255, 0.2);
     }
-    .author-image.author-icon i {
-        font-size: 2.8rem;
+    .author-image.author-icon svg {
+        width: 48px;
+        height: 48px;
         color: #fff;
+        fill: #fff;
     }
     
     .author-info {
@@ -596,8 +598,9 @@
             width: 60px;
             height: 60px;
         }
-        .author-image.author-icon i {
-            font-size: 2.2rem;
+        .author-image.author-icon svg {
+            width: 40px;
+            height: 40px;
         }
         
         .author-name {
@@ -1783,7 +1786,7 @@ window.addEventListener('resize', function() {
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image author-icon">
-                                <i class="fas fa-user-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">محمد المصري</h5>
@@ -1808,7 +1811,7 @@ window.addEventListener('resize', function() {
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image author-icon">
-                                <i class="fas fa-user-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">ديالا جرار</h5>
@@ -1833,7 +1836,7 @@ window.addEventListener('resize', function() {
                         </div>
                         <div class="testimonial-author">
                             <div class="author-image author-icon">
-                                <i class="fas fa-user-circle"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                             </div>
                             <div class="author-info">
                                 <h5 class="author-name">بيان خريسات</h5>
