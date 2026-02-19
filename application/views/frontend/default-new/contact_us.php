@@ -32,7 +32,7 @@
                 <div class="contact-heading">
                     <h3><?php echo get_phrase('Contact Us') ?></h3>
                     <?php
-                    $connect_phrase = 'Connect with us to experience seamless communication. We value open dialogue and are eager to engage with you. Whether you have questions, ideas, or feedback, we are here to listen and respond.';
+                    $connect_phrase = 'تواصل معنا لتجربة تواصل سلس. نحن نُقدّر الحوار المفتوح ونتطلع إلى التفاعل معك. سواء كانت لديك أسئلة أو أفكار أو ملاحظات، فنحن هنا للاستماع إليك والرد عليك.';
                     $connect_text = get_phrase($connect_phrase);
                     if ($this->session->userdata('language') == 'arabic' && $connect_text === $connect_phrase) {
                         $connect_text = 'تواصل معنا لتجربة تواصل سلس. نحن نقدّر الحوار المفتوح ونحن متحمسون للتفاعل معك. سواء كان لديك أسئلة أو أفكار أو ملاحظات، نحن هنا نستمع ونجيب.';
@@ -70,7 +70,7 @@
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div class="office-hour-text">
-                                    <h4><?php echo get_phrase('Get In Touch'); ?></h4>
+                                    <h4><?php echo get_phrase('تواصل معنا'); ?></h4>
                                     <?php echo nl2br($contact_info['phone']); ?>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                 <div class="form-check">
                                     <input name="i_agree" class="form-check-input" type="checkbox" value="1" id="i_agree">
                                     <label class="form-check-label" for="i_agree"> 
-                                        <p><?php echo get_phrase('I agree that my submitted data is being collected and stored.'); ?></p>
+                                        <p><?php echo get_phrase('أوافق على جمع وتخزين البيانات التي أرسلتها.'); ?></p>
                                     </label>
                                   </div>                                  
                               </div>
