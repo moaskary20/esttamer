@@ -1,3 +1,17 @@
+<style>
+    /* إصلاح تنسيق صفحة SEO: منع ظهور النص عمودياً وضبط عرض الحقول */
+    #accordionContent .form-group label { display: block; }
+    #accordionContent .form-control { min-width: 100%; width: 100%; }
+    #accordionContent .form-text,
+    #accordionContent .bootstrap-tagsinput + .form-text,
+    #accordionContent small.text-muted {
+        display: block !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        margin-top: 0.25rem;
+    }
+    #accordionContent .bootstrap-tagsinput { width: 100% !important; min-width: 100% !important; }
+</style>
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
@@ -49,8 +63,8 @@
 
                                                 <div class="form-group">
                                                     <label for="meta_keywords"><?php echo get_phrase('Meta Keywords'); ?></label>
-                                                    <input type="text" name="meta_keywords" value="<?php echo $seo_meta_tag['meta_keywords']; ?>" class="form-control bootstrap-tag-input" id="meta_keywords" data-role="tagsinput" style="width: 100%;" value="" />
-                                                    <small class="form-label ol-form-label text-muted"><?php echo get_phrase('Writing your keyword and hit the enter'); ?></small>
+                                                    <input type="text" name="meta_keywords" value="<?php echo $seo_meta_tag['meta_keywords']; ?>" class="form-control bootstrap-tag-input" id="meta_keywords" data-role="tagsinput" style="width: 100%; min-width: 100%;" />
+                                                    <small class="form-text text-muted d-block mt-1" style="white-space: normal; display: block !important;"><?php echo get_phrase('Writing your keyword and hit the enter'); ?></small>
                                                 </div>
 
                                                 <div class="form-group">
