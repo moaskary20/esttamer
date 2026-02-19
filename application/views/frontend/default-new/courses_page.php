@@ -61,8 +61,8 @@
                  <?php if(count($courses) == 0): ?>
                     <div class="not-found w-100 text-center d-flex align-items-center flex-column">
                         <img loading="lazy" width="80px" src="<?php echo base_url('assets/global/image/not-found.svg'); ?>">
-                        <h5><?php echo get_phrase('Course Not Found'); ?></h5>
-                        <p><?php echo get_phrase('Sorry, try using more similar words in your search.') ?></p>
+                        <h5><?php echo ($this->session->userdata('language') == 'arabic') ? 'الدورة غير موجودة' : get_phrase('Course Not Found'); ?></h5>
+                        <p><?php echo ($this->session->userdata('language') == 'arabic') ? 'عذراً، جرّب استخدام كلمات أكثر تشابهاً في البحث.' : get_phrase('Sorry, try using more similar words in your search.') ?></p>
                     </div>
                  <?php endif; ?>
             </div>

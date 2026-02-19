@@ -74,8 +74,8 @@ function updateQueryString($key, $value) {
                             </div>
 
                             <div class="show-more">
-                                <a class="show-more-less-btn" href="#" onclick="$('.course-all-category .course-category .webdesign-category').toggleClass('less'); $('.show-more-less-btn').toggleClass('d-none');"><?php echo get_phrase('Show More'); ?></a>
-                                <a class="show-more-less-btn d-none" href="#" onclick="$('.course-all-category .course-category .webdesign-category').toggleClass('less'); $('.show-more-less-btn').toggleClass('d-none');"><?php echo get_phrase('Show Less'); ?></a>
+                                <a class="show-more-less-btn" href="#" onclick="$('.course-all-category .course-category .webdesign-category').toggleClass('less'); $('.show-more-less-btn').toggleClass('d-none');"><?php echo ($this->session->userdata('language') == 'arabic') ? 'أظهر المزيد' : get_phrase('Show More'); ?></a>
+                                <a class="show-more-less-btn d-none" href="#" onclick="$('.course-all-category .course-category .webdesign-category').toggleClass('less'); $('.show-more-less-btn').toggleClass('d-none');"><?php echo ($this->session->userdata('language') == 'arabic') ? 'عرض أقل' : get_phrase('Show Less'); ?></a>
                             </div>
                             
                             <!--  -->
@@ -179,8 +179,8 @@ function updateQueryString($key, $value) {
                             </div>
 
                                 <div class="show-more">
-                                    <a class="show-more-less-btn-lan" href="#" onclick="$('.course-all-category .course-category .webdesign-lan').toggleClass('less'); $('.show-more-less-btn-lan').toggleClass('d-none');"><?php echo get_phrase('Show More'); ?></a>
-                                    <a class="show-more-less-btn-lan d-none" href="#" onclick="$('.course-all-category .course-category .webdesign-lan').toggleClass('less'); $('.show-more-less-btn-lan').toggleClass('d-none');"><?php echo get_phrase('Show Less'); ?></a>
+                                    <a class="show-more-less-btn-lan" href="#" onclick="$('.course-all-category .course-category .webdesign-lan').toggleClass('less'); $('.show-more-less-btn-lan').toggleClass('d-none');"><?php echo ($this->session->userdata('language') == 'arabic') ? 'أظهر المزيد' : get_phrase('Show More'); ?></a>
+                                    <a class="show-more-less-btn-lan d-none" href="#" onclick="$('.course-all-category .course-category .webdesign-lan').toggleClass('less'); $('.show-more-less-btn-lan').toggleClass('d-none');"><?php echo ($this->session->userdata('language') == 'arabic') ? 'عرض أقل' : get_phrase('Show Less'); ?></a>
                                 </div>
                             <!--  -->
                         </div>

@@ -20,11 +20,13 @@
                     </nav>
                     <h1><?php echo $page_title; ?></h1>
                 </div>
+                <?php if ($this->uri->segment(2) != 'courses'): ?>
                 <div class="col-3 ms-auto d-none d-sm-inline-block">
                     <div class="book-img">
                         <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/brd-book.png') ?>" alt="">
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
