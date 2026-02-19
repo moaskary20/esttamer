@@ -1280,6 +1280,7 @@ label, li, td, th {
         white-space: nowrap !important;
     }
 
+    /* القائمة + زر انضم الآن على نفس السطر */
     .menubar .right-menubar {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -1287,6 +1288,10 @@ label, li, td, th {
         white-space: nowrap !important;
         flex-shrink: 0 !important;
         margin-left: auto !important;
+    }
+    .menubar .right-menubar > a {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
     }
 
     /* Additional spacing for header links */

@@ -129,6 +129,10 @@
             <li class="bg-light"><a class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500" href="<?php echo site_url('tutors'); ?>"><i class="fas fa-chalkboard-teacher me-2"></i><?php echo get_phrase('Find a Tutor'); ?></a></li>
           <?php endif; ?>
 
+          <li class="bg-light"><a class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500" href="<?php echo site_url('home/about_us'); ?>"><i class="fas fa-info-circle me-2"></i><?php echo site_phrase('about_us'); ?></a></li>
+          <li class="bg-light"><a class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500" href="<?php echo site_url('home/contact_us'); ?>"><i class="fas fa-envelope me-2"></i><?php echo site_phrase('contact_us'); ?></a></li>
+          <li class="bg-light"><a class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500" href="<?php echo site_url('blog'); ?>"><i class="fas fa-blog me-2"></i><?php echo site_phrase('blog'); ?></a></li>
+
           <?php if($admin_login): ?>
             <li class="bg-light">
               <a href="<?php echo site_url('admin'); ?>" class="btn btn-toggle-list d-inline-flex align-items-center rounded border-0 text-dark text-16px fw-500"> <i class="fas fa-location-arrow me-2"></i> <?php echo get_phrase('Administration'); ?></a>
