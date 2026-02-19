@@ -2,9 +2,10 @@
 <?php
 $is_about_or_contact = (isset($page_name) && in_array($page_name, array('about_us', 'contact_us')))
     || in_array($this->uri->segment(2), array('about_us', 'contact_us'));
+$green_style = $is_about_or_contact ? ' style="background:#038261 !important; background-image:none !important; color:#fff !important;"' : '';
 ?>
 <section>
-    <div class="bread-crumb<?php echo $is_about_or_contact ? ' bread-crumb-green' : ''; ?>">
+    <div class="bread-crumb<?php echo $is_about_or_contact ? ' bread-crumb-green' : ''; ?>"<?php echo $green_style; ?>>
         <div class="container">
             <div class="row">
                 <div class="col-auto">

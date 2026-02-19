@@ -1132,6 +1132,55 @@ class Home extends CI_Controller
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
     }
 
+    /**
+     * تطبيق ترجمات عربية لصفحة اتصل بنا (مرة واحدة).
+     * الاستخدام: home/apply_contact_arabic/KEY ثم احذف أو غيّر KEY.
+     */
+    public function apply_contact_arabic($key = '')
+    {
+        $secret = 'esttamer_arabic_2025';
+        if ($key !== $secret) {
+            show_404();
+            return;
+        }
+        $this->load->dbforge();
+        if (!$this->db->field_exists('arabic', 'language')) {
+            $this->dbforge->add_column('language', array(
+                'arabic' => array('type' => 'LONGTEXT', 'null' => TRUE)
+            ));
+        }
+        $phrases = array(
+            'connect_with_us_to_experience_seamless_communication._we_value_open_dialogue_and_are_eager_to_engage_with_you._whether_you_have_questions,_ideas,_or_feedback,_we_are_here_to_listen_and_respond.' => 'تواصل معنا لتجربة تواصل سلس. نحن نقدّر الحوار المفتوح ونحن متحمسون للتفاعل معك. سواء كان لديك أسئلة أو أفكار أو ملاحظات، نحن هنا نستمع ونجيب.',
+            'email_address' => 'البريد الإلكتروني',
+            'address' => 'العنوان',
+            'write_your_message' => 'اكتب رسالتك',
+            'i_agree_that_my_submitted_data_is_being_collected_and_stored.' => 'أوافق على أن البيانات المُرسلة يتم جمعها وتخزينها.',
+            'get_in_touch' => 'تواصل معنا',
+            'our_address' => 'عنواننا',
+        );
+        $updated = 0;
+        foreach ($phrases as $phrase_key => $arabic_text) {
+            $exists = $this->db->get_where('language', array('phrase' => $phrase_key))->row_array();
+            if (!empty($exists)) {
+                $this->db->where('phrase', $phrase_key);
+                $this->db->update('language', array('arabic' => $arabic_text));
+                $updated += $this->db->affected_rows();
+            } else {
+                $this->db->insert('language', array(
+                    'phrase' => $phrase_key,
+                    'english' => str_replace('_', ' ', $phrase_key),
+                    'arabic' => $arabic_text
+                ));
+                $updated++;
+            }
+        }
+        header('Content-Type: text/html; charset=utf-8');
+        echo '<!DOCTYPE html><html dir="rtl"><head><meta charset="utf-8"><title>ترجمات اتصل بنا</title></head><body style="font-family:Tajawal;padding:20px;">';
+        echo '<h2>تم تطبيق الترجمات العربية لصفحة اتصل بنا</h2><p>تم تحديث ' . $updated . ' عبارة.</p>';
+        echo '<p><strong>مهم:</strong> احذف أو غيّر الرابط (لا تتركه مفتوحاً) ثم اختر اللغة العربية من الموقع وتصفح صفحة اتصل بنا.</p>';
+        echo '</body></html>';
+    }
+
     public function terms_and_condition()
     {
         $page_data['page_name'] = 'terms_and_condition';
