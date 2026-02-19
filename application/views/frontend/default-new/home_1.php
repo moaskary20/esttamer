@@ -495,6 +495,17 @@
         object-fit: cover;
     }
     
+    .author-image.author-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+    }
+    .author-image.author-icon i {
+        font-size: 2.8rem;
+        color: #fff;
+    }
+    
     .author-info {
         text-align: right;
     }
@@ -584,6 +595,9 @@
         .author-image {
             width: 60px;
             height: 60px;
+        }
+        .author-image.author-icon i {
+            font-size: 2.2rem;
         }
         
         .author-name {
@@ -1765,14 +1779,14 @@ window.addEventListener('resize', function() {
                                     <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
                                 </svg>
                             </div>
-                            <p class="testimonial-text">منصة استمر منصة رائعة ساعدتني في تطوير مهاراتي في العلاج الطبيعي. المحتوى غني والمدربون محترفون جداً. أنصح الجميع بالانضمام!</p>
+                            <p class="testimonial-text">سعيد بكوني جزء من المنصة و ان شاء بالتوفيق للجميع</p>
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://i.pravatar.cc/150?img=12" alt="أحمد محمد" onerror="this.src='https://ui-avatars.com/api/?name=أحمد+محمد&background=20E3B2&color=fff&size=150'">
+                            <div class="author-image author-icon">
+                                <i class="fas fa-user-circle"></i>
                             </div>
                             <div class="author-info">
-                                <h5 class="author-name">أحمد محمد</h5>
+                                <h5 class="author-name">محمد المصري</h5>
                                 <p class="author-role">أخصائي علاج طبيعي</p>
                             </div>
                         </div>
@@ -1790,14 +1804,14 @@ window.addEventListener('resize', function() {
                                     <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
                                 </svg>
                             </div>
-                            <p class="testimonial-text">تجربة ممتازة مع منصة استمر! الدورات في علاج النطق واللغة شاملة ومفيدة جداً. استفدت كثيراً وأصبحت أكثر كفاءة في عملي.</p>
+                            <p class="testimonial-text">شكرا على الفكرة الرائعة، دايما كنت أحلم بوجود مكان عربي متكامل بيحكي عن النطق و اللغة و التأهيل بشكل عام</p>
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://i.pravatar.cc/150?img=47" alt="فاطمة علي" onerror="this.src='https://ui-avatars.com/api/?name=فاطمة+علي&background=20E3B2&color=fff&size=150'">
+                            <div class="author-image author-icon">
+                                <i class="fas fa-user-circle"></i>
                             </div>
                             <div class="author-info">
-                                <h5 class="author-name">فاطمة علي</h5>
+                                <h5 class="author-name">ديالا جرار</h5>
                                 <p class="author-role">أخصائية نطق ولغة</p>
                             </div>
                         </div>
@@ -1815,14 +1829,14 @@ window.addEventListener('resize', function() {
                                     <path d="M19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21C20.3431 21 19 19.6569 19 18Z" fill="white"/>
                                 </svg>
                             </div>
-                            <p class="testimonial-text">منصة احترافية بكل معنى الكلمة. محتوى العلاج الوظيفي ممتاز والشرح واضح. شكراً لكم على هذه الخدمة المميزة!</p>
+                            <p class="testimonial-text">مبادرة حلوة و متحمسين لكل الدورات على المنصة و ان شاء الله يكون في كتير دورات و مقالات بالعلاج الطبيعي في المستقبل!</p>
                         </div>
                         <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://i.pravatar.cc/150?img=33" alt="خالد إبراهيم" onerror="this.src='https://ui-avatars.com/api/?name=خالد+إبراهيم&background=20E3B2&color=fff&size=150'">
+                            <div class="author-image author-icon">
+                                <i class="fas fa-user-circle"></i>
                             </div>
                             <div class="author-info">
-                                <h5 class="author-name">خالد إبراهيم</h5>
+                                <h5 class="author-name">بيان خريسات</h5>
                                 <p class="author-role">أخصائي علاج وظيفي</p>
                             </div>
                         </div>
