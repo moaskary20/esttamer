@@ -49,7 +49,7 @@
 
     <?php if($popular_blogs->num_rows() > 0): ?>
         <div class="container mb-4 mt-4">
-            <h1 class="text-center mb-2"><span><?php echo get_phrase('Popular blogs'); ?></span></h1>
+            <h1 class="text-center mb-2"><span><?php echo get_phrase('المدونات الشائعة'); ?></span></h1>
             <p class="text-center mb-5"><?php echo get_phrase('Learn from Expert Bloggers and Expand Your Knowledge') ?></p>
             <div class="courses-card">
                 <div class="row justify-content-center">

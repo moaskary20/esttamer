@@ -474,12 +474,12 @@ label, li, td, th {
 
 
 
-/*Blog page*/
+/*Blog page — نفس لون الـ Breadcrumb (أخضر #038261) */
 .image-placeholder-2{
     position: absolute;
     width: 100%;
     height: 100% !important;
-    background: radial-gradient(circle, rgb(117 79 254 / 89%) 0%, rgb(117 79 254) 74%) !important;
+    background: radial-gradient(circle, rgba(3, 130, 97, 0.89) 0%, #038261 74%) !important;
 }
 .blog-search-input{
     height: 42px;
