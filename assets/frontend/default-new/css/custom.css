@@ -1530,3 +1530,19 @@ header .navbarHover li a,
     padding: 0 !important;
     flex-direction: column !important;
 }
+
+/* Breadcrumb: من نحن + اتصل بنا — لون أخضر بدون صورة الكتب */
+.bread-crumb-green {
+    background-image: none !important;
+    background-color: #038261 !important;
+}
+.bread-crumb-green .breadcrumb span,
+.bread-crumb-green .breadcrumb i,
+.bread-crumb-green .breadcrumb a,
+.bread-crumb-green .breadcrumb-item a,
+.bread-crumb-green h1 {
+    color: #fff !important;
+}
+.bread-crumb-green .breadcrumb a:hover {
+    color: rgba(255,255,255,0.9) !important;
+}

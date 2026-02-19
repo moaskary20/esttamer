@@ -1,8 +1,7 @@
 <!--------- Blog section start ---------->
 <section class="blog-body courses blog pb-3 mb-5">
     <div class="container">
-        <h1 class="text-center"><span><?php echo get_phrase('Inspirational Journeys'); ?></span></h1>
-        <p class="text-center"><?php echo get_phrase('Follow the Stories of Academics and Their Research Expeditions') ?></p>
+        <h1 class="text-center"><span><?php echo ($this->session->userdata('language') == 'arabic') ? 'مقالات أكاديمية' : get_phrase('Inspirational Journeys'); ?></span></h1>
         <div class="courses-card">
             <div class="row">
                 <div class="col-lg-8">

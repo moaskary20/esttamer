@@ -1,6 +1,7 @@
 <!---------- Bread Crumb Area Start ---------->
+<?php $is_about_or_contact = in_array($this->uri->segment(2), array('about_us', 'contact_us')); ?>
 <section>
-    <div class="bread-crumb">
+    <div class="bread-crumb<?php echo $is_about_or_contact ? ' bread-crumb-green' : ''; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-auto">
@@ -20,7 +21,7 @@
                     </nav>
                     <h1><?php echo $page_title; ?></h1>
                 </div>
-                <?php if ($this->uri->segment(2) != 'courses'): ?>
+                <?php if ($this->uri->segment(2) != 'courses' && !$is_about_or_contact): ?>
                 <div class="col-3 ms-auto d-none d-sm-inline-block">
                     <div class="book-img">
                         <img loading="lazy" src="<?php echo base_url('assets/frontend/default-new/image/brd-book.png') ?>" alt="">
