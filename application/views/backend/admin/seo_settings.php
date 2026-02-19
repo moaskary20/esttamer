@@ -1,16 +1,48 @@
 <style>
-    /* إصلاح تنسيق صفحة SEO: منع ظهور النص عمودياً وضبط عرض الحقول */
-    #accordionContent .form-group label { display: block; }
-    #accordionContent .form-control { min-width: 100%; width: 100%; }
-    #accordionContent .form-text,
-    #accordionContent .bootstrap-tagsinput + .form-text,
-    #accordionContent small.text-muted {
+    /* إصلاح تنسيق صفحة SEO: منع ظهور النص عمودياً وضبط عرض الحقول داخل الـ accordion */
+    .seo-settings-accordion .accordion-body,
+    .seo-settings-accordion .accordion-collapse .accordion-body,
+    .seo-settings-accordion .w-100 {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .seo-settings-accordion .form-group {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .seo-settings-accordion .form-group label {
+        display: block !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        writing-mode: horizontal-tb !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    .seo-settings-accordion .form-control {
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+    }
+    .seo-settings-accordion textarea.form-control {
+        min-height: 80px;
+    }
+    .seo-settings-accordion .form-text,
+    .seo-settings-accordion small.text-muted {
         display: block !important;
         white-space: normal !important;
         writing-mode: horizontal-tb !important;
+        word-break: normal !important;
         margin-top: 0.25rem;
     }
-    #accordionContent .bootstrap-tagsinput { width: 100% !important; min-width: 100% !important; }
+    .seo-settings-accordion .bootstrap-tagsinput {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
 </style>
 <div class="row ">
     <div class="col-xl-12">
@@ -29,7 +61,7 @@
 			<div class="card-body">
                 <div class="course-playing-sidebar">
                     <h4 class="title"><?php echo get_phrase('Seo Content'); ?></h4>
-                    <div class="accordion custom-accordion" id="accordionContent">
+                    <div class="accordion custom-accordion seo-settings-accordion" id="accordionContent">
                         <?php foreach($seo_meta_tags as $seo_meta_tag): ?>
                             <?php 
                             // Check if the current tag is an addon and if the corresponding addon is enabled
