@@ -1,5 +1,8 @@
 <!---------- Bread Crumb Area Start ---------->
-<?php $is_about_or_contact = in_array($this->uri->segment(2), array('about_us', 'contact_us')); ?>
+<?php
+$is_about_or_contact = (isset($page_name) && in_array($page_name, array('about_us', 'contact_us')))
+    || in_array($this->uri->segment(2), array('about_us', 'contact_us'));
+?>
 <section>
     <div class="bread-crumb<?php echo $is_about_or_contact ? ' bread-crumb-green' : ''; ?>">
         <div class="container">

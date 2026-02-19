@@ -103,7 +103,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="mb-3">
-                                <input name="address" type="text" class="form-control" id="address" placeholder="Address">
+                                <input name="address" type="text" class="form-control" id="address" placeholder="<?php echo get_phrase('Address'); ?>">
                             </div> 
                             <div class="input-group comment">
                                 <textarea name="message" class="form-control" aria-label="With textarea" id="message" placeholder="<?php echo get_phrase('Write your message'); ?>"></textarea>
