@@ -26,58 +26,43 @@
 <?php if ($page_name == 'courses-server-side') : ?>
     <script type="text/javascript">
         $(document).ready(function() {
+            var ajaxUrl = "<?php echo site_url(((isset($logged_in_user_role) && $logged_in_user_role) ? $logged_in_user_role : 'admin') . '/get_courses') ?>";
             var table = $('#course-datatable-server-side').DataTable({
                 responsive: true,
                 "processing": true,
                 "serverSide": true,
                 "ajax": {
-                    "url": "<?php echo site_url(strtolower($this->session->userdata('role')) . '/get_courses') ?>",
+                    "url": ajaxUrl,
                     "dataType": "json",
                     "type": "POST",
                     "data": {
-                        selected_category_id: '<?php echo $selected_category_id; ?>',
-                        selected_status: '<?php echo $selected_status ?>',
-                        selected_instructor_id: '<?php echo $selected_instructor_id ?>',
-                        selected_price: '<?php echo $selected_price ?>'
+                        selected_category_id: '<?php echo isset($selected_category_id) ? addslashes($selected_category_id) : "all"; ?>',
+                        selected_status: '<?php echo isset($selected_status) ? addslashes($selected_status) : "all"; ?>',
+                        selected_instructor_id: '<?php echo isset($selected_instructor_id) ? addslashes($selected_instructor_id) : "all"; ?>',
+                        selected_price: '<?php echo isset($selected_price) ? addslashes($selected_price) : "all"; ?>'
+                    },
+                    "error": function(xhr, err, code) {
+                        console.error('DataTables AJAX error:', err, code, xhr.responseText);
+                        if (typeof error_notify === 'function') {
+                            error_notify('<?php echo addslashes(get_phrase("no_data_found")); ?>');
+                        }
                     }
                 },
-                "columns": [{
-                        "data": "#"
-                    },
-                    {
-                        "data": "title"
-                    },
-                    {
-                        "data": "category"
-                    },
-                    {
-                        "data": "lesson_and_section"
-                    },
-                    {
-                        "data": "enrolled_student"
-                    },
-                    {
-                        "data": "status"
-                    },
-                    {
-                        "data": "price"
-                    },
-                    {
-                        "data": "actions"
-                    },
-                ],
-                dom: 'Bfrtip',  // This positions the buttons
+                "columns": [{"data": "#"}, {"data": "title"}, {"data": "category"}, {"data": "lesson_and_section"}, {"data": "enrolled_student"}, {"data": "status"}, {"data": "price"}, {"data": "actions"}],
+                "language": {
+                    "emptyTable": "<?php echo addslashes(get_phrase('no_data_found')); ?>",
+                    "zeroRecords": "<?php echo addslashes(get_phrase('no_data_found')); ?>",
+                    "processing": "<?php echo addslashes(get_phrase('please_wait')); ?>..."
+                },
+                dom: 'Bfrtip',
                 buttons: [
                     {
                         extend: 'csv',
                         text: 'Export as CSV',
                         filename: function () {
-                            var currentTime = new Date().toISOString().slice(0, 19).replace(/[-T:]/g, '_');  // Get current time and format it
-                            return 'courses-' + currentTime;  // File name will be "courses-YYYY_MM_DD_HH_MM_SS"
+                            return 'courses-' + new Date().toISOString().slice(0, 19).replace(/[-T:]/g, '_');
                         },
-                        exportOptions: {
-                            columns: ':visible'  // You can choose which columns to export
-                        }
+                        exportOptions: { columns: ':visible' }
                     }
                 ]
             });
@@ -104,6 +89,24 @@
                 placeholder: 'Search here',
                 minimumInputLength: 1,
             });
+        });
+    </script>
+<?php endif; ?>
+
+<?php if (isset($page_name) && $page_name == 'course_add') : ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var $firstTab = $('#basic');
+            if ($firstTab.length && !$firstTab.hasClass('active')) {
+                $firstTab.addClass('active').show();
+            }
+            if (typeof $.fn.select2 !== 'undefined') {
+                $('.scrollable-tab-section select[data-toggle="select2"]').each(function() {
+                    if (!$(this).hasClass('select2-hidden-accessible')) {
+                        $(this).select2({ width: '100%' });
+                    }
+                });
+            }
         });
     </script>
 <?php endif; ?>
