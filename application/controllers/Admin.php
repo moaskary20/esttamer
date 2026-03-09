@@ -917,15 +917,28 @@ class Admin extends CI_Controller
         $price         = $this->input->post('selected_price');
         $status        = $this->input->post('selected_status');
 
-        $limit = htmlspecialchars_($this->input->post('length'));
-        $start = htmlspecialchars_($this->input->post('start'));
+        $limit = (int) $this->input->post('length');
+        $start = (int) $this->input->post('start');
+        if ($limit <= 0) {
+            $limit = 25;
+        }
 
-        $column_index = $columns[$this->input->post('order')[0]['column']];
+        $order_post = $this->input->post('order');
+        $order_col = 0;
+        $dir = 'asc';
+        if (!empty($order_post) && is_array($order_post) && isset($order_post[0]['column'], $order_post[0]['dir'])) {
+            $order_col = (int) $order_post[0]['column'];
+            $dir = in_array(strtolower($order_post[0]['dir']), array('asc', 'desc')) ? $order_post[0]['dir'] : 'asc';
+        }
+        if (!isset($columns[$order_col])) {
+            $order_col = 0;
+        }
+        $column_index = $columns[$order_col];
 
-        $dir = $this->input->post('order')[0]['dir'];
+        $search_post = $this->input->post('search');
+        $search = (is_array($search_post) && isset($search_post['value'])) ? $search_post['value'] : '';
 
         $total_number_of_row = $this->crud_model->get_courses()->num_rows();
-        $search = $this->input->post('search')['value'];
 
         //FILTERED DATA
         $this->db->select('*');
@@ -1134,7 +1147,7 @@ class Admin extends CI_Controller
             "data"            => $data
         );
 
-        echo json_encode($json_data);
+        $this->output->set_content_type('application/json', 'UTF-8')->set_output(json_encode($json_data));
     }
 
     public function pending_courses()

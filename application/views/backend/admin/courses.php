@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="col-sm-6 col-xl-3">
-                        <a href="<?php echo site_url('admin/admin/courses?category_id=all&status=pending&instructor_id=all&price=all&button='); ?>" class="text-secondary">
+                        <a href="<?php echo site_url('admin/courses?category_id=all&status=pending&instructor_id=all&price=all&button='); ?>" class="text-secondary">
                             <div class="card shadow-none m-0 border-left">
                                 <div class="card-body text-center">
                                     <i class="dripicons-link-broken text-muted" style="font-size: 24px;"></i>
