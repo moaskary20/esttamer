@@ -1008,8 +1008,14 @@ class Admin extends CI_Controller
         // Fetch the data and make it as JSON format and return it.
         if (!empty($courses)) {
             foreach ($courses as $key => $row) {
-                $instructor_details = $this->user_model->get_all_user($row['creator'])->row_array();
-                $category_details = $this->crud_model->get_category_details_by_id($row['sub_category_id'])->row_array();
+                $creator_id = isset($row['creator']) ? $row['creator'] : 0;
+                $sub_cat_id = isset($row['sub_category_id']) ? $row['sub_category_id'] : 0;
+                $instructor_details = $creator_id ? $this->user_model->get_all_user($creator_id)->row_array() : array();
+                if (!is_array($instructor_details)) {
+                    $instructor_details = array();
+                }
+                $cat_result = $sub_cat_id ? $this->crud_model->get_category_details_by_id($sub_cat_id)->row_array() : null;
+                $category_details = is_array($cat_result) ? $cat_result : array('name' => '-');
                 $sections = $this->crud_model->get_section('course', $row['id']);
                 $lessons = $this->crud_model->get_lessons('course', $row['id']);
                 $enroll_history = $this->crud_model->enrol_history($row['id']);
@@ -1054,16 +1060,17 @@ class Admin extends CI_Controller
                 $section_and_lesson_url = site_url('admin/course_form/course_edit/' . $row['id']);
                 $academic_progress_url = site_url('admin/course_form/course_edit/' . $row['id'] . '?tab=academic_progress');
 
+                $course_owner_id = isset($row['user_id']) ? $row['user_id'] : $creator_id;
                 if ($row['status'] == 'active') {
                     $course_status_changing_message = get_phrase('mark_as_pending');
-                    if ($row['user_id'] != $this->session->userdata('user_id')) {
+                    if ($course_owner_id != $this->session->userdata('user_id')) {
                         $course_status_changing_action = "showAjaxModal('" . site_url('modal/popup/mail_on_course_status_changing_modal/pending/' . $row['id'] . '/' . $category_id . '/' . $instructor_id . '/all/' . $status) . "', '" . $course_status_changing_message . "')";
                     } else {
                         $course_status_changing_action = "confirm_modal('" . site_url('admin/change_course_status_for_admin/pending/' . $row['id'] . '/' . $category_id . '/' . $instructor_id . '/all/' . $status) . "')";
                     }
                 } else {
                     $course_status_changing_message = get_phrase('mark_as_active');
-                    if ($row['user_id'] != $this->session->userdata('user_id')) {
+                    if ($course_owner_id != $this->session->userdata('user_id')) {
                         $course_status_changing_action = "showAjaxModal('" . site_url('modal/popup/mail_on_course_status_changing_modal/active/' . $row['id'] . '/' . $category_id . '/' . $instructor_id . '/all/' . $status) . "', '" . $course_status_changing_message . "')";
                     } else {
                         $course_status_changing_action = "confirm_modal('" . site_url('admin/change_course_status_for_admin/active/' . $row['id'] . '/' . $category_id . '/' . $instructor_id . '/all/' . $status) . "')";
@@ -1106,15 +1113,24 @@ class Admin extends CI_Controller
                 $nestedData['#'] = $key + 1;
 
                 $instructor_names = "";
-                foreach ($this->crud_model->get_course_instructors_id($row['id']) as $instructor_id) {
-                    $multi_instructor = $this->user_model->get_all_user($instructor_id)->row_array();
-                    $instructor_names = $multi_instructor['first_name'] . ' ' . $multi_instructor['last_name'];
+                $course_instructor_ids = $this->crud_model->get_course_instructors_id($row['id']);
+                if (is_array($course_instructor_ids)) {
+                    foreach ($course_instructor_ids as $inst_id) {
+                        $multi_instructor = $this->user_model->get_all_user($inst_id)->row_array();
+                        if (is_array($multi_instructor)) {
+                            $instructor_names .= ($instructor_names ? ', ' : '') . (isset($multi_instructor['first_name']) ? $multi_instructor['first_name'] : '') . ' ' . (isset($multi_instructor['last_name']) ? $multi_instructor['last_name'] : '');
+                        }
+                    }
+                }
+                if ($instructor_names === '' && is_array($instructor_details) && !empty($instructor_details)) {
+                    $instructor_names = (isset($instructor_details['first_name']) ? $instructor_details['first_name'] : '') . ' ' . (isset($instructor_details['last_name']) ? $instructor_details['last_name'] : '');
                 }
 
                 $nestedData['title'] = '<strong><a href="' . site_url('admin/course_form/course_edit/' . $row['id']) . '">' . $row['title'] . '</a></strong><br>
                 <small class="text-muted">' . get_phrase('instructor') . ': <b>' . $instructor_names . '</b></small>';
 
-                $nestedData['category'] = '<span class="badge badge-dark-lighten">' . $category_details['name'] . '</span>';
+                $category_name = isset($category_details['name']) ? $category_details['name'] : '-';
+                $nestedData['category'] = '<span class="badge badge-dark-lighten">' . htmlspecialchars($category_name) . '</span>';
 
                 if ($row['course_type'] == 'scorm') {
                     $nestedData['lesson_and_section'] = '<span class="badge badge-info-lighten">' . get_phrase('scorm_course') . '</span>';
