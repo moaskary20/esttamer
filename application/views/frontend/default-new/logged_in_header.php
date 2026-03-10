@@ -19,7 +19,7 @@
                     <div class="icon right-icon  d-flex justify-content-end align-items-center">
                         <ul class="nav justify-content-end">
                             <li class="nav-item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li class="nav-item"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="nav-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                             <li class="nav-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                             <li class="nav-item"><a href="#"><i class="fa-brands fa-behance"></i></a></li>
                         </ul>

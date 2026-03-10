@@ -1542,4 +1542,21 @@ header .navbarHover li a,
 }
 
 /* Breadcrumb: من نحن + اتصل بنا — نفس شكل صفحة الدورات (التدرج من الـ style داخل الصفحة) */
-/* لا نضع لون خلفية هنا؛ الصفحتان about_us و contact_us تضافان نفس الـ gradient في الصفحة */
+/* لا نضع لون خلفية هنا؛ الصفحتان about_us و contact_us تضافان نفس الـ gradient في الصفحة *//* Social icons: force order Facebook - Instagram - LinkedIn (header + footer) */
+.sub-header .right-icon .nav .nav-item:nth-child(1) a i,
+.eBottomfooter .nav .nav-item:nth-child(1) a i {
+  /* Facebook icon stays as is */
+}
+/* Second icon (was Twitter/X): hide SVG and show Instagram brand icon */
+.sub-header .right-icon .nav .nav-item:nth-child(2) svg,
+.eBottomfooter .nav .nav-item:nth-child(2) svg {
+  display: none !important;
+}
+.sub-header .right-icon .nav .nav-item:nth-child(2) a::before,
+.eBottomfooter .nav .nav-item:nth-child(2) a::before {
+  content: f16d; /* Font Awesome Instagram */
+  font-family: Font Awesome 6 Brands;
+  font-weight: 400;
+  font-size: 14px;
+}
+/* Third icon (LinkedIn) already uses correct SVG/brand icon */

@@ -89,7 +89,7 @@
 
                                         <label class="text-dark fw-600"><?php echo site_phrase('add_your_twitter_link'); ?></label>
                                         <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fab fa-twitter"></i></span>
+                                            <span class="input-group-text"><i class="fab fa-instagram"></i></span>
                                             <input type="text" class="form-control bg-white-2 text-14px" maxlength="60" name="twitter_link" placeholder="<?php echo site_phrase('twitter_link'); ?>" value="<?php echo $social_links['twitter']; ?>">
                                         </div>
 

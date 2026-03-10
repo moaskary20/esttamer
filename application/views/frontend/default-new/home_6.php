@@ -463,7 +463,7 @@
                 <?php if($social_links['twitter']): ?>
                   <li>
                     <a class="" href="<?php echo $social_links['twitter']; ?>" target="_blank">
-                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-brands fa-instagram"></i>
                     </a>
                   </li>
                 <?php endif; ?>

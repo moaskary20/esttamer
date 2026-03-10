@@ -627,7 +627,7 @@
                                         <?php endif; ?>
                                         <?php if($social_links['twitter']): ?>
                                             <a class="" href="<?php echo $social_links['twitter']; ?>" target="_blank">
-                                                <i class="fa-brands fa-twitter"></i>
+                                                <i class="fa-brands fa-instagram"></i>
                                             </a>
                                         <?php endif; ?>
                                         <?php if($social_links['linkedin']): ?>
