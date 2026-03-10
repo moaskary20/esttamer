@@ -37,3 +37,11 @@ package-lock.json
 *.temp
 *.log
 
+
+# نسخ احتياطية وملفات لا تُرفع
+*.bak
+*.bak2
+*.disabled
+application/config/*.sql
+GITHUB_DELETE_AND_PUSH.txt
+
