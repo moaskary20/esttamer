@@ -97,3 +97,9 @@ $cart_items = $this->session->userdata('cart_items');
   </section>
 </header>
 <!---------- Header Section End  ---------->
+
+<style>
+  li.nav-item {
+    padding-left: 8px;
+  }
+</style>
