@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:html/parser.dart' as html_parser;
 import '../utils/colors.dart';
+import '../utils/html_utils.dart';
 import '../services/api_service.dart';
 import 'profile_sub_screens.dart';
+import 'article_detail_screen.dart';
+import 'category_courses_screen.dart';
 
 // ─────────────────────── COURSES SCREEN ───────────────────────
 class CoursesScreen extends StatelessWidget {
@@ -227,7 +229,24 @@ class CategoriesScreen extends StatelessWidget {
             itemCount: categories.length,
             itemBuilder: (context, index) {
               final category = categories[index];
-              return _CategoryCard(category: category);
+              return _CategoryCard(
+                category: category,
+                onTap: () {
+                  final id = category['id'];
+                  final name = category['name'] ?? 'قسم';
+                  if (id != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryCoursesScreen(
+                          categoryId: id.toString(),
+                          categoryName: name,
+                        ),
+                      ),
+                    );
+                  }
+                },
+              );
             },
           );
         },
@@ -238,7 +257,8 @@ class CategoriesScreen extends StatelessWidget {
 
 class _CategoryCard extends StatefulWidget {
   final dynamic category;
-  const _CategoryCard({required this.category});
+  final VoidCallback? onTap;
+  const _CategoryCard({required this.category, this.onTap});
 
   @override
   State<_CategoryCard> createState() => _CategoryCardState();
@@ -266,6 +286,7 @@ class _CategoryCardState extends State<_CategoryCard> with SingleTickerProviderS
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: widget.onTap,
       onTapDown: (_) => _controller.forward(),
       onTapUp: (_) => _controller.reverse(),
       onTapCancel: () => _controller.reverse(),
@@ -347,8 +368,19 @@ class ArticlesScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final blog = blogs[index];
               final String raw = blog['description'] ?? '';
-              final String plain = html_parser.parse(raw).documentElement?.text ?? '';
-              return _ArticleCard(blog: blog, description: plain);
+              final String plain = stripHtmlToPlain(raw);
+              return _ArticleCard(
+                blog: blog,
+                description: plain,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ArticleDetailScreen(blog: blog),
+                    ),
+                  );
+                },
+              );
             },
           );
         },
@@ -360,7 +392,8 @@ class ArticlesScreen extends StatelessWidget {
 class _ArticleCard extends StatefulWidget {
   final dynamic blog;
   final String description;
-  const _ArticleCard({required this.blog, required this.description});
+  final VoidCallback? onTap;
+  const _ArticleCard({required this.blog, required this.description, this.onTap});
 
   @override
   State<_ArticleCard> createState() => _ArticleCardState();
@@ -390,9 +423,11 @@ class _ArticleCardState extends State<_ArticleCard> with SingleTickerProviderSta
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _controller,
-      child: SlideTransition(
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: FadeTransition(
+        opacity: _controller,
+        child: SlideTransition(
         position: _slide,
         child: Container(
           margin: EdgeInsets.only(bottom: 16),
@@ -455,6 +490,7 @@ class _ArticleCardState extends State<_ArticleCard> with SingleTickerProviderSta
             ],
           ),
         ),
+      ),
       ),
     );
   }

@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../utils/colors.dart';
+import '../utils/html_utils.dart';
 import '../services/api_service.dart';
-import 'package:html/parser.dart';
 import 'category_courses_screen.dart';
+import 'article_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<String> imgList = [
@@ -121,7 +122,13 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final category = categories[index];
                       // Defaulting to a generic icon if none is provided via API
-                      return _buildCategoryCard(context, category['name'], Icons.category, category['id']);
+                      final catId = category['id'];
+                      return _buildCategoryCard(
+                        context,
+                        category['name'] ?? 'قسم',
+                        Icons.category,
+                        catId != null ? catId.toString() : null,
+                      );
                     },
                   );
                 },
@@ -207,9 +214,17 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final blog = blogs[index];
                     final String rawDesc = blog['description'] ?? '';
-                    final String plainDesc = parse(rawDesc).documentElement?.text ?? '';
+                    final String plainDesc = stripHtmlToPlain(rawDesc);
                     
                     return ListTile(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ArticleDetailScreen(blog: blog),
+                          ),
+                        );
+                      },
                       leading: Container(
                         width: 60,
                         height: 60,

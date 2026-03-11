@@ -17,6 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     _controller = VideoPlayerController.asset('assets/splash.mp4')
       ..initialize().then((_) {
         setState(() {});
+        _controller.setVolume(0.0);
         _controller.play();
         _controller.setLooping(false);
         _controller.addListener(_onVideoEnd);
@@ -63,16 +64,14 @@ class _SplashScreenState extends State<SplashScreen> {
       return _FallbackSplash(onDone: _navigateToLogin);
     }
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       body: Stack(
         fit: StackFit.expand,
         children: [
           if (_controller.value.isInitialized)
-            FittedBox(
-              fit: BoxFit.cover,
-              child: SizedBox(
-                width: _controller.value.size.width,
-                height: _controller.value.size.height,
+            Center(
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               ),
             )
