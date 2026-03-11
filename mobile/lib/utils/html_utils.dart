@@ -2,19 +2,9 @@
 /// Handles malformed HTML and Word/Office exports that may show raw tags/attributes.
 String stripHtmlToPlain(String html) {
   if (html.isEmpty) return '';
-  // 1. Remove all HTML tags
-  String text = html.replaceAll(RegExp(r'<[^>]*>'), ' ');
-  // 2. Remove common HTML attribute fragments that may appear as text
-  //    (e.g. when content is mangled: "p class=\"p1\" dir=\"RTL\" style=\"...\"")
-  text = text
-      .replaceAll(RegExp(r'''\b(class|style|dir|id|name|lang)\s*=\s*"[^"]*"''', caseSensitive: false), '')
-      .replaceAll(RegExp(r"""\b(class|style|dir|id|name|lang)\s*=\s*'[^']*'""", caseSensitive: false), '')
-      .replaceAll(RegExp(r'\b[Mm]so[\w-]*\b'), '')
-      .replaceAll(RegExp(r'\b(text-align|line-height|direction|unicode-bidi|margin|padding|font-size|font-family|text-justify|mso-[\w-]+)\s*:\s*[^;}"]+[;]?', caseSensitive: false), '')
-      .replaceAll(RegExp(r'\b(MsoNormal|MsoListParagraph)\b', caseSensitive: false), '')
-      .replaceAll(RegExp(r'''<\s*\w+[^>]*>'''), ' ');
-  // 3. Decode common entities
-  text = text
+
+  // 1. Decode HTML entities first (handles double-encoded content)
+  String text = html
       .replaceAll('&nbsp;', ' ')
       .replaceAll('&amp;', '&')
       .replaceAll('&lt;', '<')
@@ -22,6 +12,30 @@ String stripHtmlToPlain(String html) {
       .replaceAll('&quot;', '"')
       .replaceAll('&#39;', "'")
       .replaceAll(RegExp(r'&#\d+;'), ' ');
-  // 4. Collapse whitespace and trim
+
+  // 2. Remove all HTML tags
+  text = text.replaceAll(RegExp(r'<[^>]*>'), ' ');
+
+  // 3. Remove leftover HTML attribute fragments
+  final attrPattern = RegExp(
+    r'''\b(class|style|dir|id|name|lang|align)\s*=\s*("[^"]*"|'[^']*')''',
+    caseSensitive: false,
+  );
+  text = text.replaceAll(attrPattern, '');
+
+  // 4. Remove CSS property fragments
+  text = text.replaceAll(
+    RegExp(
+      r'\b(text-align|text-justify|line-height|direction|unicode-bidi|margin|padding|font-size|font-family|mso-[\w-]+)\s*:\s*[^;}"]+[;]?',
+      caseSensitive: false,
+    ),
+    '',
+  );
+
+  // 5. Remove Word-specific class names
+  text = text.replaceAll(RegExp(r'\b[Mm]so[\w-]*\b'), '');
+  text = text.replaceAll(RegExp(r'\b(MsoNormal|MsoListParagraph)\b', caseSensitive: false), '');
+
+  // 6. Collapse whitespace and trim
   return text.replaceAll(RegExp(r'\s+'), ' ').trim();
 }

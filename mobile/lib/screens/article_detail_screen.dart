@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:html/parser.dart' as html_parser;
 import '../utils/colors.dart';
 
 class ArticleDetailScreen extends StatelessWidget {
@@ -9,17 +8,44 @@ class ArticleDetailScreen extends StatelessWidget {
 
   const ArticleDetailScreen({Key? key, required this.blog}) : super(key: key);
 
-  /// Decodes HTML entities (e.g. &lt; → <, &amp; → &) using the html parser.
-  String _decodeHtmlEntities(String text) {
-    if (text.isEmpty) return '';
-    final doc = html_parser.parseFragment(text);
-    return doc.outerHtml;
+  /// Cleans Word/Office-generated HTML so flutter_html can render it properly.
+  String _cleanWordHtml(String html) {
+    if (html.isEmpty) return '';
+
+    // 1. Decode double-encoded HTML entities if present
+    if (html.contains('&lt;') || html.contains('&gt;')) {
+      html = html
+          .replaceAll('&lt;', '<')
+          .replaceAll('&gt;', '>')
+          .replaceAll('&amp;', '&')
+          .replaceAll('&quot;', '"')
+          .replaceAll('&#39;', "'")
+          .replaceAll('&nbsp;', ' ');
+    }
+
+    // 2. Remove all style, class, dir, lang, align attributes
+    final attrPattern = RegExp(
+      r'''\s+(style|class|dir|lang|align|name|id)\s*=\s*("[^"]*"|'[^']*')''',
+      caseSensitive: false,
+    );
+    html = html.replaceAll(attrPattern, '');
+
+    // 3. Remove <span>, </span>, <o:p>, </o:p>, <font>, </font> tags (keep inner content)
+    html = html.replaceAll(RegExp(r'</?span[^>]*>'), '');
+    html = html.replaceAll(RegExp(r'</?o:p[^>]*>'), '');
+    html = html.replaceAll(RegExp(r'</?font[^>]*>'), '');
+
+    // 4. Clean up empty paragraphs and collapse whitespace
+    html = html.replaceAll(RegExp(r'<p>\s*</p>'), '');
+    html = html.replaceAll(RegExp(r'\s+'), ' ');
+
+    return html.trim();
   }
 
   @override
   Widget build(BuildContext context) {
     final String title = blog['title'] ?? '';
-    final String rawDesc = _decodeHtmlEntities(blog['description'] ?? '');
+    final String rawDesc = _cleanWordHtml(blog['description'] ?? '');
     final String? thumbnail = blog['thumbnail'];
     final String? categoryName = blog['category_name'];
     final String? author = blog['author'];

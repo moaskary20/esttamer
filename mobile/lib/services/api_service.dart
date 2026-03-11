@@ -64,4 +64,43 @@ class ApiService {
       throw Exception('Error fetching my courses: $e');
     }
   }
+
+  /// Fetch detailed course info by ID. Pass authToken to get is_purchased/is_wishlisted.
+  static Future<Map<String, dynamic>> fetchCourseDetails(String courseId, {String? authToken}) async {
+    try {
+      String url = '$baseUrl/course_details_by_id?course_id=$courseId';
+      if (authToken != null && authToken.isNotEmpty) {
+        url += '&auth_token=$authToken';
+      }
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        // API returns a list with one item
+        if (data is List && data.isNotEmpty) {
+          return Map<String, dynamic>.from(data[0]);
+        }
+        throw Exception('Empty course data');
+      } else {
+        throw Exception('Failed to load course details');
+      }
+    } catch (e) {
+      throw Exception('Error fetching course details: $e');
+    }
+  }
+
+  /// Enroll in a free course.
+  static Future<Map<String, dynamic>> enrollFreeCourse(String courseId, String authToken) async {
+    try {
+      final response = await http.get(
+        Uri.parse('$baseUrl/enroll_free_course?course_id=$courseId&auth_token=$authToken'),
+      );
+      if (response.statusCode == 200) {
+        return Map<String, dynamic>.from(json.decode(response.body));
+      } else {
+        throw Exception('Failed to enroll');
+      }
+    } catch (e) {
+      throw Exception('Error enrolling in course: $e');
+    }
+  }
 }

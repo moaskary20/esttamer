@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:http/http.dart' as http;
 import '../utils/colors.dart';
+import '../services/session_service.dart';
 import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -31,26 +32,61 @@ class _LoginScreenState extends State<LoginScreen>
     try {
       final Uri url = Uri.parse(_isLogin ? '$baseUrl/login' : '$baseUrl/signup');
 
+      // Split name into first_name and last_name for signup
+      String firstName = '';
+      String lastName = '';
+      if (!_isLogin) {
+        final nameParts = _nameController.text.trim().split(' ');
+        firstName = nameParts.first;
+        lastName = nameParts.length > 1 ? nameParts.sublist(1).join(' ') : '';
+      }
+
       final response = _isLogin
           ? await http.post(url, body: {
               'email': _emailController.text.trim(),
               'password': _passwordController.text.trim(),
             })
           : await http.post(url, body: {
-              'full_name': _nameController.text.trim(),
+              'first_name': firstName,
+              'last_name': lastName,
               'email': _emailController.text.trim(),
               'password': _passwordController.text.trim(),
             });
 
       final data = json.decode(response.body);
-      if (data['validity'] == 1 || data['status'] == 1) {
-        if (mounted) {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (_) => MainScreen()),
+
+      if (_isLogin) {
+        // ── LOGIN FLOW ──
+        if (data['validity'] == 1) {
+          await SessionService.saveUser(
+            userId: (data['user_id'] ?? '').toString(),
+            email: data['email'] ?? _emailController.text.trim(),
+            firstName: data['first_name'] ?? '',
+            lastName: data['last_name'] ?? '',
+            image: data['image'] ?? '',
+            authToken: data['token'] ?? '',
           );
+          if (mounted) {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (_) => MainScreen()),
+            );
+          }
+        } else {
+          _showError(data['message'] ?? 'البريد أو كلمة المرور غير صحيحة');
         }
       } else {
-        _showError(data['message'] ?? 'خطأ في البيانات');
+        // ── SIGNUP FLOW ──
+        if (data['validity'] == true || data['status'] == 200) {
+          if (data['email_verification'] == 'enable') {
+            _showSuccess(data['message'] ?? 'تم التسجيل! تحقق من بريدك الإلكتروني لتفعيل حسابك');
+          } else {
+            _showSuccess('تم إنشاء حسابك بنجاح! سجّل دخولك الآن');
+          }
+          // Switch to login tab
+          setState(() => _isLogin = true);
+        } else {
+          _showError(data['message'] ?? 'حدث خطأ في التسجيل');
+        }
       }
     } catch (e) {
       _showError('تعذّر الاتصال بالخادم');
@@ -63,6 +99,16 @@ class _LoginScreenState extends State<LoginScreen>
       SnackBar(
         content: Text(msg, style: GoogleFonts.tajawal()),
         backgroundColor: Colors.red.shade700,
+      ),
+    );
+  }
+
+  void _showSuccess(String msg) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg, style: GoogleFonts.tajawal()),
+        backgroundColor: AppColors.primaryGreen,
+        duration: Duration(seconds: 4),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/colors.dart';
 import '../services/api_service.dart';
+import 'course_detail_screen.dart';
 
 class CategoryCoursesScreen extends StatelessWidget {
   final String categoryId;
@@ -75,7 +76,23 @@ class CategoryCoursesScreen extends StatelessWidget {
             itemCount: courses.length,
             itemBuilder: (context, index) {
               final course = courses[index];
-              return _CourseCard(course: course);
+              return GestureDetector(
+                onTap: () {
+                  final id = course['id'];
+                  if (id != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => CourseDetailScreen(
+                          courseId: id.toString(),
+                          courseTitle: course['title'],
+                        ),
+                      ),
+                    );
+                  }
+                },
+                child: _CourseCard(course: course),
+              );
             },
           );
         },

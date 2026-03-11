@@ -3,15 +3,36 @@ import 'package:google_fonts/google_fonts.dart';
 import '../utils/colors.dart';
 import '../utils/html_utils.dart';
 import '../services/api_service.dart';
+import '../services/session_service.dart';
 import 'profile_sub_screens.dart';
 import 'article_detail_screen.dart';
 import 'category_courses_screen.dart';
 
 // ─────────────────────── COURSES SCREEN ───────────────────────
-class CoursesScreen extends StatelessWidget {
-  // In a real app, this token comes from a login session.
-  // For now, we show a "login required" message when no token is set.
-  static const String authToken = '';
+class CoursesScreen extends StatefulWidget {
+  @override
+  State<CoursesScreen> createState() => _CoursesScreenState();
+}
+
+class _CoursesScreenState extends State<CoursesScreen> {
+  String? _authToken;
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadToken();
+  }
+
+  Future<void> _loadToken() async {
+    final token = await SessionService.getAuthToken();
+    if (mounted) {
+      setState(() {
+        _authToken = token;
+        _loading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +41,25 @@ class CoursesScreen extends StatelessWidget {
         title: Text('دوراتي', style: GoogleFonts.tajawal(fontWeight: FontWeight.bold, color: Colors.black)),
         centerTitle: true,
       ),
-      body: authToken.isEmpty
-          ? _buildLoginPrompt(context)
-          : FutureBuilder<List<dynamic>>(
-              future: ApiService.fetchMyCourses(authToken),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator(color: AppColors.primaryGreen));
-                } else if (snapshot.hasError || !snapshot.hasData || snapshot.data!.isEmpty) {
-                  return _buildEmptyState(
-                    Icons.play_circle_outline,
-                    'لم تشترك في أي دورة بعد',
-                    'تصفّح الأقسام وابدأ التعلم',
-                  );
-                }
-                return _buildCoursesList(snapshot.data!);
-              },
-            ),
+      body: _loading
+          ? Center(child: CircularProgressIndicator(color: AppColors.primaryGreen))
+          : (_authToken == null || _authToken!.isEmpty)
+              ? _buildLoginPrompt(context)
+              : FutureBuilder<List<dynamic>>(
+                  future: ApiService.fetchMyCourses(_authToken!),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(child: CircularProgressIndicator(color: AppColors.primaryGreen));
+                    } else if (snapshot.hasError || !snapshot.hasData || snapshot.data!.isEmpty) {
+                      return _buildEmptyState(
+                        Icons.play_circle_outline,
+                        'لم تشترك في أي دورة بعد',
+                        'تصفّح الأقسام وابدأ التعلم',
+                      );
+                    }
+                    return _buildCoursesList(snapshot.data!);
+                  },
+                ),
     );
   }
 

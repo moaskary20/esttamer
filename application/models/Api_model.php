@@ -340,6 +340,7 @@ class Api_model extends CI_Model
 			$userdata['first_name'] = $row['first_name'];
 			$userdata['last_name'] = $row['last_name'];
 			$userdata['email'] = $row['email'];
+			$userdata['image'] = $row['image'];
 			$userdata['role'] = strtolower(get_user_role('user_role', $row['id']));
 			$userdata['validity'] = 1;
 

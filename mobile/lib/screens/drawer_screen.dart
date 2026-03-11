@@ -1,8 +1,48 @@
 import 'package:flutter/material.dart';
 import '../utils/colors.dart';
+import '../services/session_service.dart';
 import 'placeholder_screens.dart';
+import 'login_screen.dart';
 
-class DrawerScreen extends StatelessWidget {
+class DrawerScreen extends StatefulWidget {
+  @override
+  State<DrawerScreen> createState() => _DrawerScreenState();
+}
+
+class _DrawerScreenState extends State<DrawerScreen> {
+  String _email = '';
+  String _name = '';
+  String? _imageUrl;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadUserData();
+  }
+
+  Future<void> _loadUserData() async {
+    final email = await SessionService.getEmail();
+    final name = await SessionService.getName();
+    final imageUrl = await SessionService.getImageUrl();
+    if (mounted) {
+      setState(() {
+        _email = email ?? '';
+        _name = name.isNotEmpty ? name : 'أهلاً بك';
+        _imageUrl = imageUrl;
+      });
+    }
+  }
+
+  Future<void> _handleLogout() async {
+    await SessionService.logout();
+    if (mounted) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => LoginScreen()),
+        (route) => false,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,15 +60,20 @@ class DrawerScreen extends StatelessWidget {
                   CircleAvatar(
                     radius: 40,
                     backgroundColor: Colors.white,
-                    child: Icon(Icons.person, size: 40, color: AppColors.primaryGreen),
+                    backgroundImage: _imageUrl != null
+                        ? NetworkImage(_imageUrl!)
+                        : null,
+                    child: _imageUrl == null
+                        ? Icon(Icons.person, size: 40, color: AppColors.primaryGreen)
+                        : null,
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'أهلاً بك',
+                    _name.isNotEmpty ? _name : 'أهلاً بك',
                     style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'طالب مستمر',
+                    _email.isNotEmpty ? _email : 'سجّل دخولك',
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
                 ],
@@ -51,9 +96,7 @@ class DrawerScreen extends StatelessWidget {
                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen()));
             }),
             Divider(color: Colors.white30, indent: 20, endIndent: 20),
-            _buildMenuItem(Icons.logout, 'تسجيل خروج', () {
-               // Handle logout tap
-            }),
+            _buildMenuItem(Icons.logout, 'تسجيل خروج', _handleLogout),
           ],
         ),
       ),

@@ -6,11 +6,12 @@ import '../utils/html_utils.dart';
 import '../services/api_service.dart';
 import 'category_courses_screen.dart';
 import 'article_detail_screen.dart';
+import 'cart_screen.dart';
+import 'placeholder_screens.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<String> imgList = [
-    'https://via.placeholder.com/600x300?text=Esttamer+Banner+1',
-    'https://via.placeholder.com/600x300?text=Esttamer+Banner+2',
+  final List<Map<String, dynamic>> imgList = [
+    {'type': 'asset', 'path': 'assets/1slider.png'},
   ];
 
   @override
@@ -28,11 +29,15 @@ class HomeScreen extends StatelessWidget {
           children: [
             IconButton(
               icon: Icon(Icons.notifications_none, color: AppColors.primaryGreen),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => NotificationsScreen()));
+              },
             ),
             IconButton(
               icon: Icon(Icons.shopping_cart_outlined, color: AppColors.primaryGreen),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => CartScreen()));
+              },
             ),
           ],
         ),
@@ -55,17 +60,33 @@ class HomeScreen extends StatelessWidget {
             CarouselSlider(
               options: CarouselOptions(
                 height: 200.0,
-                autoPlay: true,
+                autoPlay: imgList.length > 1,
                 enlargeCenterPage: true,
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
+                enableInfiniteScroll: imgList.length > 1,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
               items: imgList.map((item) => Container(
-                child: Center(
-                    child: Image.network(item, fit: BoxFit.cover, width: 1000)
+                margin: EdgeInsets.symmetric(horizontal: 5),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: item['type'] == 'asset'
+                      ? Image.asset(
+                          item['path'],
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        )
+                      : Image.network(
+                          item['path'],
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(child: CircularProgressIndicator(color: AppColors.primaryGreen));
+                          },
+                        ),
                 ),
               )).toList(),
             ),
@@ -151,11 +172,28 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: 10),
                   CarouselSlider(
                     options: CarouselOptions(
-                      height: 150.0,
+                      height: 180.0,
                       autoPlay: true,
                       viewportFraction: 0.9,
+                      autoPlayInterval: Duration(seconds: 4),
                     ),
-                    items: [1, 2, 3].map((i) {
+                    items: [
+                      {
+                        'quote': 'سعيد بكوني جزء من المنصة و ان شاء الله بالتوفيق للجميع',
+                        'name': 'محمد المصري',
+                        'role': 'أخصائي علاج طبيعي',
+                      },
+                      {
+                        'quote': 'شكرا على الفكرة الرائعة، دايما كنت أحلم بوجود مكان عربي متكامل بيحكي عن النطق و اللغة و التأهيل بشكل عام',
+                        'name': 'ديالا جرار',
+                        'role': 'أخصائية نطق ولغة',
+                      },
+                      {
+                        'quote': 'مبادرة حلوة و متحمسين لكل الدورات على المنصة و ان شاء الله يكون في كتير دورات و مقالات بالعلاج الطبيعي في المستقبل!',
+                        'name': 'بيان خريسات',
+                        'role': 'أخصائي علاج وظيفي',
+                      },
+                    ].map((testimonial) {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
@@ -163,16 +201,26 @@ class HomeScreen extends StatelessWidget {
                             margin: EdgeInsets.symmetric(horizontal: 5.0),
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)
+                                borderRadius: BorderRadius.circular(14)
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("منصة رائعة جداً ومفيدة", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                                  Icon(Icons.format_quote, color: AppColors.primaryGreen, size: 24),
+                                  SizedBox(height: 8),
+                                  Text(
+                                    testimonial['quote']!,
+                                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, height: 1.5),
+                                    textAlign: TextAlign.center,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                   SizedBox(height: 10),
-                                  Text("محمد أحمد - طالب مستمر", style: TextStyle(color: AppColors.greyText)),
+                                  Text(testimonial['name']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                                  SizedBox(height: 2),
+                                  Text(testimonial['role']!, style: TextStyle(color: AppColors.greyText, fontSize: 12)),
                                 ],
                               ),
                             ),
