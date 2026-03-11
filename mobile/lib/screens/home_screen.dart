@@ -144,10 +144,12 @@ class HomeScreen extends StatelessWidget {
                       final category = categories[index];
                       // Defaulting to a generic icon if none is provided via API
                       final catId = category['id'];
+                      final String? catThumb = category['thumbnail']?.toString();
                       return _buildCategoryCard(
                         context,
                         category['name'] ?? 'قسم',
                         Icons.category,
+                        catThumb,
                         catId != null ? catId.toString() : null,
                       );
                     },
@@ -265,9 +267,13 @@ class HomeScreen extends StatelessWidget {
                     final String plainDesc = stripHtmlToPlain(rawDesc);
                     
                     // Construct thumbnail URL with fallback to banner
-                    String thumbUrl = blog['thumbnail'] ?? '';
-                    if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().isNotEmpty) {
-                      thumbUrl += blog['banner'].toString();
+                    String thumbUrl = (blog['thumbnail']?.toString() ?? '').trim();
+                    if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().trim().isNotEmpty) {
+                      thumbUrl += blog['banner'].toString().trim();
+                    }
+
+                    if (thumbUrl.startsWith('http://')) {
+                      thumbUrl = thumbUrl.replaceFirst('http://', 'https://');
                     }
                     
                     return ListTile(
@@ -341,7 +347,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryCard(BuildContext context, String title, IconData icon, [String? id]) {
+  Widget _buildCategoryCard(BuildContext context, String title, IconData icon, String? imageUrl, [String? id]) {
     return GestureDetector(
       onTap: () {
         if (id != null) {
@@ -374,7 +380,19 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 35, color: AppColors.primaryGreen),
+            if (imageUrl != null && imageUrl.isNotEmpty && !imageUrl.endsWith('/'))
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  imageUrl.startsWith('http://') ? imageUrl.replaceFirst('http://', 'https://') : imageUrl,
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Icon(icon, size: 35, color: AppColors.primaryGreen),
+                ),
+              )
+            else
+              Icon(icon, size: 35, color: AppColors.primaryGreen),
             SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),

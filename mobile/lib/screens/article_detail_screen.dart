@@ -68,9 +68,13 @@ class ArticleDetailScreen extends StatelessWidget {
             if (thumbnail != null && thumbnail.isNotEmpty)
               Builder(
                 builder: (context) {
-                  String thumbUrl = thumbnail;
-                  if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().isNotEmpty) {
-                    thumbUrl += blog['banner'].toString();
+                  String thumbUrl = (thumbnail.trim());
+                  if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().trim().isNotEmpty) {
+                    thumbUrl += blog['banner'].toString().trim();
+                  }
+
+                  if (thumbUrl.startsWith('http://')) {
+                    thumbUrl = thumbUrl.replaceFirst('http://', 'https://');
                   }
                   
                   if (thumbUrl.endsWith('/')) return SizedBox.shrink();
