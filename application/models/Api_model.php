@@ -179,6 +179,32 @@ class Api_model extends CI_Model
 		return $this->course_data($courses);
 	}
 
+	public function latest_blogs_get($limit = 5) {
+		$this->db->where('status', 1);
+		$this->db->order_by('added_date', 'desc');
+		if ($limit > 0) {
+			$this->db->limit($limit);
+		}
+		$blogs = $this->db->get('blogs')->result_array();
+		
+		foreach ($blogs as $key => $blog) {
+			$blogs[$key]['thumbnail'] = base_url('uploads/blog/thumbnail/' . $blog['blog_thumbnail']);
+			
+			// Optional: Attach category name if needed
+			$category_details = $this->db->get_where('blog_category', array('blog_category_id' => $blog['blog_category_id']))->row_array();
+			if ($category_details) {
+				$blogs[$key]['category_name'] = $category_details['title'];
+			} else {
+				$blogs[$key]['category_name'] = 'General';
+			}
+
+            $user_details = $this->user_model->get_all_user($blog['user_id'])->row_array();
+            $blogs[$key]['author'] = $user_details['first_name'] . ' ' . $user_details['last_name'];
+		}
+		
+		return $blogs;
+	}
+
 	// Return require course data
 	public function course_data($courses = array())
 	{

@@ -147,6 +147,13 @@ class Api extends REST_Controller {
     $courses = $this->api_model->courses_by_search_string_get($search_string);
     $this->set_response($courses, REST_Controller::HTTP_OK);
   }
+
+  // Get the latest blogs
+  public function latest_blogs_get() {
+    $limit = isset($_GET['limit']) ? $_GET['limit'] : 5;
+    $blogs = $this->api_model->latest_blogs_get($limit);
+    $this->set_response($blogs, REST_Controller::HTTP_OK);
+  }
   // get system settings
   public function system_settings_get() {
     $system_settings_data = $this->api_model->system_settings_get();
