@@ -7,6 +7,7 @@ import '../services/session_service.dart';
 import 'profile_sub_screens.dart';
 import 'article_detail_screen.dart';
 import 'category_courses_screen.dart';
+import 'edit_profile_screen.dart';
 
 // ─────────────────────── COURSES SCREEN ───────────────────────
 class CoursesScreen extends StatefulWidget {
@@ -464,15 +465,24 @@ class _ArticleCardState extends State<_ArticleCard> with SingleTickerProviderSta
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.only(topRight: Radius.circular(16), bottomRight: Radius.circular(16)),
-                child: widget.blog['thumbnail'] != null
-                    ? Image.network(
-                        widget.blog['thumbnail'],
-                        width: 100,
-                        height: 110,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) => _placeholder(),
-                      )
-                    : _placeholder(),
+                child: Builder(
+                  builder: (context) {
+                    String thumbUrl = widget.blog['thumbnail'] ?? '';
+                    if (thumbUrl.endsWith('/') && widget.blog['banner'] != null && widget.blog['banner'].toString().isNotEmpty) {
+                      thumbUrl += widget.blog['banner'].toString();
+                    }
+
+                    return (thumbUrl.isNotEmpty && !thumbUrl.endsWith('/'))
+                        ? Image.network(
+                            thumbUrl,
+                            width: 100,
+                            height: 110,
+                            fit: BoxFit.cover,
+                            errorBuilder: (_, __, ___) => _placeholder(),
+                          )
+                        : _placeholder();
+                  },
+                ),
               ),
               Expanded(
                 child: Padding(
@@ -559,7 +569,9 @@ class _ProfileScreenState extends State<ProfileScreen> with TickerProviderStateM
   }
 
   final List<_ProfileMenuItem> _menuItems = [
-    _ProfileMenuItem(icon: Icons.edit_outlined, title: 'تعديل الملف الشخصى', color: Color(0xFF2D9C4F), onTap: (ctx) {}),
+    _ProfileMenuItem(icon: Icons.edit_outlined, title: 'تعديل الملف الشخصى', color: Color(0xFF2D9C4F), onTap: (ctx) {
+      Navigator.push(ctx, MaterialPageRoute(builder: (_) => EditProfileScreen()));
+    }),
     _ProfileMenuItem(icon: Icons.settings_outlined, title: 'اعدادات الحساب', color: Color(0xFF1A7A8A), onTap: (ctx) {
       Navigator.push(ctx, MaterialPageRoute(builder: (_) => AccountSettingsScreen()));
     }),

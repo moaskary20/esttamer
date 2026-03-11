@@ -101,7 +101,7 @@ class HelpSupportScreen extends StatelessWidget {
               children: [
                 Expanded(child: _buildContactCard(Icons.email_outlined, 'البريد الإلكتروني', 'support@esttamer.com', Color(0xFF2D9C4F))),
                 SizedBox(width: 12),
-                Expanded(child: _buildContactCard(Icons.phone_outlined, 'الهاتف', '+966 500 000 000', Color(0xFF1A7A8A))),
+                Expanded(child: _buildContactCard(Icons.phone_outlined, 'الهاتف', '00962796209332', Color(0xFF1A7A8A))),
               ],
             ),
           ),

@@ -264,6 +264,12 @@ class HomeScreen extends StatelessWidget {
                     final String rawDesc = blog['description'] ?? '';
                     final String plainDesc = stripHtmlToPlain(rawDesc);
                     
+                    // Construct thumbnail URL with fallback to banner
+                    String thumbUrl = blog['thumbnail'] ?? '';
+                    if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().isNotEmpty) {
+                      thumbUrl += blog['banner'].toString();
+                    }
+                    
                     return ListTile(
                       onTap: () {
                         Navigator.push(
@@ -279,10 +285,18 @@ class HomeScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: AppColors.lightBackground,
                           borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                            image: NetworkImage(blog['thumbnail'] ?? 'https://via.placeholder.com/150'),
-                            fit: BoxFit.cover,
-                          ),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: (thumbUrl.isNotEmpty && !thumbUrl.endsWith('/'))
+                              ? Image.network(
+                                  thumbUrl,
+                                  width: 60,
+                                  height: 60,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, __, ___) => Icon(Icons.article_outlined, color: AppColors.primaryGreen),
+                                )
+                              : Icon(Icons.article_outlined, color: AppColors.primaryGreen),
                         ),
                       ),
                       title: Text(blog['title'] ?? 'عنوان المقال', style: TextStyle(fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis),

@@ -66,16 +66,27 @@ class ArticleDetailScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (thumbnail != null && thumbnail.isNotEmpty)
-              Image.network(
-                thumbnail,
-                height: 220,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => Container(
-                  height: 220,
-                  color: AppColors.lightBackground,
-                  child: Icon(Icons.article_outlined, size: 80, color: AppColors.primaryGreen),
-                ),
+              Builder(
+                builder: (context) {
+                  String thumbUrl = thumbnail;
+                  if (thumbUrl.endsWith('/') && blog['banner'] != null && blog['banner'].toString().isNotEmpty) {
+                    thumbUrl += blog['banner'].toString();
+                  }
+                  
+                  if (thumbUrl.endsWith('/')) return SizedBox.shrink();
+
+                  return Image.network(
+                    thumbUrl,
+                    height: 220,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => Container(
+                      height: 220,
+                      color: AppColors.lightBackground,
+                      child: Icon(Icons.article_outlined, size: 80, color: AppColors.primaryGreen),
+                    ),
+                  );
+                },
               ),
             Padding(
               padding: const EdgeInsets.all(20),

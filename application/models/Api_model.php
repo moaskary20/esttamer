@@ -188,7 +188,13 @@ class Api_model extends CI_Model
 		$blogs = $this->db->get('blogs')->result_array();
 		
 		foreach ($blogs as $key => $blog) {
-			$blogs[$key]['thumbnail'] = base_url('uploads/blog/thumbnail/' . $blog['blog_thumbnail']);
+			if (!empty($blog['blog_thumbnail'])) {
+				$blogs[$key]['thumbnail'] = base_url('uploads/blog/thumbnail/' . $blog['blog_thumbnail']);
+			} elseif (!empty($blog['banner'])) {
+				$blogs[$key]['thumbnail'] = base_url('uploads/blog/thumbnail/' . $blog['banner']);
+			} else {
+				$blogs[$key]['thumbnail'] = '';
+			}
 			
 			// Optional: Attach category name if needed
 			$category_details = $this->db->get_where('blog_category', array('blog_category_id' => $blog['blog_category_id']))->row_array();
