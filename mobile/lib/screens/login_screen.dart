@@ -29,13 +29,13 @@ class _LoginScreenState extends State<LoginScreen>
     setState(() => _loading = true);
 
     try {
-      final Uri url = _isLogin
-          ? Uri.parse(
-              '$baseUrl/login_get?email=${_emailController.text.trim()}&password=${_passwordController.text.trim()}')
-          : Uri.parse('$baseUrl/signup');
+      final Uri url = Uri.parse(_isLogin ? '$baseUrl/login' : '$baseUrl/signup');
 
       final response = _isLogin
-          ? await http.get(url)
+          ? await http.post(url, body: {
+              'email': _emailController.text.trim(),
+              'password': _passwordController.text.trim(),
+            })
           : await http.post(url, body: {
               'full_name': _nameController.text.trim(),
               'email': _emailController.text.trim(),

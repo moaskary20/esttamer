@@ -160,9 +160,18 @@ class Api extends REST_Controller {
     $this->set_response($system_settings_data, REST_Controller::HTTP_OK);
   }
 
-  // Login Api
+  // Login Api (GET - kept for backward compatibility)
   public function login_get() {
     $userdata = $this->api_model->login_get();
+    if ($userdata['validity'] == 1) {
+      $userdata['token'] = $this->tokenHandler->GenerateToken($userdata);
+    }
+    return $this->set_response($userdata, REST_Controller::HTTP_OK);
+  }
+
+  // Login Api (POST - preferred, more secure)
+  public function login_post() {
+    $userdata = $this->api_model->login_post();
     if ($userdata['validity'] == 1) {
       $userdata['token'] = $this->tokenHandler->GenerateToken($userdata);
     }
