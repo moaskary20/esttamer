@@ -79,6 +79,11 @@
                       </div>  
                 </div>
                 <div class="col-lg-6 col-md-12">
+                    <?php
+                    if (!isset($facebook)) $facebook = get_frontend_settings('facebook');
+                    if (!isset($instagram)) $instagram = get_frontend_settings('instagram');
+                    if (!isset($linkedin)) $linkedin = get_frontend_settings('linkedin');
+                    ?>
                     <ul class="nav gap-3 justify-content-end">
                         <?php if($facebook): ?>
                           <li class="nav-item">

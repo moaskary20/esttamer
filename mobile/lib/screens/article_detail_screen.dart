@@ -134,15 +134,118 @@ class ArticleDetailScreen extends StatelessWidget {
                     data: rawDesc,
                     style: {
                       "body": Style(
-                        fontSize: FontSize(16),
-                        lineHeight: LineHeight(1.8),
-                        color: Colors.black87,
+                        fontSize: FontSize(17),
+                        lineHeight: LineHeight(1.9),
+                        color: Color(0xFF2D3748),
                         fontFamily: GoogleFonts.tajawal().fontFamily,
                         margin: Margins.zero,
                         padding: HtmlPaddings.zero,
+                        maxLines: 999,
+                        textAlign: TextAlign.justify,
                       ),
                       "p": Style(
-                        margin: Margins.only(bottom: 12),
+                        margin: Margins.only(bottom: 16),
+                        lineHeight: LineHeight(1.9),
+                        fontSize: FontSize(16),
+                        textAlign: TextAlign.justify,
+                      ),
+                      "h1": Style(
+                        fontSize: FontSize(24),
+                        fontWeight: FontWeight.bold,
+                        margin: Margins.only(top: 24, bottom: 12),
+                        color: Color(0xFF1A202C),
+                      ),
+                      "h2": Style(
+                        fontSize: FontSize(20),
+                        fontWeight: FontWeight.bold,
+                        margin: Margins.only(top: 20, bottom: 10),
+                        color: Color(0xFF1A202C),
+                      ),
+                      "h3": Style(
+                        fontSize: FontSize(18),
+                        fontWeight: FontWeight.w600,
+                        margin: Margins.only(top: 18, bottom: 8),
+                        color: Color(0xFF1A202C),
+                      ),
+                      "h4": Style(
+                        fontSize: FontSize(16),
+                        fontWeight: FontWeight.w600,
+                        margin: Margins.only(top: 14, bottom: 6),
+                        color: Color(0xFF1A202C),
+                      ),
+                      "strong": Style(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1A202C),
+                      ),
+                      "b": Style(
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1A202C),
+                      ),
+                      "em": Style(
+                        fontStyle: FontStyle.italic,
+                      ),
+                      "i": Style(
+                        fontStyle: FontStyle.italic,
+                      ),
+                      "ul": Style(
+                        margin: Margins.only(top: 12, bottom: 12, left: 8),
+                        padding: HtmlPaddings.only(left: 16),
+                      ),
+                      "ol": Style(
+                        margin: Margins.only(top: 12, bottom: 12, left: 8),
+                        padding: HtmlPaddings.only(left: 16),
+                      ),
+                      "li": Style(
+                        margin: Margins.only(bottom: 8),
+                        lineHeight: LineHeight(1.7),
+                        fontSize: FontSize(16),
+                        textAlign: TextAlign.justify,
+                      ),
+                      "blockquote": Style(
+                        margin: Margins.only(top: 16, bottom: 16, left: 0),
+                        padding: HtmlPaddings.only(left: 16),
+                        border: Border(
+                          left: BorderSide(
+                            color: AppColors.primaryGreen,
+                            width: 4,
+                          ),
+                        ),
+                        backgroundColor: Color(0xFFF7FAFC),
+                        fontSize: FontSize(16),
+                        fontStyle: FontStyle.italic,
+                        lineHeight: LineHeight(1.8),
+                        textAlign: TextAlign.justify,
+                      ),
+                      "a": Style(
+                        color: AppColors.primaryGreen,
+                        textDecoration: TextDecoration.underline,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      "img": Style(
+                        margin: Margins.only(top: 12, bottom: 12),
+                        padding: HtmlPaddings.zero,
+                      ),
+                      "hr": Style(
+                        margin: Margins.symmetric(vertical: 20),
+                        border: Border(
+                          bottom: BorderSide(
+                            color: Color(0xFFE2E8F0),
+                            width: 1,
+                          ),
+                        ),
+                      ),
+                      "pre": Style(
+                        backgroundColor: Color(0xFF2D3748),
+                        padding: HtmlPaddings.all(16),
+                        margin: Margins.only(top: 12, bottom: 12),
+                        fontSize: FontSize(14),
+                        fontFamily: 'monospace',
+                      ),
+                      "code": Style(
+                        backgroundColor: Color(0xFFEDF2F7),
+                        padding: HtmlPaddings.symmetric(horizontal: 6, vertical: 2),
+                        fontSize: FontSize(14),
+                        fontFamily: 'monospace',
                       ),
                     },
                   ),

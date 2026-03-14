@@ -2393,10 +2393,14 @@ class Crud_model extends CI_Model
         $this->db->where('key', 'linkedin');
         $this->db->update('frontend_settings', $data);
 
-        $data['value'] = $this->input->post('instagram');
-        $this->db->where('key', 'instagram');
-        $this->db->update('frontend_settings', $data);
-
+        // Instagram: insert if not exists (key may be missing in older installs)
+        $instagram_value = $this->input->post('instagram');
+        $instagram_row = $this->db->where('key', 'instagram')->get('frontend_settings')->row();
+        if ($instagram_row) {
+            $this->db->where('key', 'instagram')->update('frontend_settings', ['value' => $instagram_value]);
+        } else {
+            $this->db->insert('frontend_settings', ['key' => 'instagram', 'value' => $instagram_value]);
+        }
 
         $data['value'] = $this->input->post('about_us', false);
         $this->db->where('key', 'about_us');
