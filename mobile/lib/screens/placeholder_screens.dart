@@ -318,45 +318,91 @@ class _CategoryCardState extends State<_CategoryCard> with SingleTickerProviderS
         scale: _scale,
         child: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [AppColors.primaryGreen.withOpacity(0.85), AppColors.secondaryGreen],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primaryGreen.withOpacity(0.3),
+                color: Colors.black12,
                 blurRadius: 10,
                 offset: Offset(0, 5),
               ),
             ],
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(18),
+            child: Stack(
+              fit: StackFit.expand,
               children: [
-                Icon(Icons.category, color: Colors.white, size: 36),
-                SizedBox(height: 12),
-                Text(
-                  widget.category['name'] ?? 'قسم',
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.tajawal(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
+                // Background Image
+                Builder(
+                  builder: (context) {
+                    final String? rawUrl = widget.category['thumbnail']?.toString();
+                    if (rawUrl != null && rawUrl.trim().isNotEmpty && !rawUrl.trim().endsWith('/')) {
+                      String imageUrl = rawUrl.trim();
+                      if (imageUrl.startsWith('http://')) {
+                        imageUrl = imageUrl.replaceFirst('http://', 'https://');
+                      }
+                      return Image.network(
+                        imageUrl,
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, __, ___) => Container(
+                          color: AppColors.primaryGreen,
+                          child: Center(child: Icon(Icons.category, color: Colors.white, size: 40)),
+                        ),
+                      );
+                    } else {
+                      return Container(
+                        color: AppColors.primaryGreen,
+                        child: Center(child: Icon(Icons.category, color: Colors.white, size: 40)),
+                      );
+                    }
+                  },
+                ),
+                // Gradient Overlay
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: 80,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.transparent, Colors.black.withOpacity(0.8)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                    ),
                   ),
                 ),
-                if (widget.category['total_course'] != null) ...[
-                  SizedBox(height: 6),
-                  Text(
-                    '${widget.category['total_course']} دورة',
-                    style: GoogleFonts.tajawal(color: Colors.white70, fontSize: 12),
+                // Text Content
+                Positioned(
+                  left: 12,
+                  right: 12,
+                  bottom: 12,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        widget.category['name'] ?? 'قسم',
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.tajawal(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      if (widget.category['total_course'] != null) ...[
+                        SizedBox(height: 4),
+                        Text(
+                          '${widget.category['total_course']} دورة',
+                          style: GoogleFonts.tajawal(color: Colors.white70, fontSize: 12),
+                        ),
+                      ]
+                    ],
                   ),
-                ]
+                ),
               ],
             ),
           ),
@@ -467,9 +513,12 @@ class _ArticleCardState extends State<_ArticleCard> with SingleTickerProviderSta
                 borderRadius: BorderRadius.only(topRight: Radius.circular(16), bottomRight: Radius.circular(16)),
                 child: Builder(
                   builder: (context) {
-                    String thumbUrl = widget.blog['thumbnail'] ?? '';
-                    if (thumbUrl.endsWith('/') && widget.blog['banner'] != null && widget.blog['banner'].toString().isNotEmpty) {
-                      thumbUrl += widget.blog['banner'].toString();
+                    String thumbUrl = (widget.blog['thumbnail']?.toString() ?? '').trim();
+                    if (thumbUrl.endsWith('/') && widget.blog['banner'] != null && widget.blog['banner'].toString().trim().isNotEmpty) {
+                      thumbUrl += widget.blog['banner'].toString().trim();
+                    }
+                    if (thumbUrl.startsWith('http://')) {
+                      thumbUrl = thumbUrl.replaceFirst('http://', 'https://');
                     }
 
                     return (thumbUrl.isNotEmpty && !thumbUrl.endsWith('/'))

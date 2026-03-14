@@ -134,6 +134,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="instagram"><?php echo get_phrase('instagram'); ?></label>
+                                <input type="text" name = "instagram" id = "instagram" class="form-control" value="<?php echo get_frontend_settings('instagram');  ?>">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="cookie_policy"><?php echo get_phrase('cookie_policy'); ?></label>
                                 <textarea name="cookie_policy" id = "cookie_policy" class="form-control" rows="5"><?php echo get_frontend_settings('cookie_policy'); ?></textarea>
                             </div>
