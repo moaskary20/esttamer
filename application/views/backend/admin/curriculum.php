@@ -1,6 +1,26 @@
 <?php
 $sections = $this->crud_model->get_section('course', $course_id)->result_array();
 ?>
+<style>
+/* Fix vertical text in curriculum - force horizontal layout */
+#curriculum .card-title,
+#curriculum .card .card-body .card-title,
+#curriculum .thinner-card-body .card-title,
+#curriculum .card-body,
+#curriculum .card .card-body {
+  direction: ltr !important;
+  text-align: left !important;
+  writing-mode: horizontal-tb !important;
+  white-space: normal !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+#curriculum .card-title span { display: inline !important; }
+#curriculum .row, #curriculum .col-md-12, #curriculum .col-xl-12 { min-width: 0 !important; }
+</style>
 <div class="row justify-content-center">
     <div class="col-xl-12 mb-4 text-center mt-3">
         <a href="javascript:void(0)" class="btn btn-outline-primary btn-rounded btn-sm ml-1" onclick="showAjaxModal('<?php echo site_url('modal/popup/section_add/'.$course_id); ?>', '<?php echo get_phrase('add_new_section'); ?>')"><i class="mdi mdi-plus"></i> <?php echo get_phrase('add_section'); ?></a>
@@ -38,7 +58,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                         <?php endif; ?>
                         <!-- Study plan END-->
 
-                        <h5 class="card-title" class="mb-3" style="min-height: 45px;"><span class="font-weight-light"><?php echo get_phrase('section').' '.++$key; ?></span>: <?php echo $section['title']; ?>
+                        <h5 class="card-title mb-3" style="min-height: 45px; direction: ltr; text-align: left; white-space: normal; display: block; width: 100%;"><span class="font-weight-light"><?php echo get_phrase('section').' '.++$key; ?></span>: <?php echo $section['title']; ?>
                             <div class="justify-content-center alignToTitle display-none" id = "widgets-of-section-<?php echo $section['id']; ?>">
                                 <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm" name="button" onclick="showLargeModal('<?php echo site_url('modal/popup/sort_lesson/'.$section['id']); ?>', '<?php echo get_phrase('sort_lessons'); ?>')" ><i class="mdi mdi-sort-variant"></i> <?php echo get_phrase('sort_lesson'); ?></button>
                                 <button type="button" class="btn btn-outline-secondary btn-rounded btn-sm ml-1" name="button" onclick="showAjaxModal('<?php echo site_url('modal/popup/section_edit/'.$section['id'].'/'.$course_id); ?>', '<?php echo get_phrase('update_section'); ?>')" ><i class="mdi mdi-pencil-outline"></i> <?php echo get_phrase('edit_section'); ?></button>
@@ -52,8 +72,8 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                         foreach ($lessons as $index => $lesson):?>
                         <div class="col-md-12">
                             <!-- Portlet card -->
-                            <div class="card text-secondary on-hover-action mb-2 w-100" id = "<?php echo 'lesson-'.$lesson['id']; ?>">
-                                <div class="card-body thinner-card-body">
+                            <div class="card text-secondary on-hover-action mb-2 w-100" id = "<?php echo 'lesson-'.$lesson['id']; ?>" style="min-width: 0;">
+                                <div class="card-body thinner-card-body" style="direction: ltr; text-align: left; min-width: 0;">
                                     <div class="card-widgets display-none" id = "widgets-of-lesson-<?php echo $lesson['id']; ?>">
                                         <?php if ($lesson['lesson_type'] == 'quiz'): ?>
                                             <a href="<?php echo site_url('home/lesson/'.slugify($course_details['title']).'/'.$course_details['id'].'/'.$lesson['id']); ?>" target="_blank" data-toggle="tooltip" title="<?php echo get_phrase('quiz_results'); ?>"><i class="mdi mdi-file-document-box-outline"></i></a>
@@ -68,8 +88,8 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                                         <?php endif; ?>
                                         <a href="javascript:;" onclick="confirm_modal('<?php echo site_url('admin/lessons/'.$course_id.'/delete'.'/'.$lesson['id']); ?>');" data-toggle="tooltip" title="<?php echo get_phrase('delete'); ?>"><i class="mdi mdi-window-close"></i></a>
                                     </div>
-                                    <h5 class="card-title mb-0">
-                                        <span class="font-weight-light">
+                                    <h5 class="card-title mb-0" style="direction: ltr; text-align: left; white-space: normal; display: block; width: 100%; word-break: normal; overflow-wrap: normal;">
+                                        <span class="font-weight-light" style="display: inline;">
                                             <?php
                                             if ($lesson['lesson_type'] == 'quiz') {
                                                 $quiz_counter++; // Keeps track of number of quiz
@@ -83,7 +103,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                                                 }
                                             }
                                             ?>
-                                            <img src="<?php echo base_url('assets/backend/lesson_icon/'.$lesson_type.'.png'); ?>" alt="" height = "16">
+                                            <img src="<?php echo base_url('assets/backend/lesson_icon/'.$lesson_type.'.png'); ?>" alt="" height = "16" style="vertical-align: middle;">
                                             <?php echo $lesson['lesson_type'] == 'quiz' ? get_phrase('quiz').' '.$quiz_counter : get_phrase('lesson').' '.$lesson_counter; ?>
                                         </span>: <?php echo $lesson['title']; ?>
                                     </h5>
