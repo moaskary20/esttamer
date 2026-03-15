@@ -12,71 +12,71 @@
                     echo $custom_content;
                 } else {
                     ?>
-                <div class="privacy-policy-content" style="direction: rtl; text-align: right; line-height: 1.9; font-size: 1.05em;">
-                    <h1 style="font-size: 2rem; color: #1a202c; margin-bottom: 1.5rem; text-align: center;">سياسة الخصوصية</h1>
-                    <p style="color: #4a5568; margin-bottom: 1rem;"><strong>آخر تحديث:</strong> <?php echo date('Y-m-d'); ?></p>
+                <div class="privacy-policy-content" style="direction: ltr; text-align: left; line-height: 1.9; font-size: 1.05em;">
+                    <h1 style="font-size: 2rem; color: #1a202c; margin-bottom: 1.5rem; text-align: center;">Privacy Policy</h1>
+                    <p style="color: #4a5568; margin-bottom: 1rem;"><strong>Last updated:</strong> <?php echo date('Y-m-d'); ?></p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">١. مقدمة</h2>
-                    <p>مرحباً بك في منصة "استمر". نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمعنا واستخدامنا وحمايتنا لمعلوماتك عند استخدام موقعنا الإلكتروني (<strong>esttamer.com</strong>) وتطبيقنا على Google Play. نلتزم بمتطلبات سياسة الخصوصية الخاصة بـ Google Play Store.</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">1. Introduction</h2>
+                    <p>Welcome to Esttamer. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and protect your information when you use our website (<strong>esttamer.com</strong>) and our app on Google Play. We comply with Google Play Store privacy policy requirements.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٢. البيانات التي نجمعها</h2>
-                    <p>قد نجمع الأنواع التالية من البيانات:</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">2. Data We Collect</h2>
+                    <p>We may collect the following types of data:</p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem;">
-                        <li><strong>بيانات الحساب:</strong> الاسم، البريد الإلكتروني، كلمة المرور (مشفرة)، صورة الملف الشخصي عند رفعها.</li>
-                        <li><strong>بيانات الاستخدام:</strong> الدورات المشترك فيها، التقدم في الدروس، التقييمات والمراجعات، سجل المشتريات.</li>
-                        <li><strong>بيانات الجهاز (التطبيق):</strong> نوع الجهاز، نظام التشغيل، معرف فريد للتطبيق لأغراض تسجيل الدخول والأمان.</li>
-                        <li><strong>بيانات الدفع:</strong> لا نخزن أرقام البطاقات؛ تتم المعاملات عبر بوابات دفع آمنة (مثل Stripe، PayPal) وفق سياساتها.</li>
+                        <li><strong>Account data:</strong> Name, email address, password (encrypted), profile picture when uploaded.</li>
+                        <li><strong>Usage data:</strong> Enrolled courses, progress in lessons, ratings and reviews, purchase history.</li>
+                        <li><strong>Device data (app):</strong> Device type, operating system, unique app identifier for login and security purposes.</li>
+                        <li><strong>Payment data:</strong> We do not store card numbers; transactions are processed through secure payment gateways (e.g. Stripe, PayPal) under their policies.</li>
                     </ul>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٣. كيف نستخدم بياناتك</h2>
-                    <p>نستخدم البيانات لأغراض مشروعة فقط، تشمل:</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">3. How We Use Your Data</h2>
+                    <p>We use data only for legitimate purposes, including:</p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem;">
-                        <li>إنشاء حسابك وإدارة تسجيل الدخول (الموقع والتطبيق).</li>
-                        <li>توفير الدورات والمحتوى والخدمات التي تطلبها.</li>
-                        <li>معالجة الدفع وإصدار الفواتير والإشعارات المتعلقة بالاشتراكات.</li>
-                        <li>تحسين تجربة المستخدم، ودعم العملاء، والرد على استفساراتك.</li>
-                        <li>إرسال رسائل إخبارية أو عروض (فقط إذا وافقت على ذلك ويمكنك إلغاء الاشتراك في أي وقت).</li>
-                        <li>الامتثال للقانون وحماية حقوقنا وحقوق المستخدمين.</li>
+                        <li>Creating and managing your account and login (website and app).</li>
+                        <li>Providing the courses, content, and services you request.</li>
+                        <li>Processing payments, issuing invoices, and sending subscription-related notifications.</li>
+                        <li>Improving user experience, customer support, and responding to your inquiries.</li>
+                        <li>Sending newsletters or offers only if you have agreed, and you may unsubscribe at any time.</li>
+                        <li>Complying with the law and protecting our and users’ rights.</li>
                     </ul>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٤. مشاركة البيانات مع طرف ثالث</h2>
-                    <p>لا نبيع بياناتك الشخصية. قد نشارك البيانات فقط في الحالات التالية:</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">4. Sharing Data with Third Parties</h2>
+                    <p>We do not sell your personal data. We may share data only in these cases:</p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem;">
-                        <li><strong>مقدمي الخدمات:</strong> شركات تستخدم لاستضافة الموقع، معالجة الدفع، إرسال البريد الإلكتروني، أو تحليلات الاستخدام، وهم ملتزمون بعقود حماية البيانات.</li>
-                        <li><strong>المتطلبات القانونية:</strong> عند وجود التزام قانوني أو أمر قضائي.</li>
-                        <li><strong>حماية الحقوق:</strong> عند الضرورة لحماية أمن المنصة أو المستخدمين.</li>
+                        <li><strong>Service providers:</strong> Companies we use for hosting, payment processing, email delivery, or analytics, under data protection agreements.</li>
+                        <li><strong>Legal requirements:</strong> When required by law or court order.</li>
+                        <li><strong>Protecting rights:</strong> When necessary to protect the security of the platform or users.</li>
                     </ul>
-                    <p>تطبيقنا على Google Play قد يستخدم خدمات Google (مثل Firebase أو تحليلات التطبيقات) وفق سياسة خصوصية Google.</p>
+                    <p>Our app on Google Play may use Google services (e.g. Firebase or app analytics) in accordance with Google’s privacy policy.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٥. أمان البيانات</h2>
-                    <p>نتخذ إجراءات تقنية وتنظيمية مناسبة لحماية بياناتك، تشمل التشفير (مثل HTTPS و TLS)، تخزين كلمات المرور بشكل آمن، والحد من الوصول إلى البيانات الشخصية فقط للموظفين المخولين. مع ذلك، لا يمكن ضمان أمان كامل لأي نقل عبر الإنترنت.</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">5. Data Security</h2>
+                    <p>We take appropriate technical and organizational measures to protect your data, including encryption (e.g. HTTPS and TLS), secure storage of passwords, and limiting access to personal data to authorized personnel only. However, no transmission over the internet can be guaranteed to be fully secure.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٦. حقوقك</h2>
-                    <p>لديك الحق في:</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">6. Your Rights</h2>
+                    <p>You have the right to:</p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem;">
-                        <li><strong>الوصول:</strong> طلب نسخة من البيانات الشخصية التي نحتفظ بها عنك.</li>
-                        <li><strong>التصحيح:</strong> طلب تصحيح أي بيانات غير دقيقة أو غير مكتملة.</li>
-                        <li><strong>الحذف:</strong> طلب حذف بياناتك الشخصية، مع مراعاة الالتزامات القانونية أو التعاقدية.</li>
-                        <li><strong>إلغاء الاشتراك:</strong> إلغاء استلام الرسائل التسويقية في أي وقت عبر الرابط في الرسائل أو من إعدادات الحساب.</li>
+                        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+                        <li><strong>Correction:</strong> Request correction of any inaccurate or incomplete data.</li>
+                        <li><strong>Deletion:</strong> Request deletion of your personal data, subject to legal or contractual obligations.</li>
+                        <li><strong>Unsubscribe:</strong> Opt out of marketing messages at any time via the link in emails or account settings.</li>
                     </ul>
-                    <p>لممارسة هذه الحقوق، يرجى التواصل معنا عبر البريد الإلكتروني أو نموذج "اتصل بنا" المذكور أدناه.</p>
+                    <p>To exercise these rights, please contact us using the email or contact form below.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٧. ملفات تعريف الارتباط (Cookies) والويب</h2>
-                    <p>قد نستخدم ملفات تعريف الارتباط وتقنيات مماثلة على الموقع لتسجيل الدخول، تذكر التفضيلات، وتحليل الزيارات. يمكنك ضبط متصفحك لرفض بعض ملفات تعريف الارتباط، مع العلم أن ذلك قد يؤثر على بعض وظائف الموقع.</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">7. Cookies and the Website</h2>
+                    <p>We may use cookies and similar technologies on the website for login, remembering preferences, and analyzing visits. You can set your browser to refuse some cookies; note that this may affect some site features.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٨. خصوصية الأطفال</h2>
-                    <p>خدماتنا لا تستهدف بشكل مباشر الأطفال دون سن معينة. إذا علمنا أننا جمعنا بيانات شخصية من طفل دون السن المسموح بها دون موافقة الوالدين، سنتخذ خطوات لحذف تلك المعلومات. إذا كنت ولي أمر وتعتقد أن طفلك قد زوّدنا ببيانات شخصية، يرجى التواصل معنا.</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">8. Children’s Privacy</h2>
+                    <p>Our services are not directed at children under a certain age. If we learn that we have collected personal data from a child without parental consent, we will take steps to delete that information. If you are a parent and believe your child has provided us with personal data, please contact us.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">٩. التعديلات على السياسة</h2>
-                    <p>قد نحدّث سياسة الخصوصية من وقت لآخر. سننشر أي تغييرات على هذه الصفحة مع تحديث تاريخ "آخر تحديث". ننصحك بمراجعة هذه الصفحة دورياً. استمرارك في استخدام الموقع أو التطبيق بعد التعديلات يعني موافقتك على السياسة المحدّثة.</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">9. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will post any changes on this page and update the “Last updated” date. We encourage you to review this page periodically. Your continued use of the website or app after changes means you accept the updated policy.</p>
 
-                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">١٠. التواصل معنا</h2>
-                    <p>لأي استفسارات تتعلق بالخصوصية أو لممارسة حقوقك، يمكنك التواصل معنا عبر:</p>
+                    <h2 style="font-size: 1.5rem; color: #2d3748; margin-top: 2rem; margin-bottom: 0.75rem;">10. Contact Us</h2>
+                    <p>For any privacy-related questions or to exercise your rights, you can contact us via:</p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem;">
-                        <li>صفحة <a href="<?php echo site_url('home/contact_us'); ?>">اتصل بنا</a> على الموقع.</li>
-                        <li>البريد الإلكتروني: <?php echo get_settings('system_email') ?: 'privacy@esttamer.com'; ?></li>
+                        <li>The <a href="<?php echo site_url('home/contact_us'); ?>">Contact Us</a> page on the website.</li>
+                        <li>Email: <?php echo get_settings('system_email') ?: 'privacy@esttamer.com'; ?></li>
                     </ul>
-                    <p style="margin-top: 2rem; color: #718096;">باستخدامك لموقع استمر أو تطبيق استمر، فإنك توافق على سياسة الخصوصية هذه.</p>
+                    <p style="margin-top: 2rem; color: #718096;">By using the Esttamer website or app, you agree to this Privacy Policy.</p>
                 </div>
                     <?php
                 }
