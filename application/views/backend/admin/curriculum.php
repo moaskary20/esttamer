@@ -46,6 +46,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                             </div>
                         </h5>
                         <div class="clearfix"></div>
+                        <div class="row">
                         <?php
                         $lessons = $this->crud_model->get_lessons('section', $section['id'])->result_array();
                         foreach ($lessons as $index => $lesson):?>
@@ -90,6 +91,7 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                             </div> <!-- end card-->
                         </div>
                     <?php endforeach; ?>
+                        </div><!-- end row -->
                 </div> <!-- end card-body-->
             </div> <!-- end card-->
         </div>

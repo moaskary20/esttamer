@@ -227,6 +227,16 @@ i.material-icons {
 .thinner-card-body {
   padding: 1.0rem;
 }
+
+/* Curriculum: keep lesson/section titles horizontal (fix vertical text in admin course page) */
+#curriculum .card .thinner-card-body .card-title,
+#curriculum .card-title {
+  direction: ltr;
+  writing-mode: horizontal-tb;
+  white-space: normal;
+  display: block;
+  width: 100%;
+}
 .display-none {
   display: none;
 }
