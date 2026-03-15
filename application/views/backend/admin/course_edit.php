@@ -151,7 +151,7 @@ $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
                                 <button type="button" class="scrollable-tab-btn-right"><i class="mdi mdi-arrow-right"></i></button>
 
                                 <div class="tab-content b-0 mb-0">
-                                    <div class="tab-pane" id="curriculum">
+                                    <div class="tab-pane" id="curriculum" dir="ltr">
                                         <?php
                                         if ($course_details['course_type'] == 'general') :
                                             include 'curriculum.php';

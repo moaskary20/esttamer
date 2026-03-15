@@ -230,12 +230,25 @@ i.material-icons {
 
 /* Curriculum: keep lesson/section titles horizontal (fix vertical text in admin course page) */
 #curriculum .card .thinner-card-body .card-title,
-#curriculum .card-title {
-  direction: ltr;
-  writing-mode: horizontal-tb;
-  white-space: normal;
-  display: block;
-  width: 100%;
+#curriculum .card-title,
+.tab-pane#curriculum .card-title,
+.tab-pane#curriculum .card .card-body .card-title {
+  direction: ltr !important;
+  writing-mode: horizontal-tb !important;
+  white-space: normal !important;
+  display: block !important;
+  width: 100% !important;
+  unicode-bidi: plaintext;
+}
+.tab-pane#curriculum .card-body,
+#curriculum .card-body {
+  direction: ltr !important;
+}
+#curriculum .row,
+#curriculum .col-md-12,
+#curriculum .col-xl-12 {
+  direction: ltr !important;
+  max-width: 100% !important;
 }
 .display-none {
   display: none;
