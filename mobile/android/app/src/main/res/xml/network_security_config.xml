@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow HTTPS to API (release builds may apply stricter defaults) -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">esttamer.com</domain>
+    </domain-config>
+</network-security-config>

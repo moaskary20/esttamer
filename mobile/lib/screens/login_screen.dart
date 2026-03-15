@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animate_do/animate_do.dart';
@@ -25,6 +27,13 @@ class _LoginScreenState extends State<LoginScreen>
 
   static const String baseUrl = 'https://esttamer.com/api';
 
+  /// Headers required for API (release builds can be blocked without User-Agent/Accept)
+  static const Map<String, String> _apiHeaders = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'User-Agent': 'EsttamerApp/1.0',
+  };
+
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _loading = true);
@@ -42,18 +51,36 @@ class _LoginScreenState extends State<LoginScreen>
       }
 
       final response = _isLogin
-          ? await http.post(url, body: {
-              'email': _emailController.text.trim(),
-              'password': _passwordController.text.trim(),
-            })
-          : await http.post(url, body: {
-              'first_name': firstName,
-              'last_name': lastName,
-              'email': _emailController.text.trim(),
-              'password': _passwordController.text.trim(),
-            });
+          ? await http
+              .post(url, headers: _apiHeaders, body: {
+                'email': _emailController.text.trim(),
+                'password': _passwordController.text.trim(),
+              })
+              .timeout(const Duration(seconds: 45))
+          : await http
+              .post(url, headers: _apiHeaders, body: {
+                'first_name': firstName,
+                'last_name': lastName,
+                'email': _emailController.text.trim(),
+                'password': _passwordController.text.trim(),
+              })
+              .timeout(const Duration(seconds: 45));
 
-      final data = json.decode(response.body);
+      // Release: server may return non-200 or HTML error page
+      if (response.statusCode != 200) {
+        _showError('خطأ من الخادم (${response.statusCode}). حاول مرة أخرى.');
+        if (mounted) setState(() => _loading = false);
+        return;
+      }
+
+      Map<String, dynamic> data;
+      try {
+        data = Map<String, dynamic>.from(json.decode(response.body) as Map);
+      } catch (_) {
+        _showError('استجابة غير متوقعة من الخادم. حاول مرة أخرى.');
+        if (mounted) setState(() => _loading = false);
+        return;
+      }
 
       if (_isLogin) {
         // ── LOGIN FLOW ──
@@ -88,8 +115,16 @@ class _LoginScreenState extends State<LoginScreen>
           _showError(data['message'] ?? 'حدث خطأ في التسجيل');
         }
       }
+    } on TimeoutException catch (_) {
+      _showError('انتهت مهلة الاتصال. تحقق من الإنترنت وحاول مرة أخرى.');
+    } on SocketException catch (_) {
+      _showError('لا يوجد اتصال بالإنترنت. تحقق من الشبكة.');
+    } on HandshakeException catch (_) {
+      _showError('خطأ في الاتصال الآمن. تحقق من التاريخ والوقت على الجهاز أو جرّب شبكة أخرى.');
+    } on TlsException catch (_) {
+      _showError('خطأ في الاتصال الآمن. جرّب شبكة أخرى أو تحديث الجهاز.');
     } catch (e) {
-      _showError('تعذّر الاتصال بالخادم');
+      _showError('تعذّر الاتصال بالخادم. تحقق من الإنترنت وحاول مرة أخرى.');
     }
     if (mounted) setState(() => _loading = false);
   }

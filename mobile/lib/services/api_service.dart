@@ -5,9 +5,15 @@ class ApiService {
   // Using production URL. Change if testing locally again.
   static const String baseUrl = 'https://esttamer.com/api';
 
+  /// Headers for API (needed in release so server/proxy accepts the request)
+  static const Map<String, String> _headers = {
+    'Accept': 'application/json',
+    'User-Agent': 'EsttamerApp/1.0',
+  };
+
   static Future<List<dynamic>> fetchCategories() async {
     try {
-      final response = await http.get(Uri.parse('$baseUrl/categories'));
+      final response = await http.get(Uri.parse('$baseUrl/categories'), headers: _headers);
       if (response.statusCode == 200) {
         return json.decode(response.body);
       } else {
@@ -20,7 +26,7 @@ class ApiService {
 
   static Future<List<dynamic>> fetchLatestBlogs({int limit = 5}) async {
     try {
-      final response = await http.get(Uri.parse('$baseUrl/latest_blogs?limit=$limit'));
+      final response = await http.get(Uri.parse('$baseUrl/latest_blogs?limit=$limit'), headers: _headers);
       if (response.statusCode == 200) {
         return json.decode(response.body);
       } else {
@@ -39,6 +45,7 @@ class ApiService {
     try {
       final response = await http.get(
         Uri.parse('$baseUrl/category_wise_course?category_id=$categoryId'),
+        headers: _headers,
       );
       if (response.statusCode == 200) {
         return json.decode(response.body);
@@ -54,6 +61,7 @@ class ApiService {
     try {
       final response = await http.get(
         Uri.parse('$baseUrl/my_courses?auth_token=$authToken'),
+        headers: _headers,
       );
       if (response.statusCode == 200) {
         return json.decode(response.body);
@@ -72,7 +80,7 @@ class ApiService {
       if (authToken != null && authToken.isNotEmpty) {
         url += '&auth_token=$authToken';
       }
-      final response = await http.get(Uri.parse(url));
+      final response = await http.get(Uri.parse(url), headers: _headers);
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         // API returns a list with one item
@@ -93,6 +101,7 @@ class ApiService {
     try {
       final response = await http.get(
         Uri.parse('$baseUrl/enroll_free_course?course_id=$courseId&auth_token=$authToken'),
+        headers: _headers,
       );
       if (response.statusCode == 200) {
         return Map<String, dynamic>.from(json.decode(response.body));

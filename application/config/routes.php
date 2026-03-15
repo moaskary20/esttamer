@@ -82,6 +82,8 @@ $route['blogs/(:any)'] = "blog/blogs/$1";
 //End blog
 
 
+// Privacy policy (for Google Play: short URL)
+$route['privacy'] = 'home/privacy_policy';
 //Custom page
 $route['page/(:any)'] = "page/index/$1";
 //End Custom page

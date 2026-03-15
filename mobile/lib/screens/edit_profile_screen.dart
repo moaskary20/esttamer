@@ -22,6 +22,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   String? _imageUrl;
 
   static const String baseUrl = 'https://esttamer.com/api';
+  static const Map<String, String> _headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'User-Agent': 'EsttamerApp/1.0',
+  };
 
   @override
   void initState() {
@@ -38,6 +43,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     try {
       final response = await http.get(
         Uri.parse('$baseUrl/userdata?auth_token=$_authToken'),
+        headers: _headers,
       );
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
@@ -64,6 +70,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     try {
       final response = await http.post(
         Uri.parse('$baseUrl/update_userdata'),
+        headers: _headers,
         body: {
           'auth_token': _authToken ?? '',
           'first_name': _firstNameCtrl.text.trim(),
