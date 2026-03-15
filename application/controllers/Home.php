@@ -1201,6 +1201,14 @@ class Home extends CI_Controller
         $page_data['page_title'] = site_phrase('privacy_policy');
         $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
     }
+
+    public function delete_account()
+    {
+        $page_data['page_name'] = 'delete_account';
+        $page_data['page_title'] = 'Delete Account';
+        $this->load->view('frontend/' . get_frontend_settings('theme') . '/index', $page_data);
+    }
+
     public function cookie_policy()
     {
         $page_data['page_name'] = 'cookie_policy';

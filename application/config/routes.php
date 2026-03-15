@@ -84,6 +84,8 @@ $route['blogs/(:any)'] = "blog/blogs/$1";
 
 // Privacy policy (for Google Play: short URL)
 $route['privacy'] = 'home/privacy_policy';
+// Delete account (user data / app store compliance)
+$route['delete-account'] = 'home/delete_account';
 //Custom page
 $route['page/(:any)'] = "page/index/$1";
 //End Custom page
