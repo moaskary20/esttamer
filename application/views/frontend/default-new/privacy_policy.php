@@ -6,7 +6,9 @@
             <div class="col-12">
                 <?php
                 $custom_content = get_frontend_settings('privacy_policy');
-                if (!empty(trim(strip_tags($custom_content)))) {
+                $custom_text = trim(strip_tags($custom_content));
+                // اعرض المحتوى الكامل فقط إذا كان في الإعدادات نص سياسة خصوصية طويل (أكثر من 400 حرف)
+                if (strlen($custom_text) > 400) {
                     echo $custom_content;
                 } else {
                     ?>
