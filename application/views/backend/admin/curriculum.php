@@ -2,24 +2,28 @@
 $sections = $this->crud_model->get_section('course', $course_id)->result_array();
 ?>
 <style>
-/* Fix vertical text in curriculum - force horizontal layout */
+/* Fix curriculum text: horizontal flow, full width so Arabic/English stay on one line */
 #curriculum .card-title,
 #curriculum .card .card-body .card-title,
-#curriculum .thinner-card-body .card-title,
-#curriculum .card-body,
-#curriculum .card .card-body {
+#curriculum .thinner-card-body .card-title {
   direction: ltr !important;
   text-align: left !important;
   writing-mode: horizontal-tb !important;
   white-space: normal !important;
   display: block !important;
   width: 100% !important;
-  min-width: 0 !important;
   word-break: normal !important;
   overflow-wrap: normal !important;
 }
 #curriculum .card-title span { display: inline !important; }
-#curriculum .row, #curriculum .col-md-12, #curriculum .col-xl-12 { min-width: 0 !important; }
+/* Prevent shrinking: section and lesson cards take full width so title text flows in one line */
+#curriculum .card.bg-light .card-body,
+#curriculum .card.on-hover-action,
+#curriculum .card .card-body.thinner-card-body,
+#curriculum .col-md-12 { width: 100% !important; min-width: 100% !important; box-sizing: border-box !important; }
+/* Ensure lesson title row has enough width for Arabic text (avoid one word per line) */
+#curriculum .card.on-hover-action .thinner-card-body,
+#curriculum .card.on-hover-action .card-title { min-width: 280px !important; }
 </style>
 <div class="row justify-content-center">
     <div class="col-xl-12 mb-4 text-center mt-3">
@@ -72,8 +76,8 @@ $sections = $this->crud_model->get_section('course', $course_id)->result_array()
                         foreach ($lessons as $index => $lesson):?>
                         <div class="col-md-12">
                             <!-- Portlet card -->
-                            <div class="card text-secondary on-hover-action mb-2 w-100" id = "<?php echo 'lesson-'.$lesson['id']; ?>" style="min-width: 0;">
-                                <div class="card-body thinner-card-body" style="direction: ltr; text-align: left; min-width: 0;">
+                            <div class="card text-secondary on-hover-action mb-2 w-100" id = "<?php echo 'lesson-'.$lesson['id']; ?>" style="min-width: 100%;">
+                                <div class="card-body thinner-card-body" style="direction: ltr; text-align: left; min-width: 100%;">
                                     <div class="card-widgets display-none" id = "widgets-of-lesson-<?php echo $lesson['id']; ?>">
                                         <?php if ($lesson['lesson_type'] == 'quiz'): ?>
                                             <a href="<?php echo site_url('home/lesson/'.slugify($course_details['title']).'/'.$course_details['id'].'/'.$lesson['id']); ?>" target="_blank" data-toggle="tooltip" title="<?php echo get_phrase('quiz_results'); ?>"><i class="mdi mdi-file-document-box-outline"></i></a>
