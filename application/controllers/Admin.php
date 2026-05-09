@@ -753,6 +753,7 @@ class Admin extends CI_Controller
             redirect(site_url('admin/payment_settings'), 'refresh');
         }
 
+        $this->crud_model->ensure_hyperpay_payment_gateway();
         $page_data['payment_gateways'] = $this->crud_model->get_payment_gateways()->result_array();
         $page_data['page_name'] = 'payment_settings';
         $page_data['page_title'] = get_phrase('payment_settings');

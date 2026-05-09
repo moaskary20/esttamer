@@ -324,6 +324,76 @@ class Payment_model extends CI_Model
         }
     }
 
+    public function check_hyperpay_payment($identifier = "")
+    {
+        $payment_gateway = $this->db->get_where('payment_gateways', ['identifier' => $identifier])->row_array();
+        $payment_details = $this->session->userdata('payment_details');
+
+        if ($payment_details['is_instructor_payout_user_id'] > 0) {
+            $instructor_details = $this->user_model->get_all_user($payment_details['is_instructor_payout_user_id'])->row_array();
+            $keys = json_decode($instructor_details['payment_keys'], true);
+            $keys = $keys[$payment_gateway['identifier']];
+        } else {
+            $keys = json_decode($payment_gateway['keys'], true);
+        }
+
+        $checkout_id = $this->session->userdata('hyperpay_checkout_id');
+        if (empty($checkout_id)) {
+            return false;
+        }
+
+        $base_url = rtrim($payment_gateway['enabled_test_mode'] == 1 ? ($keys['test_base_url'] ?? 'https://eu-test.oppwa.com') : ($keys['live_base_url'] ?? 'https://eu-prod.oppwa.com'), '/');
+        $resource_path = $_GET['resourcePath'] ?? '/v1/checkouts/' . rawurlencode($checkout_id) . '/payment';
+        if (strpos($resource_path, '/v1/checkouts/') !== 0 || strpos($resource_path, $checkout_id) === false) {
+            return false;
+        }
+
+        $url = $base_url . $resource_path . '?' . http_build_query(array(
+            'entityId' => $keys['entity_id']
+        ));
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer ' . $keys['access_token']
+            )
+        ));
+
+        $response = curl_exec($curl);
+        $error = curl_error($curl);
+        curl_close($curl);
+
+        if ($error) {
+            return false;
+        }
+
+        $response_data = json_decode($response, true);
+        if (!is_array($response_data) || empty($response_data['result']['code'])) {
+            return false;
+        }
+
+        $result_code = $response_data['result']['code'];
+        $amount = isset($response_data['amount']) ? number_format((float) $response_data['amount'], 2, '.', '') : '';
+        $expected_amount = number_format((float) $payment_details['total_payable_amount'], 2, '.', '');
+        $currency = $response_data['currency'] ?? '';
+
+        $is_successful = preg_match('/^(000\.000\.|000\.100\.1|000\.[36]|000\.400\.[1][12]0)/', $result_code);
+
+        if ($is_successful && $amount === $expected_amount && $currency === $payment_gateway['currency']) {
+            $this->session->unset_userdata('hyperpay_checkout_id');
+            $this->session->unset_userdata('hyperpay_amount');
+            $this->session->unset_userdata('hyperpay_currency');
+            $this->session->unset_userdata('hyperpay_merchant_transaction_id');
+            return true;
+        }
+
+        return false;
+    }
+
     public function razorpayPrepareData($identifier = "")
     {
         //start common code of all payment gateway

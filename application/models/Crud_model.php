@@ -539,6 +539,49 @@ class Crud_model extends CI_Model
         return $this->db->get('payment_gateways');
     }
 
+    public function ensure_hyperpay_payment_gateway()
+    {
+        $default_keys = array(
+            'entity_id' => 'your_hyperpay_entity_id',
+            'access_token' => 'your_hyperpay_access_token',
+            'payment_brand' => 'VISA MASTER MADA',
+            'payment_type' => 'DB',
+            'billing_country' => 'SA',
+            'test_base_url' => 'https://eu-test.oppwa.com',
+            'live_base_url' => 'https://eu-prod.oppwa.com'
+        );
+
+        if ($this->get_payment_gateways('hyperpay')->num_rows() > 0) {
+            $payment_gateway = $this->get_payment_gateways('hyperpay')->row_array();
+            $keys = json_decode($payment_gateway['keys'], true);
+            $keys = is_array($keys) ? $keys : array();
+            $merged_keys = array_merge($default_keys, $keys);
+
+            if ($merged_keys !== $keys) {
+                $this->db->where('identifier', 'hyperpay');
+                $this->db->update('payment_gateways', array(
+                    'keys' => json_encode($merged_keys),
+                    'updated_at' => time()
+                ));
+            }
+            return;
+        }
+
+        $data['identifier'] = 'hyperpay';
+        $data['currency'] = 'SAR';
+        $data['title'] = 'Hyperpay';
+        $data['description'] = '';
+        $data['keys'] = json_encode($default_keys);
+        $data['model_name'] = 'Payment_model';
+        $data['enabled_test_mode'] = 1;
+        $data['status'] = 0;
+        $data['is_addon'] = 0;
+        $data['created_at'] = time();
+        $data['updated_at'] = time();
+
+        $this->db->insert('payment_gateways', $data);
+    }
+
     public function update_payment_settings()
     {
         $keys = array();

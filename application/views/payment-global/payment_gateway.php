@@ -199,10 +199,16 @@ $payment_gateways = $this->db->where('status', 1)->get('payment_gateways')->resu
 						$counter += 1; ?>
 						<?php if(isset($$empty_key_of_instructor) && $empty_key_of_instructor > 0) continue; ?>
 
+						<?php
+							$gateway_icon = 'assets/payment/'.$payment_gateway['identifier'].'.png';
+							if (!file_exists(FCPATH.$gateway_icon)) {
+								$gateway_icon = 'assets/payment/sample.jpg';
+							}
+						?>
 						<div class="row payment-gateway <?php echo $payment_gateway['identifier'].'-selector'; ?>" onclick="selectedPaymentGateway('<?php echo $payment_gateway['identifier']; ?>')">
 							<div class="col-12">
 								<img class="tick-icon <?php echo $payment_gateway['identifier']; ?>-icon" src="<?php echo base_url('assets/payment/tick.png'); ?>">
-								<img class="payment-gateway-icon" src="<?php echo base_url('assets/payment/'.$payment_gateway['identifier'].'.png'); ?>">
+								<img class="payment-gateway-icon" src="<?php echo base_url($gateway_icon); ?>">
 							</div>
 						</div>
 					<?php endforeach; ?>

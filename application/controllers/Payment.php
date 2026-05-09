@@ -322,6 +322,85 @@ class Payment extends CI_Controller
         echo json_encode($response);
     }
 
+    public function create_hyperpay_payment()
+    {
+        $identifier = 'hyperpay';
+        $payment_details = $this->session->userdata('payment_details');
+        $payment_gateway = $this->db->get_where('payment_gateways', ['identifier' => $identifier])->row_array();
+        $customer_details = $this->user_model->get_all_user($this->session->userdata('user_id'))->row_array();
+
+        if ($payment_details['is_instructor_payout_user_id'] > 0) {
+            $instructor_details = $this->user_model->get_all_user($payment_details['is_instructor_payout_user_id'])->row_array();
+            $keys = json_decode($instructor_details['payment_keys'], true);
+            $keys = $keys[$payment_gateway['identifier']];
+        } else {
+            $keys = json_decode($payment_gateway['keys'], true);
+        }
+
+        $base_url = rtrim($payment_gateway['enabled_test_mode'] == 1 ? ($keys['test_base_url'] ?? 'https://eu-test.oppwa.com') : ($keys['live_base_url'] ?? 'https://eu-prod.oppwa.com'), '/');
+        $amount = number_format((float) $payment_details['total_payable_amount'], 2, '.', '');
+        $merchant_transaction_id = 'HP_' . time() . '_' . $this->session->userdata('user_id');
+
+        $post_data = array(
+            'entityId' => $keys['entity_id'],
+            'amount' => $amount,
+            'currency' => $payment_gateway['currency'],
+            'paymentType' => $keys['payment_type'],
+            'merchantTransactionId' => $merchant_transaction_id,
+            'customer.email' => $customer_details['email'],
+            'customer.givenName' => $customer_details['first_name'],
+            'customer.surname' => $customer_details['last_name'],
+            'billing.country' => $keys['billing_country'] ?? 'SA'
+        );
+
+        if ($payment_gateway['enabled_test_mode'] == 1) {
+            $post_data['testMode'] = 'EXTERNAL';
+        }
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $base_url . '/v1/checkouts',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => http_build_query($post_data),
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer ' . $keys['access_token'],
+                'Content-Type: application/x-www-form-urlencoded'
+            )
+        ));
+
+        $response = curl_exec($curl);
+        $error = curl_error($curl);
+        curl_close($curl);
+
+        $response_data = json_decode($response, true);
+
+        if ($error || !is_array($response_data) || empty($response_data['id'])) {
+            echo json_encode(array(
+                'status' => 0,
+                'error' => array(
+                    'message' => $error ? $error : ($response_data['result']['description'] ?? get_phrase('checkout_creation_failed'))
+                )
+            ));
+            return;
+        }
+
+        $this->session->set_userdata('hyperpay_checkout_id', $response_data['id']);
+        $this->session->set_userdata('hyperpay_amount', $amount);
+        $this->session->set_userdata('hyperpay_currency', $payment_gateway['currency']);
+        $this->session->set_userdata('hyperpay_merchant_transaction_id', $merchant_transaction_id);
+
+        echo json_encode(array(
+            'status' => 1,
+            'checkoutId' => $response_data['id'],
+            'widgetUrl' => $base_url . '/v1/paymentWidgets.js?checkoutId=' . $response_data['id'],
+            'integrity' => $response_data['integrity'] ?? '',
+            'shopperResultUrl' => $payment_details['success_url'] . '/' . $identifier,
+            'brands' => $keys['payment_brand'] ?? 'VISA MASTER'
+        ));
+    }
+
     public function create_payu_payment()
     {
         $identifier = 'payu';
