@@ -652,6 +652,8 @@
                         </div>
                         <div class="feature-content">
                             <h6><?php
+                                $status_wise_courses = $this->crud_model->get_status_wise_courses_front();
+                                $number_of_courses = $status_wise_courses['active']->num_rows();
                                 echo $number_of_courses . ' ' . site_phrase('online_courses'); ?></h6>
                             <p><?php echo site_phrase('explore_a_variety_of_fresh_topics'); ?></p>
                         </div>
